@@ -10,9 +10,8 @@ For each epic (project) there will be a swimlane, and tickets should move throug
 
 ## Branches ##
 
-For each ticket, while it is being worked on, there should be a branch for just that ticket.
+For each ticket, while it is being worked on, there should be a branch for just that ticket. The branch should be named with the following template: "#{issue-number} {description}"
 
 ## Pull Requests ##
 
-
-
+When work is completed on a ticket, a pull request should be made, and the ticket should be moved into the 'to review' swimlane. At least one other memeber of the team must review the code change before it can be merged into master.
