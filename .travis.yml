@@ -5,7 +5,7 @@ notifications:
   slack: 'loungeolizards:ZLbdpBYlGv10ef8qZYX7rnnJ'
 osx_image: xcode61
 rvm:
-- 2.4.0
+- 2.4.1
 install:
 - ./Scripts/install.sh
 script:
