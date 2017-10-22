@@ -3,6 +3,7 @@
 language: C#
 notifications:
   slack: 'loungeolizards:ZLbdpBYlGv10ef8qZYX7rnnJ'
+os: osx
 osx_image: xcode61
 rvm:
 - 2.4.0
