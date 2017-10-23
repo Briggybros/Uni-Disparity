@@ -10,7 +10,7 @@ For each epic (project) there will be a swimlane, and tickets should move throug
 
 ## Branches ##
 
-For each ticket, while it is being worked on, there should be a branch for just that ticket. The branch should be named with the following template: "#{issue-number} {description}"
+For each ticket, while it is being worked on, there should be a branch for just that ticket. The branch should be named with the following template: "{issue-number} {description}"
 
 ## Pull Requests ##
 
