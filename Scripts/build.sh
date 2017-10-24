@@ -13,3 +13,7 @@ echo "Attempting to build $project"
 
 echo 'Logs from build'
 cat $(pwd)/unity.log
+
+ls $(pwd)
+ls $(pwd)/Build/
+ls $(pwd)/Build/android/

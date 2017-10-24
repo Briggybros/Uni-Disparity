@@ -16,4 +16,4 @@ deploy:
   file: ./Build/android/disparity.apk
   on:
     repo: Briggybros/disparity
-    branch: 7-set-up-travis-deployment
+    tags: true
