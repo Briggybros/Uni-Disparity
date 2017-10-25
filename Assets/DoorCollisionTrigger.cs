@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverBehaviourScript : InteractTrigger {
+public class DoorCollisionTrigger: CollisionTrigger {
+    
 	
-
     // Update is called once per frame
     void Update () {
         if (active){
-            ActivateDoor();
+            TriggerDoor();
             active = false;
         }
     }
 
-    void ActivateDoor()
+    void TriggerDoor()
     {
         target.GetComponent<DoorBehaviourScript>().ToggleOpen(true);
-    }
-
-    public void ActivateLever(bool set)
-    {
-        active = set;
     }
 }
