@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorBehaviour : MonoBehaviour {
-    bool open;
+public class DoorBehaviourScript : MonoBehaviour {
+    public bool open;
 	// Use this for initialization
 	void Start () {
         open = false;
@@ -13,6 +13,8 @@ public class DoorBehaviour : MonoBehaviour {
 	void Update () {
         if (open)
         {
+            Debug.Log("Door opened");
+            open = false;
             //Open the door
         }
         else
