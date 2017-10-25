@@ -2,29 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverBehaviourScript : MonoBehaviour {
+public class PressurePadBehaviourScript : MonoBehaviour {
     GameObject door;
     public string target;
-    bool active;
-
-	// Use this for initialization
-	void Start () {
-        active = false;
+    bool Active;
+    // Use this for initialization
+    void Start () {
+        Active = false;
         door = GameObject.Find(target/*door's name*/);
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if (Active){
+            TriggerDoor();
+            Active = false;
+        }
 		
 	}
 
-    void ActivateDoor()
+    void TriggerDoor()
     {
         door.GetComponent<DoorBehaviourScript>().SetOpenable(true);
     }
 
-    public void ActivateLever(bool set)
+    public void ActivatePad(bool set)
     {
-        active = set;
+        Active = set;
     }
 }

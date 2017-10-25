@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 
 public class DoorBehaviourScript : Receiver {
     public bool open;
@@ -12,6 +13,7 @@ public class DoorBehaviourScript : Receiver {
         open = false;
     }
 	
+
     // Update is called once per frame
     protected override void Update () {
         if (open){
