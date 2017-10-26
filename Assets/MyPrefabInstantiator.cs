@@ -38,7 +38,7 @@ public class MyPrefabInstantiator : MonoBehaviour, ITrackableEventHandler
             myModelTrf.localPosition = new Vector3(0f, 0f, 0f);
             myModelTrf.localRotation = Quaternion.identity;
             myModelTrf.localScale = new Vector3(0.0005f, 0.0005f, 0.0005f);
-            myModelTrf.gameObject.active = true;
+            myModelTrf.gameObject.SetActive(true);
         }
     }
 }
