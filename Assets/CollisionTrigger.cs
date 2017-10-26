@@ -5,11 +5,28 @@ using UnityEngine;
 public class CollisionTrigger : Trigger {
     public GameObject owner;
 
+    protected override void Start(){
+        base.Start();
+    }
 
-    void OnTriggerEnter(Collider other)
-    {
+    protected override void Update(){
+        base.Update();
+    }
+    protected void OnTriggerEnter(Collider other){
         if (other.gameObject == owner/*ensure it the the player name, or the object name*/){
-            Activate(true);
+            base.target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
+        }
+    }
+
+    protected void OnTriggerExit(Collider other){
+        if (other.gameObject == owner){
+            base.target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("ExitFlag");
+        }
+    }
+
+    protected void OnTriggerStay(Collider other){
+        if (other.gameObject == owner){
+            base.target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("WithinFlag");
         }
     }
 }
