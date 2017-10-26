@@ -6,6 +6,8 @@ echo "Attempting to build disparity"
   -force-free \
   -quit \
   -nographics \
+  -username DisparityGame \
+  -password Disparity123 \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -buildTarget android \
