@@ -7,19 +7,17 @@ public class LeverBehaviourScript : InteractTrigger {
 
     // Update is called once per frame
     void Update () {
-        if (active){
-            ActivateDoor();
-            active = false;
-        }
+      //  if (active){
+        //    ActivateDoor();
+    //        active = false;
+       // }
     }
 
-    void ActivateDoor()
-    {
-        target.GetComponent<DoorBehaviourScript>().ToggleOpen(true);
+    void ActivateDoor(){
+            //      target.GetComponent<DoorBehaviourScript>().ToggleOpen(true);
     }
 
-    public void ActivateLever(bool set)
-    {
-        active = set;
+    public void ActivateLever(bool set){
+            // active = set;
     }
 }

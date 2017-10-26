@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorBehaviourScript : MonoBehaviour {
+public class DoorBehaviourScript : Receiver {
     public bool open;
 
 
     // Use this for initialization
-    void Start () {
+    protected override void Start () {
         open = false;
     }
 	
     // Update is called once per frame
-    void Update () {
+    protected override void Update () {
         if (open){
             Debug.Log("Door opened");
             open = false;
@@ -23,8 +23,11 @@ public class DoorBehaviourScript : MonoBehaviour {
         }
     }
 
-    public void ToggleOpen(bool set)
-    {
-        open = set;
+    protected void ToggleOpen(){
+        open = !open;
+    }
+
+    protected override void ColliderEnter(){
+        ToggleOpen();
     }
 }

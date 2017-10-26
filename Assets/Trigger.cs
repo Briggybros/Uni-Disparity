@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
     public GameObject target;
-    public bool active;
 
 
     // Use this for initialization
-    void Start()
-    {
-        active = false;
+    protected virtual void Start(){
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (active){
-            active = false;
-        }
-    }
-
-    public void Activate(bool set)
-    {
-        active = set;
+    protected virtual void Update(){
     }
 }
