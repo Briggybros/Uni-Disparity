@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< HEAD
+
 
 public class DoorBehaviourScript : Receiver {
     public bool open;
