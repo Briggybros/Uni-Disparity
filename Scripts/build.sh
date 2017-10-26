@@ -5,11 +5,10 @@ project="disparity"
 echo "Attempting to build $project"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
-  -nographics \
+  -quit \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildTarget Android "$(pwd)/Build/android/$project.apk" \
-  -quit
+  -executeMethod Build.PerformBuild
 
 echo 'Logs from build'
 cat $(pwd)/unity.log
