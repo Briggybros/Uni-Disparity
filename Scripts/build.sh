@@ -6,8 +6,8 @@ echo "Attempting to build $project"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -quit \
-  -username Briggybros
-  -password Disparity4eva
+  -username Briggybros \
+  -password Disparity4eva \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -executeMethod Build.PerformBuild
