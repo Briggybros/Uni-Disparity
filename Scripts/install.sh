@@ -1,6 +1,9 @@
 #! /bin/sh
-echo 'Downloading from https://netstorage.unity3d.com/unity/46dda1414e51/MacEditorInstaller/Unity-2017.2.0f3.pkg: '
-curl -o Unity.pkg https://netstorage.unity3d.com/unity/46dda1414e51/MacEditorInstaller/Unity-2017.2.0f3.pkg
+echo 'Downloading from http://beta.unity3d.com/download/ee86734cf592/unity-editor_amd64-2017.2.0f3.deb: '
+curl -o unity.deb http://beta.unity3d.com/download/ee86734cf592/unity-editor_amd64-2017.2.0f3.deb
 
-echo 'Installing Unity.pkg'
-sudo installer -dumplog -package Unity.pkg -target /
+echo 'Installing Unity'
+sudo apt install ./unity.deb -y
+
+echo 'Removing installer'
+rm unity.deb

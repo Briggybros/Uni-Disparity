@@ -1,14 +1,18 @@
 #! /bin/sh
 
-project="disparity"
-
-echo "Attempting to build $project"
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+echo "Attempting to build disparity"
+/opt/Unity/Editor/Unity \
   -batchmode \
+  -force-free \
   -quit \
+  -nographics \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
+  -buildTarget android \
   -executeMethod Build.PerformBuild
 
-echo 'Logs from build'
-cat $(pwd)/unity.log
+cat unity.log
+
+echo "Is the apk there?"
+
+ls Build/android

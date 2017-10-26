@@ -1,14 +1,14 @@
-language: C#
+language: android
+android:
+  components:
+    - build-tools-25.2.5
+    - android-27
 notifications:
   slack: loungeolizards:ZLbdpBYlGv10ef8qZYX7rnnJ
-os: osx
-osx_image: xcode61
-rvm:
-- 2.4.0
 install:
-- ./Scripts/install.sh
+  - ./Scripts/install.sh
 script:
-- ./Scripts/build.sh
+  - ./Scripts/build.sh
 deploy:
   provider: releases
   api_key:
