@@ -6,7 +6,7 @@ echo "Attempting to build disparity"
   -force-free \
   -quit \
   -nographics \
-  -username "DisparityGame" \
+  -username "greg.sims.2015@bris.ac.uk" \
   -password "Disparity123" \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
