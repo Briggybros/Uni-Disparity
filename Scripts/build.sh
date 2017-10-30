@@ -1,7 +1,6 @@
 #! /bin/sh
 
 echo "Attempting to build disparity"
-/opt/Unity/Editor/Unity
 /opt/Unity/Editor/Unity \
   -batchmode \
   -force-free \
