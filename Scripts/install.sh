@@ -7,3 +7,7 @@ sudo apt install ./unity.deb -y
 
 echo 'Removing installer'
 rm unity.deb
+
+echo 'Downloading license'
+mkdir -p ~/.local/share/unity3d/Unity
+curl -o ~/.local/share/unity3d/Unity/Unity_lic.ulf https://www.dropbox.com/s/3fm8vv3q6ngd2jg/Unity_lic.ulf
