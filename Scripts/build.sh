@@ -4,6 +4,8 @@
   -batchmode \
   -force-free \
   -quit \
+  -username greg.sims.2015@bris.ac.uk \
+  -password Disparity123 \
   -nographics \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
