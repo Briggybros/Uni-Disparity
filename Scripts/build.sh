@@ -6,6 +6,9 @@ echo "Attempting to build disparity"
   -batchmode \
   -force-free \
   -quit \
+  -username greg.sims.2015@bris.ac.uk \
+  -password Disparity123 \
+  -serial na \
   -nographics \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
