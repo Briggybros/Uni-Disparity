@@ -52,11 +52,13 @@ public class character : MonoBehaviour {
 			if (directionNormalised == 0 || directionNormalised == 4) {
 				if (move == 1) {
 					if (originalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z + 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z + 1);
 						movementflag = 0;
 					}
 				}
 				if (move == -1) {
 					if (originalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z - 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z - 1);
 						movementflag = 0;
 					}
 				}
@@ -64,11 +66,13 @@ public class character : MonoBehaviour {
 			else if (directionNormalised == 1){
 				if (move == 1) {
 					if (originalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x + 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x + 1, 0, originalPosition.z);
 						movementflag = 0;
 					}
 				}
 				if (move == -1) {
 					if (originalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x - 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x - 1, 0, originalPosition.z);
 						movementflag = 0;
 					}
 				}
@@ -76,11 +80,13 @@ public class character : MonoBehaviour {
 			else if (directionNormalised == 2){
 				if (move == 1) {
 					if (originalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z - 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z - 1);
 						movementflag = 0;
 					}
 				}
 				if (move == -1) {
 					if (originalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z + 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z + 1);
 						movementflag = 0;
 					}
 				}
@@ -88,11 +94,13 @@ public class character : MonoBehaviour {
 			else if (directionNormalised == 3){
 				if (move == 1) {
 					if (originalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x - 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x - 1, 0, originalPosition.z);
 						movementflag = 0;
 					}
 				}
 				if (move == -1) {
 					if (originalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x + 1 + 0.1) {
+						this.transform.position = new Vector3 (originalPosition.x + 1, 0, originalPosition.z);
 						movementflag = 0;
 					}
 				}
