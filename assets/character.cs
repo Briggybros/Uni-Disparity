@@ -11,6 +11,7 @@ public class character : MonoBehaviour {
 	private int rotateflag = 0;
 	private int movementflag = 0;
 	private float RotationSpeed = 15.0f;
+	private float MovementSpeed = 4.0f;
 
 	void Rotate () {
 		this.transform.rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.Euler (0, direction * 90, 0), Time.deltaTime * RotationSpeed);
@@ -18,10 +19,10 @@ public class character : MonoBehaviour {
 
 	void Move (int translation) {
 			if (translation == 1) {
-			this.transform.position += transform.forward*Time.deltaTime;
+			this.transform.position += transform.forward*Time.deltaTime*MovementSpeed;
 			}
 			if (translation == -1) {
-			this.transform.position += transform.forward*-Time.deltaTime;
+			this.transform.position += transform.forward*-Time.deltaTime*MovementSpeed;
 			}
 	}
 
