@@ -2,143 +2,151 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class character : MonoBehaviour {
+public class Character : MonoBehaviour {
 
-	private int direction = 0;
-	private Vector3 originalPosition = new Vector3(0, 0, 0);
-	private int move = 0;
-	private int directionNormalised = 0;
-	private int rotateflag = 0;
-	private int movementflag = 0;
+	private int Direction = 0;
+	private Vector3 OriginalPosition = new Vector3(0, 0, 0);
+	private int MoveInt = 0;
+	private int DirectionNormalised = 0;
+	private int Rotateflag = 0;
+	private int Movementflag = 0;
 	private float RotationSpeed = 15.0f;
 	private float MovementSpeed = 4.0f;
 
 	void Rotate () {
-		this.transform.rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.Euler (0, direction * 90, 0), Time.deltaTime * RotationSpeed);
+		this.transform.localRotation = Quaternion.Lerp (this.transform.localRotation, Quaternion.Euler (0, Direction * 90, 0), Time.deltaTime * RotationSpeed);
 	}
 
 	void Move (int translation) {
 			if (translation == 1) {
-			this.transform.position += transform.forward*Time.deltaTime*MovementSpeed;
+				this.transform.position += transform.forward*Time.deltaTime*MovementSpeed;
 			}
 			if (translation == -1) {
-			this.transform.position += transform.forward*-Time.deltaTime*MovementSpeed;
+				this.transform.position += transform.forward*-Time.deltaTime*MovementSpeed;
 			}
 	}
 
 	void Start () {
-		rotateflag = 0;
-		movementflag = 0;
+		Rotateflag = 0;
+		Movementflag = 0;
 	}
 
 	void Update () {
 
-		if (rotateflag == 1) {
+		if (Rotateflag == 1) {
 			Rotate ();
 
-			directionNormalised = direction;
-			if (directionNormalised < 0) {
-				directionNormalised = directionNormalised + 4;
+			DirectionNormalised = Direction;
+				if (DirectionNormalised < 0) {
+					DirectionNormalised = DirectionNormalised + 4;
 			}
-			if ((directionNormalised * 90) - 1 < this.transform.rotation.eulerAngles.y && this.transform.rotation.eulerAngles.y < (directionNormalised * 90) + 1) {
-				this.transform.eulerAngles = new Vector3 (0, directionNormalised * 90, 0);
-				rotateflag = 0;
+				if ((DirectionNormalised * 90) - 1 < this.transform.localRotation.eulerAngles.y && this.transform.localRotation.eulerAngles.y < (DirectionNormalised * 90) + 1) {
+					this.transform.eulerAngles = new Vector3 (0, DirectionNormalised * 90, 0);
+				Rotateflag = 0;
 			}
 		} 
 
-		else if (movementflag == 1) {
-			Move (move);
-			Debug.Log (directionNormalised);
-			if (directionNormalised == 0 || directionNormalised == 4) {
-				if (move == 1) {
-					if (originalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z + 1);
-						movementflag = 0;
+			else if (Movementflag == 1) {
+			
+			Move (MoveInt);
+			Debug.Log (DirectionNormalised);
+			switch (DirectionNormalised) {
+
+			case 0:
+				if (MoveInt == 1) {
+					if (OriginalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z + 1);
+						Movementflag = 0;
 					}
 				}
-				if (move == -1) {
-					if (originalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z - 1);
-						movementflag = 0;
+				if (MoveInt == -1) {
+					if (OriginalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z - 1);
+						Movementflag = 0;
 					}
 				}
-			}
-			else if (directionNormalised == 1){
-				if (move == 1) {
-					if (originalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x + 1, 0, originalPosition.z);
-						movementflag = 0;
+				break;
+
+			case 1:
+				if (MoveInt == 1) {
+					if (OriginalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x + 1, 0, OriginalPosition.z);
+						Movementflag = 0;
 					}
 				}
-				if (move == -1) {
-					if (originalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x - 1, 0, originalPosition.z);
-						movementflag = 0;
+				if (MoveInt == -1) {
+					if (OriginalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x - 1, 0, OriginalPosition.z);
+						Movementflag = 0;
 					}
 				}
-			}
-			else if (directionNormalised == 2){
-				if (move == 1) {
-					if (originalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z - 1);
-						movementflag = 0;
+				break;
+
+			case 2:
+				if (MoveInt == 1) {
+					if (OriginalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z - 1);
+						Movementflag = 0;
 					}
 				}
-				if (move == -1) {
-					if (originalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < originalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x, 0, originalPosition.z + 1);
-						movementflag = 0;
+				if (MoveInt == -1) {
+					if (OriginalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z + 1);
+						Movementflag = 0;
 					}
 				}
-			}
-			else if (directionNormalised == 3){
-				if (move == 1) {
-					if (originalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x - 1, 0, originalPosition.z);
-						movementflag = 0;
+				break;
+
+			case 3:
+				if (MoveInt == 1) {
+					if (OriginalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x - 1, 0, OriginalPosition.z);
+						Movementflag = 0;
 					}
 				}
-				if (move == -1) {
-					if (originalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < originalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (originalPosition.x + 1, 0, originalPosition.z);
-						movementflag = 0;
+				if (MoveInt == -1) {
+					if (OriginalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
+						this.transform.position = new Vector3 (OriginalPosition.x + 1, 0, OriginalPosition.z);
+						Movementflag = 0;
 					}
 				}
+				break;
 			}
 		}
+
 		else {
-			if (Input.GetKeyDown (KeyCode.A)) {        // Left
-				direction++;
-				if (direction > 0) {
-					direction = direction % 4;
+			if (Input.GetKeyDown (KeyCode.D)) {        // Left
+				Direction++;
+				if (Direction > 0) {
+					Direction = Direction % 4;
 				} 
 				else {
-					direction = direction % -4;
+					Direction = Direction % -4;
 				}
-				rotateflag = 1;
+				Rotateflag = 1;
 			}
 
-			if (Input.GetKeyDown (KeyCode.D)) {        // Right
-				direction--;
-				if (direction > 0) {
-					direction = direction % 4;
+			if (Input.GetKeyDown (KeyCode.A)) {        // Right
+				Direction--;
+				if (Direction > 0) {
+					Direction = Direction % 4;
 				} 
 				else {
-					direction = direction % -4;
+					Direction = Direction % -4;
 				}
-				rotateflag = 1;
+				Rotateflag = 1;
 			}
 
 			if (Input.GetKeyDown (KeyCode.W)) {        // Up
-				move = 1;
-				movementflag = 1;
-				originalPosition = this.transform.position;
+				MoveInt = 1;
+				Movementflag = 1;
+				OriginalPosition = this.transform.position;
 			}
 
 			if (Input.GetKeyDown (KeyCode.S)) {        // Down
-				move = -1;
-				movementflag = 1;
-				originalPosition = this.transform.position;
+				MoveInt = -1;
+				Movementflag = 1;
+				OriginalPosition = this.transform.position;
 			}
 		}
 	}
