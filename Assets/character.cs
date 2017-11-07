@@ -14,15 +14,23 @@ public class Character : MonoBehaviour {
 	private float MovementSpeed = 4.0f;
 
 	void Rotate () {
-		this.transform.localRotation = Quaternion.Lerp (this.transform.localRotation, Quaternion.Euler (0, Direction * 90, 0), Time.deltaTime * RotationSpeed);
+		this.transform.localRotation = Quaternion.Lerp (
+			this.transform.localRotation,
+			Quaternion.Euler (
+				0, Direction * 90, 0
+			),
+			Time.deltaTime * RotationSpeed
+		);
 	}
 
 	void Move (int translation) {
 			if (translation == 1) {
-				this.transform.position += transform.forward*Time.deltaTime*MovementSpeed;
+				this.transform.position +=
+				transform.forward*Time.deltaTime*MovementSpeed;
 			}
 			if (translation == -1) {
-				this.transform.position += transform.forward*-Time.deltaTime*MovementSpeed;
+				this.transform.position +=
+				transform.forward*-Time.deltaTime*MovementSpeed;
 			}
 	}
 
@@ -40,28 +48,41 @@ public class Character : MonoBehaviour {
 				if (DirectionNormalised < 0) {
 					DirectionNormalised = DirectionNormalised + 4;
 			}
-				if ((DirectionNormalised * 90) - 1 < this.transform.localRotation.eulerAngles.y && this.transform.localRotation.eulerAngles.y < (DirectionNormalised * 90) + 1) {
-					this.transform.eulerAngles = new Vector3 (0, DirectionNormalised * 90, 0);
+				if ((DirectionNormalised * 90) - 1 <
+				this.transform.localRotation.eulerAngles.y &&
+				this.transform.localRotation.eulerAngles.y <
+				(DirectionNormalised * 90) + 1) {
+					this.transform.eulerAngles = new Vector3 (
+					0, DirectionNormalised * 90, 0
+				);
 				Rotateflag = 0;
 			}
-		} 
+		}
 
 			else if (Movementflag == 1) {
-			
+
 			Move (MoveInt);
 			Debug.Log (DirectionNormalised);
 			switch (DirectionNormalised) {
 
 			case 0:
 				if (MoveInt == 1) {
-					if (OriginalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z + 1);
+					if (OriginalPosition.z + 1 - 0.1 <
+					this.transform.position.z &&
+					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
+						this.transform.position = new Vector3 (
+							OriginalPosition.x, 0, OriginalPosition.z + 1
+						);
 						Movementflag = 0;
 					}
 				}
 				if (MoveInt == -1) {
-					if (OriginalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z - 1);
+					if (OriginalPosition.z - 1 - 0.1 <
+					this.transform.position.z &&
+					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
+						this.transform.position = new Vector3 (
+							OriginalPosition.x, 0, OriginalPosition.z - 1
+						);
 						Movementflag = 0;
 					}
 				}
@@ -69,14 +90,22 @@ public class Character : MonoBehaviour {
 
 			case 1:
 				if (MoveInt == 1) {
-					if (OriginalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x + 1, 0, OriginalPosition.z);
+					if (OriginalPosition.x + 1 - 0.1 <
+					this.transform.position.x &&
+					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
+						this.transform.position = new Vector3 (
+							OriginalPosition.x + 1, 0, OriginalPosition.z
+						);
 						Movementflag = 0;
 					}
 				}
 				if (MoveInt == -1) {
-					if (OriginalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x - 1, 0, OriginalPosition.z);
+					if (OriginalPosition.x - 1 - 0.1 <
+					this.transform.position.x &&
+					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
+						this.transform.position = new Vector3 (
+						OriginalPosition.x - 1, 0, OriginalPosition.z
+					);
 						Movementflag = 0;
 					}
 				}
@@ -84,14 +113,22 @@ public class Character : MonoBehaviour {
 
 			case 2:
 				if (MoveInt == 1) {
-					if (OriginalPosition.z - 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z - 1);
+					if (OriginalPosition.z - 1 - 0.1 <
+					this.transform.position.z &&
+					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
+						this.transform.position = new Vector3 (
+						OriginalPosition.x, 0, OriginalPosition.z - 1
+					);
 						Movementflag = 0;
 					}
 				}
 				if (MoveInt == -1) {
-					if (OriginalPosition.z + 1 - 0.1 < this.transform.position.z && this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x, 0, OriginalPosition.z + 1);
+					if (OriginalPosition.z + 1 - 0.1 <
+					this.transform.position.z &&
+					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
+						this.transform.position = new Vector3 (
+						OriginalPosition.x, 0, OriginalPosition.z + 1
+					);
 						Movementflag = 0;
 					}
 				}
@@ -99,14 +136,22 @@ public class Character : MonoBehaviour {
 
 			case 3:
 				if (MoveInt == 1) {
-					if (OriginalPosition.x - 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x - 1, 0, OriginalPosition.z);
+					if (OriginalPosition.x - 1 - 0.1 <
+					this.transform.position.x &&
+					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
+						this.transform.position = new Vector3 (
+						OriginalPosition.x - 1, 0, OriginalPosition.z
+					);
 						Movementflag = 0;
 					}
 				}
 				if (MoveInt == -1) {
-					if (OriginalPosition.x + 1 - 0.1 < this.transform.position.x && this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (OriginalPosition.x + 1, 0, OriginalPosition.z);
+					if (OriginalPosition.x + 1 - 0.1 <
+					this.transform.position.x &&
+					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
+						this.transform.position = new Vector3 (
+						OriginalPosition.x + 1, 0, OriginalPosition.z
+					);
 						Movementflag = 0;
 					}
 				}
@@ -119,7 +164,7 @@ public class Character : MonoBehaviour {
 				Direction++;
 				if (Direction > 0) {
 					Direction = Direction % 4;
-				} 
+				}
 				else {
 					Direction = Direction % -4;
 				}
@@ -130,7 +175,7 @@ public class Character : MonoBehaviour {
 				Direction--;
 				if (Direction > 0) {
 					Direction = Direction % 4;
-				} 
+				}
 				else {
 					Direction = Direction % -4;
 				}
