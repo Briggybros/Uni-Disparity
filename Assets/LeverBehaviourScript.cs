@@ -6,7 +6,7 @@ public class LeverBehaviourScript : InteractTrigger {
 	
 
     // Update is called once per frame
-    void Update () {
+    protected override void Update () {
       //  if (active){
         //    ActivateDoor();
     //        active = false;
