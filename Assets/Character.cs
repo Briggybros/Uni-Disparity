@@ -57,9 +57,7 @@ public class Character : MonoBehaviour {
 				);
 				Rotateflag = 0;
 			}
-		}
-
-			else if (Movementflag == 1) {
+		} else if (Movementflag == 1) {
 
 			Move (MoveInt);
 			Debug.Log (DirectionNormalised);
@@ -203,9 +201,7 @@ public class Character : MonoBehaviour {
                 }
                     break;
 			}
-		}
-
-		else {
+		} else {
 			if (Input.GetKeyDown (KeyCode.D)) {        // Left
 				Direction++;
 				if (Direction > 0) {
