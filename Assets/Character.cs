@@ -24,7 +24,7 @@ public class Character : MonoBehaviour {
 	}
 
 	void Move (int translation) {
-			if (translation == 1) {
+			if (translation > 0) {
 				this.transform.position +=
 				transform.forward*Time.deltaTime*MovementSpeed;
 			}
@@ -63,15 +63,15 @@ public class Character : MonoBehaviour {
 
 			Move (MoveInt);
 			Debug.Log (DirectionNormalised);
+            //switch based in which direction facing
 			switch (DirectionNormalised) {
-
 			case 0:
 				if (MoveInt == 1) {
 					if (OriginalPosition.z + 1 - 0.1 <
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z + 1
+							OriginalPosition.x, OriginalPosition.y, OriginalPosition.z + 1
 						);
 						Movementflag = 0;
 					}
@@ -81,11 +81,21 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z - 1
+							OriginalPosition.x, OriginalPosition.y, OriginalPosition.z - 1
 						);
 						Movementflag = 0;
 					}
 				}
+                if (MoveInt == 2){
+                    if(OriginalPosition.z + 2 - 0.1 <
+                    this.transform.position.z &&
+                    this.transform.position.z < OriginalPosition.z + 2 + 0.1){
+                            this.transform.position = new Vector3(
+                                OriginalPosition.x, OriginalPosition.y, OriginalPosition.z + 2
+                            );
+                            Movementflag = 0;
+                    }
+                }
 				break;
 
 			case 1:
@@ -94,7 +104,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-							OriginalPosition.x + 1, 0, OriginalPosition.z
+							OriginalPosition.x + 1, OriginalPosition.y, OriginalPosition.z
 						);
 						Movementflag = 0;
 					}
@@ -104,12 +114,24 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
+						OriginalPosition.x - 1, OriginalPosition.y, OriginalPosition.z
 					);
 						Movementflag = 0;
 					}
 				}
-				break;
+                if (MoveInt == 2)
+                {
+                    if (OriginalPosition.x + 2 - 0.1 <
+                    this.transform.position.x &&
+                    this.transform.position.x < OriginalPosition.x + 2 + 0.1)
+                    {
+                        this.transform.position = new Vector3(
+                            OriginalPosition.x + 2, OriginalPosition.y, OriginalPosition.z
+                        );
+                        Movementflag = 0;
+                    }
+                }
+                break;
 
 			case 2:
 				if (MoveInt == 1) {
@@ -117,7 +139,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z - 1
+						OriginalPosition.x, OriginalPosition.y, OriginalPosition.z - 1
 					);
 						Movementflag = 0;
 					}
@@ -127,12 +149,24 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z + 1
+						OriginalPosition.x, OriginalPosition.y, OriginalPosition.z + 1
 					);
 						Movementflag = 0;
 					}
 				}
-				break;
+                if (MoveInt == 2)
+                {
+                    if (OriginalPosition.z - 2 - 0.1 <
+                    this.transform.position.z &&
+                    this.transform.position.z < OriginalPosition.z - 2 + 0.1)
+                    {
+                        this.transform.position = new Vector3(
+                            OriginalPosition.x, OriginalPosition.y, OriginalPosition.z - 2
+                        );
+                        Movementflag = 0;
+                    }
+                }
+                    break;
 
 			case 3:
 				if (MoveInt == 1) {
@@ -140,7 +174,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
+						OriginalPosition.x - 1, OriginalPosition.y, OriginalPosition.z
 					);
 						Movementflag = 0;
 					}
@@ -150,12 +184,24 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x + 1, 0, OriginalPosition.z
+						OriginalPosition.x + 1, OriginalPosition.y, OriginalPosition.z
 					);
 						Movementflag = 0;
 					}
 				}
-				break;
+                if (MoveInt == 2)
+                {
+                    if (OriginalPosition.x - 2 - 0.1 <
+                    this.transform.position.x &&
+                    this.transform.position.x < OriginalPosition.x - 2 + 0.1)
+                    {
+                        this.transform.position = new Vector3(
+                            OriginalPosition.x - 2, OriginalPosition.y, OriginalPosition.z
+                        );
+                        Movementflag = 0;
+                    }
+                }
+                    break;
 			}
 		}
 
@@ -182,6 +228,8 @@ public class Character : MonoBehaviour {
 				Rotateflag = 1;
 			}
 
+            //MoveInt determines the direction of movement and by how much
+            //1 is forwards by 1, -1 is backwards by one, 2 is a forwards leap.
 			if (Input.GetKeyDown (KeyCode.W)) {        // Up
 				MoveInt = 1;
 				Movementflag = 1;
@@ -193,6 +241,13 @@ public class Character : MonoBehaviour {
 				Movementflag = 1;
 				OriginalPosition = this.transform.position;
 			}
+
+            if (Input.GetKeyDown (KeyCode.Space))       // Jump
+            {
+                MoveInt = 2;
+                Movementflag = 1;
+                OriginalPosition = this.transform.position;
+            }
 		}
 	}
 }
