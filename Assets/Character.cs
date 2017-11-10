@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Uses WAD for moving and Space for jumping
+
 public class Character : MonoBehaviour {
 
 	private float RotationSpeed = 15.0f;
@@ -25,39 +27,40 @@ public class Character : MonoBehaviour {
 	void Start () {
 		rot = transform.localRotation;
 		pos = transform.position;
-		tr = transform;
 	}
 
 	void Update () {
-		if (tr.localRotation == rot && tr.position == pos) {
-			// Left
-			if (Input.GetKeyDown (KeyCode.D)) {
-				StopAllCoroutines();
-				rot = Quaternion.Euler (0, 90, 0) * transform.localRotation;
-				StartCoroutine (Rotate (rot));
-			}
-			
-			// Right
-			if (Input.GetKeyDown (KeyCode.A)) {
-				StopAllCoroutines();
-				rot = Quaternion.Euler (0, -90, 0) * transform.localRotation;
-				StartCoroutine (Rotate (rot));
-			}
+		// the equality checks for rotation and position are overriden by the classes
+		// to return equal when they are "close enough" accounting for precision
+		// this introduces some error that can compound over time
 
-			// Up
-			if (Input.GetKeyDown (KeyCode.W)) {
-				Vector3 movement = transform.rotation * Vector3.forward;	
-				pos += movement;
-			}
-
-			// Jump
-			if (Input.GetKeyDown (KeyCode.Space)) {
-				Vector3 movement = transform.rotation * Vector3.forward * 2;	
-				pos += movement;
-			}
+		if (Input.GetKeyDown (KeyCode.D) && transform.localRotation == rot && transform.position == pos) {
+			transform.position = pos;
+			StopAllCoroutines ();
+			rot = Quaternion.Euler (0, 90, 0) * transform.localRotation;
+			StartCoroutine (Rotate (rot));
 		}
 
-		transform.position = Vector3.MoveTowards(
+		if (Input.GetKeyDown (KeyCode.A) && transform.localRotation == rot && transform.position == pos) {
+			transform.position = pos;
+			StopAllCoroutines ();
+			rot = Quaternion.Euler (0, -90, 0) * transform.localRotation;
+			StartCoroutine (Rotate (rot));
+		}
+
+		if (Input.GetKeyDown (KeyCode.W) && transform.localRotation == rot && transform.position == pos) {
+			transform.position = pos;
+			Vector3 movement = transform.rotation * Vector3.forward;	
+			pos += movement;
+		}
+
+		if (Input.GetKeyDown (KeyCode.Space) && transform.localRotation == rot && transform.position == pos) {
+			transform.position = pos;
+			Vector3 movement = transform.rotation * Vector3.forward * 2;	
+			pos += movement;
+		}
+
+		transform.position = Vector3.MoveTowards (
 			transform.position,
 			pos,
 			Time.deltaTime * MovementSpeed
