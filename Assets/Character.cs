@@ -8,9 +8,8 @@ public class Character : MonoBehaviour {
 
 	private float RotationSpeed = 15.0f;
 	private float MovementSpeed = 4.0f;
-	Vector3 pos;
-	Transform tr;
-	Quaternion rot;
+	private Vector3 pos;
+	private Quaternion rot;
 
 	IEnumerator Rotate(Quaternion finalRotation){
 		while(this.transform.localRotation != finalRotation) {
@@ -35,29 +34,23 @@ public class Character : MonoBehaviour {
 		// this introduces some error that can compound over time
 
 		if (Input.GetKeyDown (KeyCode.D) && transform.localRotation == rot && transform.position == pos) {
-			transform.position = pos;
 			StopAllCoroutines ();
-			rot = Quaternion.Euler (0, 90, 0) * transform.localRotation;
+			rot *= Quaternion.Euler (0, 90, 0);
 			StartCoroutine (Rotate (rot));
 		}
 
 		if (Input.GetKeyDown (KeyCode.A) && transform.localRotation == rot && transform.position == pos) {
-			transform.position = pos;
 			StopAllCoroutines ();
-			rot = Quaternion.Euler (0, -90, 0) * transform.localRotation;
+			rot *= Quaternion.Euler (0, -90, 0);
 			StartCoroutine (Rotate (rot));
 		}
 
 		if (Input.GetKeyDown (KeyCode.W) && transform.localRotation == rot && transform.position == pos) {
-			transform.position = pos;
-			Vector3 movement = transform.rotation * Vector3.forward;	
-			pos += movement;
+			pos += transform.localRotation * Vector3.forward;
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space) && transform.localRotation == rot && transform.position == pos) {
-			transform.position = pos;
-			Vector3 movement = transform.rotation * Vector3.forward * 2;	
-			pos += movement;
+			pos += transform.localRotation * Vector3.forward * 2;
 		}
 
 		transform.position = Vector3.MoveTowards (
