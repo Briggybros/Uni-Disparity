@@ -12,4 +12,13 @@ public class PulseTrigger : CollisionTrigger{
             }
         }
     }
+
+    protected override void OnTriggerEnter(Collider other) {
+
+    }
+
+    protected override void OnTriggerExit(Collider other) {
+
+    }
+
 }
