@@ -14,12 +14,8 @@ public class RotatingPlatformBehaviourScript: Receiver {
     private Vector3 SourceAxis;
     private Vector3 TargetAxis;
 
-    private int count;
-    private int Quadrant;
-
 	// Use this for initialization
 	protected override void Start () {
-        Quadrant = 0;
         CurrentTime = 0;
         TargetAngle = Increment;
         Quaternion sourceOrientation = this.transform.rotation;
@@ -33,6 +29,7 @@ public class RotatingPlatformBehaviourScript: Receiver {
             Rotation();
         }else{
             if (!Lock) {
+
                 Rotating = true;
             }
         }
