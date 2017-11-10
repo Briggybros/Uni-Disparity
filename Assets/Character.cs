@@ -2,197 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Uses WAD for moving and Space for jumping
+
 public class Character : MonoBehaviour {
 
-	private int Direction = 0;
-	private Vector3 OriginalPosition = new Vector3(0, 0, 0);
-	private int MoveInt = 0;
-	private int DirectionNormalised = 0;
-	private int Rotateflag = 0;
-	private int Movementflag = 0;
 	private float RotationSpeed = 15.0f;
 	private float MovementSpeed = 4.0f;
+	private Vector3 pos;
+	private Quaternion rot;
 
-	void Rotate () {
-		this.transform.localRotation = Quaternion.Lerp (
-			this.transform.localRotation,
-			Quaternion.Euler (
-				0, Direction * 90, 0
-			),
-			Time.deltaTime * RotationSpeed
-		);
-	}
-
-	void Move (int translation) {
-			if (translation == 1) {
-				this.transform.position +=
-				transform.forward*Time.deltaTime*MovementSpeed;
-			}
-			if (translation == -1) {
-				this.transform.position +=
-				transform.forward*-Time.deltaTime*MovementSpeed;
-			}
+	IEnumerator Rotate(Quaternion finalRotation){
+		while(this.transform.localRotation != finalRotation) {
+			this.transform.localRotation = Quaternion.Slerp(
+				this.transform.localRotation,
+				finalRotation,
+				Time.deltaTime * RotationSpeed
+			);
+			yield return 0;
+		}
+		this.transform.localRotation = finalRotation;
 	}
 
 	void Start () {
-		Rotateflag = 0;
-		Movementflag = 0;
+		rot = transform.localRotation;
+		pos = transform.position;
 	}
 
 	void Update () {
+		// the equality checks for rotation and position are overriden by the classes
+		// to return equal when they are "close enough" accounting for precision
+		// this introduces some error that can compound over time
 
-		if (Rotateflag == 1) {
-			Rotate ();
-
-			DirectionNormalised = Direction;
-				if (DirectionNormalised < 0) {
-					DirectionNormalised = DirectionNormalised + 4;
-			}
-				if ((DirectionNormalised * 90) - 1 <
-				this.transform.localRotation.eulerAngles.y &&
-				this.transform.localRotation.eulerAngles.y <
-				(DirectionNormalised * 90) + 1) {
-					this.transform.eulerAngles = new Vector3 (
-					0, DirectionNormalised * 90, 0
-				);
-				Rotateflag = 0;
-			}
+		if (Input.GetKeyDown (KeyCode.D) && transform.localRotation == rot && transform.position == pos) {
+			StopAllCoroutines ();
+			rot *= Quaternion.Euler (0, 90, 0);
+			StartCoroutine (Rotate (rot));
 		}
 
-			else if (Movementflag == 1) {
-
-			Move (MoveInt);
-			Debug.Log (DirectionNormalised);
-			switch (DirectionNormalised) {
-
-			case 0:
-				if (MoveInt == 1) {
-					if (OriginalPosition.z + 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z + 1
-						);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.z - 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z - 1
-						);
-						Movementflag = 0;
-					}
-				}
-				break;
-
-			case 1:
-				if (MoveInt == 1) {
-					if (OriginalPosition.x + 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-							OriginalPosition.x + 1, 0, OriginalPosition.z
-						);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.x - 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
-					);
-						Movementflag = 0;
-					}
-				}
-				break;
-
-			case 2:
-				if (MoveInt == 1) {
-					if (OriginalPosition.z - 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z - 1
-					);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.z + 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z + 1
-					);
-						Movementflag = 0;
-					}
-				}
-				break;
-
-			case 3:
-				if (MoveInt == 1) {
-					if (OriginalPosition.x - 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
-					);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.x + 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x + 1, 0, OriginalPosition.z
-					);
-						Movementflag = 0;
-					}
-				}
-				break;
-			}
+		if (Input.GetKeyDown (KeyCode.A) && transform.localRotation == rot && transform.position == pos) {
+			StopAllCoroutines ();
+			rot *= Quaternion.Euler (0, -90, 0);
+			StartCoroutine (Rotate (rot));
 		}
 
-		else {
-			if (Input.GetKeyDown (KeyCode.D)) {        // Left
-				Direction++;
-				if (Direction > 0) {
-					Direction = Direction % 4;
-				}
-				else {
-					Direction = Direction % -4;
-				}
-				Rotateflag = 1;
-			}
-
-			if (Input.GetKeyDown (KeyCode.A)) {        // Right
-				Direction--;
-				if (Direction > 0) {
-					Direction = Direction % 4;
-				}
-				else {
-					Direction = Direction % -4;
-				}
-				Rotateflag = 1;
-			}
-
-			if (Input.GetKeyDown (KeyCode.W)) {        // Up
-				MoveInt = 1;
-				Movementflag = 1;
-				OriginalPosition = this.transform.position;
-			}
-
-			if (Input.GetKeyDown (KeyCode.S)) {        // Down
-				MoveInt = -1;
-				Movementflag = 1;
-				OriginalPosition = this.transform.position;
-			}
+		if (Input.GetKeyDown (KeyCode.W) && transform.localRotation == rot && transform.position == pos) {
+			pos += transform.localRotation * Vector3.forward;
 		}
+
+		if (Input.GetKeyDown (KeyCode.Space) && transform.localRotation == rot && transform.position == pos) {
+			pos += transform.localRotation * Vector3.forward * 2;
+		}
+
+		transform.position = Vector3.MoveTowards (
+			transform.position,
+			pos,
+			Time.deltaTime * MovementSpeed
+		);
 	}
 }
