@@ -6,25 +6,8 @@ using UnityEngine;
 
 public class DoorBehaviourScript : Receiver {
     public bool open;
+    public Vector3 target,home;
 
-
-    // Use this for initialization
-    protected override void Start () {
-        open = false;
-    }
-	
-
-    // Update is called once per frame
-    protected override void Update () {
-        if (open){
-            Debug.Log("Door opened");
-            open = false;
-            //Open the door
-        }
-        else{
-            //do whatever doors do while they wait
-        }
-    }
 
     protected void ToggleOpen(){
         open = !open;
@@ -32,5 +15,16 @@ public class DoorBehaviourScript : Receiver {
 
     protected override void ColliderEnter(){
         ToggleOpen();
+    }
+
+    protected override void ColliderExit(){
+        ToggleOpen();
+    }
+
+    protected void init()
+    {
+        open = false;
+        target = transform.position;
+        home = transform.position;
     }
 }

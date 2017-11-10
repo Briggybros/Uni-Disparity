@@ -71,7 +71,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z + 1
+							OriginalPosition.x, OriginalPosition.y, OriginalPosition.z + 1
 						);
 						Movementflag = 0;
 					}
@@ -81,7 +81,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z - 1
+							OriginalPosition.x, OriginalPosition.y, OriginalPosition.z - 1
 						);
 						Movementflag = 0;
 					}
@@ -94,7 +94,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-							OriginalPosition.x + 1, 0, OriginalPosition.z
+							OriginalPosition.x + 1, OriginalPosition.y, OriginalPosition.z
 						);
 						Movementflag = 0;
 					}
@@ -104,7 +104,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
+						OriginalPosition.x - 1, OriginalPosition.y, OriginalPosition.z
 					);
 						Movementflag = 0;
 					}
@@ -117,7 +117,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z - 1
+						OriginalPosition.x, OriginalPosition.y, OriginalPosition.z - 1
 					);
 						Movementflag = 0;
 					}
@@ -127,7 +127,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.z &&
 					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z + 1
+						OriginalPosition.x, OriginalPosition.y, OriginalPosition.z + 1
 					);
 						Movementflag = 0;
 					}
@@ -140,7 +140,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
+						OriginalPosition.x - 1, OriginalPosition.y, OriginalPosition.z
 					);
 						Movementflag = 0;
 					}
@@ -150,7 +150,7 @@ public class Character : MonoBehaviour {
 					this.transform.position.x &&
 					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
 						this.transform.position = new Vector3 (
-						OriginalPosition.x + 1, 0, OriginalPosition.z
+						OriginalPosition.x + 1, OriginalPosition.y, OriginalPosition.z
 					);
 						Movementflag = 0;
 					}

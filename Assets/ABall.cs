@@ -19,4 +19,12 @@ public class ABall : MonoBehaviour {
             transform.parent = c.transform;
         }
     }
+
+    private void OnCollisionExit(Collision c)
+    {
+        if (c.transform.name == "Spinner")
+        {
+            transform.parent = null;
+        }
+    }
 }

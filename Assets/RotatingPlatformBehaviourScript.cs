@@ -5,10 +5,14 @@ using UnityEngine;
 public class RotatingPlatformBehaviourScript: Receiver {
     public bool Lock;
     public bool Rotating;
-    public int Direction;
+    //public int Direction;
     public int Increment;
-    public int Speed;
-    private int Facing;
+    public float Duration;
+    private float TargetAngle;
+    private float Facing;
+    private float CurrentTime;
+    private Vector3 SourceAxis;
+    private Vector3 TargetAxis;
 
     private int count;
     private int Quadrant;
@@ -16,42 +20,54 @@ public class RotatingPlatformBehaviourScript: Receiver {
 	// Use this for initialization
 	protected override void Start () {
         Quadrant = 0;
-	}
+        CurrentTime = 0;
+        TargetAngle = Increment;
+        Quaternion sourceOrientation = this.transform.rotation;
+        sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
+        TargetAxis = transform.up;
+    }
 	
 	// Update is called once per frame
 	protected override void Update () {
         if (Rotating){
-            Rotate();
-            int CurrentFace = (int)System.Math.Truncate(this.transform.localRotation.eulerAngles.y);
-            if (Facing + Direction*90 == CurrentFace|| Facing + Direction*90 + 360 == CurrentFace ) {
-                Rotating = false;
-            }
+            Rotation();
         }else{
             if (!Lock) {
-                Quadrant++;
-                Quadrant = Quadrant % 4;
-                Facing = (int) System.Math.Truncate(this.transform.localRotation.eulerAngles.y);
                 Rotating = true;
             }
         }
 	}
 
-    protected void Rotate() {
-        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.Euler(0, Direction * Increment * Quadrant, 0), Time.deltaTime * Speed);
+    protected void Rotation(){
+        if (CurrentTime < Duration){
+            CurrentTime += Time.deltaTime;
+            float progress = CurrentTime / Duration;
+
+            // Interpolate to get the current angle/axis between the source and target.
+            float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
+            Vector3 currentAxis = Vector3.Slerp(SourceAxis, TargetAxis, progress);
+            // Assign the current rotation
+            this.transform.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis);
+        }
+        else{
+            Rotating = false;
+            Quaternion sourceOrientation = this.transform.rotation;
+            sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
+            TargetAxis = transform.up;
+            CurrentTime = 0;
+            TargetAngle = Facing + Increment;
+        }
     }
 
-    protected void ToggleLock()
-    {
+    protected void ToggleLock(){
         Lock = !Lock;
     }
 
-    protected override void ColliderEnter()
-    {
+    protected override void ColliderEnter(){
         ToggleLock();
     }
 
-    protected override void ColliderExit()
-    {
+    protected override void ColliderExit(){
         ToggleLock();
     }
 }

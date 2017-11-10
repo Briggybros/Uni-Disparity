@@ -14,19 +14,27 @@ public class CollisionTrigger : Trigger {
     }
     protected void OnTriggerEnter(Collider other){
         if (other.gameObject == owner/*ensure it the the player name, or the object name*/){
-            base.target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
+            foreach (GameObject target in base.targets){
+                target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
+            }
         }
     }
 
     protected void OnTriggerExit(Collider other){
         if (other.gameObject == owner){
-            base.target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("ExitFlag");
+            foreach (GameObject target in base.targets)
+            {
+                target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("ExitFlag");
+            }
         }
     }
 
     protected void OnTriggerStay(Collider other){
         if (other.gameObject == owner){
-            base.target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("WithinFlag");
+            foreach (GameObject target in base.targets)
+            {
+                target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("WithinFlag");
+            }
         }
     }
 }
