@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 public class MovingPlatformBehaviour : Receiver{
-    private bool Move;
+    private bool Move, Switch;
     private int Forward;
     private int Stage;
     private Vector3 Target;
@@ -44,7 +44,11 @@ public class MovingPlatformBehaviour : Receiver{
             switch (Stage){
                 case 0:
                     Stage +=1;
-                    Move = false;
+                    if (Switch) {
+                        ToggleForward();
+                    }else {
+                        Move = false;
+                    }
                     break;
                 case 1:
                     Target = Target - transform.position;
@@ -78,7 +82,11 @@ public class MovingPlatformBehaviour : Receiver{
                     break;
                 case 4:
                     Stage -=1 ;
-                    Move = false;
+                    if (Switch) {
+                        ToggleForward();
+                    } else {
+                        Move = false;
+                    }
                     break;
             }
            
@@ -101,6 +109,17 @@ public class MovingPlatformBehaviour : Receiver{
     protected override void ColliderEnter(){
         ToggleForward();
         if (!Move) { Move = true; }
+    }
+
+    protected override void PulseReceived() {
+        ToggleForward();
+        if (!Move) { Move = true; }
+    }
+
+    protected override void SwitchReceived() {
+        ToggleForward();
+        if (!Move) { Move = true; }
+        Switch = !Switch;
     }
 
     protected override void ColliderExit(){

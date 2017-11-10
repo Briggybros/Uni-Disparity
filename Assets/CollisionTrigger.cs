@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionTrigger : Trigger {
+
+
     public GameObject owner;
 
     protected override void Start(){
@@ -12,15 +14,15 @@ public class CollisionTrigger : Trigger {
     protected override void Update(){
         base.Update();
     }
-    protected void OnTriggerEnter(Collider other){
-        if (other.gameObject == owner/*ensure it the the player name, or the object name*/){
+    protected virtual void OnTriggerEnter(Collider other){
+        if (other.gameObject == owner){
             foreach (GameObject target in base.targets){
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
             }
         }
     }
 
-    protected void OnTriggerExit(Collider other){
+    protected virtual void OnTriggerExit(Collider other){
         if (other.gameObject == owner){
             foreach (GameObject target in base.targets)
             {
@@ -29,7 +31,7 @@ public class CollisionTrigger : Trigger {
         }
     }
 
-    protected void OnTriggerStay(Collider other){
+    protected virtual void OnTriggerStay(Collider other){
         if (other.gameObject == owner){
             foreach (GameObject target in base.targets)
             {

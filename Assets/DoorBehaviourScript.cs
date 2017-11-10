@@ -5,6 +5,8 @@ using UnityEngine;
 
 
 public class DoorBehaviourScript : Receiver {
+
+
     public bool open;
     public Vector3 target,home;
 
@@ -18,6 +20,14 @@ public class DoorBehaviourScript : Receiver {
     }
 
     protected override void ColliderExit(){
+        ToggleOpen();
+    }
+
+    protected override void PulseReceived() {
+        ToggleOpen();
+    }
+
+    protected override void SwitchReceived() {
         ToggleOpen();
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Receiver : MonoBehaviour {
     
+
 	// Use this for initialization
 	protected virtual void Start () {
 		
@@ -23,6 +24,14 @@ public class Receiver : MonoBehaviour {
     }
 
     protected virtual void ColliderExit(){
+
+    }
+
+    protected virtual void PulseReceived() {
+
+    }
+
+    protected virtual void SwitchReceived() {
 
     }
 }

@@ -67,4 +67,12 @@ public class RotatingPlatformBehaviourScript: Receiver {
     protected override void ColliderExit(){
         ToggleLock();
     }
+
+    protected override void PulseReceived() {
+        ToggleLock();
+    }
+
+    protected override void SwitchReceived() {
+        ToggleLock();
+    }
 }

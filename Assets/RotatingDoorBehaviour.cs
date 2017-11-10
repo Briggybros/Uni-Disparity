@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotatingDoorBehaviour : DoorBehaviourScript {
 
+
     private bool Turning;
     public float MinRot, MaxRot;
 
@@ -57,6 +58,16 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
 
     protected override void ColliderExit()
     {
+        ToggleOpen();
+        Turning = true;
+    }
+
+    protected override void PulseReceived() {
+        ToggleOpen();
+        Turning = true;
+    }
+
+    protected override void SwitchReceived() {
         ToggleOpen();
         Turning = true;
     }
