@@ -603,13 +603,14 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 1
+    Build: 1
+    Collab: 0
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: fcecf6e8-5c6d-4364-958b-dc82c2e45b9e
+  cloudProjectId: 486ef441-c8c7-407e-bd6d-0441b0c1c275
   projectName: disparity
-  organizationId: shasocais
+  organizationId: gregory-sims
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
