@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Character : MonoBehaviour {
+public class Character : NetworkBehaviour {
 
 	private int Direction = 0;
 	private Vector3 OriginalPosition = new Vector3(0, 0, 0);
@@ -40,6 +41,8 @@ public class Character : MonoBehaviour {
 	}
 
 	void Update () {
+        if (!isLocalPlayer)
+            return;
 
 		if (Rotateflag == 1) {
 			Rotate ();
