@@ -28,34 +28,47 @@ public class Character : MonoBehaviour {
 		pos = transform.position;
 	}
 
-	void Update () {
-		// the equality checks for rotation and position are overriden by the classes
-		// to return equal when they are "close enough" accounting for precision
-		// this introduces some error that can compound over time
+    private void OnCollisionEnter(Collision c) {
+        if (c.transform.name == "Spinner") {
+            this.transform.parent = c.transform;
+        }
+    }
 
-		if (Input.GetKeyDown (KeyCode.D) && transform.localRotation == rot && transform.position == pos) {
+    private void OnCollisionExit(Collision c) {
+        if (c.transform.name == "Spinner") {
+            this.transform.parent = null;
+        }
+    }
+
+    void Update () {
+        // the equality checks for rotation and position are overriden by the classes
+        // to return equal when they are "close enough" accounting for precision
+        // this introduces some error that can compound over time
+        //rot = transform.localRotation;
+        pos.y = this.transform.position.y;
+        if (Input.GetKeyDown (KeyCode.D) && this.transform.localRotation == rot && this.transform.position == pos) {
 			StopAllCoroutines ();
 			rot *= Quaternion.Euler (0, 90, 0);
 			StartCoroutine (Rotate (rot));
 		}
 
-		if (Input.GetKeyDown (KeyCode.A) && transform.localRotation == rot && transform.position == pos) {
+		if (Input.GetKeyDown (KeyCode.A) && this.transform.localRotation == rot && this.transform.position == pos) {
 			StopAllCoroutines ();
 			rot *= Quaternion.Euler (0, -90, 0);
 			StartCoroutine (Rotate (rot));
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.W) && transform.localRotation == rot && transform.position == pos) {
-			pos += transform.localRotation * Vector3.forward;
+		if (Input.GetKeyDown (KeyCode.W) && this.transform.localRotation == rot && this.transform.position == pos) {
+			pos += this.transform.localRotation * Vector3.forward;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && transform.localRotation == rot && transform.position == pos) {
-			pos += transform.localRotation * Vector3.forward * 2;
+		if (Input.GetKeyDown (KeyCode.Space) && this.transform.localRotation == rot && this.transform.position == pos) {
+			pos += this.transform.localRotation * Vector3.forward * 2;
 		}
 
-		transform.position = Vector3.MoveTowards (
-			transform.position,
+		this.transform.position = Vector3.MoveTowards (
+			this.transform.position,
 			pos,
 			Time.deltaTime * MovementSpeed
 		);
