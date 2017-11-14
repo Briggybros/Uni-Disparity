@@ -28,15 +28,19 @@ public class Character : MonoBehaviour {
 		pos = transform.position;
 	}
 
-    private void OnCollisionEnter(Collision c) {
+    void OnCollisionEnter(Collision c) {
         if (c.transform.name == "Spinner") {
-            this.transform.parent = c.transform;
+            this.transform.SetParent(c.transform, true);
+            //pos = this.transform.localPosition;
+            //rot = this.transform.localRotation;
         }
     }
 
-    private void OnCollisionExit(Collision c) {
+    void OnCollisionExit(Collision c) {
         if (c.transform.name == "Spinner") {
             this.transform.parent = null;
+            //pos = this.transform.position;
+            //rot = this.transform.rotation;
         }
     }
 
