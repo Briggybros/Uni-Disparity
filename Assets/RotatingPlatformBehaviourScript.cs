@@ -14,6 +14,7 @@ public class RotatingPlatformBehaviourScript: Receiver {
     private Vector3 SourceAxis;
     private Vector3 TargetAxis;
 
+
 	// Use this for initialization
 	protected override void Start () {
         CurrentTime = 0;
