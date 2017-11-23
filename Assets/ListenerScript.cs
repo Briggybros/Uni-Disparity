@@ -27,4 +27,12 @@ public class ListenerScript : MonoBehaviour {
     void WithinFlag(){
         base.gameObject.BroadcastMessage("ColliderWithin");
     }
+
+    void PulseFlag() {
+        base.gameObject.BroadcastMessage("PulseReceived");
+    }
+
+    void SwitchFlag() {
+        base.gameObject.BroadcastMessage("SwitchReceived");
+    }
 }

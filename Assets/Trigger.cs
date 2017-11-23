@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Trigger : MonoBehaviour {
-    public GameObject target;
+
+
+    public GameObject[] targets;
 
 
     // Use this for initialization

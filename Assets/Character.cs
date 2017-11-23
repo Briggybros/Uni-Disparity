@@ -3,199 +3,102 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+
 public class Character : NetworkBehaviour {
 
-	private int Direction = 0;
-	private Vector3 OriginalPosition = new Vector3(0, 0, 0);
-	private int MoveInt = 0;
-	private int DirectionNormalised = 0;
-	private int Rotateflag = 0;
-	private int Movementflag = 0;
+
 	private float RotationSpeed = 15.0f;
 	private float MovementSpeed = 4.0f;
+	private Vector3 pos;
+	private Quaternion rot;
+	public bool BlockInput;
 
-	void Rotate () {
-		this.transform.localRotation = Quaternion.Lerp (
-			this.transform.localRotation,
-			Quaternion.Euler (
-				0, Direction * 90, 0
-			),
-			Time.deltaTime * RotationSpeed
-		);
-	}
+    private Vector3 HeldScale;
 
-	void Move (int translation) {
-			if (translation == 1) {
-				this.transform.position +=
-				transform.forward*Time.deltaTime*MovementSpeed;
-			}
-			if (translation == -1) {
-				this.transform.position +=
-				transform.forward*-Time.deltaTime*MovementSpeed;
-			}
+    public List<GameObject> Parentables;
+
+	//Handles rotation
+	IEnumerator Rotate(Quaternion finalRotation){
+		while(this.transform.localRotation != finalRotation) {
+			this.transform.localRotation = Quaternion.Slerp(
+				this.transform.localRotation,
+				finalRotation,
+				Time.deltaTime * RotationSpeed
+			);
+			yield return 0;
+		}
+		this.transform.localRotation = finalRotation;
 	}
 
 	void Start () {
-		Rotateflag = 0;
-		Movementflag = 0;
+		rot = transform.localRotation;
+		pos = transform.localPosition;
+		BlockInput = false;
 	}
 
-	void Update () {
+	//Parents on interaction with collider
+    void OnCollisionEnter(Collision c) {
+        if (Parentables.Contains(c.gameObject)) {
+            this.transform.SetParent(c.gameObject.transform, true);
+            pos = this.transform.localPosition;
+            rot = this.transform.localRotation;
+            MovementSpeed = 0.8f;
+            BlockInput = false;
+        }
+    }
+
+    void OnCollisionExit(Collision c) {
+        if (Parentables.Contains(c.gameObject)) {
+            this.transform.parent = null;
+            pos = this.transform.localPosition;
+            rot = this.transform.localRotation;
+            MovementSpeed = 4.0f;
+        }
+    }
+
+    void Update () {
         if (!isLocalPlayer)
             return;
+        this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
 
-		if (Rotateflag == 1) {
-			Rotate ();
+		//Rigidbody lines control jump start/end
+        if (BlockInput && this.GetComponent<Rigidbody>().IsSleeping()) {
+            pos = this.transform.localPosition;
+            rot = this.transform.localRotation;
+            BlockInput = false;
+        }
+        if (!BlockInput) { 
+            pos.y = this.transform.localPosition.y;
+            pos = this.transform.localPosition;
+            rot = this.transform.localRotation;
+            if (Input.GetKey(KeyCode.D)) {
+                StopAllCoroutines();
+                rot *= Quaternion.Euler(0, 5, 0);
+                StartCoroutine(Rotate(rot));
+            }
 
-			DirectionNormalised = Direction;
-				if (DirectionNormalised < 0) {
-					DirectionNormalised = DirectionNormalised + 4;
-			}
-				if ((DirectionNormalised * 90) - 1 <
-				this.transform.localRotation.eulerAngles.y &&
-				this.transform.localRotation.eulerAngles.y <
-				(DirectionNormalised * 90) + 1) {
-					this.transform.eulerAngles = new Vector3 (
-					0, DirectionNormalised * 90, 0
-				);
-				Rotateflag = 0;
-			}
-		}
+            if (Input.GetKey(KeyCode.A)) {
+                StopAllCoroutines();
+                rot *= Quaternion.Euler(0, -5, 0);
+                StartCoroutine(Rotate(rot));
 
-			else if (Movementflag == 1) {
+            }
 
-			Move (MoveInt);
-			Debug.Log (DirectionNormalised);
-			switch (DirectionNormalised) {
+            if (Input.GetKey(KeyCode.W)) {
+                pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
+            }
 
-			case 0:
-				if (MoveInt == 1) {
-					if (OriginalPosition.z + 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z + 1
-						);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.z - 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-							OriginalPosition.x, 0, OriginalPosition.z - 1
-						);
-						Movementflag = 0;
-					}
-				}
-				break;
+			//Update position
+            this.transform.localPosition = Vector3.MoveTowards(
+            this.transform.localPosition,
+            pos,
+            Time.deltaTime * MovementSpeed
+            );
 
-			case 1:
-				if (MoveInt == 1) {
-					if (OriginalPosition.x + 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-							OriginalPosition.x + 1, 0, OriginalPosition.z
-						);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.x - 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
-					);
-						Movementflag = 0;
-					}
-				}
-				break;
-
-			case 2:
-				if (MoveInt == 1) {
-					if (OriginalPosition.z - 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z - 1
-					);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.z + 1 - 0.1 <
-					this.transform.position.z &&
-					this.transform.position.z < OriginalPosition.z + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x, 0, OriginalPosition.z + 1
-					);
-						Movementflag = 0;
-					}
-				}
-				break;
-
-			case 3:
-				if (MoveInt == 1) {
-					if (OriginalPosition.x - 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x - 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x - 1, 0, OriginalPosition.z
-					);
-						Movementflag = 0;
-					}
-				}
-				if (MoveInt == -1) {
-					if (OriginalPosition.x + 1 - 0.1 <
-					this.transform.position.x &&
-					this.transform.position.x < OriginalPosition.x + 1 + 0.1) {
-						this.transform.position = new Vector3 (
-						OriginalPosition.x + 1, 0, OriginalPosition.z
-					);
-						Movementflag = 0;
-					}
-				}
-				break;
-			}
-		}
-
-		else {
-			if (Input.GetKeyDown (KeyCode.D)) {        // Left
-				Direction++;
-				if (Direction > 0) {
-					Direction = Direction % 4;
-				}
-				else {
-					Direction = Direction % -4;
-				}
-				Rotateflag = 1;
-			}
-
-			if (Input.GetKeyDown (KeyCode.A)) {        // Right
-				Direction--;
-				if (Direction > 0) {
-					Direction = Direction % 4;
-				}
-				else {
-					Direction = Direction % -4;
-				}
-				Rotateflag = 1;
-			}
-
-			if (Input.GetKeyDown (KeyCode.W)) {        // Up
-				MoveInt = 1;
-				Movementflag = 1;
-				OriginalPosition = this.transform.position;
-			}
-
-			if (Input.GetKeyDown (KeyCode.S)) {        // Down
-				MoveInt = -1;
-				Movementflag = 1;
-				OriginalPosition = this.transform.position;
-			}
-		}
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                this.GetComponent<Rigidbody>().AddForce(Vector3.Scale((this.transform.forward + this.transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
+                BlockInput = true;
+            }
+        }
 	}
 }
