@@ -15,8 +15,6 @@ public class Character : NetworkBehaviour {
 
     private Vector3 HeldScale;
 
-    public List<GameObject> Parentables;
-
 	//Handles rotation
 	IEnumerator Rotate(Quaternion finalRotation){
 		while(this.transform.localRotation != finalRotation) {
@@ -38,18 +36,18 @@ public class Character : NetworkBehaviour {
 
 	//Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
-        if (Parentables.Contains(c.gameObject)) {
-            this.transform.SetParent(c.gameObject.transform, true);
-            pos = this.transform.localPosition;
-            rot = this.transform.localRotation;
-            MovementSpeed = 0.8f;
-            BlockInput = false;
-        }
+		if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
+			this.transform.SetParent(c.gameObject.transform, true);
+			pos = this.transform.localPosition;
+			rot = this.transform.localRotation;
+			MovementSpeed = 0.8f;
+			BlockInput = false;
+		}
     }
 
     void OnCollisionExit(Collision c) {
-        if (Parentables.Contains(c.gameObject)) {
-            this.transform.parent = null;
+		if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
+			this.transform.parent = null;
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;
             MovementSpeed = 4.0f;
