@@ -14,12 +14,12 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	protected override void Update () {
         if (open)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
-            //Open the door
+			//Open the door
+			transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
         }
         else
         {
-            //do whatever doors do while they wait
+            //Close the door
             transform.position = Vector3.MoveTowards(transform.position, home, 4 * Time.deltaTime);
         }
     }

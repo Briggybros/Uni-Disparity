@@ -25,28 +25,25 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
         TargetAxis = transform.parent.up;
     }
 
-    // Update is called once per frame
     protected override void Update()
     {
         if (open)
         {
-            TargetAngle = MaxRot;
+			//Open the door
+			TargetAngle = MaxRot;
             if (Turning) {
                 Rotation();
             }
             
-            //transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
-            //Open the door
         }
         else
         {
-            TargetAngle = MinRot;
+			//Close the door
+			TargetAngle = MinRot;
             if (Turning) {
                 Rotation();
             }
-            
-            //do whatever doors do while they wait
-            //transform.position = Vector3.MoveTowards(transform.position, home, 4 * Time.deltaTime);
+
         }
     }
 
@@ -82,7 +79,6 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
             // Interpolate to get the current angle/axis between the source and target.
             float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
             Vector3 currentAxis = Vector3.Slerp(SourceAxis, TargetAxis, progress);
-            // Assign the current rotation
             this.transform.parent.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis);
         }
         else

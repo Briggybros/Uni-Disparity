@@ -10,12 +10,13 @@ public class Character : MonoBehaviour {
 	private float MovementSpeed = 4.0f;
 	private Vector3 pos;
 	private Quaternion rot;
-    public bool BlockInput;
+	public bool BlockInput;
 
     private Vector3 HeldScale;
 
     public List<GameObject> Parentables;
 
+	//Handles rotation
 	IEnumerator Rotate(Quaternion finalRotation){
 		while(this.transform.localRotation != finalRotation) {
 			this.transform.localRotation = Quaternion.Slerp(
@@ -31,9 +32,11 @@ public class Character : MonoBehaviour {
 	void Start () {
 		rot = transform.localRotation;
 		pos = transform.localPosition;
-        BlockInput = false;
+		BlockInput = false;
 	}
 
+
+	//Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
         if (Parentables.Contains(c.gameObject)) {
             this.transform.SetParent(c.gameObject.transform, true);
@@ -54,10 +57,9 @@ public class Character : MonoBehaviour {
     }
 
     void Update () {
-        // the equality checks for rotation and position are overriden by the classes
-        // to return equal when they are "close enough" accounting for precision
-        // this introduces some error that can compound over time
         this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
+
+		//Rigidbody lines control jump start/end
         if (BlockInput && this.GetComponent<Rigidbody>().IsSleeping()) {
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;
@@ -84,6 +86,7 @@ public class Character : MonoBehaviour {
                 pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
+			//Update position
             this.transform.localPosition = Vector3.MoveTowards(
             this.transform.localPosition,
             pos,
@@ -95,10 +98,5 @@ public class Character : MonoBehaviour {
                 BlockInput = true;
             }
         }
-		
-
-		
-        Debug.Log("Pos" + pos + "::: actPos" + this.transform.localPosition);
-        Debug.Log("Rot" + rot + "::: actRot" + this.transform.localRotation);
 	}
 }

@@ -18,9 +18,6 @@ public class MovingPlatformBehaviour : Receiver{
         Move = false;
         Forward = -1;
         Stage = 1;
-       // target = transform.position;
-       // home = transform.position;
-      //  target.y += 6;
     }
 
     private float BoolToFloat(bool Input) {
@@ -32,7 +29,7 @@ public class MovingPlatformBehaviour : Receiver{
     }
 
 
-    // Update is called once per frame
+    // Platform moves from one anchor to another, stages are used to control order of directional movement, xyz or yxz etc.
     protected override void Update(){
         if (Move){
             if (Forward == 1){
@@ -88,13 +85,9 @@ public class MovingPlatformBehaviour : Receiver{
                         Move = false;
                     }
                     break;
-            }
-           
-            //Open the door
+            }     
         }
         else{
-            //do whatever doors do while they wait
-           // transform.position = Vector3.MoveTowards(transform.position, home, 4 * Time.deltaTime);
         }
     }
 
