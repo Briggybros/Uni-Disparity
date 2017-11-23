@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-// Uses WAD for moving and Space for jumping
 
-public class Character : MonoBehaviour {
+public class Character : NetworkBehaviour {
+
 
 	private float RotationSpeed = 15.0f;
 	private float MovementSpeed = 4.0f;
@@ -35,7 +36,6 @@ public class Character : MonoBehaviour {
 		BlockInput = false;
 	}
 
-
 	//Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
         if (Parentables.Contains(c.gameObject)) {
@@ -57,6 +57,8 @@ public class Character : MonoBehaviour {
     }
 
     void Update () {
+        if (!isLocalPlayer)
+            return;
         this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
 
 		//Rigidbody lines control jump start/end
