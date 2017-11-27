@@ -33,3 +33,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 unity.log
+.exe
+.dll
