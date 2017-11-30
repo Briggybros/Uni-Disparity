@@ -20,7 +20,7 @@ public class MovingPlatformBehaviour : Receiver{
         Stage = 1;
     }
 
-    private float BoolToFloat(bool Input) {
+    protected virtual float BoolToFloat(bool Input) {
         if (Input) {
             return 1f;
         } else {
@@ -91,7 +91,7 @@ public class MovingPlatformBehaviour : Receiver{
         }
     }
 
-    protected void ToggleForward(){
+    protected virtual void ToggleForward(){
         if(Forward == 1) {
             Forward = -1;
         }else {
