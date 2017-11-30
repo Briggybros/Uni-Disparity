@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114588430334740818}
   - component: {fileID: 114791220694089168}
   - component: {fileID: 114208796480154266}
+  - component: {fileID: 54616670267400048}
+  - component: {fileID: 64030638314428066}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Player
@@ -85,6 +87,35 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1635768022117036}
+  m_Mesh: {fileID: 4300000, guid: 0c47a90318632fc41831ef331c9a273d, type: 3}
+--- !u!54 &54616670267400048
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635768022117036}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &64030638314428066
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635768022117036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 1
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0c47a90318632fc41831ef331c9a273d, type: 3}
 --- !u!95 &95558647642694474
 Animator:
