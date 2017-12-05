@@ -12,6 +12,9 @@ public class Character : NetworkBehaviour {
 	private Vector3 pos;
 	private Quaternion rot;
 	public bool BlockInput;
+	public bool interacting;
+	public bool touching;
+	private int count;
 
     private Vector3 HeldScale;
 
@@ -32,16 +35,21 @@ public class Character : NetworkBehaviour {
 		rot = transform.localRotation;
 		pos = transform.localPosition;
 		BlockInput = false;
+		interacting = false;
+		touching = false;
+		count = 0;
 	}
 
 	//Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
 		if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
-			this.transform.SetParent(c.gameObject.transform, true);
+			this.transform.SetParent(c.gameObject.transform.parent.transform, true);
 			pos = this.transform.localPosition;
 			rot = this.transform.localRotation;
-			MovementSpeed = 0.8f;
+			//MovementSpeed = 0.8f;
 			BlockInput = false;
+		}else if ((c.gameObject.GetComponent<Interactable>() != null)) {
+			touching = true;
 		}
     }
 
@@ -50,15 +58,37 @@ public class Character : NetworkBehaviour {
 			this.transform.parent = null;
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;
-            MovementSpeed = 4.0f;
-        }
-    }
+            //MovementSpeed = 4.0f;
+        } else if ((c.gameObject.GetComponent<Interactable>() != null)) {
+			interacting = false;
+			touching = false;
+		}
+	}
+
+	public bool isInteracting() {
+		return interacting;
+	}
+
+	public void setInteract() {
+		interacting = false;
+	}
+
 
     void Update () {
         if (!isLocalPlayer)
             return;
-        this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
-
+		this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
+		if (Input.GetKeyDown(KeyCode.E) && touching) {
+			interacting = true;
+			this.gameObject.tag = "PlayerInteract";
+		}
+		if (interacting) {
+			count++;
+			if(count > 2) {
+				this.gameObject.tag = "Player";
+				count = 0;
+			}
+		}
 		//Rigidbody lines control jump start/end
         if (BlockInput && this.GetComponent<Rigidbody>().IsSleeping()) {
             pos = this.transform.localPosition;
