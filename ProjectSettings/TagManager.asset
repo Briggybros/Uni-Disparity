@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Checkpoint
+=======
+  - PlayerInteract
+>>>>>>>  scaling fixed, world made big, doors still fucked
   layers:
   - Default
   - TransparentFX
