@@ -2317,11 +2317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80efc482d5ba96545af73093eacd30ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiresInteract: 1
+  requiresInteract: 0
   targets:
   - {fileID: 1728289570}
   owner: {fileID: 0}
-  playerInteract: 1
+  playerInteract: 0
   interacted: 0
 --- !u!23 &1653700779
 MeshRenderer:
