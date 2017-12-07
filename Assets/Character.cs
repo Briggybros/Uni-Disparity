@@ -43,6 +43,10 @@ public class Character : NetworkBehaviour {
 			MovementSpeed = 0.8f;
 			BlockInput = false;
 		}
+        if(c.gameObject.tag == "Enemy")
+        {
+            this.transform.position = Checkpoint.GetActiveCheckpointPosition();
+        }
     }
 
     void OnCollisionExit(Collision c) {
@@ -58,6 +62,11 @@ public class Character : NetworkBehaviour {
         if (!isLocalPlayer)
             return;
         this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
+
+        if (this.transform.localPosition.y <= -2)
+        {
+            this.transform.position = Checkpoint.GetActiveCheckpointPosition();
+        }
 
 		//Rigidbody lines control jump start/end
         if (BlockInput && this.GetComponent<Rigidbody>().IsSleeping()) {
