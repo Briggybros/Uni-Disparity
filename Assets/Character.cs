@@ -15,7 +15,7 @@ public class Character : NetworkBehaviour {
 	public bool interacting;
 	public bool touching;
 	private int count;
-
+	private NetworkIdentity thisNetworkIdent;
     private Vector3 HeldScale;
 
 	//Handles rotation
@@ -38,10 +38,23 @@ public class Character : NetworkBehaviour {
 		interacting = false;
 		touching = false;
 		count = 0;
+		thisNetworkIdent = this.GetComponent<NetworkIdentity>();
+	}
+
+	[Command]
+	void CmdsyncChange(string tag) {
+		thisNetworkIdent.AssignClientAuthority(connectionToClient);
+		RpcupdateState(tag);
+		thisNetworkIdent.RemoveClientAuthority(connectionToClient);
+	}
+
+	[ClientRpc]
+	void RpcupdateState(string tag) {
+		this.gameObject.tag = tag;
 	}
 
 	//Parents on interaction with collider
-    void OnCollisionEnter(Collision c) {
+	void OnCollisionEnter(Collision c) {
 		if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
 			this.transform.SetParent(c.gameObject.transform.parent.transform, true);
 			pos = this.transform.localPosition;
@@ -80,12 +93,14 @@ public class Character : NetworkBehaviour {
 		this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
 		if (Input.GetKeyDown(KeyCode.E) && touching) {
 			interacting = true;
-			this.gameObject.tag = "PlayerInteract";
+			//this.gameObject.tag = "PlayerInteract";
+			CmdsyncChange("PlayerInteract");
 		}
 		if (interacting) {
 			count++;
 			if(count > 2) {
-				this.gameObject.tag = "Player";
+				//this.gameObject.tag = "Player";
+				CmdsyncChange("Player");
 				count = 0;
 			}
 		}
