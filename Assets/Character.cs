@@ -15,7 +15,8 @@ public class Character : NetworkBehaviour {
 	public bool interacting;
 	public bool touching;
 	private int count;
-	private NetworkIdentity thisNetworkIdent;
+	private NetworkIdentity targetNetworkIdent;
+	private GameObject target;
     private Vector3 HeldScale;
 
 	//Handles rotation
@@ -38,19 +39,19 @@ public class Character : NetworkBehaviour {
 		interacting = false;
 		touching = false;
 		count = 0;
-		thisNetworkIdent = this.GetComponent<NetworkIdentity>();
+		targetNetworkIdent = null;// = this.GetComponent<NetworkIdentity>();
 	}
 
 	[Command]
-	void CmdsyncChange(string tag) {
-		thisNetworkIdent.AssignClientAuthority(connectionToClient);
-		RpcupdateState(tag);
-		thisNetworkIdent.RemoveClientAuthority(connectionToClient);
+	void CmdsyncChange(string tag, GameObject target) {
+		targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		RpcupdateState(tag,target);
+		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
-	void RpcupdateState(string tag) {
-		this.gameObject.tag = tag;
+	void RpcupdateState(string tag, GameObject target) {
+		target.tag = tag;
 	}
 
 	//Parents on interaction with collider
@@ -62,6 +63,8 @@ public class Character : NetworkBehaviour {
 			//MovementSpeed = 0.8f;
 			BlockInput = false;
 		}else if ((c.gameObject.GetComponent<Interactable>() != null)) {
+			targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
+			target = c.gameObject;
 			touching = true;
 		}
     }
@@ -74,16 +77,9 @@ public class Character : NetworkBehaviour {
             //MovementSpeed = 4.0f;
         } else if ((c.gameObject.GetComponent<Interactable>() != null)) {
 			interacting = false;
+			target = null;
 			touching = false;
 		}
-	}
-
-	public bool isInteracting() {
-		return interacting;
-	}
-
-	public void setInteract() {
-		interacting = false;
 	}
 
 
@@ -94,16 +90,16 @@ public class Character : NetworkBehaviour {
 		if (Input.GetKeyDown(KeyCode.E) && touching) {
 			interacting = true;
 			//this.gameObject.tag = "PlayerInteract";
-			CmdsyncChange("PlayerInteract");
+			CmdsyncChange("Bopped",target);
 		}
-		if (interacting) {
+		/*if (interacting) {
 			count++;
 			if(count > 2) {
 				//this.gameObject.tag = "Player";
-				CmdsyncChange("Player");
+				CmdsyncChange("Player",target);
 				count = 0;
 			}
-		}
+		}*/
 		//Rigidbody lines control jump start/end
         if (BlockInput && this.GetComponent<Rigidbody>().IsSleeping()) {
             pos = this.transform.localPosition;

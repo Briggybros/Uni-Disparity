@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour {
 	void Update() {
 
 	}
-
+	//Being used as a glorified tag atm
 	/*protected virtual void OnTriggerStay(Collider other) {
 		if (other.GetComponent<Character>().isInteracting()) {
 			base.gameObject.BroadcastMessage("Pressed");
