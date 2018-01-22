@@ -7,11 +7,12 @@ public class SwitchTrigger: InteractTrigger {
 
     protected override void OnTriggerStay(Collider other) {
 		if (requiresInteract) {
-			if ((other.gameObject == owner || (playerInteract == true && other.tag == "PlayerInteract"))) {
+			if ((other.gameObject == owner || (playerInteract == true && this.tag == "Bopped"))) {
 				foreach (GameObject target in base.targets) {
 					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 				}
 				interacted = false;
+				this.tag = "Static";
 			}
 		}
 	}
