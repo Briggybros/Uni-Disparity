@@ -17,7 +17,7 @@ public class Character : NetworkBehaviour {
 	private int count;
 	private NetworkIdentity targetNetworkIdent;
 	private GameObject target;
-    private Vector3 HeldScale;
+  private Vector3 HeldScale;
 
 	//Handles rotation
 	IEnumerator Rotate(Quaternion finalRotation){
@@ -67,7 +67,11 @@ public class Character : NetworkBehaviour {
 			target = c.gameObject;
 			touching = true;
 		}
-    }
+		if(c.gameObject.tag == "Enemy")
+		{
+			this.transform.position = Checkpoint.GetActiveCheckpointPosition();
+		}
+  }
 
     void OnCollisionExit(Collision c) {
 		if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
@@ -86,12 +90,16 @@ public class Character : NetworkBehaviour {
     void Update () {
         if (!isLocalPlayer)
             return;
-		this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
-		if (Input.GetKeyDown(KeyCode.E) && touching) {
-			interacting = true;
-			//this.gameObject.tag = "PlayerInteract";
-			CmdsyncChange("Bopped",target);
-		}
+				this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
+				if (Input.GetKeyDown(KeyCode.E) && touching) {
+					interacting = true;
+					//this.gameObject.tag = "PlayerInteract";
+					CmdsyncChange("Bopped",target);
+				}
+				if (this.transform.localPosition.y <= -2)
+        {
+            this.transform.position = Checkpoint.GetActiveCheckpointPosition();
+        }
 		/*if (interacting) {
 			count++;
 			if(count > 2) {
