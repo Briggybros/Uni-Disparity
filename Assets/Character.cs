@@ -67,7 +67,11 @@ public class Character : NetworkBehaviour {
 			target = c.gameObject;
 			touching = true;
 		}
-    }
+		if(c.gameObject.tag == "Enemy")
+		{
+			this.transform.position = Checkpoint.GetActiveCheckpointPosition();
+		}
+  }
 
     void OnCollisionExit(Collision c) {
 		if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
@@ -132,6 +136,10 @@ public class Character : NetworkBehaviour {
 			//this.gameObject.tag = "PlayerInteract";
 			CmdsyncChange("Bopped",target);
 		}
+		if (this.transform.localPosition.y <= -2)
+        {
+            this.transform.position = Checkpoint.GetActiveCheckpointPosition();
+        }
 		/*if (interacting) {
 			count++;
 			if(count > 2) {
@@ -146,7 +154,7 @@ public class Character : NetworkBehaviour {
             rot = this.transform.localRotation;
             BlockInput = false;
         }
-        if (!BlockInput) { 
+        if (!BlockInput) {
             pos.y = this.transform.localPosition.y;
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;

@@ -7,6 +7,8 @@ TagManager:
   - PlayerInteract
   - Bopped
   - Static
+  - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
