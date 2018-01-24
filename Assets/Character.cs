@@ -83,42 +83,42 @@ public class Character : NetworkBehaviour {
 	}
 
 	static bool isInteract() {
-		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKeyDown(KeyCode.E);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return TouchManager.Test("use");
+		return Touch.Test("use");
 		#endif
 	}
 
 	static bool IsRight() {
-		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKey(KeyCode.D);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return TouchManager.Test("right");
+		return Touch.Test("right");
 		#endif
 	}
 
 	static bool IsLeft() {
-		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKey(KeyCode.A);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return TouchManager.Test("left");
+		return Touch.Test("left");
 		#endif
 	}
 
 	static bool IsForward() {
-		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKey(KeyCode.W);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return TouchManager.Test("forward");
+		return Touch.Test("forward");
 		#endif
 	}
 
 	static bool IsJump() {
-		#if UNITY_STANDALONE || UNITY_WEBPLAYER
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKeyDown(KeyCode.Space);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return TouchManager.Test("jump");
+		return Touch.Test("jump");
 		#endif
 	}
 
