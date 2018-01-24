@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TouchButtonLogic : MonoBehaviour {
+public class TouchButton : MonoBehaviour {
 
 	public string label;
 	void Update () {
