@@ -9,6 +9,7 @@ TagManager:
   - Static
   - Checkpoint
   - Enemy
+  - UI
   layers:
   - Default
   - TransparentFX
