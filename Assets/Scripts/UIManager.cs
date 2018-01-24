@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour {
         parent.AddComponent<CanvasScaler>();
         parent.GetComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         parent.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1080, 720);
+        parent.AddComponent<GraphicRaycaster>();
+        parent.layer = 5;
         if (matchWidth) parent.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
         else parent.GetComponent<CanvasScaler>().matchWidthOrHeight = 1;
 
@@ -42,13 +44,7 @@ public class UIManager : MonoBehaviour {
     void initialiseUI()
     {
         GameObject daddy = createCanvas("UI");
-        GameObject toInstantiate = uiControls;
-        GameObject instantiated = Instantiate(toInstantiate, new Vector2(0, 0), Quaternion.identity) as GameObject;
+        GameObject instantiated = Instantiate(uiControls, new Vector2(0, 0), Quaternion.identity) as GameObject;
         instantiated.transform.SetParent(daddy.transform, false);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

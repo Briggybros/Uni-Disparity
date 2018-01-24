@@ -90,7 +90,7 @@ public class Character : NetworkBehaviour {
 		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKeyDown(KeyCode.E);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return Touch.Test("use");
+		return Touch.Test("Use");
 		#endif
 	}
 
@@ -98,7 +98,7 @@ public class Character : NetworkBehaviour {
 		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKey(KeyCode.D);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return Touch.Test("right");
+		return Touch.Test("Right");
 		#endif
 	}
 
@@ -106,7 +106,7 @@ public class Character : NetworkBehaviour {
 		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKey(KeyCode.A);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return Touch.Test("left");
+		return Touch.Test("Left");
 		#endif
 	}
 
@@ -114,7 +114,7 @@ public class Character : NetworkBehaviour {
 		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKey(KeyCode.W);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return Touch.Test("forward");
+		return Touch.Test("Forward");
 		#endif
 	}
 
@@ -122,7 +122,7 @@ public class Character : NetworkBehaviour {
 		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
 		return Input.GetKeyDown(KeyCode.Space);
 		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		return Touch.Test("jump");
+		return Touch.Test("Jump");
 		#endif
 	}
 
@@ -131,10 +131,13 @@ public class Character : NetworkBehaviour {
         if (!isLocalPlayer)
             return;
 		this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
-		if (isInteract() && touching) {
+		if (!interacting && isInteract() && touching) {
 			interacting = true;
 			//this.gameObject.tag = "PlayerInteract";
 			CmdsyncChange("Bopped",target);
+		}
+		if (interacting && !isInteract()) {
+			interacting = false;
 		}
 		if (this.transform.localPosition.y <= -2)
         {

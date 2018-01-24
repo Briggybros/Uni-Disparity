@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Touch : MonoBehaviour {
+public class Touch : EventTrigger {
 	private static List<string> buttonTouches = new List<string>();
 
 	public static bool Test(string label) {
@@ -15,13 +15,13 @@ public class Touch : MonoBehaviour {
 		return false;
 	}
 
-	public string label;
-
-	public void OnPointerEnter() {
-		buttonTouches.Add(label);
+	public override void OnPointerEnter(PointerEventData data) {
+		Debug.Log(this.name + " entered");
+		buttonTouches.Add(this.name);
 	}
 
-	public void OnPointerExit() {
-		buttonTouches.Remove(label);
+	public override void OnPointerExit(PointerEventData data) {
+		Debug.Log(this.name + " exited");
+		buttonTouches.Remove(this.name);
 	}
 }
