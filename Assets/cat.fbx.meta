@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: a9a9d84a1e1964644b489aa64e36fa14
+timeCreated: 1516805692
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cat1_bag1
+    100004: head
+    100006: l_ankle
+    100008: l_ear_base
+    100010: l_ear_tip
+    100012: l_elbow
+    100014: l_hand
+    100016: l_hip
+    100018: l_knee
+    100020: l_shoulder
+    100022: l_shoulder_joint
+    100024: l_toe
+    100026: pelvis
+    100028: r_ankle
+    100030: r_ear_base
+    100032: r_ear_tip
+    100034: r_elbow
+    100036: r_hand
+    100038: r_hip
+    100040: r_knee
+    100042: r_shoulder
+    100044: r_shoulder_joint
+    100046: r_toe
+    100048: spine_mid
+    100050: spine_top
+    100052: tail1
+    100054: tail2
+    100056: tail_base
+    100058: tail_tip
+    400000: //RootNode
+    400002: Cat1_bag1
+    400004: head
+    400006: l_ankle
+    400008: l_ear_base
+    400010: l_ear_tip
+    400012: l_elbow
+    400014: l_hand
+    400016: l_hip
+    400018: l_knee
+    400020: l_shoulder
+    400022: l_shoulder_joint
+    400024: l_toe
+    400026: pelvis
+    400028: r_ankle
+    400030: r_ear_base
+    400032: r_ear_tip
+    400034: r_elbow
+    400036: r_hand
+    400038: r_hip
+    400040: r_knee
+    400042: r_shoulder
+    400044: r_shoulder_joint
+    400046: r_toe
+    400048: spine_mid
+    400050: spine_top
+    400052: tail1
+    400054: tail2
+    400056: tail_base
+    400058: tail_tip
+    2100000: lambert7
+    4300000: Cat1_bag1
+    9500000: //RootNode
+    13700000: Cat1_bag1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
