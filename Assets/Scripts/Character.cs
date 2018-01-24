@@ -86,12 +86,52 @@ public class Character : NetworkBehaviour {
 		}
 	}
 
+	static bool isInteract() {
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKeyDown(KeyCode.E);
+		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+		return Touch.Test("use");
+		#endif
+	}
+
+	static bool IsRight() {
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKey(KeyCode.D);
+		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+		return Touch.Test("right");
+		#endif
+	}
+
+	static bool IsLeft() {
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKey(KeyCode.A);
+		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+		return Touch.Test("left");
+		#endif
+	}
+
+	static bool IsForward() {
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKey(KeyCode.W);
+		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+		return Touch.Test("forward");
+		#endif
+	}
+
+	static bool IsJump() {
+		#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKeyDown(KeyCode.Space);
+		#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+		return Touch.Test("jump");
+		#endif
+	}
+
 
     void Update () {
         if (!isLocalPlayer)
             return;
 		this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
-		if (Input.GetKeyDown(KeyCode.E) && touching) {
+		if (isInteract() && touching) {
 			interacting = true;
 			//this.gameObject.tag = "PlayerInteract";
 			CmdsyncChange("Bopped",target);
@@ -118,20 +158,20 @@ public class Character : NetworkBehaviour {
             pos.y = this.transform.localPosition.y;
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;
-            if (Input.GetKey(KeyCode.D)) {
+            if (IsRight()) {
                 StopAllCoroutines();
                 rot *= Quaternion.Euler(0, 5, 0);
                 StartCoroutine(Rotate(rot));
             }
 
-            if (Input.GetKey(KeyCode.A)) {
+            if (IsLeft()) {
                 StopAllCoroutines();
                 rot *= Quaternion.Euler(0, -5, 0);
                 StartCoroutine(Rotate(rot));
 
             }
 
-            if (Input.GetKey(KeyCode.W)) {
+            if (IsForward()) {
                 pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
@@ -142,7 +182,7 @@ public class Character : NetworkBehaviour {
             Time.deltaTime * MovementSpeed
             );
 
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (IsJump()) {
                 this.GetComponent<Rigidbody>().AddForce(Vector3.Scale((this.transform.forward + this.transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
                 BlockInput = true;
             }
