@@ -15,7 +15,7 @@ MonoBehaviour:
     vuforiaLicenseKey: AQ/w/Kn/////AAAAGT2qB2yV00pfnHtgfzA2uDRGPjnY0wROIgqPmHPeQaHnr8NPeDn2JGAGmACB0qUI9blMghNf6AfqzxD8aF11tBpwqaGYX3ZFKBohPZ4w2Eb6I1C4pC2lkwyb67b4skEBFhF8hGsJSz+tKvelXWxeGDkYnnm1rxzMmO+4lOxzsbwIyN+Mf0uUi+GWkfTR5yd1mHyTHKgxO8vUynICVyeGB765b/hpsY4fVKkqwo+a1ha/5SmC5+egygVbQ4U03cC8SdNWGdE5EFISz/j0k0hr8TsppQl9MNaORtPXMX4Mpn5024cXDQmdmWratImpIvvi1S4h4cyNoEmC74rHDzRp3EgqXHgVCfaYXD6ccGSKCIKE
     ufoLicenseKey: QVQ1TDNiZi8vLy8vQUFBQUtBNkVUbUZMSmttWnFpWkk0QVBMNGs1dHB4a21IbjhtdW1kdTFJbHZ2L3UwT0t3dHowdW45Rk9pdzFoRWlQMHl3Ny9XaW92U0lFWkFGSnh5UDhJRHhwa0ozN0NsL2hGdHA2YVNvdGFURSsrdldFWmtRN2pvVENteDB5R1M2d093WVIzeEdSakhFWjF2VFJqTzBPU0hWYTdtc3NPdmJpQ2lhMXFyS1lWbEwzVFE1YnM3RjZSN0xud2xpVFNsblRlVzVkRFRXNjMyRHZKTXhhbk8xR1JqSUJjbkpuS2RMTEFXLzY2QWorcC9iMDltUU9FdVVPNE1oMkRsNnlENURrQWNIQkozdkJCR0hoNW5lSWFhbzhIZFErVS9iMnd5RVJHUWhBR0pmMTBZZTBMdDZvbUIzQWJJMVh6SmU1U2FjQW9TbEFLK0x0b2RDdTdJcjlTeFovWXdwekhYOGZBYnNGMzdDS1pJaUhTeVQ1ckY=
     delayedInitialization: 0
-    cameraDeviceModeSetting: -1
+    cameraDeviceModeSetting: -3
     maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
@@ -44,9 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - DisparityTest
+    - Disparity
     dataSetsToActivate:
-    - DisparityTest
+    - Disparity
   videoBackground:
     clippingMode: 0
     numDivisions: 2
@@ -68,5 +68,5 @@ MonoBehaviour:
   webcam:
     deviceNameSetInEditor: 
     flipHorizontally: 0
-    turnOffWebCam: 1
+    turnOffWebCam: 0
     renderTextureLayer: 30
