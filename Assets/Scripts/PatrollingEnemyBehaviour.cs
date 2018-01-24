@@ -9,6 +9,7 @@ public class PatrollingEnemyBehaviour : Receiver {
 	private int Stage,TempStage;
 	private Vector3 Target;
 	private Vector3 TempTarget;
+	private int Orientation;
 	private Vector3 TargetDir;
 	private Vector3 Order;
 	public GameObject[] Waypoints;
@@ -24,7 +25,7 @@ public class PatrollingEnemyBehaviour : Receiver {
 		Move_Index = 0;
 		Target_index = 1;
 		Stage = 1;
-		TempStage = 1;
+		TempStage = 0;
 		Target = Waypoints[Target_index].transform.position;
 		Order = Directions[Move_Index];
 	}
@@ -39,24 +40,45 @@ public class PatrollingEnemyBehaviour : Receiver {
 	protected override void Update () {
 		if(Move){
 			TempTarget = Target;
-			/*Debug.Log(TempStage + " = " + Stage);
+			Debug.Log(TempStage + " = " + Stage);
 			if(TempStage != Stage && Stage != 0 && Stage != 4){
-				Target = Target - transform.position;
-				Target.x *= BoolToFloat(Order.x == Stage);
-				Target.y *= BoolToFloat(Order.y == Stage);
-				Target.z *= BoolToFloat(Order.z == Stage);
-				Target = Target + transform.position;
-				TargetDir = Target - this.transform.position;
-				float step = (float) 0.4 * Time.deltaTime;
-				Vector3 newDir = Vector3.RotateTowards(transform.forward, TargetDir, step, 0.0F);
-				Debug.DrawRay(transform.position, newDir, Color.red);
-				transform.rotation = Quaternion.LookRotation(newDir);
-				if(Vector3.Angle( transform.forward, newDir) < 1){
-					TempStage = Stage;
+				Debug.Log("Arrived");
+				TempTarget = Target - transform.position;
+				Debug.Log("TempTarg " + TempTarget);
+				TempTarget.x *= BoolToFloat(Order.x == Stage);
+				TempTarget.y *= BoolToFloat(Order.y == Stage);
+				TempTarget.z *= BoolToFloat(Order.z == Stage);
+				if(TempTarget.magnitude < 1){
+					TempTarget.y = Stage;
 				}
-			}else{*/
+				if(TempTarget.x > 0 || TempTarget.z > 0){
+					Orientation = 1;
+				}else{
+					Orientation = -1;
+				}
+				TempTarget.x = BoolToFloat(Order.x == Stage);
+				TempTarget.y = BoolToFloat(Order.y == Stage);
+				TempTarget.z = BoolToFloat(Order.z == Stage);
+				//Orientation = transform.rotation;
+				Debug.Log("TempTarg " + TempTarget);
+				TempTarget  *= Orientation;
+				if(TempTarget.y != 0 ){
+					TempStage = Stage;
+				}else{
+					if((TempTarget-transform.forward).magnitude < 0.05){
+						TempStage = Stage;
+					}else{
+						transform.rotation = Quaternion.Slerp(
+							transform.rotation,
+							Quaternion.LookRotation(TempTarget),
+							Time.deltaTime * 2f
+						);
+					}
+				}
+			}else{
 				Stage = Movement(Stage,TempTarget,Order,Forward);
-			//}
+				//Stage+=1;
+			}
 		}else{
 			Debug.Log("fetch next Move");
 			Move_Index += Move_Forward;
