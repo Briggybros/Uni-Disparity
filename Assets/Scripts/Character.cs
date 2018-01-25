@@ -7,11 +7,12 @@ using UnityEngine.Networking;
 public class Character : NetworkBehaviour {
 
 
-	private float RotationSpeed = 15.0f;
-	private float MovementSpeed = 4.0f;
+	public float RotationSpeed = 15.0f;
+	public float MovementSpeed = 6.0f;
 	private Vector3 pos;
+    private Vector3 clickPos;
 	private Quaternion rot;
-	public bool BlockInput;
+	private bool BlockInput;
 
     private Vector3 HeldScale;
 
@@ -33,6 +34,7 @@ public class Character : NetworkBehaviour {
 	void Start () {
 		rot = transform.localRotation;
 		pos = transform.localPosition;
+        clickPos = transform.localPosition;
 		BlockInput = false;
 	}
 
@@ -67,10 +69,25 @@ public class Character : NetworkBehaviour {
             rot = this.transform.localRotation;
             BlockInput = false;
         }
-        if (!BlockInput) { 
-            pos.y = this.transform.localPosition.y;
+        if (!BlockInput) {
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;
+
+            //tap to move script
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+                    if (hit.collider.CompareTag("Floor"))
+                    {
+                        clickPos = hit.point;
+                    }
+                }
+            }
+
+            //Old wad movement script
             if (Input.GetKey(KeyCode.D)) {
                 StopAllCoroutines();
                 rot *= Quaternion.Euler(0, 5, 0);
@@ -88,12 +105,16 @@ public class Character : NetworkBehaviour {
                 pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
-			//Update position
-            this.transform.localPosition = Vector3.MoveTowards(
-            this.transform.localPosition,
-            pos,
-            Time.deltaTime * MovementSpeed
-            );
+            //Update position
+            if (Vector3.Distance(this.transform.position, clickPos) != 0)
+            {
+                this.transform.localPosition = Vector3.MoveTowards(
+                    this.transform.localPosition,
+                    clickPos,
+                    Time.deltaTime * MovementSpeed
+                    );
+            }
+            
 
             if (Input.GetKeyDown(KeyCode.Space)) {
                 this.GetComponent<Rigidbody>().AddForce(Vector3.Scale((this.transform.forward + this.transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);

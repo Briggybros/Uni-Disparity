@@ -10,6 +10,8 @@ TagManager:
   - Checkpoint
   - Enemy
   - UI
+  - Floor
+  - Wall
   layers:
   - Default
   - TransparentFX
