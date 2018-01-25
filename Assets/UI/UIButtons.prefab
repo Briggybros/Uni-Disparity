@@ -362,19 +362,15 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 182, y: 50}
-<<<<<<< HEAD
   m_SizeDelta: {x: 150, y: 150}
-=======
-  m_SizeDelta: {x: 150, y: 100}
->>>>>>> 332c24f3fecfdddfb6959bc4e6fcfb30925cce74
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224102256723975472
 RectTransform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1666042115797774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -383,13 +379,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: -150, y: 50}
+  m_AnchoredPosition: {x: -100, y: 50}
   m_SizeDelta: {x: 150, y: 150}
-=======
-  m_AnchoredPosition: {x: -16, y: 50}
-  m_SizeDelta: {x: 200, y: 100}
->>>>>>> 332c24f3fecfdddfb6959bc4e6fcfb30925cce74
   m_Pivot: {x: 1, y: 0}
 --- !u!224 &224132054054188838
 RectTransform:
@@ -429,11 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: -16, y: 150}
-=======
-  m_AnchoredPosition: {x: -16, y: 166}
->>>>>>> 332c24f3fecfdddfb6959bc4e6fcfb30925cce74
+  m_AnchoredPosition: {x: -16, y: 182}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 1, y: 0}
 --- !u!224 &224829842998051888
@@ -451,13 +438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: 174, y: 196}
   m_SizeDelta: {x: 150, y: 150}
-=======
-  m_AnchoredPosition: {x: 174, y: 150}
-  m_SizeDelta: {x: 100, y: 150}
->>>>>>> 332c24f3fecfdddfb6959bc4e6fcfb30925cce74
   m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224876441413838706
 RectTransform:
@@ -475,9 +457,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 16, y: 50}
-<<<<<<< HEAD
   m_SizeDelta: {x: 150, y: 150}
-=======
-  m_SizeDelta: {x: 150, y: 100}
->>>>>>> 332c24f3fecfdddfb6959bc4e6fcfb30925cce74
   m_Pivot: {x: 0, y: 0}
