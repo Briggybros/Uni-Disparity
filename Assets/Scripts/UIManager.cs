@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     private bool uiOpen = false;
-    public bool matchWidth = false;
+    private float matchWidth = 1;
     public GameObject uiControls;
 
 
@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (Screen.width < Screen.height) matchWidth = 0;
         initialiseUI();
 	}
 
@@ -35,8 +36,7 @@ public class UIManager : MonoBehaviour {
         parent.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1080, 720);
         parent.AddComponent<GraphicRaycaster>();
         parent.layer = 5;
-        if (matchWidth) parent.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
-        else parent.GetComponent<CanvasScaler>().matchWidthOrHeight = 1;
+        parent.GetComponent<CanvasScaler>().matchWidthOrHeight = matchWidth;
 
         return parent;
     }
