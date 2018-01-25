@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     private bool uiOpen = false;
-    private float matchWidth = 1;
+    private float matchWidth = 0.5f;
+    private GameObject parent;
     public GameObject uiControls;
-
 
     public bool isOpen()
     {
@@ -22,13 +22,13 @@ public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (Screen.width < Screen.height) matchWidth = 0;
+		if (Screen.width < Screen.height) matchWidth = 0.5f;
         initialiseUI();
 	}
 
-    GameObject createCanvas(string tag)
+    void createCanvas(string tag)
     {
-        GameObject parent = new GameObject(tag);
+        parent = new GameObject(tag);
         parent.AddComponent<Canvas>();
         parent.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         parent.AddComponent<CanvasScaler>();
@@ -37,14 +37,17 @@ public class UIManager : MonoBehaviour {
         parent.AddComponent<GraphicRaycaster>();
         parent.layer = 5;
         parent.GetComponent<CanvasScaler>().matchWidthOrHeight = matchWidth;
-
-        return parent;
     }
 
     void initialiseUI()
     {
-        GameObject daddy = createCanvas("UI");
+        createCanvas("UI");
         GameObject instantiated = Instantiate(uiControls, new Vector2(0, 0), Quaternion.identity) as GameObject;
-        instantiated.transform.SetParent(daddy.transform, false);
+        instantiated.transform.SetParent(parent.transform, false);
+    }
+
+    void Update () {
+        if (Screen.width < Screen.height) matchWidth = 0.5f;
+        parent.GetComponent<CanvasScaler>().matchWidthOrHeight = matchWidth;
     }
 }
