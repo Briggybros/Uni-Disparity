@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public class Character : NetworkBehaviour {
 
 
-	private float RotationSpeed = 15.0f;
+	private float RotationSpeed = 30.0f;
 	private float MovementSpeed = 4.0f;
 	private Vector3 pos;
 	private Quaternion rot;
