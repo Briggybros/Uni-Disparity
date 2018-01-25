@@ -333,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b94ba08bb5df041bd5a6ddb74156c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matchWidth: 1
   uiControls: {fileID: 1584279360254132, guid: 2cabfb13de4c9634da66047fe62c32c1, type: 2}
 --- !u!1001 &1639552783
 Prefab:
