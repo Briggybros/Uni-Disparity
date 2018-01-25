@@ -9,6 +9,7 @@ public class DoorBehaviourScript : Receiver {
 
     public bool open;
     public Vector3 target,home;
+	public int timer;
 
 
     protected void ToggleOpen(){
@@ -23,13 +24,19 @@ public class DoorBehaviourScript : Receiver {
         ToggleOpen();
     }
 
-    protected override void PulseReceived() {
-        ToggleOpen();
-    }
+    protected override void PulseReceived() { 
+		StartCoroutine(TimerWait());
+	}
 
     protected override void SwitchReceived() {
         ToggleOpen();
     }
+
+	IEnumerator TimerWait() {
+		ToggleOpen();
+		yield return new WaitForSeconds(timer);
+		ToggleOpen();
+	}
 
     protected void init()
     {

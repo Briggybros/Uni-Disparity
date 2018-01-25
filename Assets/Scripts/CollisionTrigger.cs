@@ -6,6 +6,7 @@ public class CollisionTrigger : Trigger {
 
 
     public GameObject owner;
+	public bool playerInteract;
 
     protected override void Start(){
         base.Start();
@@ -15,7 +16,7 @@ public class CollisionTrigger : Trigger {
         base.Update();
     }
     protected virtual void OnTriggerEnter(Collider other){
-        if (other.gameObject == owner){
+        if (other.gameObject == owner || (playerInteract == true && other.tag == "Player")){
             foreach (GameObject target in base.targets){
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
             }
@@ -23,7 +24,7 @@ public class CollisionTrigger : Trigger {
     }
 
     protected virtual void OnTriggerExit(Collider other){
-        if (other.gameObject == owner){
+        if (other.gameObject == owner || (playerInteract == true && other.tag == "Player")) {
             foreach (GameObject target in base.targets)
             {
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("ExitFlag");
@@ -32,7 +33,7 @@ public class CollisionTrigger : Trigger {
     }
 
     protected virtual void OnTriggerStay(Collider other){
-        if (other.gameObject == owner){
+        if (other.gameObject == owner || (playerInteract == true && other.tag == "Player")) {
             foreach (GameObject target in base.targets)
             {
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("WithinFlag");

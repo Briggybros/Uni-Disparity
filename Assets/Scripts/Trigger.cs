@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
 
-
+	public bool requiresInteract;
     public GameObject[] targets;
 
 

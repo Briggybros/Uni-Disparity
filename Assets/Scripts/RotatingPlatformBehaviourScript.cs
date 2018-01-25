@@ -12,6 +12,7 @@ public class RotatingPlatformBehaviourScript: Receiver {
     private float CurrentTime;
     private Vector3 SourceAxis;
     private Vector3 TargetAxis;
+	private bool pulse;
 
 
 	protected override void Start () {
@@ -27,9 +28,11 @@ public class RotatingPlatformBehaviourScript: Receiver {
             Rotation();
         }else{
             if (!Lock) {
-
                 Rotating = true;
-            }
+				if (pulse) {
+					ToggleLock();
+				}
+			}
         }
 	}
 
@@ -67,6 +70,7 @@ public class RotatingPlatformBehaviourScript: Receiver {
 
     protected override void PulseReceived() {
         ToggleLock();
+		pulse = true;
     }
 
     protected override void SwitchReceived() {

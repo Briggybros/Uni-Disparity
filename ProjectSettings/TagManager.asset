@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerInteract
+  - Bopped
+  - Static
+  - Checkpoint
+  - Enemy
+  - UI
   layers:
   - Default
   - TransparentFX
