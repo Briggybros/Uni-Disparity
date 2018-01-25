@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4949037285971042}
   m_Layer: 0
-  m_Name: worldPrefab
+  m_Name: WorldPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,11 +641,7 @@ GameObject:
   - component: {fileID: 65229703612955158}
   - component: {fileID: 23192093409608126}
   m_Layer: 0
-<<<<<<< HEAD
   m_Name: WorldPrefab
-=======
-  m_Name: Cube (13)
->>>>>>> 332c24f3fecfdddfb6959bc4e6fcfb30925cce74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
