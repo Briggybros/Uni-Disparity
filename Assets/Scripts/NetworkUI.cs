@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Networking.Match;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(NetworkManager))]
@@ -22,7 +23,7 @@ public class NetworkUI : MonoBehaviour {
         CanvasScaler canvasScaler = container.AddComponent<CanvasScaler>();
         canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         canvasScaler.referenceResolution = new Vector2(1080, 720);
-        canvasScaler.matchWidthOrHeight = 0;
+        canvasScaler.matchWidthOrHeight = 0.5f;
 
         container.AddComponent<GraphicRaycaster>();
         container.layer = 5;
@@ -33,16 +34,41 @@ public class NetworkUI : MonoBehaviour {
 		instantiated.GetComponent<Button>().onClick.AddListener(Clicked);
 	}
 
-	void Clicked() {
+	private void Clicked () {
 		networkManager.StartMatchMaker();
 
 		GameObject instantiated1 = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
 		instantiated1.GetComponentInChildren<Text>().text = "Create Internet Match";
         instantiated1.transform.SetParent(container.transform, false);
+		instantiated1.GetComponent<Button>().onClick.AddListener(() => {
+			Debug.Log("hi");
+		});
 
 		GameObject instantiated2 = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
-		instantiated2.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 30);
+		instantiated1.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 30);
 		instantiated2.GetComponentInChildren<Text>().text = "Find Internet Match";
         instantiated2.transform.SetParent(container.transform, false);
+		instantiated2.GetComponent<Button>().onClick.AddListener(() => FindInternetMatch("default"));
+	}
+
+	private void FindInternetMatch (string matchName) {
+		networkManager.matchMaker.ListMatches(0 ,10, matchName, true, 0, 0, OnInternetMatchList);
+	}
+
+	private void OnInternetMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> internetMatches) {
+		if (success) {
+			if (internetMatches.Count != 0) {
+				networkManager.matchMaker.JoinMatch(internetMatches[0].networkId, "", "", "", 0, 0, OnJoinInternetMatch);
+			}
+			// Needs no matches
+		}
+		// Needs error
+	}
+
+	private void OnJoinInternetMatch(bool success, string extendedInfo, MatchInfo matchInfo) {
+		if (success) {
+			networkManager.StartClient(matchInfo);
+		}
+		// Needs error
 	}
 }
