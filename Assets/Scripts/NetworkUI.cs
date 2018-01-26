@@ -40,15 +40,26 @@ public class NetworkUI : MonoBehaviour {
 		GameObject instantiated1 = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
 		instantiated1.GetComponentInChildren<Text>().text = "Create Internet Match";
         instantiated1.transform.SetParent(container.transform, false);
-		instantiated1.GetComponent<Button>().onClick.AddListener(() => {
-			Debug.Log("hi");
-		});
+		instantiated1.GetComponent<Button>().onClick.AddListener(() => CreateInternetMatch("default"));
 
 		GameObject instantiated2 = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
 		instantiated1.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 30);
 		instantiated2.GetComponentInChildren<Text>().text = "Find Internet Match";
         instantiated2.transform.SetParent(container.transform, false);
 		instantiated2.GetComponent<Button>().onClick.AddListener(() => FindInternetMatch("default"));
+	}
+
+	private void CreateInternetMatch (string matchName) {
+		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
+	}
+
+	private void OnInternetMatchCreate (bool success, string extendedInfo, MatchInfo matchInfo) {
+		if (success) {
+			NetworkServer.Listen(matchInfo, 9000);
+
+			networkManager.StartHost(matchInfo);
+		}
+		// Needs error
 	}
 
 	private void FindInternetMatch (string matchName) {
