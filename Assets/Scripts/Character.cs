@@ -83,6 +83,7 @@ public class Character : NetworkBehaviour {
                     if (hit.collider.CompareTag("Floor"))
                     {
                         clickPos = hit.point;
+                        clickPos.y = this.transform.localPosition.y;
                     }
                 }
             }
@@ -105,6 +106,8 @@ public class Character : NetworkBehaviour {
                 pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
+            //Deny y movement
+            if (clickPos.y > this.transform.localPosition.y + 0.2f || clickPos.y < this.transform.localPosition.y - 0.2f) clickPos = this.transform.localPosition;
             //Update position
             if (Vector3.Distance(this.transform.position, clickPos) != 0)
             {
