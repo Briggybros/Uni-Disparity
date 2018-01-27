@@ -53,9 +53,9 @@ public class NetworkUI : MonoBehaviour {
 	private void Clicked () {
 		networkManager.StartMatchMaker();
 
-		GameObject createButton = MakeButton(uiContainer, "Create Internet Match", new Vector2(0, 0));
+		GameObject createButton = MakeButton(uiContainer, "Create Internet Match", new Vector2(0, 40));
 
-		GameObject findButton = MakeButton(uiContainer, "Find Internet Match", new Vector2(0, -30));
+		GameObject findButton = MakeButton(uiContainer, "Find Internet Match", new Vector2(0, -40));
 
 		createButton.GetComponent<Button>().onClick.AddListener(() => {
 			LevelSelect();
