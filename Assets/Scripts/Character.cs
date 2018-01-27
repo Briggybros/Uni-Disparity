@@ -12,7 +12,7 @@ public class Character : NetworkBehaviour {
 	private Vector3 pos;
     private Vector3 clickPos;
 	private Quaternion rot;
-	private bool BlockInput;
+	private bool BlockInput,Orientating;
 
     private Vector3 HeldScale;
 
@@ -36,6 +36,7 @@ public class Character : NetworkBehaviour {
 		pos = transform.localPosition;
         clickPos = transform.localPosition;
 		BlockInput = false;
+		Orientating = true;
 	}
 
 	//Parents on interaction with collider
@@ -84,6 +85,7 @@ public class Character : NetworkBehaviour {
                     {
                         clickPos = hit.point;
                         clickPos.y = this.transform.localPosition.y;
+						Orientating = true;
                     }
                 }
             }
@@ -108,16 +110,28 @@ public class Character : NetworkBehaviour {
 
             //Deny y movement
             if (clickPos.y > this.transform.localPosition.y + 0.2f || clickPos.y < this.transform.localPosition.y - 0.2f) clickPos = this.transform.localPosition;
-            //Update position
-            if (Vector3.Distance(this.transform.position, clickPos) != 0)
-            {
-                this.transform.localPosition = Vector3.MoveTowards(
-                    this.transform.localPosition,
-                    clickPos,
-                    Time.deltaTime * MovementSpeed
-                    );
-            }
-            
+
+			if(Orientating){
+				if(clickPos - transform.position.magnitude < 0.5){
+					Orientating = false;
+				}else{
+					transform.rotation = Quaternion.Slerp(
+						transform.rotation,
+						Quaternion.LookRotation(clickPos-transform.position),
+						Time.deltaTime * 2f
+					);
+				}
+			}else{
+	            //Update position
+	            if (Vector3.Distance(this.transform.position, clickPos) != 0)
+	            {
+	                this.transform.localPosition = Vector3.MoveTowards(
+	                    this.transform.localPosition,
+	                    clickPos,
+	                    Time.deltaTime * MovementSpeed
+	                    );
+	            }
+			}
 
             if (Input.GetKeyDown(KeyCode.Space)) {
                 this.GetComponent<Rigidbody>().AddForce(Vector3.Scale((this.transform.forward + this.transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
