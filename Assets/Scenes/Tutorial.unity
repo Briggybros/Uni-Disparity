@@ -284,7 +284,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 1672389083038390, guid: 339560c4d497b4a948375a306cc82132,
     type: 2}
   levels:
-  - {fileID: 102900000, guid: e32384b339286d343927c141a32fbc11, type: 3}
+  - TutorialWorld
 --- !u!114 &1380941716
 MonoBehaviour:
   m_ObjectHideFlags: 0

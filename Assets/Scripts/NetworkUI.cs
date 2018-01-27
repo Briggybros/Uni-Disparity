@@ -5,13 +5,12 @@ using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 using UnityEngine.UI;
-using UnityEditor;
 
 [RequireComponent(typeof(NetworkManager))]
 public class NetworkUI : MonoBehaviour {
 
 	public GameObject buttonPrefab;
-	public SceneAsset[] levels;
+	public string[] levels;
 
 	private NetworkManager networkManager;
 	private GameObject uiContainer;
@@ -73,9 +72,9 @@ public class NetworkUI : MonoBehaviour {
 	}
 
 	private void LevelSelect () {
-		foreach (SceneAsset level in levels) {
-			MakeButton(uiContainer, level.name, new Vector2(0, 0), () => {
-				networkManager.onlineScene = level.name;
+		foreach (string level in levels) {
+			MakeButton(uiContainer, level, new Vector2(0, 0), () => {
+				networkManager.onlineScene = level;
 				CreateInternetMatch("default");
 			});
 		}
