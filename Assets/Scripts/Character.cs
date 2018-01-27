@@ -13,6 +13,7 @@ public class Character : NetworkBehaviour {
     private Vector3 clickPos;
 	private Quaternion rot;
 	private bool BlockInput,Orientating;
+	private float rotSpeed = 20f;
 
     private Vector3 HeldScale;
 
@@ -84,8 +85,8 @@ public class Character : NetworkBehaviour {
                 {
                     if (hit.collider.CompareTag("Floor"))
                     {
-                        if (hit.point.y > this.transform.localPosition.y + 0.2f || hit.point.y < this.transform.localPosition.y - 0.2f)
-                        {
+                        if (hit.point.y > this.transform.localPosition.y + 0.2f || hit.point.y < this.transform.localPosition.y - 0.2f){}
+                        else{
                             clickPos = hit.point;
                             Orientating = true;
                         }
@@ -122,7 +123,7 @@ public class Character : NetworkBehaviour {
 					transform.rotation = Quaternion.Slerp(
 						transform.rotation,
 						Quaternion.LookRotation(clickPos-transform.position),
-						Time.deltaTime * 2f
+						Time.deltaTime * rotSpeed
 					);
 				}
 			}else{
