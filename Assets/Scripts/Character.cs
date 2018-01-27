@@ -114,7 +114,7 @@ public class Character : NetworkBehaviour {
 			if(Orientating){
 				if((clickPos - transform.position).magnitude < 0.5){
 					Orientating = false;
-				}else if(Vector3.Angle(clickPos - transform.position,transform.forward) < 10){
+				}else if(Vector3.Angle(clickPos - transform.position,transform.forward) < 1){
 					Orientating = false;
 				}else{
 					transform.rotation = Quaternion.Slerp(
