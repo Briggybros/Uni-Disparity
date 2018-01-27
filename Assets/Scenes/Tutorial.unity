@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380941714}
   - component: {fileID: 1380941716}
-  - component: {fileID: 1380941717}
+  - component: {fileID: 1380941715}
   m_Layer: 0
   m_Name: Network Manager
   m_TagString: Untagged
@@ -270,6 +270,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1380941715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380941713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d749073b4504c8ea815a061afb2638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 1672389083038390, guid: 339560c4d497b4a948375a306cc82132,
+    type: 2}
+  levels:
+  - {fileID: 102900000, guid: e32384b339286d343927c141a32fbc11, type: 3}
 --- !u!114 &1380941716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +310,7 @@ MonoBehaviour:
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
   m_OfflineScene: 
-  m_OnlineScene: TutorialWorld
+  m_OnlineScene: 
   m_SpawnPrefabs: []
   m_CustomConfig: 0
   m_MaxConnections: 4
@@ -352,19 +367,6 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
---- !u!114 &1380941717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380941713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d749073b4504c8ea815a061afb2638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  networkingUI: {fileID: 1672389083038390, guid: 339560c4d497b4a948375a306cc82132,
-    type: 2}
 --- !u!1 &1713506885
 GameObject:
   m_ObjectHideFlags: 0
