@@ -110,9 +110,11 @@ public class Character : NetworkBehaviour {
 
             //Deny y movement
             if (clickPos.y > this.transform.localPosition.y + 0.2f || clickPos.y < this.transform.localPosition.y - 0.2f) clickPos = this.transform.localPosition;
-
+			Debug.Log("Orientating state" + Orientating);
 			if(Orientating){
-				if(clickPos - transform.position.magnitude < 0.5){
+				if((clickPos - transform.position).magnitude < 0.5){
+					Orientating = false;
+				}else if(Vector3.Angle(clickPos - transform.position,transform.forward) < 10){
 					Orientating = false;
 				}else{
 					transform.rotation = Quaternion.Slerp(
