@@ -12,8 +12,9 @@ public class Character : NetworkBehaviour {
 	private Vector3 pos;
     private Vector3 clickPos;
 	private Quaternion rot;
-	private bool BlockInput,Orientating;
+	private bool BlockInput,Orientating,moving;
 	private float rotSpeed = 20f;
+    private float yLevel;
 
     private Vector3 HeldScale;
 
@@ -70,8 +71,17 @@ public class Character : NetworkBehaviour {
             pos = this.transform.localPosition;
             clickPos = pos;
             rot = this.transform.localRotation;
+            yLevel = this.transform.position.y;
             BlockInput = false;
         }
+        //Falling check
+        if(this.transform.localPosition.y <= yLevel - 2)
+        {
+            this.transform.SetPositionAndRotation(Checkpoint.GetActiveCheckpointPosition(), Quaternion.identity);
+            clickPos = this.transform.localPosition;
+            moving = false;
+        }
+        //Some other stuff
         if (!BlockInput) {
             pos = this.transform.localPosition;
             rot = this.transform.localRotation;
@@ -81,14 +91,15 @@ public class Character : NetworkBehaviour {
             RaycastHit hit;
             if (Input.GetMouseButtonDown(0))
             {
-                if (Physics.Raycast(ray, out hit, 100))
+                if (Physics.Raycast(ray, out hit, 200))
                 {
                     if (hit.collider.CompareTag("Floor"))
                     {
-                        if (hit.point.y > this.transform.localPosition.y + 0.2f || hit.point.y < this.transform.localPosition.y - 0.2f){}
-                        else{
+                        if (hit.point.y < this.transform.localPosition.y + 0.2f || hit.point.y > this.transform.localPosition.y - 0.2f)
+                        { 
                             clickPos = hit.point;
                             Orientating = true;
+                            moving = true;
                         }
                     }
                 }
@@ -112,7 +123,7 @@ public class Character : NetworkBehaviour {
                 pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
-            //Mvement etc
+            //Movement etc
 			Debug.Log("Orientating state" + Orientating);
 			if(Orientating){
 				if((clickPos - transform.position).magnitude < 0.5){
@@ -130,12 +141,19 @@ public class Character : NetworkBehaviour {
 	            //Update position
 	            if (Vector3.Distance(this.transform.position, clickPos) != 0)
 	            {
-	                this.transform.localPosition = Vector3.MoveTowards(
-	                    this.transform.localPosition,
-	                    clickPos,
-	                    Time.deltaTime * MovementSpeed
-	                    );
+                    if (moving)
+                    {
+                        this.transform.localPosition = Vector3.MoveTowards(
+                        this.transform.localPosition,
+                        clickPos,
+                        Time.deltaTime * MovementSpeed
+                        );
+                    }
 	            }
+                else
+                {
+                    moving = false;
+                }
 			}
 
             if (Input.GetKeyDown(KeyCode.Space)) {
