@@ -1,52 +1,85 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 using UnityEngine.UI;
+using UnityEditor;
 
 [RequireComponent(typeof(NetworkManager))]
 public class NetworkUI : MonoBehaviour {
 
-	public GameObject networkingUI;
+	public GameObject buttonPrefab;
+	public SceneAsset[] levels;
+
 	private NetworkManager networkManager;
-	private GameObject container;
+	private GameObject uiContainer;
+
+	private GameObject MakeButton (GameObject container, string text, Vector2 position, UnityAction clickListener = null) {
+		GameObject button = Instantiate(buttonPrefab, new Vector2(0, 0), Quaternion.identity);
+		button.GetComponentInChildren<Text>().text = text;
+		button.GetComponent<RectTransform>().anchoredPosition = position;
+		if (clickListener != null) {
+			button.GetComponent<Button>().onClick.AddListener(clickListener);
+		}
+		button.transform.SetParent(container.transform, false);
+
+		return button;
+	}
 
 	// Use this for initialization
 	void Start () {
-		networkManager = GetComponent<NetworkManager>();
+		networkManager = NetworkManager.singleton;
 
-        container = new GameObject("UI");
-        Canvas canvas = container.AddComponent<Canvas>();
+        uiContainer = new GameObject("UI");
+        Canvas canvas = uiContainer.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
 
-        CanvasScaler canvasScaler = container.AddComponent<CanvasScaler>();
+        CanvasScaler canvasScaler = uiContainer.AddComponent<CanvasScaler>();
         canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         canvasScaler.referenceResolution = new Vector2(1080, 720);
         canvasScaler.matchWidthOrHeight = 0.5f;
 
-        container.AddComponent<GraphicRaycaster>();
-        container.layer = 5;
+        uiContainer.AddComponent<GraphicRaycaster>();
+        uiContainer.layer = 5;
 
-        GameObject instantiated = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
-        instantiated.transform.SetParent(container.transform, false);
-
-		instantiated.GetComponent<Button>().onClick.AddListener(Clicked);
+        GameObject startButton = MakeButton(uiContainer, "Start", new Vector2(0, 0));
+		startButton.GetComponent<Button>().onClick.AddListener(() => {
+			Destroy(startButton);
+			Clicked();
+		});
 	}
 
 	private void Clicked () {
 		networkManager.StartMatchMaker();
 
-		GameObject instantiated1 = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
-		instantiated1.GetComponentInChildren<Text>().text = "Create Internet Match";
-        instantiated1.transform.SetParent(container.transform, false);
-		instantiated1.GetComponent<Button>().onClick.AddListener(() => CreateInternetMatch("default"));
+		GameObject createButton = MakeButton(uiContainer, "Create Internet Match", new Vector2(0, 0));
 
-		GameObject instantiated2 = Instantiate(networkingUI, new Vector2(0, 0), Quaternion.identity);
-		instantiated1.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 30);
-		instantiated2.GetComponentInChildren<Text>().text = "Find Internet Match";
-        instantiated2.transform.SetParent(container.transform, false);
-		instantiated2.GetComponent<Button>().onClick.AddListener(() => FindInternetMatch("default"));
+		GameObject findButton = MakeButton(uiContainer, "Find Internet Match", new Vector2(0, -30));
+
+		createButton.GetComponent<Button>().onClick.AddListener(() => {
+			LevelSelect();
+			Destroy(createButton);
+			Destroy(findButton);
+			// Make function to clear up buttons instead
+		});
+
+		findButton.GetComponent<Button>().onClick.AddListener(() => {
+			FindInternetMatch("default");
+			Destroy(createButton);
+			Destroy(findButton);
+		});
+	}
+
+	private void LevelSelect () {
+		foreach (SceneAsset level in levels) {
+			MakeButton(uiContainer, level.name, new Vector2(0, 0), () => {
+				networkManager.onlineScene = level.name;
+				CreateInternetMatch("default");
+			});
+		}
+		// Need to clear up buttons
 	}
 
 	private void CreateInternetMatch (string matchName) {
