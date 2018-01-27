@@ -7,7 +7,11 @@
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { 
+			"QueueType"="Transparent"
+			"RenderType"="Transparent" 
+			"IgnoreProjector"="True"
+			"CanUseSpriteAtlas"="True"  }
 		LOD 200
 
 		CGPROGRAM
@@ -47,16 +51,13 @@
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
-			fixed4 colour = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-			if(_AlphaSplitEnabled)
-				colour.a = tex2D (_AlphaTex, IN.uv_MainTex).r;
 			
 			fixed4 c = SampleSpriteTexture (IN.uv_MainTex);
 			fixed4 swapCol = tex2D(_SwapTex, float2(c.r, 0));
-			fixed4 final = lerp(c, swapCol, swapCol.a) * colour;
+			fixed4 final = lerp(c, swapCol, swapCol.a);
 			final.a = c.a;
 			final.rgb *= c.a;
-			o.Albedo = final.rgb;
+			o.Albedo = final;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;

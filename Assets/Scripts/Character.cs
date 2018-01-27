@@ -67,6 +67,7 @@ public class Character : NetworkBehaviour {
 		//Rigidbody lines control jump start/end
         if (BlockInput && this.GetComponent<Rigidbody>().IsSleeping()) {
             pos = this.transform.localPosition;
+            clickPos = pos;
             rot = this.transform.localRotation;
             BlockInput = false;
         }
@@ -83,9 +84,11 @@ public class Character : NetworkBehaviour {
                 {
                     if (hit.collider.CompareTag("Floor"))
                     {
-                        clickPos = hit.point;
-                        clickPos.y = this.transform.localPosition.y;
-						Orientating = true;
+                        if (hit.point.y > this.transform.localPosition.y + 0.2f || hit.point.y < this.transform.localPosition.y - 0.2f)
+                        {
+                            clickPos = hit.point;
+                            Orientating = true;
+                        }
                     }
                 }
             }
@@ -108,8 +111,7 @@ public class Character : NetworkBehaviour {
                 pos += this.transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
-            //Deny y movement
-            if (clickPos.y > this.transform.localPosition.y + 0.2f || clickPos.y < this.transform.localPosition.y - 0.2f) clickPos = this.transform.localPosition;
+            //Mvement etc
 			Debug.Log("Orientating state" + Orientating);
 			if(Orientating){
 				if((clickPos - transform.position).magnitude < 0.5){
