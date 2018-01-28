@@ -42,11 +42,12 @@ public class NetworkUI : MonoBehaviour {
 		networkManager.StartMatchMaker();
 	}
 
-	public void LevelSelect () {
+	public void LevelSelect (Text textObject) {
+		string matchName = textObject.text != "" ? textObject.text : "default";
 		foreach (string level in levels) {
 			MakeButton(levelSelectPanel, level, new Vector2(0, 0), () => {
 				networkManager.onlineScene = level;
-				CreateInternetMatch("default");
+				CreateInternetMatch(matchName);
 			});
 		}
 		// Need to clear up buttons
@@ -65,7 +66,8 @@ public class NetworkUI : MonoBehaviour {
 		// Needs error
 	}
 
-	public void FindInternetMatch (string matchName) {
+	public void FindInternetMatch (Text textObject) {
+		string matchName = textObject.text != "" ? textObject.text : "default";
 		networkManager.matchMaker.ListMatches(0 ,10, matchName, true, 0, 0, OnInternetMatchList);
 	}
 
