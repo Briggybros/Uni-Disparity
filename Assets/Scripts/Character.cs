@@ -16,6 +16,8 @@ public class Character : NetworkBehaviour {
 	private int count;
 	private NetworkIdentity targetNetworkIdent;
 	private GameObject target;
+	public bool canMove;
+
     private Vector3 HeldScale;
 
 	//Handles rotation
@@ -127,6 +129,11 @@ public class Character : NetworkBehaviour {
 
 
     void Update () {
+
+		if (!canMove) {
+			return;
+		}
+
         if (!isLocalPlayer)
             return;
 		transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
