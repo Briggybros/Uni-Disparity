@@ -12,6 +12,7 @@ public class Character : NetworkBehaviour {
 	private Vector3 pos;
 	private Quaternion rot;
 	public bool BlockInput;
+	public bool canMove;
 
     private Vector3 HeldScale;
 
@@ -57,6 +58,11 @@ public class Character : NetworkBehaviour {
     }
 
     void Update () {
+
+		if (!canMove) {
+			return;
+		}
+
         if (!isLocalPlayer)
             return;
         this.transform.localRotation.eulerAngles.Set(0, this.transform.localRotation.eulerAngles.y, 0); //Force upright
