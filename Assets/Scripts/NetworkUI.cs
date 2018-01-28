@@ -8,15 +8,12 @@ using UnityEngine.UI;
 
 public class NetworkUI : MonoBehaviour {
 
-	private const string LEVEL_SELECT_NAME = "Level Select Panel";
-	private const string ERROR_MESSAGE_NAME = "Error Message";
-
 	public GameObject buttonPrefab;
+	public GameObject levelSelectPanel;
+	public GameObject errorMessageObject;
 	public string[] levels;
 
 	private NetworkManager networkManager;
-	private GameObject levelSelectPanel;
-	private GameObject errorMessageObject;
 	private IEnumerator errorHideCoroutine = null;
 
 	private GameObject MakeButton (GameObject container, string text, Vector2 position, UnityAction clickListener = null) {
@@ -49,16 +46,6 @@ public class NetworkUI : MonoBehaviour {
 
 	void Start () {
 		networkManager = NetworkManager.singleton;
-		foreach (Transform child in transform) {
-			switch (child.gameObject.name) {
-				case LEVEL_SELECT_NAME:
-					levelSelectPanel = child.gameObject;
-					break;
-				case ERROR_MESSAGE_NAME:
-					errorMessageObject = child.gameObject;
-					break;
-			}
-		}
 	}
 
 	public void StartButtonClicked () {
