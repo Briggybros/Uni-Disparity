@@ -6,14 +6,15 @@ using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(NetworkManager))]
 public class NetworkUI : MonoBehaviour {
+
+	private const string LEVEL_SELECT_NAME = "Level Select Panel";
 
 	public GameObject buttonPrefab;
 	public string[] levels;
 
 	private NetworkManager networkManager;
-	private GameObject uiContainer;
+	private GameObject levelSelectPanel;
 
 	private GameObject MakeButton (GameObject container, string text, Vector2 position, UnityAction clickListener = null) {
 		GameObject button = Instantiate(buttonPrefab, new Vector2(0, 0), Quaternion.identity);
@@ -30,50 +31,20 @@ public class NetworkUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		networkManager = NetworkManager.singleton;
-
-        uiContainer = new GameObject("UI");
-        Canvas canvas = uiContainer.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-
-        CanvasScaler canvasScaler = uiContainer.AddComponent<CanvasScaler>();
-        canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        canvasScaler.referenceResolution = new Vector2(1080, 720);
-        canvasScaler.matchWidthOrHeight = 0.5f;
-
-        uiContainer.AddComponent<GraphicRaycaster>();
-        uiContainer.layer = 5;
-
-        GameObject startButton = MakeButton(uiContainer, "Start", new Vector2(0, 0));
-		startButton.GetComponent<Button>().onClick.AddListener(() => {
-			Destroy(startButton);
-			Clicked();
-		});
+		foreach (Transform child in transform) {
+			if (child.gameObject.name == LEVEL_SELECT_NAME) {
+				levelSelectPanel = child.gameObject;
+			}
+		}
 	}
 
-	private void Clicked () {
+	public void StartButtonClicked () {
 		networkManager.StartMatchMaker();
-
-		GameObject createButton = MakeButton(uiContainer, "Create Internet Match", new Vector2(0, 40));
-
-		GameObject findButton = MakeButton(uiContainer, "Find Internet Match", new Vector2(0, -40));
-
-		createButton.GetComponent<Button>().onClick.AddListener(() => {
-			LevelSelect();
-			Destroy(createButton);
-			Destroy(findButton);
-			// Make function to clear up buttons instead
-		});
-
-		findButton.GetComponent<Button>().onClick.AddListener(() => {
-			FindInternetMatch("default");
-			Destroy(createButton);
-			Destroy(findButton);
-		});
 	}
 
-	private void LevelSelect () {
+	public void LevelSelect () {
 		foreach (string level in levels) {
-			MakeButton(uiContainer, level, new Vector2(0, 0), () => {
+			MakeButton(levelSelectPanel, level, new Vector2(0, 0), () => {
 				networkManager.onlineScene = level;
 				CreateInternetMatch("default");
 			});
@@ -81,7 +52,7 @@ public class NetworkUI : MonoBehaviour {
 		// Need to clear up buttons
 	}
 
-	private void CreateInternetMatch (string matchName) {
+	public void CreateInternetMatch (string matchName) {
 		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
 	}
 
@@ -94,7 +65,7 @@ public class NetworkUI : MonoBehaviour {
 		// Needs error
 	}
 
-	private void FindInternetMatch (string matchName) {
+	public void FindInternetMatch (string matchName) {
 		networkManager.matchMaker.ListMatches(0 ,10, matchName, true, 0, 0, OnInternetMatchList);
 	}
 
