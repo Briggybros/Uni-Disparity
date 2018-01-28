@@ -117,4 +117,9 @@ public class NetworkUI : MonoBehaviour {
 			ShowError("Failed to join the match");
 		}
 	}
+
+	public void DisconnectInternetMatch() {
+		networkManager.StopHost();
+		networkManager.onlineScene = null;
+	}
 }
