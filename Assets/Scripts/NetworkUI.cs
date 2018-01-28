@@ -42,6 +42,10 @@ public class NetworkUI : MonoBehaviour {
 		networkManager.StartMatchMaker();
 	}
 
+	public void StopMatchMaker () {
+		networkManager.StopMatchMaker();
+	}
+
 	public void LevelSelect (Text textObject) {
 		string matchName = textObject.text != "" ? textObject.text : "default";
 		foreach (string level in levels) {
