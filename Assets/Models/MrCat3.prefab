@@ -945,6 +945,7 @@ MonoBehaviour:
   BlockInput: 0
   interacting: 0
   touching: 0
+  canMove: 1
 --- !u!114 &114888406601374704
 MonoBehaviour:
   m_ObjectHideFlags: 1
