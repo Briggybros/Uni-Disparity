@@ -10,6 +10,9 @@ TagManager:
   - Checkpoint
   - Enemy
   - UI
+  - WorldA
+  - WorldB
+  - WorldAB
   layers:
   - Default
   - TransparentFX
