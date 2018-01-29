@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 3d94a98e8a1f2d842818036799251320
+<<<<<<< HEAD
 timeCreated: 1511181318
 licenseType: Pro
+=======
+timeCreated: 1517220038
+licenseType: Free
+>>>>>>> swicth and pulse trigger code restored
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
