@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -498,8 +498,9 @@ GameObject:
   - component: {fileID: 684945430}
   - component: {fileID: 684945429}
   - component: {fileID: 684945428}
+  - component: {fileID: 684945431}
   m_Layer: 5
-  m_Name: Start Button
+  m_Name: Disconnect Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,6 +610,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 684945426}
+--- !u!114 &684945431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684945426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180fff70ce0a845b0a2e8314355bb46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827427547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1044,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 1512204687729164, guid: 9f7a6786a6922454b931b64fb4937a3a,
     type: 2}
   levelSelectPanel: {fileID: 0}
+  matchSelectPanel: {fileID: 0}
   errorMessageObject: {fileID: 0}
   levels:
   - TutorialWorld
