@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ColorChanger : MonoBehaviour {
 
-    protected SpriteRenderer sr;
+    protected SkinnedMeshRenderer sr;
     protected Image im;
     private bool sra = true;
     Texture2D mColorSwapTex;
@@ -14,9 +14,10 @@ public class ColorChanger : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        sr = GetComponent<SpriteRenderer>();
+        sr = this.transform.GetChild(0).gameObject.GetComponent<SkinnedMeshRenderer>();
         if (!sr)
         {
+            Debug.Log("false");
             sra = false;
             im = GetComponent<Image>();
         }

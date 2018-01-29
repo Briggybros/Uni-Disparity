@@ -942,9 +942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae0b99cf7e09459e91d73a3bdb7d66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlockInput: 0
-  interacting: 0
-  touching: 0
+  RotationSpeed: 15
+  MovementSpeed: 6
+  Parentables: []
 --- !u!114 &114888406601374704
 MonoBehaviour:
   m_ObjectHideFlags: 1

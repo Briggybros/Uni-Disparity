@@ -95,9 +95,10 @@ public class Character : NetworkBehaviour {
                 {
                     if (hit.collider.CompareTag("Floor"))
                     {
-                        if (hit.point.y < this.transform.localPosition.y + 0.2f || hit.point.y > this.transform.localPosition.y - 0.2f)
+                        if (hit.point.y < this.transform.localPosition.y + 0.1f && hit.point.y > this.transform.localPosition.y - 0.1f)
                         { 
                             clickPos = hit.point;
+                            clickPos.y = this.transform.localPosition.y;
                             Orientating = true;
                             moving = true;
                         }
