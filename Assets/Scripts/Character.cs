@@ -101,6 +101,7 @@ public class Character : NetworkBehaviour {
                             clickPos.y = this.transform.localPosition.y;
                             Orientating = true;
                             moving = true;
+                            this.GetComponent<Animator>().SetBool("Running", true);
                         }
                     }
                 }
@@ -153,6 +154,7 @@ public class Character : NetworkBehaviour {
 	            }
                 else
                 {
+                    this.GetComponent<Animator>().SetBool("Running", false);
                     moving = false;
                 }
 			}
