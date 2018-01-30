@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 847809d92c2d44944b4db9dd083f8b50
 <<<<<<< HEAD
+<<<<<<< HEAD
 timeCreated: 1511181319
 licenseType: Pro
 =======
 timeCreated: 1517220038
+=======
+timeCreated: 1517226493
+>>>>>>> ready to be a real branch
 licenseType: Free
 >>>>>>> swicth and pulse trigger code restored
 NativeFormatImporter:

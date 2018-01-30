@@ -10,6 +10,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootGameObject: {fileID: 1467872356515966}
   m_IsPrefabParent: 1
 --- !u!1 &1006971440864676
@@ -18,35 +19,49 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1004681596712086
 >>>>>>> swicth and pulse trigger code restored
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 4899431603337788}
 =======
-  - component: {fileID: 4133989657221052}
->>>>>>> swicth and pulse trigger code restored
-  m_Layer: 0
-  m_Name: Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
-<<<<<<< HEAD
---- !u!1 &1427725226028288
-=======
---- !u!1 &1487287971036010
->>>>>>> swicth and pulse trigger code restored
+  m_RootGameObject: {fileID: 1943070904872078}
+  m_IsPrefabParent: 1
+--- !u!1 &1436549742476552
+>>>>>>> ready to be a real branch
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - component: {fileID: 4899431603337788}
+=======
+  - component: {fileID: 4133989657221052}
+>>>>>>> swicth and pulse trigger code restored
+=======
+  - component: {fileID: 4006749586100750}
+>>>>>>> ready to be a real branch
+  m_Layer: 0
+  m_Name: Merge0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!1 &1427725226028288
+=======
+--- !u!1 &1487287971036010
+>>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!1 &1590382649877728
+>>>>>>> ready to be a real branch
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 4876610365594876}
   - component: {fileID: 23240452739493368}
@@ -58,16 +73,27 @@ GameObject:
   m_Layer: 0
   m_Name: Merge0
 >>>>>>> swicth and pulse trigger code restored
+=======
+  - component: {fileID: 4774390861909210}
+  - component: {fileID: 23694234540992822}
+  - component: {fileID: 33687995310175874}
+  m_Layer: 0
+  m_Name: Merge0~1_primitive_0
+>>>>>>> ready to be a real branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1467872356515966
 =======
 --- !u!1 &1660753582659168
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!1 &1811387048779954
+>>>>>>> ready to be a real branch
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -75,12 +101,18 @@ GameObject:
   serializedVersion: 5
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 4960811242802070}
 =======
   - component: {fileID: 4989839623465486}
   - component: {fileID: 23062777649309066}
   - component: {fileID: 33292969565969306}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  - component: {fileID: 4060998812716322}
+  - component: {fileID: 23414953777783114}
+  - component: {fileID: 33166311994447936}
+>>>>>>> ready to be a real branch
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -89,10 +121,14 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1922498048725178
 =======
 --- !u!1 &1886227098454612
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!1 &1838543144443440
+>>>>>>> ready to be a real branch
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -100,12 +136,16 @@ GameObject:
   serializedVersion: 5
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 4723638328300380}
 =======
   - component: {fileID: 4250774444944968}
   - component: {fileID: 23291596566532164}
   - component: {fileID: 33878269991467424}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  - component: {fileID: 4968984468127872}
+>>>>>>> ready to be a real branch
   m_Layer: 0
   m_Name: root
   m_TagString: Untagged
@@ -114,16 +154,21 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1963742517180334
 =======
 --- !u!1 &1992584622754360
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!1 &1943070904872078
+>>>>>>> ready to be a real branch
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 4914761573797472}
   - component: {fileID: 23712259799204864}
@@ -135,20 +180,30 @@ GameObject:
   m_Layer: 0
   m_Name: root
 >>>>>>> swicth and pulse trigger code restored
+=======
+  - component: {fileID: 4484598147126810}
+  m_Layer: 0
+  m_Name: Model
+>>>>>>> ready to be a real branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &4723638328300380
 =======
 --- !u!4 &4133989657221052
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!4 &4006749586100750
+>>>>>>> ready to be a real branch
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1922498048725178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -162,29 +217,42 @@ Transform:
 --- !u!4 &4876610365594876
 =======
   m_GameObject: {fileID: 1004681596712086}
+=======
+  m_GameObject: {fileID: 1436549742476552}
+>>>>>>> ready to be a real branch
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4753331374815960}
-  m_Father: {fileID: 0}
+  - {fileID: 4774390861909210}
+  - {fileID: 4060998812716322}
+  m_Father: {fileID: 4968984468127872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!4 &4250774444944968
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!4 &4060998812716322
+>>>>>>> ready to be a real branch
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1427725226028288}
 =======
   m_GameObject: {fileID: 1886227098454612}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_GameObject: {fileID: 1811387048779954}
+>>>>>>> ready to be a real branch
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_Father: {fileID: 4899431603337788}
   m_RootOrder: 0
@@ -196,19 +264,30 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4719243711196170
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_Father: {fileID: 4006749586100750}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4484598147126810
+>>>>>>> ready to be a real branch
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1006971440864676}
 =======
   m_GameObject: {fileID: 1487287971036010}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_GameObject: {fileID: 1943070904872078}
+>>>>>>> ready to be a real branch
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 4876610365594876}
   - {fileID: 4914761573797472}
@@ -224,10 +303,18 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4753331374815960
 >>>>>>> swicth and pulse trigger code restored
+=======
+  - {fileID: 4968984468127872}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4774390861909210
+>>>>>>> ready to be a real branch
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1963742517180334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -240,20 +327,27 @@ Transform:
 --- !u!4 &4960811242802070
 =======
   m_GameObject: {fileID: 1992584622754360}
+=======
+  m_GameObject: {fileID: 1590382649877728}
+>>>>>>> ready to be a real branch
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_Children:
-  - {fileID: 4719243711196170}
-  m_Father: {fileID: 4133989657221052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4006749586100750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!4 &4989839623465486
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!4 &4968984468127872
+>>>>>>> ready to be a real branch
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1467872356515966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -267,24 +361,36 @@ Transform:
 --- !u!23 &23240452739493368
 =======
   m_GameObject: {fileID: 1660753582659168}
+=======
+  m_GameObject: {fileID: 1838543144443440}
+>>>>>>> ready to be a real branch
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4719243711196170}
-  m_RootOrder: 1
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_Children:
+  - {fileID: 4006749586100750}
+  m_Father: {fileID: 4484598147126810}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!23 &23062777649309066
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!23 &23414953777783114
+>>>>>>> ready to be a real branch
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1427725226028288}
 =======
   m_GameObject: {fileID: 1660753582659168}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_GameObject: {fileID: 1811387048779954}
+>>>>>>> ready to be a real branch
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -313,20 +419,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!23 &23712259799204864
 =======
 --- !u!23 &23291596566532164
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!23 &23694234540992822
+>>>>>>> ready to be a real branch
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1963742517180334}
 =======
   m_GameObject: {fileID: 1886227098454612}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_GameObject: {fileID: 1590382649877728}
+>>>>>>> ready to be a real branch
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -356,14 +470,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!33 &33283862297295304
 =======
 --- !u!33 &33292969565969306
 >>>>>>> swicth and pulse trigger code restored
+=======
+--- !u!33 &33166311994447936
+>>>>>>> ready to be a real branch
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1963742517180334}
   m_Mesh: {fileID: 4300000, guid: 8fce5ded11c2ce443aecbb5375fc9eda, type: 2}
@@ -373,13 +492,22 @@ MeshFilter:
   m_Mesh: {fileID: 4300000, guid: 8fce5ded11c2ce443aecbb5375fc9eda, type: 2}
 --- !u!33 &33878269991467424
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_GameObject: {fileID: 1811387048779954}
+  m_Mesh: {fileID: 4300000, guid: 8fce5ded11c2ce443aecbb5375fc9eda, type: 2}
+--- !u!33 &33687995310175874
+>>>>>>> ready to be a real branch
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 1427725226028288}
 =======
   m_GameObject: {fileID: 1886227098454612}
 >>>>>>> swicth and pulse trigger code restored
+=======
+  m_GameObject: {fileID: 1590382649877728}
+>>>>>>> ready to be a real branch
   m_Mesh: {fileID: 4300000, guid: 847809d92c2d44944b4db9dd083f8b50, type: 2}
