@@ -36,6 +36,7 @@ public class Character : NetworkBehaviour {
 		rot = transform.localRotation;
 		pos = transform.localPosition;
 		BlockInput = false;
+		canMove = true;
 		interacting = false;
 		touching = false;
 		count = 0;
