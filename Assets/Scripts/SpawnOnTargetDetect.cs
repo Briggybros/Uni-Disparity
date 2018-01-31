@@ -36,11 +36,53 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
-				isTracked = true;
-				if (isServerAdded && isTracked && !isSpawned) {
-					AddPlayer();
-				}
+			OnTrackingFound();
+			isTracked = true;
+			if (isServerAdded && isTracked && !isSpawned) {
+				AddPlayer();
 			}
+		} else if (previousStatus == TrackableBehaviour.Status.TRACKED && newStatus == TrackableBehaviour.Status.NOT_FOUND) {
+			OnTrackingLost();
+		} else {
+			OnTrackingLost();
+		}
+    }
+
+	protected virtual void OnTrackingFound()
+    {
+        var rendererComponents = GetComponentsInChildren<Renderer>(true);
+        var colliderComponents = GetComponentsInChildren<Collider>(true);
+        var canvasComponents = GetComponentsInChildren<Canvas>(true);
+
+        foreach (var component in rendererComponents) {
+			Debug.Log(component.gameObject.name);
+			if (component.gameObject.name[component.gameObject.name.Length-1] != 'B') {
+            	component.enabled = true;
+			}
+		}
+
+        foreach (var component in colliderComponents)
+            component.enabled = true;
+
+        foreach (var component in canvasComponents)
+            component.enabled = true;
+    }
+
+
+    protected virtual void OnTrackingLost()
+    {
+        var rendererComponents = GetComponentsInChildren<Renderer>(true);
+        var colliderComponents = GetComponentsInChildren<Collider>(true);
+        var canvasComponents = GetComponentsInChildren<Canvas>(true);
+
+        foreach (var component in rendererComponents)
+            component.enabled = false;
+
+        foreach (var component in colliderComponents)
+            component.enabled = false;
+
+        foreach (var component in canvasComponents)
+            component.enabled = false;
     }
 
 	private void AddPlayer () {

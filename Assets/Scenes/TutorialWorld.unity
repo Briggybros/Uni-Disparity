@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 173782282}
   - component: {fileID: 173782281}
-  - component: {fileID: 173782280}
   - component: {fileID: 173782279}
   - component: {fileID: 173782278}
   - component: {fileID: 173782277}
@@ -184,17 +183,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1770992566, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &173782280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 173782276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &173782281
@@ -1277,7 +1265,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1489580714173118, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
       propertyPath: m_Name
-      value: Button1(WORLDA)
+      value: Button1A
       objectReference: {fileID: 0}
     - target: {fileID: 1039852256482602, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
       propertyPath: m_TagString
@@ -1285,11 +1273,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1101611650017680, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
       propertyPath: m_Name
-      value: Enemy 2(WorldA)
+      value: Enemy 2A
       objectReference: {fileID: 0}
     - target: {fileID: 1163682509451168, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
       propertyPath: m_Name
-      value: Enemy(WORLDB)
+      value: EnemyB
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882867641526106, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
+      propertyPath: m_Name
+      value: ChasmB
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039852256482602, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
+      propertyPath: m_Name
+      value: Cube (14)A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b01dc6e5e6a266442900bd76b292e6d2, type: 2}
