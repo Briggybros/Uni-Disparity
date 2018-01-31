@@ -12,6 +12,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	private bool isSpawned = false;
 	private NetworkConnection conn;
 	private short playerControllerId;
+	private char otherWorld;
 	// private GameObject[] spawnpoints;
 
     void Start () {
@@ -20,6 +21,8 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
+		otherWorld = Network.isServer ? 'B' : 'A';
+		Debug.Log(otherWorld);
 	}
 
 	public void OnServerAddPlayer (NetworkConnection conn, short playerControllerId) {
@@ -56,7 +59,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
         foreach (var component in rendererComponents) {
 			Debug.Log(component.gameObject.name);
-			if (component.gameObject.name[component.gameObject.name.Length-1] != 'B') {
+			if (component.gameObject.name[component.gameObject.name.Length-1] != otherWorld) {
             	component.enabled = true;
 			}
 		}
@@ -86,7 +89,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
     }
 
 	private void AddPlayer () {
-		GameObject playerPrefab = NetworkManager.singleton.playerPrefab;
+		GameObject playerPrefab = NetworkManager.singleton.spawnPrefabs[otherWorld == 'B' ? 0 : 1];
 		Transform startPos = NetworkManager.singleton.GetStartPosition();
 		GameObject player = (GameObject) Instantiate(playerPrefab, startPos.position, Quaternion.identity);
 		NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
