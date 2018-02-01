@@ -5,10 +5,20 @@ using UnityEngine.Networking;
 
 public class MyNetworkManager : NetworkManager {
 
+	private char world;
+
+	public void Start () {
+		world = GetComponent<CharacterPicker>().GetWorld();
+	}
+
 	private const string TARGET_NAME = "ImageTarget" ;
 
 	public override void OnServerAddPlayer(NetworkConnection connection, short playerControllerId) {
-		SpawnOnTargetDetect spawn = GameObject.Find(TARGET_NAME).GetComponent<SpawnOnTargetDetect>();
-		spawn.OnServerAddPlayer(connection, playerControllerId);
+		GameObject playerPrefab = NetworkManager.singleton.spawnPrefabs[world == 'A' ? 1 : 0];
+		Transform startPos = NetworkManager.singleton.GetStartPosition();
+		GameObject player = (GameObject) Instantiate(playerPrefab, startPos.position, Quaternion.identity);
+		player.GetComponent<Rigidbody>().isKinematic = true;
+		player.transform.SetParent(GameObject.Find(TARGET_NAME).transform);
+		NetworkServer.AddPlayerForConnection(connection, player, playerControllerId);
 	}
 }

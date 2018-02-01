@@ -8,30 +8,30 @@ using Vuforia;
 public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	private TrackableBehaviour trackableBehaviour;
-	private bool isServerAdded = false;
-	private bool isTracked = false;
-	private bool isSpawned = false;
-	private NetworkConnection conn;
-	private short playerControllerId;
 	private char otherWorld;
-	// private GameObject[] spawnpoints;
+	private bool isTracking, isActive;
 
     void Start () {
-		// spawnpoints = (GameObject[]) FindObjectsOfType(typeof(NetworkStartPosition));
 		trackableBehaviour = GetComponent<TrackableBehaviour>();
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
 		otherWorld = GetComponent<CharacterPicker>().GetWorld() == 'A' ? 'B' : 'A';
-		Debug.Log(otherWorld);
 	}
 
-	public void OnServerAddPlayer (NetworkConnection conn, short playerControllerId) {
-		isServerAdded = true;
-		this.conn = conn;
-		this.playerControllerId = playerControllerId;
-		if (isServerAdded && isTracked && !isSpawned) {
-			AddPlayer();
+	public void Update () {
+		var players = GameObject.FindGameObjectsWithTag("Player");
+		if (isTracking && !isActive) {	
+			foreach (var player in players) {
+				player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+				player.transform.parent = null;
+				isActive = true;
+			}
+		} else if (!isTracking && isActive) {
+			foreach (var player in players) {
+				player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+				isActive = false;
+			}
 		}
 	}
 
@@ -41,10 +41,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
 			OnTrackingFound();
-			isTracked = true;
-			if (isServerAdded && isTracked && !isSpawned) {
-				AddPlayer();
-			}
 		} else if (previousStatus == TrackableBehaviour.Status.TRACKED && newStatus == TrackableBehaviour.Status.NOT_FOUND) {
 			OnTrackingLost();
 		} else {
@@ -54,12 +50,13 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
+		isTracking = true;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
 
+
         foreach (var component in rendererComponents) {
-			Debug.Log(component.gameObject.name);
 			if (component.gameObject.name[component.gameObject.name.Length-1] != otherWorld) {
             	component.enabled = true;
 			}
@@ -72,9 +69,9 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
             component.enabled = true;
     }
 
-
     protected virtual void OnTrackingLost()
     {
+		isTracking = false;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
@@ -88,12 +85,4 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
         foreach (var component in canvasComponents)
             component.enabled = false;
     }
-
-	private void AddPlayer () {
-		GameObject playerPrefab = NetworkManager.singleton.spawnPrefabs[otherWorld == 'B' ? 0 : 1];
-		Transform startPos = NetworkManager.singleton.GetStartPosition();
-		GameObject player = (GameObject) Instantiate(playerPrefab, startPos.position, Quaternion.identity);
-		NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
-		isSpawned = true;
-	}
 }
