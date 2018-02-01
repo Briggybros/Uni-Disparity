@@ -14,7 +14,6 @@ public class Character : NetworkBehaviour
     public bool BlockInput;
     public bool interacting;
     public bool touching;
-    private int count;
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
     private float yLevel;
@@ -42,7 +41,6 @@ public class Character : NetworkBehaviour
         canMove = true;
         interacting = false;
         touching = false;
-        count = 0;
         targetNetworkIdent = null;// = this.GetComponent<NetworkIdentity>();
     }
 
