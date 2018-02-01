@@ -40,11 +40,8 @@ public class PatrollingEnemyBehaviour : Receiver {
 	protected override void Update () {
 		if(Move){
 			TempTarget = Target;
-			Debug.Log(TempStage + " = " + Stage);
 			if(TempStage != Stage && Stage != 0 && Stage != 4){
-				Debug.Log("Arrived");
 				TempTarget = Target - transform.position;
-				Debug.Log("TempTarg " + TempTarget);
 				TempTarget.x *= BoolToFloat(Order.x == Stage);
 				TempTarget.y *= BoolToFloat(Order.y == Stage);
 				TempTarget.z *= BoolToFloat(Order.z == Stage);
@@ -60,7 +57,6 @@ public class PatrollingEnemyBehaviour : Receiver {
 				TempTarget.y = BoolToFloat(Order.y == Stage);
 				TempTarget.z = BoolToFloat(Order.z == Stage);
 				//Orientation = transform.rotation;
-				Debug.Log("TempTarg " + TempTarget);
 				TempTarget  *= Orientation;
 				if(TempTarget.y != 0 ){
 					TempStage = Stage;
@@ -80,7 +76,6 @@ public class PatrollingEnemyBehaviour : Receiver {
 				//Stage+=1;
 			}
 		}else{
-			Debug.Log("fetch next Move");
 			Move_Index += Move_Forward;
 			Target_index += Forward;
 			if(Move_Index == Directions.Length){
@@ -127,7 +122,6 @@ public class PatrollingEnemyBehaviour : Receiver {
 		switch (Stage){
 			case 0:
 				Move = false;
-				Debug.Log("Finished Move");
 				break;
 			case 1:
 				Target = Target - transform.position;
@@ -161,7 +155,6 @@ public class PatrollingEnemyBehaviour : Receiver {
 				break;
 			case 4:
 				Move = false;
-				Debug.Log("Finished Move");
 				break;
 		}
 		return Stage;
