@@ -166,15 +166,18 @@ public class JoystickCharacter : NetworkBehaviour
             pos = transform.localPosition;
             rot = transform.localRotation;
 
-            float angle = Vector3.Angle(StickInput(), joystick.forwardVector);
+            float angleForwards = Vector3.Angle(transform.forward, Camera.main.transform.forward);
+            float angleJoystick = Vector3.Angle(StickInput(), joystick.forwardVector);
             stickInput = StickInput();
+            rot *= Quaternion.Euler(0, angleForwards + angleJoystick, 0);
+            StartCoroutine(Rotate(rot));
             //rot *= Vector3.Scale(cameraForwards, stickInput);
-            transform.localEulerAngles = Vector3.Scale(cameraForwards, stickInput);
+            //transform.localEulerAngles = Vector3.Scale(cameraForwards, stickInput);
             MovementSpeed = Vector3.Distance(joystick.centre, stickInput);
           
             Debug.Log(stickInput);
 
-         //   pos += (cameraForwards + stickInput) * 0.1f * Vector3.forward * (MovementSpeed * 10);
+          //  pos += transform.forward * 0.1f  * (MovementSpeed * 10);
 
             transform.localPosition = Vector3.MoveTowards(
                 transform.localPosition,
