@@ -17,6 +17,8 @@ public class Character : NetworkBehaviour
     private int count;
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
+    private bool moving;
+    private float yLevel;
     public bool canMove;
 
     private Vector3 HeldScale;
@@ -130,6 +132,12 @@ public class Character : NetworkBehaviour
 
     void Update() {
 
+        if (!GetComponent<Rigidbody>().IsSleeping()) {
+            GetComponent<Animator>().SetBool("Running", true);
+        } else {
+            GetComponent<Animator>().SetBool("Running", false);
+        }
+
         if (!canMove) {
             return;
         }
@@ -160,7 +168,12 @@ public class Character : NetworkBehaviour
         if (BlockInput && GetComponent<Rigidbody>().IsSleeping()) {
             pos = transform.localPosition;
             rot = transform.localRotation;
+            yLevel = this.transform.position.y;
             BlockInput = false;
+        }
+        //Falling check
+        if(this.transform.localPosition.y <= yLevel - 2) {
+            this.transform.SetPositionAndRotation(Checkpoint.GetActiveCheckpointPosition(), Quaternion.identity);
         }
         if (!BlockInput) {
             pos.y = transform.localPosition.y;

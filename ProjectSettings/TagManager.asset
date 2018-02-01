@@ -8,6 +8,11 @@ TagManager:
   - Wall
   - Floor
   - Enemy
+  - UI
+  - WorldB
+  - WorldA
+  - Static
+  - Bopped
   layers:
   - Default
   - TransparentFX
