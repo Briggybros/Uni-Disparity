@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Vuforia;
 
+[RequireComponent(typeof(CharacterPicker))]
 public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	private TrackableBehaviour trackableBehaviour;
@@ -21,7 +22,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-		otherWorld = Network.isServer ? 'B' : 'A';
+		otherWorld = GetComponent<CharacterPicker>().GetWorld() == 'A' ? 'B' : 'A';
 		Debug.Log(otherWorld);
 	}
 

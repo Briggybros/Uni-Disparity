@@ -1399,6 +1399,7 @@ GameObject:
   - component: {fileID: 421164862}
   - component: {fileID: 421164861}
   - component: {fileID: 421164865}
+  - component: {fileID: 421164866}
   m_Layer: 5
   m_Name: Menu Canvas
   m_TagString: UI
@@ -1506,6 +1507,17 @@ MonoBehaviour:
   errorMessageObject: {fileID: 2140461380}
   levels:
   - TutorialWorld
+--- !u!114 &421164866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421164860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a77b12662c643378753bba6f62ecb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548660039
 GameObject:
   m_ObjectHideFlags: 0

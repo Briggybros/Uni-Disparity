@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CharacterPicker))]
 public class NetworkUI : MonoBehaviour {
 
 	public GameObject buttonPrefab;
@@ -68,6 +69,7 @@ public class NetworkUI : MonoBehaviour {
 	}
 
 	public void CreateInternetMatch (string matchName) {
+		GetComponent<CharacterPicker>().SetWorld('A');
 		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
 	}
 
@@ -90,6 +92,7 @@ public class NetworkUI : MonoBehaviour {
 			if (internetMatches.Count != 0) {
 				foreach (MatchInfoSnapshot match in internetMatches) {
 					MakeButton(matchSelectPanel, match.name, new Vector2(0, 0), () => {
+						GetComponent<CharacterPicker>().SetWorld('B');
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 					});
 				}
