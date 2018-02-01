@@ -24,7 +24,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (isTracking && !isActive) {	
 			foreach (var player in players) {
 				player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-				player.transform.parent = null;
 				isActive = true;
 			}
 		} else if (!isTracking && isActive) {

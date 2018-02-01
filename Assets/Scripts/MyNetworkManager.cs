@@ -5,20 +5,35 @@ using UnityEngine.Networking;
 
 public class MyNetworkManager : NetworkManager {
 
-	private char world;
+	public class NetworkMessage : MessageBase {
+        public char world;
+    }
 
-	public void Start () {
-		world = GetComponent<CharacterPicker>().GetWorld();
+	public override void OnServerAddPlayer (NetworkConnection connection, short playerControllerId, NetworkReader networkReader) {
+		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
+		char world = message.world;
+		GameObject spawn = spawnPrefabs[world == 'A' ? 0 : 1];
+		Transform startPos = GetStartPosition();
+		GameObject player = (GameObject) Instantiate(spawn, startPos.position, startPos.rotation);
+		player.GetComponent<Rigidbody>().isKinematic = true;
+		NetworkServer.AddPlayerForConnection(connection, player, playerControllerId);
 	}
 
-	private const string TARGET_NAME = "ImageTarget" ;
+	public override void OnClientConnect (NetworkConnection conn) {
+		
+    }
 
-	public override void OnServerAddPlayer(NetworkConnection connection, short playerControllerId) {
-		GameObject playerPrefab = NetworkManager.singleton.spawnPrefabs[world == 'A' ? 1 : 0];
-		Transform startPos = NetworkManager.singleton.GetStartPosition();
-		GameObject player = (GameObject) Instantiate(playerPrefab, startPos.position, Quaternion.identity);
-		player.GetComponent<Rigidbody>().isKinematic = true;
-		player.transform.SetParent(GameObject.Find(TARGET_NAME).transform);
-		NetworkServer.AddPlayerForConnection(connection, player, playerControllerId);
+	public override void OnClientSceneChanged (NetworkConnection conn) {
+		ClientScene.Ready(conn);
+		NetworkMessage test = new NetworkMessage();
+		test.world = GetComponent<CharacterPicker>().GetWorld();
+
+		ClientScene.AddPlayer(conn, 0, test);
+    }
+
+	public override void OnServerRemovePlayer (NetworkConnection conn, PlayerController player) {
+		if (player.gameObject != null)
+			// NetworkServer.Destroy(player.gameObject);
+			Debug.Log(player.gameObject.name);
 	}
 }

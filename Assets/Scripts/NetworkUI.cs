@@ -60,6 +60,9 @@ public class NetworkUI : MonoBehaviour {
 
 	public void LevelSelect (Text textObject) {
 		string matchName = textObject.text != "" ? textObject.text : "default";
+		foreach (Transform child in levelSelectPanel.transform) {
+			GameObject.Destroy(child.gameObject);
+		}
 		foreach (string level in levels) {
 			MakeButton(levelSelectPanel, level, new Vector2(0, 0), () => {
 				networkManager.onlineScene = level;
@@ -90,6 +93,9 @@ public class NetworkUI : MonoBehaviour {
 	private void OnInternetMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> internetMatches) {
 		if (success) {
 			if (internetMatches.Count != 0) {
+				foreach (Transform child in matchSelectPanel.transform) {
+					GameObject.Destroy(child.gameObject);
+				}
 				foreach (MatchInfoSnapshot match in internetMatches) {
 					MakeButton(matchSelectPanel, match.name, new Vector2(0, 0), () => {
 						GetComponent<CharacterPicker>().SetWorld('B');

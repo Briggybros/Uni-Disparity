@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114208796480154266}
   - component: {fileID: 54616670267400048}
   - component: {fileID: 64030638314428066}
+  - component: {fileID: 95364897575368646}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Player
@@ -116,6 +117,23 @@ MeshCollider:
   m_CookingOptions: 15
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0c47a90318632fc41831ef331c9a273d, type: 3}
+--- !u!95 &95364897575368646
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635768022117036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114208796480154266
 MonoBehaviour:
   m_ObjectHideFlags: 1
