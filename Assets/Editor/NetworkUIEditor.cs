@@ -8,12 +8,14 @@ public class NetworkUIEditor : Editor {
 
     private SerializedProperty buttonPrefab;
     private SerializedProperty levelSelectPanel;
+    private SerializedProperty matchSelectPanel;
     private SerializedProperty errorMessageObject;
     private SerializedProperty levels;
 
     public void OnEnable () {
         buttonPrefab = serializedObject.FindProperty("buttonPrefab");
         levelSelectPanel = serializedObject.FindProperty("levelSelectPanel");
+        matchSelectPanel = serializedObject.FindProperty("matchSelectPanel");
         errorMessageObject = serializedObject.FindProperty("errorMessageObject");
         levels = serializedObject.FindProperty("levels");
     }
@@ -23,6 +25,7 @@ public class NetworkUIEditor : Editor {
 
         EditorGUILayout.PropertyField(buttonPrefab);
         EditorGUILayout.PropertyField(levelSelectPanel);
+        EditorGUILayout.PropertyField(matchSelectPanel);
         EditorGUILayout.PropertyField(errorMessageObject);
 
         EditorGUILayout.PropertyField(levels);

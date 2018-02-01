@@ -11,6 +11,11 @@ public class Character : NetworkBehaviour {
 	private Vector3 pos;
 	private Quaternion rot;
 	public bool BlockInput;
+	public bool interacting;
+	public bool touching;
+	private int count;
+	private NetworkIdentity targetNetworkIdent;
+	private GameObject target;
 	public bool canMove;
 	public bool interacting;
 	public bool touching;
