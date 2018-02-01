@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SlidingDoorBehaviour : DoorBehaviourScript {
     public int OpenHeight;
-	public int speed;
-    // Use this for initialization
-    protected override void Start () {
+	public int DownSpeed;
+	public int UpSpeed;
+	// Use this for initialization
+	protected override void Start () {
         init();
         target.y += OpenHeight;
     }
@@ -16,12 +17,12 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         if (open)
         {
 			//Open the door
-			transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, target, DownSpeed * Time.deltaTime);
         }
         else
         {
             //Close the door
-            transform.position = Vector3.MoveTowards(transform.position, home, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, home, UpSpeed * Time.deltaTime);
         }
     }
 }

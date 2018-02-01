@@ -17,7 +17,6 @@ public class Character : NetworkBehaviour
     private int count;
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
-    private bool moving;
     private float yLevel;
     public bool canMove;
 
@@ -40,6 +39,7 @@ public class Character : NetworkBehaviour
         rot = transform.localRotation;
         pos = transform.localPosition;
         BlockInput = false;
+        canMove = true;
         interacting = false;
         touching = false;
         count = 0;
