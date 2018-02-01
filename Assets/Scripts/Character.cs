@@ -17,11 +17,6 @@ public class Character : NetworkBehaviour {
 	private NetworkIdentity targetNetworkIdent;
 	private GameObject target;
 	public bool canMove;
-	public bool interacting;
-	public bool touching;
-	private int count;
-	private NetworkIdentity targetNetworkIdent;
-	private GameObject target;
     private Vector3 HeldScale;
 
 	//Handles rotation
