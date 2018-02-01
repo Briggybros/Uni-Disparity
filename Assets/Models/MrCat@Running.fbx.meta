@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: fa12792e6b4602b4292356c0dd4eb3ca
+timeCreated: 1517318536
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cat1_bag1
+    100002: CatBoy
+    100004: Character1_Ctrl_ChestEndEffector
+    100006: Character1_Ctrl_ChestOriginEffector
+    100008: Character1_Ctrl_Head
+    100010: Character1_Ctrl_HeadEffector
+    100012: Character1_Ctrl_Hips
+    100014: Character1_Ctrl_HipsEffector
+    100016: Character1_Ctrl_LeftAnkleEffector
+    100018: Character1_Ctrl_LeftArm
+    100020: Character1_Ctrl_LeftElbowEffector
+    100022: Character1_Ctrl_LeftFoot
+    100024: Character1_Ctrl_LeftForeArm
+    100026: Character1_Ctrl_LeftHand
+    100028: Character1_Ctrl_LeftHipEffector
+    100030: Character1_Ctrl_LeftKneeEffector
+    100032: Character1_Ctrl_LeftLeg
+    100034: Character1_Ctrl_LeftShoulderEffector
+    100036: Character1_Ctrl_LeftUpLeg
+    100038: Character1_Ctrl_LeftWristEffector
+    100040: Character1_Ctrl_Reference
+    100042: Character1_Ctrl_RightAnkleEffector
+    100044: Character1_Ctrl_RightArm
+    100046: Character1_Ctrl_RightElbowEffector
+    100048: Character1_Ctrl_RightFoot
+    100050: Character1_Ctrl_RightForeArm
+    100052: Character1_Ctrl_RightHand
+    100054: Character1_Ctrl_RightHipEffector
+    100056: Character1_Ctrl_RightKneeEffector
+    100058: Character1_Ctrl_RightLeg
+    100060: Character1_Ctrl_RightShoulderEffector
+    100062: Character1_Ctrl_RightUpLeg
+    100064: Character1_Ctrl_RightWristEffector
+    100066: Character1_Ctrl_Spine
+    100068: head
+    100070: l_ankle
+    100072: l_ear_base
+    100074: l_ear_tip
+    100076: l_elbow
+    100078: l_hand
+    100080: l_hip
+    100082: l_knee
+    100084: l_shoulder
+    100086: l_shoulder_joint
+    100088: l_toe
+    100090: //RootNode
+    100092: pelvis
+    100094: r_ankle
+    100096: r_ear_base
+    100098: r_ear_tip
+    100100: r_elbow
+    100102: r_hand
+    100104: r_hip
+    100106: r_knee
+    100108: r_shoulder
+    100110: r_shoulder_joint
+    100112: r_toe
+    100114: spine_mid
+    100116: spine_top
+    100118: tail1
+    100120: tail2
+    100122: tail2offset
+    100124: tail3offset
+    100126: tail_2_control
+    100128: tail_3_control
+    100130: tail_base
+    100132: tail_base_control
+    100134: tail_tip
+    100136: tailoffset
+    400000: Cat1_bag1
+    400002: CatBoy
+    400004: Character1_Ctrl_ChestEndEffector
+    400006: Character1_Ctrl_ChestOriginEffector
+    400008: Character1_Ctrl_Head
+    400010: Character1_Ctrl_HeadEffector
+    400012: Character1_Ctrl_Hips
+    400014: Character1_Ctrl_HipsEffector
+    400016: Character1_Ctrl_LeftAnkleEffector
+    400018: Character1_Ctrl_LeftArm
+    400020: Character1_Ctrl_LeftElbowEffector
+    400022: Character1_Ctrl_LeftFoot
+    400024: Character1_Ctrl_LeftForeArm
+    400026: Character1_Ctrl_LeftHand
+    400028: Character1_Ctrl_LeftHipEffector
+    400030: Character1_Ctrl_LeftKneeEffector
+    400032: Character1_Ctrl_LeftLeg
+    400034: Character1_Ctrl_LeftShoulderEffector
+    400036: Character1_Ctrl_LeftUpLeg
+    400038: Character1_Ctrl_LeftWristEffector
+    400040: Character1_Ctrl_Reference
+    400042: Character1_Ctrl_RightAnkleEffector
+    400044: Character1_Ctrl_RightArm
+    400046: Character1_Ctrl_RightElbowEffector
+    400048: Character1_Ctrl_RightFoot
+    400050: Character1_Ctrl_RightForeArm
+    400052: Character1_Ctrl_RightHand
+    400054: Character1_Ctrl_RightHipEffector
+    400056: Character1_Ctrl_RightKneeEffector
+    400058: Character1_Ctrl_RightLeg
+    400060: Character1_Ctrl_RightShoulderEffector
+    400062: Character1_Ctrl_RightUpLeg
+    400064: Character1_Ctrl_RightWristEffector
+    400066: Character1_Ctrl_Spine
+    400068: head
+    400070: l_ankle
+    400072: l_ear_base
+    400074: l_ear_tip
+    400076: l_elbow
+    400078: l_hand
+    400080: l_hip
+    400082: l_knee
+    400084: l_shoulder
+    400086: l_shoulder_joint
+    400088: l_toe
+    400090: //RootNode
+    400092: pelvis
+    400094: r_ankle
+    400096: r_ear_base
+    400098: r_ear_tip
+    400100: r_elbow
+    400102: r_hand
+    400104: r_hip
+    400106: r_knee
+    400108: r_shoulder
+    400110: r_shoulder_joint
+    400112: r_toe
+    400114: spine_mid
+    400116: spine_top
+    400118: tail1
+    400120: tail2
+    400122: tail2offset
+    400124: tail3offset
+    400126: tail_2_control
+    400128: tail_3_control
+    400130: tail_base
+    400132: tail_base_control
+    400134: tail_tip
+    400136: tailoffset
+    2100000: lambert7
+    4300000: Cat1_bag1
+    7400000: Running
+    9500000: //RootNode
+    13700000: Cat1_bag1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: e9f014a8f3de0c3409e389d3dea371e3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Running
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

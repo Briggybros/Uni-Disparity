@@ -49,9 +49,4 @@ public class Checkpoint : MonoBehaviour {
         }
         return output;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }
