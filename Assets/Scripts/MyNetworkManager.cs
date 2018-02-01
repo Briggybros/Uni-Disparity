@@ -33,7 +33,6 @@ public class MyNetworkManager : NetworkManager {
 
 	public override void OnServerRemovePlayer (NetworkConnection conn, PlayerController player) {
 		if (player.gameObject != null)
-			// NetworkServer.Destroy(player.gameObject);
-			Debug.Log(player.gameObject.name);
+			NetworkServer.Destroy(player.gameObject);
 	}
 }
