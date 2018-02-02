@@ -56,13 +56,19 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 
         foreach (var component in rendererComponents) {
-			if (component.gameObject.name[component.gameObject.name.Length-1] != otherWorld) {
+			if (component.gameObject.name[component.gameObject.name.Length-2] != otherWorld) {
             	component.enabled = true;
 			}
 		}
 
-        foreach (var component in colliderComponents)
-            component.enabled = true;
+        foreach (var component in colliderComponents) {
+			if (component.gameObject.name[component.gameObject.name.Length-2] == otherWorld &&
+				component.gameObject.name[component.gameObject.name.Length-1] == 1) {
+            	component.enabled = true;
+			} else if (component.gameObject.name[component.gameObject.name.Length-2] != otherWorld) {
+				component.enabled = true;
+			}
+		}
 
         foreach (var component in canvasComponents)
             component.enabled = true;
