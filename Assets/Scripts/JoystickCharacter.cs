@@ -132,6 +132,12 @@ public class JoystickCharacter : NetworkBehaviour
             return;
         }
 
+        if (GetComponent<Rigidbody>().IsSleeping()) {
+            GetComponent<Animator>().SetBool("Running", false);
+        } else {
+            GetComponent<Animator>().SetBool("Running", true);
+        }
+
         if (!isLocalPlayer)
             return;
 
@@ -171,7 +177,7 @@ public class JoystickCharacter : NetworkBehaviour
             if (stickInput != Vector3.zero)
             {   
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
-                MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 10;
+                MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
                 pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
                 transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
             }
