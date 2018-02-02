@@ -135,7 +135,9 @@ public class JoystickCharacter : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
-        cameraForwards = Camera.main.transform.forward;
+        cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
+
+       // Debug.Log("camera" + cameraForwards);
 
         transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
         if (!interacting && isInteract() && touching)
@@ -165,25 +167,14 @@ public class JoystickCharacter : NetworkBehaviour
         {
             pos = transform.localPosition;
             rot = transform.localRotation;
-
-            float angleForwards = Vector3.Angle(transform.forward, Camera.main.transform.forward);
-            float angleJoystick = Vector3.Angle(StickInput(), joystick.forwardVector);
             stickInput = StickInput();
-            rot *= Quaternion.Euler(0, angleForwards + angleJoystick, 0);
-            StartCoroutine(Rotate(rot));
-            //rot *= Vector3.Scale(cameraForwards, stickInput);
-            //transform.localEulerAngles = Vector3.Scale(cameraForwards, stickInput);
-            MovementSpeed = Vector3.Distance(joystick.centre, stickInput);
-          
-            Debug.Log(stickInput);
-
-          //  pos += transform.forward * 0.1f  * (MovementSpeed * 10);
-
-            transform.localPosition = Vector3.MoveTowards(
-                transform.localPosition,
-                pos,
-                Time.deltaTime * MovementSpeed
-                );
+            if (stickInput != Vector3.zero)
+            {   
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
+                MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 10;
+                pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
+            }
 
             if (IsJump())
             {
@@ -199,7 +190,7 @@ public class JoystickCharacter : NetworkBehaviour
         Vector3 dir = Vector3.zero;
 
         dir.x = joystick.Horizontal();
-        dir.y = joystick.Vertical();
+        dir.z = joystick.Vertical();
 
         if(dir.magnitude > 1)
         {
