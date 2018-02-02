@@ -33,16 +33,16 @@ public class Checkpoint : MonoBehaviour {
         }
     }
 
-    public static Vector3 GetActiveCheckpointPosition()
+    public static Transform GetActiveCheckpointTransform()
     {
-        Vector3 output = MyNetworkManager.singleton.GetStartPosition().position;
+        Transform output = MyNetworkManager.singleton.GetStartPosition();
         if(CheckpointList != null)
         {
             foreach (GameObject cp in CheckpointList)
             {
                 if (cp.GetComponent<Checkpoint>().activated)
                 {
-                    output = cp.transform.position;
+                    output = cp.transform;
                     break;
                 }
             }

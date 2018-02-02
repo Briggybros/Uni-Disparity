@@ -57,6 +57,17 @@ public class Character : NetworkBehaviour
         target.tag = tag;
     }
 
+    void ResetPlayerToCheckpoint () {
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+        rigidbody.isKinematic = true;
+        Transform activeCheckpointTransform = Checkpoint.GetActiveCheckpointTransform();
+        transform.SetPositionAndRotation(activeCheckpointTransform.position, activeCheckpointTransform.rotation);
+        rigidbody.isKinematic = false;
+        if (BlockInput) BlockInput = false;
+    }
+
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
         if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
@@ -71,7 +82,7 @@ public class Character : NetworkBehaviour
             touching = true;
         }
         if (c.gameObject.tag == "Enemy") {
-            transform.position = Checkpoint.GetActiveCheckpointPosition();
+            ResetPlayerToCheckpoint();
         }
     }
 
@@ -152,17 +163,6 @@ public class Character : NetworkBehaviour
         if (interacting && !isInteract()) {
             interacting = false;
         }
-        if (transform.localPosition.y <= -2) {
-            transform.position = Checkpoint.GetActiveCheckpointPosition();
-        }
-        /*if (interacting) {
-			count++;
-			if(count > 2) {
-				//this.gameObject.tag = "Player";
-				CmdsyncChange("Player",target);
-				count = 0;
-			}
-		}*/
 		//Rigidbody lines control jump start/end
         if (BlockInput && GetComponent<Rigidbody>().IsSleeping()) {
             pos = transform.localPosition;
@@ -172,12 +172,7 @@ public class Character : NetworkBehaviour
         }
         //Falling check
         if(transform.localPosition.y <= yLevel - 2) {
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
-            rigidbody.isKinematic = true;
-            transform.SetPositionAndRotation(Checkpoint.GetActiveCheckpointPosition(), Quaternion.identity);
-            rigidbody.isKinematic = false;
+            ResetPlayerToCheckpoint();
         }
         if (!BlockInput) {
             pos.y = transform.localPosition.y;
