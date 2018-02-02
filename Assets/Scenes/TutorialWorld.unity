@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 697082561}
   - component: {fileID: 697082560}
   m_Layer: 0
-  m_Name: EnemyB
+  m_Name: EnemyB1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4662,7 +4662,7 @@ GameObject:
   - component: {fileID: 1555554349}
   - component: {fileID: 1555554348}
   m_Layer: 0
-  m_Name: Button1A
+  m_Name: Button1
   m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5128,7 +5128,7 @@ GameObject:
   - component: {fileID: 1642134018}
   - component: {fileID: 1642134017}
   m_Layer: 0
-  m_Name: PressurePadA
+  m_Name: PressurePadA0
   m_TagString: WorldA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6030,7 +6030,7 @@ GameObject:
   - component: {fileID: 1898510789}
   - component: {fileID: 1898510788}
   m_Layer: 0
-  m_Name: Enemy 2A
+  m_Name: Enemy 2B1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
