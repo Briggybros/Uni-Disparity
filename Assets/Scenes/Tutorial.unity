@@ -425,8 +425,8 @@ MonoBehaviour:
           m_StringArgument: default
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 421164865}
-        m_MethodName: StopMatchMaker
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1429,6 +1429,7 @@ GameObject:
   - component: {fileID: 421164862}
   - component: {fileID: 421164861}
   - component: {fileID: 421164865}
+  - component: {fileID: 421164866}
   m_Layer: 5
   m_Name: Menu Canvas
   m_TagString: UI
@@ -1536,6 +1537,17 @@ MonoBehaviour:
   errorMessageObject: {fileID: 2140461380}
   levels:
   - TutorialWorld
+--- !u!114 &421164866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421164860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a77b12662c643378753bba6f62ecb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548660039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,7 +3046,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 421164865}
         m_MethodName: FindInternetMatch
@@ -3046,6 +3058,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: default
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1648737124}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -3217,6 +3240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380941714}
   - component: {fileID: 1380941715}
+  - component: {fileID: 1380941716}
   m_Layer: 0
   m_Name: Network Manager
   m_TagString: Untagged
@@ -3257,13 +3281,14 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1007063932820308, guid: 31b32e2cef2d67240be27558844b93ca,
-    type: 2}
-  m_AutoCreatePlayer: 1
-  m_PlayerSpawnMethod: 0
+  m_PlayerPrefab: {fileID: 0}
+  m_AutoCreatePlayer: 0
+  m_PlayerSpawnMethod: 1
   m_OfflineScene: Tutorial
   m_OnlineScene: 
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 1007063932820308, guid: 31b32e2cef2d67240be27558844b93ca, type: 2}
+  - {fileID: 1635768022117036, guid: 56e22ce977e0446eabb9cac6b0ee37f3, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -3306,7 +3331,7 @@ MonoBehaviour:
     m_MaxTimerTimeout: 12000
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
-  m_Channels: 
+  m_Channels: 0500000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
@@ -3319,6 +3344,17 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
+--- !u!114 &1380941716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380941713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a77b12662c643378753bba6f62ecb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1488347975
 GameObject:
   m_ObjectHideFlags: 0

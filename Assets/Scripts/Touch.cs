@@ -16,12 +16,10 @@ public class Touch : EventTrigger {
 	}
 
 	public override void OnPointerEnter(PointerEventData data) {
-		Debug.Log(this.name + " entered");
 		buttonTouches.Add(this.name);
 	}
 
 	public override void OnPointerExit(PointerEventData data) {
-		Debug.Log(this.name + " exited");
 		buttonTouches.Remove(this.name);
 	}
 }
