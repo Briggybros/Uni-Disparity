@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     public GameObject uiCanvas;
-    private bool uiOpen = false;
 
     public bool IsOpen () {
         return uiCanvas.activeInHierarchy;

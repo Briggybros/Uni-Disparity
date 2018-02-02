@@ -78,7 +78,6 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
 
             // Interpolate to get the current angle/axis between the source and target.
             float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
-            Vector3 currentAxis = Vector3.Slerp(SourceAxis, TargetAxis, progress);
             this.transform.parent.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis);
         }
         else
