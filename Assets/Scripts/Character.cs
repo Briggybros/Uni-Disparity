@@ -8,8 +8,8 @@ using UnityEngine.Networking;
 public class Character : NetworkBehaviour
 {
 
-    private float RotationSpeed = 15.0f;
-    private float MovementSpeed = 4.0f;
+    private float RotationSpeed = 30.0f;
+    private float MovementSpeed = 6.0f;
     private Vector3 pos;
     private Quaternion rot;
     public bool BlockInput;
@@ -131,12 +131,6 @@ public class Character : NetworkBehaviour
 
     void Update() {
 
-        if (!GetComponent<Rigidbody>().IsSleeping()) {
-            GetComponent<Animator>().SetBool("Running", true);
-        } else {
-            GetComponent<Animator>().SetBool("Running", false);
-        }
-
         if (!canMove) {
             return;
         }
@@ -195,6 +189,15 @@ public class Character : NetworkBehaviour
                 pos += transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
+            if(Vector3.Distance(pos, transform.localPosition) != 0)
+            {
+                GetComponent<Animator>().SetBool("Running", true);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("Running", false);
+            }
+
 			//Update position
             transform.localPosition = Vector3.MoveTowards(
             transform.localPosition,
@@ -205,6 +208,8 @@ public class Character : NetworkBehaviour
             if (IsJump()) {
                 GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
                 BlockInput = true;
+                //Jumping trigger will be called here
+                GetComponent<Animator>().SetBool("Running", false);
             }
         }
     }
