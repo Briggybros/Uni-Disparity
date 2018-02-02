@@ -167,12 +167,17 @@ public class Character : NetworkBehaviour
         if (BlockInput && GetComponent<Rigidbody>().IsSleeping()) {
             pos = transform.localPosition;
             rot = transform.localRotation;
-            yLevel = this.transform.position.y;
+            yLevel = transform.position.y;
             BlockInput = false;
         }
         //Falling check
-        if(this.transform.localPosition.y <= yLevel - 2) {
-            this.transform.SetPositionAndRotation(Checkpoint.GetActiveCheckpointPosition(), Quaternion.identity);
+        if(transform.localPosition.y <= yLevel - 2) {
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+            rigidbody.isKinematic = true;
+            transform.SetPositionAndRotation(Checkpoint.GetActiveCheckpointPosition(), Quaternion.identity);
+            rigidbody.isKinematic = false;
         }
         if (!BlockInput) {
             pos.y = transform.localPosition.y;
