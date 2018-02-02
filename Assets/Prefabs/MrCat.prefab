@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 65748363910455628}
   - component: {fileID: 114330400888834918}
   m_Layer: 0
-  m_Name: MrCat3
+  m_Name: MrCat
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -922,8 +922,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327549027267362}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bd22dae17d65bcc4ca28bb66e55e2187, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: a42c605f9bb421a448fcc3a051f05afb, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8f4edc64eb908ba4a8f2ae9a56f9f544, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

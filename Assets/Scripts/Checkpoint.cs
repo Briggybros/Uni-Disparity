@@ -35,7 +35,7 @@ public class Checkpoint : MonoBehaviour {
 
     public static Vector3 GetActiveCheckpointPosition()
     {
-        Vector3 output = new Vector3(0, 0, 0);
+        Vector3 output = MyNetworkManager.singleton.GetStartPosition().position;
         if(CheckpointList != null)
         {
             foreach (GameObject cp in CheckpointList)
@@ -49,9 +49,4 @@ public class Checkpoint : MonoBehaviour {
         }
         return output;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

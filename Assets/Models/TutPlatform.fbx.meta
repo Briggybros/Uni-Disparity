@@ -1,80 +1,18 @@
 fileFormatVersion: 2
-guid: bd22dae17d65bcc4ca28bb66e55e2187
-timeCreated: 1516806812
+guid: 7531f350423a4b449b60e0444cb042b4
+timeCreated: 1517224915
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cat1_bag1
-    100002: head
-    100004: l_ankle
-    100006: l_ear_base
-    100008: l_ear_tip
-    100010: l_elbow
-    100012: l_hand
-    100014: l_hip
-    100016: l_knee
-    100018: l_shoulder
-    100020: l_shoulder_joint
-    100022: l_toe
-    100024: //RootNode
-    100026: pelvis
-    100028: r_ankle
-    100030: r_ear_base
-    100032: r_ear_tip
-    100034: r_elbow
-    100036: r_hand
-    100038: r_hip
-    100040: r_knee
-    100042: r_shoulder
-    100044: r_shoulder_joint
-    100046: r_toe
-    100048: spine_mid
-    100050: spine_top
-    100052: tail1
-    100054: tail2
-    100056: tail_base
-    100058: tail_tip
-    400000: Cat1_bag1
-    400002: head
-    400004: l_ankle
-    400006: l_ear_base
-    400008: l_ear_tip
-    400010: l_elbow
-    400012: l_hand
-    400014: l_hip
-    400016: l_knee
-    400018: l_shoulder
-    400020: l_shoulder_joint
-    400022: l_toe
-    400024: //RootNode
-    400026: pelvis
-    400028: r_ankle
-    400030: r_ear_base
-    400032: r_ear_tip
-    400034: r_elbow
-    400036: r_hand
-    400038: r_hip
-    400040: r_knee
-    400042: r_shoulder
-    400044: r_shoulder_joint
-    400046: r_toe
-    400048: spine_mid
-    400050: spine_top
-    400052: tail1
-    400054: tail2
-    400056: tail_base
-    400058: tail_tip
-    2100000: lambert7
-    4300000: Cat1_bag1
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube1
     9500000: //RootNode
-    13700000: Cat1_bag1
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert7
-    second: {fileID: 2100000, guid: 064db44501b827748a44a4847634d6fc, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -104,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
