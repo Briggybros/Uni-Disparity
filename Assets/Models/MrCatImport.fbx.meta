@@ -109,7 +109,7 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
+    importCameras: 0
     importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
