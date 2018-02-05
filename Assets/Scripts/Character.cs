@@ -171,7 +171,7 @@ public class Character : NetworkBehaviour
             BlockInput = false;
         }
         //Falling check
-        if(transform.localPosition.y <= yLevel - 2) {
+        if(transform.position.y <= yLevel - 2) {
             ResetPlayerToCheckpoint();
         }
         if (!BlockInput) {
