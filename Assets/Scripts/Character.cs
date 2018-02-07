@@ -196,6 +196,7 @@ public class Character : NetworkBehaviour
             else
             {
                 GetComponent<Animator>().SetBool("Running", false);
+                GetComponent<Animator>().SetBool("Jumping", false);
             }
 
 			//Update position
@@ -208,7 +209,7 @@ public class Character : NetworkBehaviour
             if (IsJump()) {
                 GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
                 BlockInput = true;
-                //Jumping trigger will be called here
+                GetComponent<Animator>().SetBool("Jumping", true);
                 GetComponent<Animator>().SetBool("Running", false);
             }
         }
