@@ -25,7 +25,6 @@ public class Character : NetworkBehaviour
 
     [Command]
     void CmdsyncChange(string tag, GameObject target) {
-        Debug.Log("csc: " + tag + ", " + target);
         targetNetworkIdent.AssignClientAuthority(connectionToClient);
         RpcupdateState(tag, target);
         targetNetworkIdent.RemoveClientAuthority(connectionToClient);
