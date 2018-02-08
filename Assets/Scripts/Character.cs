@@ -35,6 +35,16 @@ public class Character : NetworkBehaviour
         target.tag = tag;
     }
 
+    void ResetPlayerToCheckpoint () {
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+        rigidbody.isKinematic = true;
+        Transform activeCheckpointTransform = Checkpoint.GetActiveCheckpointTransform();
+        transform.SetPositionAndRotation(activeCheckpointTransform.position, activeCheckpointTransform.rotation);
+        rigidbody.isKinematic = false;
+    }
+
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
         if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null)) {
@@ -46,7 +56,7 @@ public class Character : NetworkBehaviour
             CmdsyncChange("Bopped", c.gameObject);
         }
         if (c.gameObject.tag == "Enemy") {
-            transform.position = Checkpoint.GetActiveCheckpointPosition();
+            ResetPlayerToCheckpoint();
         }
     }
 
@@ -71,11 +81,7 @@ public class Character : NetworkBehaviour
         transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
         
         if (transform.localPosition.y <= -2) {
-            transform.position = Checkpoint.GetActiveCheckpointPosition();
-        }
-        //Falling check
-        if (this.transform.localPosition.y <= yLevel - 2) {
-            this.transform.SetPositionAndRotation(Checkpoint.GetActiveCheckpointPosition(), Quaternion.identity);
+            ResetPlayerToCheckpoint();
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
