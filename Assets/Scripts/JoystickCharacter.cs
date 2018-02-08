@@ -65,6 +65,16 @@ public class JoystickCharacter : NetworkBehaviour
         }
         transform.localRotation = finalRotation;
     }
+    void ResetPlayerToCheckpoint () {
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+        rigidbody.isKinematic = true;
+        Transform activeCheckpointTransform = Checkpoint.GetActiveCheckpointTransform();
+        transform.SetPositionAndRotation(activeCheckpointTransform.position, activeCheckpointTransform.rotation);
+        rigidbody.isKinematic = false;
+        if (BlockInput) BlockInput = false;
+    }
 
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c)
@@ -85,7 +95,7 @@ public class JoystickCharacter : NetworkBehaviour
         }
         if (c.gameObject.tag == "Enemy")
         {
-            transform.position = Checkpoint.GetActiveCheckpointPosition();
+            ResetPlayerToCheckpoint();
         }
     }
 
@@ -158,7 +168,7 @@ public class JoystickCharacter : NetworkBehaviour
         }
         if (transform.localPosition.y <= -2)
         {
-            transform.position = Checkpoint.GetActiveCheckpointPosition();
+            ResetPlayerToCheckpoint();
         }
 
         //Rigidbody lines control jump start/end
