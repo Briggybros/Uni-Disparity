@@ -84,13 +84,15 @@ public class Character : NetworkBehaviour
             ResetPlayerToCheckpoint();
         }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Input.GetMouseButtonDown(0)) {
+        Touch touch = Input.GetTouch(0); // Assume primary touch
+        if (touch.phase == TouchPhase.Began) {
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 200)) {
                 this.GetComponent<NavMeshAgent>().destination = hit.point;
             }
         }
+        
 
         if (this.GetComponent<NavMeshAgent>().velocity != Vector3.zero) {
             this.GetComponent<Animator>().SetBool("Running", true);
