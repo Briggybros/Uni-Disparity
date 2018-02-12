@@ -12,7 +12,7 @@ public class MyNetworkManager : NetworkManager {
 	public override void OnServerAddPlayer (NetworkConnection connection, short playerControllerId, NetworkReader networkReader) {
 		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
 		char world = message.world;
-		GameObject spawn = spawnPrefabs[world == 'A' ? 0 : 1];
+		GameObject spawn = spawnPrefabs[world == CharacterPicker.CAT ? 0 : world == CharacterPicker.SPECTATOR ? 2 : 1];
 		Transform startPos = GetStartPosition();
 		GameObject player = (GameObject) Instantiate(spawn, startPos.position, startPos.rotation);
 		player.GetComponent<Rigidbody>().isKinematic = true;
@@ -26,7 +26,7 @@ public class MyNetworkManager : NetworkManager {
 	public override void OnClientSceneChanged (NetworkConnection conn) {
 		ClientScene.Ready(conn);
 		NetworkMessage test = new NetworkMessage();
-		test.world = GetComponent<CharacterPicker>().GetWorld();
+		test.world = CharacterPicker.GetWorld();
 
 		ClientScene.AddPlayer(conn, 0, test);
     }
