@@ -72,7 +72,7 @@ public class NetworkUI : MonoBehaviour {
 	}
 
 	public void CreateInternetMatch (string matchName) {
-		GetComponent<CharacterPicker>().SetWorld('A');
+		CharacterPicker.SetWorld(CharacterPicker.CAT);
 		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
 	}
 
@@ -98,7 +98,7 @@ public class NetworkUI : MonoBehaviour {
 				}
 				foreach (MatchInfoSnapshot match in internetMatches) {
 					MakeButton(matchSelectPanel, match.name, new Vector2(0, 0), () => {
-						GetComponent<CharacterPicker>().SetWorld('B');
+						CharacterPicker.SetWorld(CharacterPicker.DOG);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 					});
 				}
