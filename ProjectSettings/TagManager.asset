@@ -4,12 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerInteract
-  - Bopped
-  - Static
   - Checkpoint
+  - Wall
+  - Floor
   - Enemy
   - UI
+  - WorldB
+  - WorldA
+  - Static
+  - Bopped
   layers:
   - Default
   - TransparentFX

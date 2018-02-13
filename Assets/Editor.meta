@@ -1,20 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: 87c129abbd72ed74fafc94dc64ebf239
+guid: e42e314649673fd4d8c6fca874564c87
 folderAsset: yes
-timeCreated: 1516726017
+timeCreated: 1517480710
 licenseType: Free
-=======
-guid: 1095d0f0ae0472046b1cc41cd3e05af5
-folderAsset: yes
->>>>>>> 16-test-level
-=======
-guid: ee49dcc89e9214ff0b168cc3c103efdd
-folderAsset: yes
-timeCreated: 1512051660
-licenseType: Free
->>>>>>> master
 DefaultImporter:
   externalObjects: {}
   userData: 

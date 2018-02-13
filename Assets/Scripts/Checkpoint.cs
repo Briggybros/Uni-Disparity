@@ -33,25 +33,20 @@ public class Checkpoint : MonoBehaviour {
         }
     }
 
-    public static Vector3 GetActiveCheckpointPosition()
+    public static Transform GetActiveCheckpointTransform()
     {
-        Vector3 output = new Vector3(0, 0, 0);
+        Transform output = MyNetworkManager.singleton.GetStartPosition();
         if(CheckpointList != null)
         {
             foreach (GameObject cp in CheckpointList)
             {
                 if (cp.GetComponent<Checkpoint>().activated)
                 {
-                    output = cp.transform.position;
+                    output = cp.transform;
                     break;
                 }
             }
         }
         return output;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }
