@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571346, b: 0.30692208, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1537,6 +1537,7 @@ MonoBehaviour:
   errorMessageObject: {fileID: 2140461380}
   levels:
   - TutorialWorld
+  - Level 1
 --- !u!114 &421164866
 MonoBehaviour:
   m_ObjectHideFlags: 0
