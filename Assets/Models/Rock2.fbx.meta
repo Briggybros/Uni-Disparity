@@ -12,7 +12,12 @@ ModelImporter:
     3300000: //RootNode
     4300000: fuckingrocks
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocks
+    second: {fileID: 2100000, guid: d85615f70e8107547892f29e8d91a1d7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
