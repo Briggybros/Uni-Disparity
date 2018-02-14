@@ -13,9 +13,14 @@ public class MyNetworkManager : NetworkManager {
 		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
 		char world = message.world;
 		GameObject spawn = spawnPrefabs[world == CharacterPicker.CAT ? 0 : world == CharacterPicker.SPECTATOR ? 2 : 1];
-		Transform startPos = GetStartPosition();
+		Transform startPos = GetStartPosition();;
+		if (world == CharacterPicker.SPECTATOR){
+			startPos.position += new Vector3(0, 10, 0);
+		}
 		GameObject player = (GameObject) Instantiate(spawn, startPos.position, startPos.rotation);
-		player.GetComponent<Rigidbody>().isKinematic = true;
+		if (player.GetComponent<Rigidbody>() != null) {
+			player.GetComponent<Rigidbody>().isKinematic = true;
+		}
 		NetworkServer.AddPlayerForConnection(connection, player, playerControllerId);
 	}
 
