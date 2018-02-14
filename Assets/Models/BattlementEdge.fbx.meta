@@ -17,7 +17,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BattlementEdgeTemp
-    second: {fileID: 2100000, guid: edd41a6f9c06eea4dbc17830239b5749, type: 2}
+    second: {fileID: 2100000, guid: 8e6131efe8c0d9f4b965e92ac820a1c6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
