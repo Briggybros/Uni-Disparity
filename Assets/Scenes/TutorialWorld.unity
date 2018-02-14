@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 163697057}
   - component: {fileID: 163697056}
   - component: {fileID: 163697055}
+  - component: {fileID: 163697060}
   m_Layer: 0
   m_Name: Door1 (2)
   m_TagString: Untagged
@@ -403,6 +404,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163697053}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &163697060
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 163697053}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &173782276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,6 +2040,7 @@ GameObject:
   - component: {fileID: 799052520}
   - component: {fileID: 799052519}
   - component: {fileID: 799052518}
+  - component: {fileID: 799052523}
   m_Layer: 0
   m_Name: Door1 (3)
   m_TagString: Untagged
@@ -2132,6 +2149,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 799052516}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &799052523
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799052516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &813309000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,6 +2732,7 @@ GameObject:
   - component: {fileID: 876343427}
   - component: {fileID: 876343426}
   - component: {fileID: 876343425}
+  - component: {fileID: 876343431}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -2808,6 +2841,21 @@ Transform:
   m_Father: {fileID: 1639552784}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &876343431
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876343424}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &960245242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4164,6 +4212,7 @@ GameObject:
   - component: {fileID: 1406192587}
   - component: {fileID: 1406192586}
   - component: {fileID: 1406192585}
+  - component: {fileID: 1406192591}
   m_Layer: 0
   m_Name: Door3
   m_TagString: Untagged
@@ -4272,6 +4321,21 @@ Transform:
   m_Father: {fileID: 1639552784}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!208 &1406192591
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406192584}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1408899445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4485,6 +4549,7 @@ GameObject:
   - component: {fileID: 1442281417}
   - component: {fileID: 1442281416}
   - component: {fileID: 1442281415}
+  - component: {fileID: 1442281420}
   m_Layer: 0
   m_Name: Door1 (1)
   m_TagString: Untagged
@@ -4593,6 +4658,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1442281413}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1442281420
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1442281413}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1475276957
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,6 +4682,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1475276958}
+  - component: {fileID: 1475276959}
   m_Layer: 0
   m_Name: Door2Hinge
   m_TagString: Untagged
@@ -4624,6 +4705,21 @@ Transform:
   m_Father: {fileID: 1639552784}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1475276959
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475276957}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1527090057
 GameObject:
   m_ObjectHideFlags: 0
