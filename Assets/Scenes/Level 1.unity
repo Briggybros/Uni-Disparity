@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.24264705, g: 0.24264705, b: 0.24264705, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -32,18 +32,18 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028416, g: 0.2257147, b: 0.3069231, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731707, g: 0.13414727, b: 0.12107857, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -52,10 +52,10 @@ LightmapSettings:
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 9
-    m_Resolution: 2
+    m_Resolution: 0.5
     m_BakeResolution: 40
     m_TextureWidth: 1024
     m_TextureHeight: 1024
@@ -64,7 +64,8 @@ LightmapSettings:
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
     m_Padding: 2
-    m_LightmapParameters: {fileID: 0}
+    m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000,
+      type: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
     m_FinalGather: 0
@@ -74,8 +75,8 @@ LightmapSettings:
     m_MixedBakeMode: 2
     m_BakeBackend: 0
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 32
-    m_PVRSampleCount: 500
+    m_PVRDirectSampleCount: 8
+    m_PVRSampleCount: 10
     m_PVRBounces: 2
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
@@ -172,6 +173,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
   m_IsPrefabParent: 0
@@ -251,6 +256,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -332,6 +341,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -382,6 +395,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -431,6 +448,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -493,6 +514,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -566,6 +591,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -628,6 +657,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -678,6 +711,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -701,7 +738,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &114716891
 MeshRenderer:
@@ -824,6 +861,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -904,6 +945,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -945,7 +990,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &129979709
 MeshRenderer:
@@ -1068,6 +1113,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -1117,6 +1166,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -1179,6 +1232,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -1260,6 +1317,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
   m_IsPrefabParent: 0
@@ -1321,6 +1386,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -1402,6 +1471,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -1462,6 +1535,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1525,6 +1602,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -1606,6 +1687,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -1660,6 +1745,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.57833177
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -1705,6 +1794,10 @@ Prefab:
     - target: {fileID: 400000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
@@ -1767,6 +1860,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -1848,6 +1945,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -1924,6 +2025,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: da14ee8a314bb2543bb62b339069ab9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: da14ee8a314bb2543bb62b339069ab9d, type: 3}
+      propertyPath: m_IgnoreNormalsForChartDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da14ee8a314bb2543bb62b339069ab9d, type: 3}
   m_IsPrefabParent: 0
@@ -1965,7 +2074,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &295254301
 MeshRenderer:
@@ -2088,6 +2197,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -2148,6 +2261,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2211,6 +2328,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -2292,6 +2413,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -2354,6 +2479,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -2403,6 +2532,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -2465,6 +2598,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -2551,7 +2688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &387839281
 Prefab:
@@ -2606,6 +2743,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2670,6 +2811,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -2732,6 +2877,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -2739,34 +2888,34 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_PrefabInternal: {fileID: 395281069}
---- !u!1 &405201188
+--- !u!1 &402966357
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 405201190}
-  - component: {fileID: 405201189}
+  - component: {fileID: 402966359}
+  - component: {fileID: 402966358}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Point light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &405201189
+--- !u!108 &402966358
 Light:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 405201188}
+  m_GameObject: {fileID: 402966357}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 0.944, g: 0.572, b: 0.297, a: 0.547}
-  m_Intensity: 0.5
-  m_Range: 10
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 30
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -2784,26 +2933,26 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 25
   m_ShadowAngle: 0
---- !u!4 &405201190
+--- !u!4 &402966359
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 405201188}
-  m_LocalRotation: {x: 0.19376539, y: 0.8054363, z: -0.3755812, w: 0.41553113}
-  m_LocalPosition: {x: -23.67, y: 28.5, z: 0}
+  m_GameObject: {fileID: 402966357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.1, y: 14.199998, z: -28.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50.000004, y: 125.421005, z: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &421667943
 Prefab:
   m_ObjectHideFlags: 0
@@ -2862,6 +3011,10 @@ Prefab:
     - target: {fileID: 400000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
@@ -2955,6 +3108,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
   m_IsPrefabParent: 0
@@ -3016,6 +3177,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -3097,6 +3262,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -3167,6 +3336,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -10.966001
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
   m_IsPrefabParent: 0
@@ -3229,6 +3406,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -3278,6 +3459,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -3341,6 +3526,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -3382,7 +3571,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &486634724
 MeshRenderer:
@@ -3505,6 +3694,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -3571,6 +3764,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -3621,6 +3822,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -3670,6 +3875,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -3728,6 +3937,10 @@ Prefab:
     - target: {fileID: 400000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.326095
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaae0f99655a74548870e7891d0eacc7, type: 3}
@@ -3809,6 +4022,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -3869,6 +4086,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3933,6 +4154,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -3982,6 +4207,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -4044,6 +4273,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -4124,6 +4357,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -4209,6 +4446,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -4271,6 +4516,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -4321,6 +4570,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -4341,7 +4594,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &619444871
 Transform:
@@ -4389,7 +4642,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &620547578
 MeshRenderer:
@@ -4512,6 +4765,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -4580,6 +4837,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -4600,7 +4861,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &712680669
 Transform:
@@ -4687,6 +4948,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -4747,6 +5012,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4810,6 +5079,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -4891,6 +5164,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -4957,6 +5234,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -5006,6 +5291,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -5069,6 +5358,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -5118,6 +5411,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -5180,6 +5477,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -5261,6 +5562,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -5341,6 +5646,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -5402,6 +5711,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -5482,6 +5795,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -5567,6 +5884,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -5628,6 +5953,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -5709,6 +6038,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -5758,6 +6091,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -5819,6 +6156,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5883,6 +6224,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -5943,6 +6288,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6007,6 +6356,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -6067,6 +6420,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6130,6 +6487,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -6203,6 +6564,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 203.543
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -6265,6 +6630,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
   m_IsPrefabParent: 0
@@ -6318,6 +6687,10 @@ Prefab:
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -6380,6 +6753,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -6461,6 +6838,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -6541,6 +6922,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -6603,6 +6988,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -6653,6 +7042,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -6694,11 +7087,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115233727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.87, y: 26.91, z: -29.6}
+  m_LocalPosition: {x: 18.2, y: 6.25, z: -17.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1121932972
 Prefab:
@@ -6755,6 +7148,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -6780,6 +7177,71 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+--- !u!1 &1138923418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1138923420}
+  - component: {fileID: 1138923419}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1138923419
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1138923418}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 30
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 25
+  m_ShadowAngle: 0
+--- !u!4 &1138923420
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1138923418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.1, y: 14.2, z: 25.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1153538278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6796,7 +7258,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &1153538279
 MeshRenderer:
@@ -6919,6 +7381,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -6968,6 +7434,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -7098,6 +7568,71 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1179850519}
+--- !u!1 &1185527443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1185527445}
+  - component: {fileID: 1185527444}
+  m_Layer: 0
+  m_Name: Area Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1185527444
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185527443}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 3
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 2
+  m_AreaSize: {x: 30, y: 30}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1185527445
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185527443}
+  m_LocalRotation: {x: 0.87345153, y: -0.0416741, z: -0.066295356, w: 0.4805733}
+  m_LocalPosition: {x: 21.3, y: 23.2, z: 24.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 123.489, y: 16.40799, z: 14.324997}
 --- !u!1001 &1198977705
 Prefab:
   m_ObjectHideFlags: 0
@@ -7151,6 +7686,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7215,6 +7754,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -7268,6 +7811,10 @@ Prefab:
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -7330,6 +7877,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -7411,6 +7962,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -7475,6 +8030,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -7525,6 +8084,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -7545,7 +8108,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1286687741
 Transform:
@@ -7614,6 +8177,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -7694,6 +8261,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -7779,6 +8350,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -7840,6 +8419,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -7925,6 +8508,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -7986,6 +8577,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -8067,6 +8662,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -8147,6 +8746,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -8213,6 +8816,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -8278,6 +8889,14 @@ Prefab:
     - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
       propertyPath: m_Name
       value: Rock5 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
@@ -8349,6 +8968,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
   m_IsPrefabParent: 0
@@ -8398,6 +9025,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -8459,6 +9090,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8653,6 +9288,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -8713,6 +9352,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8777,6 +9420,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -79.36301
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -8839,6 +9490,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -8891,7 +9546,7 @@ Prefab:
     - target: {fileID: 224683707576809268, guid: 41ac88a3b45f246aeb3bfbf3355cff37,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224683707576809268, guid: 41ac88a3b45f246aeb3bfbf3355cff37,
         type: 2}
@@ -9006,6 +9661,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -9090,6 +9749,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
   m_IsPrefabParent: 0
@@ -9144,6 +9811,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
   m_IsPrefabParent: 0
@@ -9193,6 +9864,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -9260,6 +9935,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -9309,6 +9992,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -9364,6 +10051,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -9387,7 +10078,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &1496833452
 MeshRenderer:
@@ -9510,6 +10201,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7999c743ff356be4e8359e7de3ce8b7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7999c743ff356be4e8359e7de3ce8b7b, type: 3}
   m_IsPrefabParent: 0
@@ -9535,6 +10230,71 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 7999c743ff356be4e8359e7de3ce8b7b, type: 3}
+--- !u!1 &1505956949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1505956951}
+  - component: {fileID: 1505956950}
+  m_Layer: 0
+  m_Name: Area Light (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1505956950
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505956949}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 3
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 2
+  m_AreaSize: {x: 30, y: 30}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1505956951
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505956949}
+  m_LocalRotation: {x: 0.8945655, y: 0.15374519, z: 0.07641437, w: 0.41264492}
+  m_LocalPosition: {x: -24.8, y: 24.2, z: 24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 134.375, y: -22.143005, z: -28.914001}
 --- !u!1001 &1524474439
 Prefab:
   m_ObjectHideFlags: 0
@@ -9581,6 +10341,10 @@ Prefab:
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -9644,6 +10408,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -9697,6 +10465,10 @@ Prefab:
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -9760,6 +10532,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -9818,6 +10594,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a6893b38e8a57534d97fa844599219df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6893b38e8a57534d97fa844599219df, type: 3}
   m_IsPrefabParent: 0
@@ -9841,7 +10621,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &1611968603
 MeshRenderer:
@@ -9952,6 +10732,10 @@ Prefab:
       propertyPath: m_Name
       value: Turret (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: da14ee8a314bb2543bb62b339069ab9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da14ee8a314bb2543bb62b339069ab9d, type: 3}
   m_IsPrefabParent: 0
@@ -10013,6 +10797,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -10094,6 +10882,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -10159,6 +10951,10 @@ Prefab:
     - target: {fileID: 100000, guid: 7999c743ff356be4e8359e7de3ce8b7b, type: 3}
       propertyPath: m_Name
       value: BattlementMiddleCC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7999c743ff356be4e8359e7de3ce8b7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7999c743ff356be4e8359e7de3ce8b7b, type: 3}
@@ -10228,6 +11024,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -10277,6 +11077,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -10339,6 +11143,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -10424,6 +11232,14 @@ Prefab:
       propertyPath: m_Name
       value: Rock5 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -10484,6 +11300,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10552,6 +11372,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 197.48799
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
   m_IsPrefabParent: 0
@@ -10601,6 +11429,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -10662,6 +11494,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10726,6 +11562,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -10751,6 +11591,136 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+--- !u!1 &1697596221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1697596223}
+  - component: {fileID: 1697596222}
+  m_Layer: 0
+  m_Name: Area Light (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1697596222
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697596221}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 3
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 2
+  m_AreaSize: {x: 30, y: 30}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1697596223
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697596221}
+  m_LocalRotation: {x: 0.44698137, y: 0.19657019, z: 0.04001355, w: 0.8717607}
+  m_LocalPosition: {x: -28.4, y: 24, z: -19.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 49.782, y: 35.886, z: 22.346}
+--- !u!1 &1729499103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1729499105}
+  - component: {fileID: 1729499104}
+  m_Layer: 0
+  m_Name: Area Light (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1729499104
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1729499103}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 3
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 2
+  m_AreaSize: {x: 30, y: 30}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1729499105
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1729499103}
+  m_LocalRotation: {x: 0.3647727, y: -0.22524634, z: -0.22813798, w: 0.8741613}
+  m_LocalPosition: {x: 23.7, y: 23.7, z: -23.800001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 32.342003, y: -41.537003, z: -41.805}
 --- !u!1001 &1750719790
 Prefab:
   m_ObjectHideFlags: 0
@@ -10806,6 +11776,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -10844,7 +11818,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1758839532
 Transform:
@@ -10930,6 +11904,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 6.9453278
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6d75667d4d2037a468b2c0a6b6bd6140, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6d75667d4d2037a468b2c0a6b6bd6140, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d75667d4d2037a468b2c0a6b6bd6140, type: 3}
   m_IsPrefabParent: 0
@@ -10950,7 +11932,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1770711268
 Transform:
@@ -11085,6 +12067,71 @@ Transform:
   m_Father: {fileID: 2099837645}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1779309573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1779309575}
+  - component: {fileID: 1779309574}
+  m_Layer: 0
+  m_Name: Point light (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1779309574
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779309573}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 30
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 25
+  m_ShadowAngle: 0
+--- !u!4 &1779309575
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779309573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.8, y: 14.199998, z: 26.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1804582316
 Prefab:
   m_ObjectHideFlags: 0
@@ -11134,6 +12181,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a6893b38e8a57534d97fa844599219df, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a6893b38e8a57534d97fa844599219df, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11198,6 +12249,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -11258,6 +12313,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11322,6 +12381,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -11342,7 +12405,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1865184726
 Transform:
@@ -11428,6 +12491,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -11496,6 +12563,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -11557,6 +12628,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -11638,6 +12713,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -11687,6 +12766,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -11748,6 +12831,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11863,7 +12950,7 @@ RectTransform:
   m_Children:
   - {fileID: 1179850520}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11940,7 +13027,7 @@ Camera:
   near clip plane: 0.05
   far clip plane: 2000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 1
   m_CullingMask:
@@ -11982,6 +13069,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCanvas: {fileID: 1441508544}
+--- !u!1 &1962156595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1962156597}
+  - component: {fileID: 1962156596}
+  m_Layer: 0
+  m_Name: Point light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1962156596
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1962156595}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 30
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 25
+  m_ShadowAngle: 0
+--- !u!4 &1962156597
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1962156595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.4, y: 14.199998, z: -25.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1962251995
 Prefab:
   m_ObjectHideFlags: 0
@@ -12035,6 +13187,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12098,6 +13254,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -12171,6 +13331,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a6893b38e8a57534d97fa844599219df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6893b38e8a57534d97fa844599219df, type: 3}
   m_IsPrefabParent: 0
@@ -12194,7 +13358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!23 &1990484994
 MeshRenderer:
@@ -12305,6 +13469,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementEdge2 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -12371,6 +13539,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
   m_IsPrefabParent: 0
@@ -12431,6 +13607,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12495,6 +13675,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -12556,6 +13740,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -12637,6 +13825,10 @@ Prefab:
       propertyPath: m_Name
       value: BattlementMiddle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
   m_IsPrefabParent: 0
@@ -12717,6 +13909,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -12778,6 +13974,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -12859,6 +14059,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
   m_IsPrefabParent: 0
@@ -12919,6 +14123,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12986,6 +14194,14 @@ Prefab:
     - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
       propertyPath: m_Name
       value: Rock5 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
@@ -13123,6 +14339,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
   m_IsPrefabParent: 0
@@ -13247,7 +14467,7 @@ Transform:
   - {fileID: 1770711268}
   - {fileID: 1758839532}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2099837646
 MonoBehaviour:
@@ -13307,6 +14527,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
   m_IsPrefabParent: 0
@@ -13356,6 +14580,10 @@ Prefab:
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_Name
       value: BattlementEdge2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -13419,6 +14647,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -13480,6 +14712,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
       propertyPath: m_Name
       value: BattlementMiddle (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
@@ -13561,6 +14797,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_IsPrefabParent: 0
@@ -13623,6 +14863,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbefa83526a102c41b4ae4dbb1b6ada7, type: 3}
   m_IsPrefabParent: 0
@@ -13683,6 +14927,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
