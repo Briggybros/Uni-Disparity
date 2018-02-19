@@ -1532,6 +1532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 1512204687729164, guid: 9f7a6786a6922454b931b64fb4937a3a,
     type: 2}
+  matchJoinPanelPrefab: {fileID: 1277735235210586, guid: 94a803537cb614e508d47581d53f2184,
+    type: 2}
   levelSelectPanel: {fileID: 1502712526}
   matchSelectPanel: {fileID: 1261037081}
   errorMessageObject: {fileID: 2140461380}
@@ -3345,11 +3347,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
-    m_Right: 20
+    m_Left: 0
+    m_Right: 0
     m_Top: 20
     m_Bottom: 20
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 100}
