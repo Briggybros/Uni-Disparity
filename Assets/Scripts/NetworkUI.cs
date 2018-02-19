@@ -10,9 +10,12 @@ using UnityEngine.UI;
 public class NetworkUI : MonoBehaviour {
 
 	public GameObject buttonPrefab;
+	public GameObject matchJoinPanelPrefab;
 	public GameObject levelSelectPanel;
 	public GameObject matchSelectPanel;
 	public GameObject errorMessageObject;
+	public GameObject graphicsSlider;
+	public GameObject graphicsText;
 	public string[] levels;
 
 	private NetworkManager networkManager;
@@ -48,6 +51,8 @@ public class NetworkUI : MonoBehaviour {
 
 	void Start () {
 		networkManager = NetworkManager.singleton;
+		graphicsSlider.GetComponent<Slider>().maxValue = QualitySettings.names.Length - 1;
+		graphicsSlider.GetComponent<Slider>().value = QualitySettings.GetQualityLevel();
 	}
 
 	public void StartButtonClicked () {
@@ -72,7 +77,7 @@ public class NetworkUI : MonoBehaviour {
 	}
 
 	public void CreateInternetMatch (string matchName) {
-		GetComponent<CharacterPicker>().SetWorld('A');
+		CharacterPicker.SetWorld(CharacterPicker.CAT);
 		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
 	}
 
@@ -97,8 +102,13 @@ public class NetworkUI : MonoBehaviour {
 					GameObject.Destroy(child.gameObject);
 				}
 				foreach (MatchInfoSnapshot match in internetMatches) {
-					MakeButton(matchSelectPanel, match.name, new Vector2(0, 0), () => {
-						GetComponent<CharacterPicker>().SetWorld('B');
+					GameObject panel = Instantiate(matchJoinPanelPrefab, new Vector2(0, 0), Quaternion.identity);
+					panel.transform.SetParent(matchSelectPanel.transform, false);
+					panel.GetComponent<MatchJoinPanelInit>().Init(match.name, () => {
+						CharacterPicker.SetWorld(CharacterPicker.DOG);
+						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
+					}, () => {
+						CharacterPicker.SetWorld(CharacterPicker.SPECTATOR);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 					});
 				}
@@ -121,5 +131,11 @@ public class NetworkUI : MonoBehaviour {
 	public void DisconnectInternetMatch() {
 		networkManager.StopHost();
 		networkManager.onlineScene = null;
+	}
+
+	public void ChangeGraphics() {
+		int val = (int) graphicsSlider.GetComponent<Slider>().value;
+		graphicsText.GetComponent<Text>().text = "Quality: " + QualitySettings.names[val];
+		QualitySettings.SetQualityLevel(val, true);
 	}
 }
