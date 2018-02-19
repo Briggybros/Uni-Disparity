@@ -10,6 +10,8 @@ public class NetworkUIEditor : Editor {
     private SerializedProperty levelSelectPanel;
     private SerializedProperty matchSelectPanel;
     private SerializedProperty errorMessageObject;
+    private SerializedProperty graphicsSlider;
+    private SerializedProperty graphicsText;
     private SerializedProperty levels;
 
     public void OnEnable () {
@@ -17,6 +19,8 @@ public class NetworkUIEditor : Editor {
         levelSelectPanel = serializedObject.FindProperty("levelSelectPanel");
         matchSelectPanel = serializedObject.FindProperty("matchSelectPanel");
         errorMessageObject = serializedObject.FindProperty("errorMessageObject");
+        graphicsSlider = serializedObject.FindProperty("graphicsSlider");
+        graphicsText = serializedObject.FindProperty("graphicsText");
         levels = serializedObject.FindProperty("levels");
     }
 
@@ -27,6 +31,8 @@ public class NetworkUIEditor : Editor {
         EditorGUILayout.PropertyField(levelSelectPanel);
         EditorGUILayout.PropertyField(matchSelectPanel);
         EditorGUILayout.PropertyField(errorMessageObject);
+        EditorGUILayout.PropertyField(graphicsSlider);
+        EditorGUILayout.PropertyField(graphicsText);
 
         EditorGUILayout.PropertyField(levels);
         EditorGUI.indentLevel += 1;

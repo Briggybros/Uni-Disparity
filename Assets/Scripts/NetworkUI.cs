@@ -13,6 +13,8 @@ public class NetworkUI : MonoBehaviour {
 	public GameObject levelSelectPanel;
 	public GameObject matchSelectPanel;
 	public GameObject errorMessageObject;
+	public GameObject graphicsSlider;
+	public GameObject graphicsText;
 	public string[] levels;
 
 	private NetworkManager networkManager;
@@ -48,6 +50,8 @@ public class NetworkUI : MonoBehaviour {
 
 	void Start () {
 		networkManager = NetworkManager.singleton;
+		graphicsSlider.GetComponent<Slider>().maxValue = QualitySettings.names.Length - 1;
+		graphicsSlider.GetComponent<Slider>().value = QualitySettings.GetQualityLevel();
 	}
 
 	public void StartButtonClicked () {
@@ -121,5 +125,11 @@ public class NetworkUI : MonoBehaviour {
 	public void DisconnectInternetMatch() {
 		networkManager.StopHost();
 		networkManager.onlineScene = null;
+	}
+
+	public void ChangeGraphics() {
+		int val = (int) graphicsSlider.GetComponent<Slider>().value;
+		graphicsText.GetComponent<Text>().text = "Quality: " + QualitySettings.names[val];
+		QualitySettings.SetQualityLevel(val, true);
 	}
 }
