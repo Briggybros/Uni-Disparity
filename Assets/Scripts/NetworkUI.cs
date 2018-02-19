@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class NetworkUI : MonoBehaviour {
 
 	public GameObject buttonPrefab;
+	public GameObject matchJoinPanelPrefab;
 	public GameObject levelSelectPanel;
 	public GameObject matchSelectPanel;
 	public GameObject errorMessageObject;
@@ -101,7 +102,12 @@ public class NetworkUI : MonoBehaviour {
 					GameObject.Destroy(child.gameObject);
 				}
 				foreach (MatchInfoSnapshot match in internetMatches) {
-					MakeButton(matchSelectPanel, match.name, new Vector2(0, 0), () => {
+					GameObject panel = Instantiate(matchJoinPanelPrefab, new Vector2(0, 0), Quaternion.identity);
+					panel.transform.SetParent(matchSelectPanel.transform, false);
+					panel.GetComponent<MatchJoinPanelInit>().Init(match.name, () => {
+						GetComponent<CharacterPicker>().SetWorld('B');
+						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
+					}, () => {
 						GetComponent<CharacterPicker>().SetWorld('B');
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 					});
