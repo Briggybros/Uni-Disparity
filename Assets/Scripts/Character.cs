@@ -17,7 +17,6 @@ public class Character : NetworkBehaviour
     public bool touching;
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
-    private float yLevel;
     public bool canMove;
 
     private Vector3 HeldScale;
@@ -167,11 +166,10 @@ public class Character : NetworkBehaviour
         if (BlockInput && GetComponent<Rigidbody>().IsSleeping()) {
             pos = transform.localPosition;
             rot = transform.localRotation;
-            yLevel = transform.position.y;
             BlockInput = false;
         }
         //Falling check
-        if(transform.localPosition.y <= yLevel - 2) {
+        if(transform.localPosition.y <= Vector3.zero.y - 3) {
             ResetPlayerToCheckpoint();
         }
         if (!BlockInput) {

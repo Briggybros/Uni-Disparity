@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -51,7 +51,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 9
@@ -2177,7 +2177,7 @@ GameObject:
   - component: {fileID: 827427548}
   m_Layer: 0
   m_Name: ARCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4607,9 +4607,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 1512204687729164, guid: 9f7a6786a6922454b931b64fb4937a3a,
     type: 2}
+  matchJoinPanelPrefab: {fileID: 0}
   levelSelectPanel: {fileID: 0}
   matchSelectPanel: {fileID: 0}
   errorMessageObject: {fileID: 0}
+  graphicsSlider: {fileID: 0}
+  graphicsText: {fileID: 0}
   levels:
   - TutorialWorld
 --- !u!224 &1409753626
