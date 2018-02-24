@@ -18,6 +18,9 @@ public class Character : NetworkBehaviour
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
     public bool canMove;
+	private float fallMod = 2.5f;
+	private float lowMod = 2f;
+	private Rigidbody rb;
 
     private Vector3 HeldScale;
 
@@ -42,6 +45,7 @@ public class Character : NetworkBehaviour
         interacting = false;
         touching = false;
         targetNetworkIdent = GetComponent<NetworkIdentity>();
+		rb = GetComponent<Rigidbody>();
     }
 
     [Command]
@@ -201,9 +205,15 @@ public class Character : NetworkBehaviour
             );
 
             if (IsJump()) {
-                GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
-                BlockInput = true;
+				//GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
+				GetComponent<Rigidbody>().velocity = Vector3.up * 5.0f;
+                //BlockInput = true;
             }
-        }
+			if (rb.velocity.y < 0) {
+				rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
+			} else if (rb.velocity.y > 0 && !IsJump()) {
+				rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+			}
+		}
     }
 }
