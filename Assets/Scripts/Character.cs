@@ -196,20 +196,20 @@ public class Character : NetworkBehaviour
             else
             {
                 GetComponent<Animator>().SetBool("Running", false);
-                GetComponent<Animator>().SetBool("Jumping", false);
             }
 
-			//Update position
+            //Update position
             transform.localPosition = Vector3.MoveTowards(
             transform.localPosition,
             pos,
             Time.deltaTime * MovementSpeed
             );
 
-            if (IsJump()) {
+            if (IsJump())
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
                 BlockInput = true;
-                GetComponent<Animator>().SetBool("Jumping", true);
+                GetComponent<Animator>().SetTrigger("Jumping");
                 GetComponent<Animator>().SetBool("Running", false);
             }
         }
