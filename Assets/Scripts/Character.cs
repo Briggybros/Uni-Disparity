@@ -80,7 +80,7 @@ public class Character : NetworkBehaviour
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
             rot = transform.localRotation;
-            //MovementSpeed = 0.8f;
+            MovementSpeed = 3.6f;
             BlockInput = false;
         } else if ((c.gameObject.GetComponent<Interactable>() != null)) {
             targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
