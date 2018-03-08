@@ -8,7 +8,7 @@ const app = express();
 const db = new sqlite.Database('./database.sqlite');
 
 db.serialize(() => {
-  db.run('CREATE TABLE IF NOT EXISTS scores (name VARCHAR, score INT, completion_time INT)');
+  db.run('CREATE TABLE IF NOT EXISTS scores (name VARCHAR, level VARCHAR, completion_time INT)');
 });
 
 app.use(bodyParser.urlencoded({
@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({
 
 app.post('/score', async (req, res) => {
   db.serialize(() => {
-    const statement = db.prepare('INSERT INTO scores (name, score, completion_time) VALUES (?, ?, ?)');
-    statement.run(req.body.name, req.body.score, req.body.time, (err) => {
+    const statement = db.prepare('INSERT INTO scores (name, level, completion_time) VALUES (?, ?, ?)');
+    statement.run(req.body.name, req.body.level, req.body.time, (err) => {
       if (err) res.sendStatus(500);
       else res.sendStatus(200);
     });
@@ -27,7 +27,8 @@ app.post('/score', async (req, res) => {
 
 app.get('/score', async (req, res) => {
   db.serialize(() => {
-    db.all('SELECT * FROM scores ORDER BY score DESC', (err, rows) => {
+    const statement = db.prepare(`SELECT name, completion_time FROM scores ORDER BY score DESC ${req.query.level ? 'WHERE level=?' : ''}`);
+    statement.all(req.body.level, (err, rows) => {
       if (err) res.sendStatus(500);
       else {
         const { count } = req.query;
