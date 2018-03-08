@@ -8,7 +8,7 @@ public class JoystickCharacter : NetworkBehaviour
 
 {
 
-    private float RotationSpeed = 15.0f;
+    private float RotationSpeed = 8.0f;
     private float MovementSpeed;
     public JoystickMovement joystick; 
     private Vector3 pos;
@@ -22,6 +22,12 @@ public class JoystickCharacter : NetworkBehaviour
     public bool canMove;
     private Vector3 cameraForwards;
     private Vector3 stickInput;
+	private float fallMod = 2.5f;
+	private float lowMod = 2f;
+	private Rigidbody rb;
+	private bool impetus = false;
+	private bool jumpReq = false;
+	private int impCount = 0;
 
     private Vector3 HeldScale;
 
@@ -35,6 +41,7 @@ public class JoystickCharacter : NetworkBehaviour
         touching = false;
         count = 0;
         targetNetworkIdent = null;// = this.GetComponent<NetworkIdentity>();
+        rb = GetComponent<Rigidbody>();
     }
 
     [Command]
@@ -116,14 +123,25 @@ public class JoystickCharacter : NetworkBehaviour
         }
     }
 
-    static bool IsJump()
-    {
-        #if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
-        return Input.GetKeyDown(KeyCode.Space);
-        #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
-        return Touch.Test("Jump");
-        #endif
+    static bool IsJump() {
+#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKeyDown(KeyCode.Space);
+#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
+		return Touch.Test("Jump");
+#endif
     }
+
+    void FixedUpdate() {
+		if (jumpReq) {
+			GetComponent<Rigidbody>().AddForce(Vector3.up * 7.0f, ForceMode.Impulse);
+			jumpReq = false;
+		}
+		if (rb.velocity.y < 0) {
+			rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
+		} else if (rb.velocity.y > 0 && !IsJump()) {
+			rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+		}
+	}
 
     static bool isInteract()
     {
@@ -192,11 +210,18 @@ public class JoystickCharacter : NetworkBehaviour
                 transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
             }
 
-            if (IsJump())
-            {
-                GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
-                BlockInput = true;
+            if (!IsJump() && impCount > 60) {
+				impetus = false;
+			}
+			if (IsJump() && !impetus) {
+				//GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
+				//GetComponent<Rigidbody>().velocity = Vector3.up * 7.0f;
+				jumpReq = true;
+				impetus = true;
+				impCount = 0;
+                //BlockInput = true;
             }
+			impCount++;
         }
 
 	}
