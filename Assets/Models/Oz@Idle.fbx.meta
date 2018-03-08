@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: 6d28dda521229fe4c9d1f87005f7ce54
+timeCreated: 1520250837
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Character2_Ctrl_ChestEndEffector
+    100002: Character2_Ctrl_ChestOriginEffector
+    100004: Character2_Ctrl_Head
+    100006: Character2_Ctrl_HeadEffector
+    100008: Character2_Ctrl_Hips
+    100010: Character2_Ctrl_HipsEffector
+    100012: Character2_Ctrl_LeftAnkleEffector
+    100014: Character2_Ctrl_LeftArm
+    100016: Character2_Ctrl_LeftElbowEffector
+    100018: Character2_Ctrl_LeftFoot
+    100020: Character2_Ctrl_LeftForeArm
+    100022: Character2_Ctrl_LeftHand
+    100024: Character2_Ctrl_LeftHipEffector
+    100026: Character2_Ctrl_LeftKneeEffector
+    100028: Character2_Ctrl_LeftLeg
+    100030: Character2_Ctrl_LeftShoulderEffector
+    100032: Character2_Ctrl_LeftUpLeg
+    100034: Character2_Ctrl_LeftWristEffector
+    100036: Character2_Ctrl_Reference
+    100038: Character2_Ctrl_RightAnkleEffector
+    100040: Character2_Ctrl_RightArm
+    100042: Character2_Ctrl_RightElbowEffector
+    100044: Character2_Ctrl_RightFoot
+    100046: Character2_Ctrl_RightForeArm
+    100048: Character2_Ctrl_RightHand
+    100050: Character2_Ctrl_RightHipEffector
+    100052: Character2_Ctrl_RightKneeEffector
+    100054: Character2_Ctrl_RightLeg
+    100056: Character2_Ctrl_RightShoulderEffector
+    100058: Character2_Ctrl_RightUpLeg
+    100060: Character2_Ctrl_RightWristEffector
+    100062: Character2_Ctrl_Spine
+    100064: DogAssembled
+    100066: headtop
+    100068: hip
+    100070: l_ankle
+    100072: l_elbow
+    100074: l_foot
+    100076: l_hand
+    100078: l_hip
+    100080: l_knee
+    100082: l_shoulder
+    100084: neck
+    100086: //RootNode
+    100088: r_ankle
+    100090: r_elbow
+    100092: r_foot
+    100094: r_hand
+    100096: r_hip
+    100098: r_knee
+    100100: r_shoulder
+    100102: torso
+    400000: Character2_Ctrl_ChestEndEffector
+    400002: Character2_Ctrl_ChestOriginEffector
+    400004: Character2_Ctrl_Head
+    400006: Character2_Ctrl_HeadEffector
+    400008: Character2_Ctrl_Hips
+    400010: Character2_Ctrl_HipsEffector
+    400012: Character2_Ctrl_LeftAnkleEffector
+    400014: Character2_Ctrl_LeftArm
+    400016: Character2_Ctrl_LeftElbowEffector
+    400018: Character2_Ctrl_LeftFoot
+    400020: Character2_Ctrl_LeftForeArm
+    400022: Character2_Ctrl_LeftHand
+    400024: Character2_Ctrl_LeftHipEffector
+    400026: Character2_Ctrl_LeftKneeEffector
+    400028: Character2_Ctrl_LeftLeg
+    400030: Character2_Ctrl_LeftShoulderEffector
+    400032: Character2_Ctrl_LeftUpLeg
+    400034: Character2_Ctrl_LeftWristEffector
+    400036: Character2_Ctrl_Reference
+    400038: Character2_Ctrl_RightAnkleEffector
+    400040: Character2_Ctrl_RightArm
+    400042: Character2_Ctrl_RightElbowEffector
+    400044: Character2_Ctrl_RightFoot
+    400046: Character2_Ctrl_RightForeArm
+    400048: Character2_Ctrl_RightHand
+    400050: Character2_Ctrl_RightHipEffector
+    400052: Character2_Ctrl_RightKneeEffector
+    400054: Character2_Ctrl_RightLeg
+    400056: Character2_Ctrl_RightShoulderEffector
+    400058: Character2_Ctrl_RightUpLeg
+    400060: Character2_Ctrl_RightWristEffector
+    400062: Character2_Ctrl_Spine
+    400064: DogAssembled
+    400066: headtop
+    400068: hip
+    400070: l_ankle
+    400072: l_elbow
+    400074: l_foot
+    400076: l_hand
+    400078: l_hip
+    400080: l_knee
+    400082: l_shoulder
+    400084: neck
+    400086: //RootNode
+    400088: r_ankle
+    400090: r_elbow
+    400092: r_foot
+    400094: r_hand
+    400096: r_hip
+    400098: r_knee
+    400100: r_shoulder
+    400102: torso
+    2100000: lambert1
+    4300000: DogAssembled
+    7400000: Idle
+    9500000: //RootNode
+    13700000: DogAssembled
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 54df6a6e815a6564aa78fdedd5c29892, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

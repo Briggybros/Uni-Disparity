@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 69322d490e8947d489ad749452021aa7
+timeCreated: 1520250835
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Character1_Ctrl_ChestEndEffector
+    100002: Character1_Ctrl_ChestOriginEffector
+    100004: Character1_Ctrl_Head
+    100006: Character1_Ctrl_HeadEffector
+    100008: Character1_Ctrl_Hips
+    100010: Character1_Ctrl_HipsEffector
+    100012: Character1_Ctrl_LeftAnkleEffector
+    100014: Character1_Ctrl_LeftArm
+    100016: Character1_Ctrl_LeftElbowEffector
+    100018: Character1_Ctrl_LeftFoot
+    100020: Character1_Ctrl_LeftForeArm
+    100022: Character1_Ctrl_LeftHand
+    100024: Character1_Ctrl_LeftHipEffector
+    100026: Character1_Ctrl_LeftKneeEffector
+    100028: Character1_Ctrl_LeftLeg
+    100030: Character1_Ctrl_LeftShoulderEffector
+    100032: Character1_Ctrl_LeftUpLeg
+    100034: Character1_Ctrl_LeftWristEffector
+    100036: Character1_Ctrl_Reference
+    100038: Character1_Ctrl_RightAnkleEffector
+    100040: Character1_Ctrl_RightArm
+    100042: Character1_Ctrl_RightElbowEffector
+    100044: Character1_Ctrl_RightFoot
+    100046: Character1_Ctrl_RightForeArm
+    100048: Character1_Ctrl_RightHand
+    100050: Character1_Ctrl_RightHipEffector
+    100052: Character1_Ctrl_RightKneeEffector
+    100054: Character1_Ctrl_RightLeg
+    100056: Character1_Ctrl_RightShoulderEffector
+    100058: Character1_Ctrl_RightUpLeg
+    100060: Character1_Ctrl_RightWristEffector
+    100062: Character1_Ctrl_Spine
+    100064: head
+    100066: joint4
+    100068: joint4 1
+    100070: l_elbow
+    100072: l_foot
+    100074: l_hand
+    100076: l_knee
+    100078: l_shoulder
+    100080: l_waist
+    100082: neck
+    100084: nurbsCircle1
+    100086: nurbsCircle2
+    100088: nurbsCircle3
+    100090: pelvis
+    100092: r_elbow
+    100094: r_foot
+    100096: r_hand
+    100098: r_knee
+    100100: r_shoulder
+    100102: r_waist
+    100104: shoulder
+    100106: spine
+    100108: Sword
+    100110: tail_1
+    100112: tail_1 1
+    100114: tail_2
+    100116: tail_2 1
+    100118: tail_base
+    100120: tail_base 1
+    100122: tail_tip
+    100124: //RootNode
+    100126: WolfBoi2
+    400000: Character1_Ctrl_ChestEndEffector
+    400002: Character1_Ctrl_ChestOriginEffector
+    400004: Character1_Ctrl_Head
+    400006: Character1_Ctrl_HeadEffector
+    400008: Character1_Ctrl_Hips
+    400010: Character1_Ctrl_HipsEffector
+    400012: Character1_Ctrl_LeftAnkleEffector
+    400014: Character1_Ctrl_LeftArm
+    400016: Character1_Ctrl_LeftElbowEffector
+    400018: Character1_Ctrl_LeftFoot
+    400020: Character1_Ctrl_LeftForeArm
+    400022: Character1_Ctrl_LeftHand
+    400024: Character1_Ctrl_LeftHipEffector
+    400026: Character1_Ctrl_LeftKneeEffector
+    400028: Character1_Ctrl_LeftLeg
+    400030: Character1_Ctrl_LeftShoulderEffector
+    400032: Character1_Ctrl_LeftUpLeg
+    400034: Character1_Ctrl_LeftWristEffector
+    400036: Character1_Ctrl_Reference
+    400038: Character1_Ctrl_RightAnkleEffector
+    400040: Character1_Ctrl_RightArm
+    400042: Character1_Ctrl_RightElbowEffector
+    400044: Character1_Ctrl_RightFoot
+    400046: Character1_Ctrl_RightForeArm
+    400048: Character1_Ctrl_RightHand
+    400050: Character1_Ctrl_RightHipEffector
+    400052: Character1_Ctrl_RightKneeEffector
+    400054: Character1_Ctrl_RightLeg
+    400056: Character1_Ctrl_RightShoulderEffector
+    400058: Character1_Ctrl_RightUpLeg
+    400060: Character1_Ctrl_RightWristEffector
+    400062: Character1_Ctrl_Spine
+    400064: head
+    400066: joint4
+    400068: joint4 1
+    400070: l_elbow
+    400072: l_foot
+    400074: l_hand
+    400076: l_knee
+    400078: l_shoulder
+    400080: l_waist
+    400082: neck
+    400084: nurbsCircle1
+    400086: nurbsCircle2
+    400088: nurbsCircle3
+    400090: pelvis
+    400092: r_elbow
+    400094: r_foot
+    400096: r_hand
+    400098: r_knee
+    400100: r_shoulder
+    400102: r_waist
+    400104: shoulder
+    400106: spine
+    400108: Sword
+    400110: tail_1
+    400112: tail_1 1
+    400114: tail_2
+    400116: tail_2 1
+    400118: tail_base
+    400120: tail_base 1
+    400122: tail_tip
+    400124: //RootNode
+    400126: WolfBoi2
+    2100000: lambert1
+    2300000: shoulder
+    2300002: Sword
+    3300000: shoulder
+    3300002: Sword
+    4300000: WolfBoi2
+    4300002: shoulder
+    4300004: Sword
+    7400000: Running
+    9500000: //RootNode
+    13700000: WolfBoi2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 8ea27ffd1744e28449f02d1413ea4f4c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Running
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
