@@ -2591,7 +2591,6 @@ GameObject:
   - component: {fileID: 202020475}
   - component: {fileID: 202020474}
   - component: {fileID: 202020473}
-  - component: {fileID: 202020472}
   - component: {fileID: 202020471}
   - component: {fileID: 202020470}
   m_Layer: 0
@@ -2637,25 +2636,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiresInteract: 1
-  targets: []
+  targets:
+  - {fileID: 202020468}
   owner: {fileID: 0}
   playerInteract: 1
   interacted: 0
---- !u!54 &202020472
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 202020468}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &202020473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,7 +2653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1672960142}
-  line: {fileID: 0}
+  line: {fileID: 1214552543}
 --- !u!65 &202020474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2679,8 +2664,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7068453, y: 1, z: 3.3912868}
-  m_Center: {x: 0.05983019, y: 0, z: -1.1956434}
+  m_Size: {x: 2.7068453, y: 2.4313755, z: 3.3912868}
+  m_Center: {x: 0.05983019, y: 0.011286736, z: -1.1956434}
 --- !u!23 &202020475
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13328,7 +13313,6 @@ Transform:
   m_Children:
   - {fileID: 202020469}
   - {fileID: 1214552542}
-  - {fileID: 2078261847}
   - {fileID: 1672960138}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -23336,7 +23320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 923690122}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1672960139
 MonoBehaviour:
@@ -28989,11 +28973,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078261846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.11, y: 6.62, z: -8.37}
+  m_LocalPosition: {x: 5.6809983, y: 6.1326795, z: -21.18431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 923690122}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2078261848
 MeshRenderer:

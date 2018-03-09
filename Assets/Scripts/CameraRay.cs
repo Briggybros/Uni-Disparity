@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraRay : MonoBehaviour {
+public class CameraRay : Receiver {
 
 	public Camera camera;
 	public LineRenderer line;
@@ -22,7 +22,7 @@ public class CameraRay : MonoBehaviour {
 
 	}
 
-	void SwitchReceived () {
+	protected override void SwitchReceived () {
 		Debug.Log("bamamam");
 		if (laserActive == false) {
 			Debug.Log(camera.transform.position);
@@ -49,11 +49,11 @@ public class CameraRay : MonoBehaviour {
 
 		line.enabled = true;
 
-	while (laserActive == true) {
+		while (laserActive == true) {
 			Debug.Log("here");
 			
 			Ray ray = new Ray(camera.transform.position, camera.transform.forward);
-			line.SetPosition(0, ray.origin);
+		//	line.SetPosition(0, ray.origin);
 
 			/*if (Physics.Raycast (ray, out hit, 100, QueryTriggerInteraction = false)) {
 				line.SetPosition(1, hit.point);
@@ -62,9 +62,9 @@ public class CameraRay : MonoBehaviour {
 				} 
 			}
 			else { */
-				line.SetPosition(1, ray.GetPoint(100));
+		//		line.SetPosition(1, ray.GetPoint(100));
 			//}
 		}
 		yield return 0;
-	}
+	}	
 }
