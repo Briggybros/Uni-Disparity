@@ -25,7 +25,8 @@ public class CameraRay : MonoBehaviour {
 	void SwitchReceived () {
 		Debug.Log("bamamam");
 		if (laserActive == false) {
-			Debug.Log("yassss");
+			Debug.Log(camera.transform.position);
+			Debug.Log(camera.transform.forward);
 			shootRay();
 		}
 		else if (laserActive == true) {
@@ -50,6 +51,7 @@ public class CameraRay : MonoBehaviour {
 
 	while (laserActive == true) {
 			Debug.Log("here");
+			
 			Ray ray = new Ray(camera.transform.position, camera.transform.forward);
 			line.SetPosition(0, ray.origin);
 
