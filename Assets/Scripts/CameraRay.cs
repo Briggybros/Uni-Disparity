@@ -35,7 +35,7 @@ public class CameraRay : Receiver {
 	}
 
 	void shootRay () {
-		StopAllCoroutines();
+		// StopAllCoroutines();
 		laserActive = true;
 		StartCoroutine(fireRay());
 	}
