@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class CameraRay : Receiver {
 
-	public Camera camera;
+	public new Camera camera;
 	public LineRenderer line;
 	bool laserActive;
 	GameObject target;
 	RaycastHit hit;
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
 		laserActive = false;
 		line.enabled = false;
 		target = GameObject.Find("keyDoor");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
 	}
 
 	protected override void SwitchReceived () {
