@@ -25,7 +25,7 @@ app.post('/score', async (req, res) => {
 
 app.get('/score', async (req, res) => {
   db.serialize(() => {
-    const statement = db.prepare(`SELECT name, completion_time FROM scores ORDER BY score DESC ${req.query.level ? 'WHERE level=?' : ''}`);
+    const statement = db.prepare('SELECT name, completion_time FROM scores ORDER BY score DESC WHERE level=?');
     statement.all(req.body.level, (err, rows) => {
       if (err) res.sendStatus(500);
       else {
