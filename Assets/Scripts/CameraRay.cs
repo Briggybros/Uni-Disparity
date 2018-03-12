@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class CameraRay : Receiver {
 
-	public new Camera camera;
+	public new GameObject camera;
 	public LineRenderer line;
 	bool laserActive;
-	GameObject target;
+	public GameObject target;
 	RaycastHit hit;
+
+	Vector3 prevForward;
 
 	// Use this for initialization
 	protected override void Start () {
 		laserActive = false;
 		line.enabled = false;
-		target = GameObject.Find("keyDoor");
 	}
 
 	protected override void SwitchReceived () {
-		Debug.Log("bamamam");
 		 if (laserActive == false) {
-		 	Debug.Log(camera.transform.position);
-		 	Debug.Log(camera.transform.forward);
 		 	shootRay();
 		 }
 		 else if (laserActive == true) {
@@ -43,22 +41,23 @@ public class CameraRay : Receiver {
 	IEnumerator fireRay () {
 
 		while (laserActive == true) {
-
-			
-			Debug.Log("here");
 			line.enabled = true;
-			Ray ray = new Ray(camera.transform.position, camera.transform.forward);
-			line.SetPosition(0, ray.origin);
+			if(camera.transform.forward != prevForward) {
+				prevForward = camera.transform.forward;
+				Ray ray = new Ray(camera.transform.position, camera.transform.forward);
+				line.SetPosition(0, ray.origin);
 
-			if (Physics.Raycast (ray, out hit, 100)) {
-				line.SetPosition(1, hit.point);
-				if (hit.rigidbody.gameObject.tag == "keyDoor") {
-					target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+				if (Physics.Raycast (ray, out hit, 100)) {
+					Debug.Log(hit.transform.gameObject.name);
+					line.SetPosition(1, hit.point);
+				//	if (hit.rigidbody.gameObject.tag == "keyDoor") {
+						// target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+				//	} 
+				}
+				else { 
+					line.SetPosition(1, ray.GetPoint(100));
 				} 
 			}
-			else { 
-				line.SetPosition(1, ray.GetPoint(100));
-			} 
 			yield return 0;
 		}
 	}	
