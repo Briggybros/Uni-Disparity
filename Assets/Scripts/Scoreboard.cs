@@ -5,19 +5,14 @@ using System.Collections.Generic;
  
 public class Scoreboard : MonoBehaviour
 {
+    public delegate void Callback(Score[] scores);
     public string serverURL = "http://127.0.0.1:8090/score";
- 
-    void Start()
-    {
-        StartCoroutine(GetScores());
-    }
- 
-    // REMEMBER TO CALL THIS AS COROUTINE
-    IEnumerator PostScore(string name, string level, float time) {
-        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-        formData.Add(new MultipartFormDataSection("name=" + name + "&level=" + level + "&time=" + time));
 
-        UnityWebRequest www = UnityWebRequest.Post(serverURL, formData);
+    private IEnumerator WebPostScore(Score score) {
+        string jsonData = JsonUtility.ToJson(score);
+
+        UnityWebRequest www = UnityWebRequest.Post(serverURL, jsonData);
+        www.SetRequestHeader("Content-Type", "application/json");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError) {
@@ -26,9 +21,12 @@ public class Scoreboard : MonoBehaviour
             Debug.Log("Score submitted");
         }
     }
- 
-    // REMEMBER TO CALL IN COROUTINE
-    IEnumerator GetScores(string level = null, int count = -1) {
+
+    public void PostScore(Score score) {
+        StartCoroutine(WebPostScore(score));
+    }
+
+    private IEnumerator WebGetScores(Callback callback, string level = null, int count = -1) {
         string query = "";
         if (level != null || count > 0) {
             query = "?";
@@ -42,19 +40,47 @@ public class Scoreboard : MonoBehaviour
                 query = query + "count=" + count;
             }
         }
-        UnityWebRequest www = UnityWebRequest.Get(serverURL + query);
-        yield return www.SendWebRequest();
 
-        string jsonData = "";
-        if (string.IsNullOrEmpty(www.error)) {
-            jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 3, www.downloadHandler.data.Length - 3);
-            List<ScoreboardResult> result = JsonUtility.FromJson<List<ScoreboardResult>>(jsonData);
+        using (UnityWebRequest www = UnityWebRequest.Get(serverURL + query)) {
+            yield return www.SendWebRequest();
+
+            string jsonData = "";
+            if (string.IsNullOrEmpty(www.error)) {
+                jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 3, www.downloadHandler.data.Length - 3);
+                Score[] result = JsonHelper.getJsonArray<Score>(jsonData);
+                callback(result);
+            }
+        }
+    }
+
+    public void GetScores(Callback callback, string level = null, int count = -1) {
+        StartCoroutine(WebGetScores(callback, level, count));
+    }
+
+    private class JsonHelper {
+        public static T[] getJsonArray<T>(string json) {
+            string newJson = "{ \"array\": " + json + "}";
+            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>> (newJson);
+            return wrapper.array;
+        }
+
+        [System.Serializable]
+        private class Wrapper<T>
+        {
+            public T[] array;
         }
     }
 
     [System.Serializable]
-    public class ScoreboardResult {
+    public class Score {
         public string name;
-        public float score;
+        public string level;
+        public float time;
+
+        public Score(string name, float time, string level) {
+            this.name = name;
+            this.time = time;
+            this.level = level;
+        }
     }
 }

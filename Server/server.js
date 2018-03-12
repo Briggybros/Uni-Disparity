@@ -11,9 +11,7 @@ db.serialize(() => {
   db.run('CREATE TABLE IF NOT EXISTS scores (name VARCHAR, level VARCHAR, completion_time INT)');
 });
 
-app.use(bodyParser.urlencoded({
-  extended: false,
-}));
+app.use(bodyParser.json());
 
 app.post('/score', async (req, res) => {
   db.serialize(() => {
