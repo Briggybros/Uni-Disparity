@@ -3,12 +3,11 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
  
-public class Scoreboard : MonoBehaviour
-{
+public static class Scoreboard {
     public delegate void Callback(Score[] scores);
-    public string serverURL = "http://127.0.0.1:8090/score";
+    public static string serverURL = "http://127.0.0.1:8090/score";
 
-    private IEnumerator WebPostScore(Score score) {
+    public static IEnumerator PostScore(Score score) {
         string jsonData = JsonUtility.ToJson(score);
 
         UnityWebRequest www = UnityWebRequest.Post(serverURL, jsonData);
@@ -22,11 +21,7 @@ public class Scoreboard : MonoBehaviour
         }
     }
 
-    public void PostScore(Score score) {
-        StartCoroutine(WebPostScore(score));
-    }
-
-    private IEnumerator WebGetScores(Callback callback, string level = null, int count = -1) {
+    public static IEnumerator GetScores(Callback callback, string level = null, int count = -1) {
         string query = "";
         if (level != null || count > 0) {
             query = "?";
@@ -53,11 +48,7 @@ public class Scoreboard : MonoBehaviour
         }
     }
 
-    public void GetScores(Callback callback, string level = null, int count = -1) {
-        StartCoroutine(WebGetScores(callback, level, count));
-    }
-
-    private class JsonHelper {
+    private static class JsonHelper {
         public static T[] getJsonArray<T>(string json) {
             string newJson = "{ \"array\": " + json + "}";
             Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>> (newJson);
