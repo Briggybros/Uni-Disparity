@@ -34,7 +34,7 @@ public static class Scoreboard {
             if (www.isNetworkError || www.isHttpError) {
                 Debug.LogError(www.error);
             } else {
-                jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 3, www.downloadHandler.data.Length - 3);
+                jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 0, www.downloadHandler.data.Length);
                 Score[] result = JsonHelper.getJsonArray<Score>(jsonData);
                 callback(result);
             }
