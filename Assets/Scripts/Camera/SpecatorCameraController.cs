@@ -15,7 +15,7 @@ public class SpecatorCameraController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (camera = ROTATEWORLD){
+		if (camera == ROTATEWORLD){
 			transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
 			transform.LookAt(Vector3.zero);
 		}

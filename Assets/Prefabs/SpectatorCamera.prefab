@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114459463348492654}
   - component: {fileID: 114340800241613054}
   - component: {fileID: 114130514246844004}
+  - component: {fileID: 114126134192951176}
+  - component: {fileID: 114330208640281362}
   m_Layer: 0
   m_Name: SpectatorCamera
   m_TagString: Player
@@ -89,6 +91,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644321383054634}
   m_Enabled: 0
+--- !u!114 &114126134192951176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1644321383054634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6685f1a50dcdac64d8559f6a0831d45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114130514246844004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mWorldCenterMode: 1
   mWorldCenter: {fileID: 0}
---- !u!114 &114340800241613054
+--- !u!114 &114330208640281362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -122,9 +135,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1644321383054634}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32492dec464a54341bb23364c66f8f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smoothSpeed: 0.125
+--- !u!114 &114340800241613054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1644321383054634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0a43db5aaa71114ebadf285afb4db7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  world: 0
 --- !u!114 &114459463348492654
 MonoBehaviour:
   m_ObjectHideFlags: 1
