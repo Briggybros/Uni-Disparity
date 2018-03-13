@@ -11,8 +11,8 @@ public class DoorBehaviourScript : Receiver {
     public Vector3 target,home;
 	public int timer;
 
-
     protected void ToggleOpen(){
+        Debug.Log("toggling");
         open = !open;
     }
 
@@ -44,4 +44,19 @@ public class DoorBehaviourScript : Receiver {
         target = transform.position;
         home = transform.position;
     }
+
+    protected void Looping()
+    {
+        StartCoroutine(TimerWaitLoop());
+    }
+
+    IEnumerator TimerWaitLoop() {
+        while(true)
+        {
+            ToggleOpen();
+            yield return new WaitForSeconds(timer);
+            ToggleOpen();
+            yield return new WaitForSeconds(timer);
+        }
+	}
 }

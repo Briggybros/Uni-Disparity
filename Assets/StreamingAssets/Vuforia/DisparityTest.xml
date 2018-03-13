@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QCARConfig>
-  <Tracking>
-    <ImageTarget name="Astronaut_scaled" size="0.069850 0.120737" />
-    <ImageTarget name="toronto" size="1.000000 0.562500" />
-  </Tracking>
-</QCARConfig>

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotatingPlatformBehaviourScript: Receiver {
     public bool Lock;
     public bool Rotating;
+	public bool TwoLocation;
     public int Increment;
     public float Duration;
     private float TargetAngle;
@@ -52,6 +53,9 @@ public class RotatingPlatformBehaviourScript: Receiver {
             sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
             TargetAxis = transform.up;
             CurrentTime = 0;
+			if (TwoLocation) {
+				Increment = -Increment;
+			}
             TargetAngle = Facing + Increment;
         }
     }

@@ -14,6 +14,7 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
     private float CurrentTime;
     private Vector3 SourceAxis;
     private Vector3 TargetAxis;
+	public bool yRot;
 
     protected override void Start()
     {
@@ -22,8 +23,12 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
         Duration = 1f;
         Quaternion sourceOrientation = this.transform.parent.rotation;
         sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
-        TargetAxis = transform.parent.up;
-    }
+		if (yRot) {
+			TargetAxis = transform.parent.up;
+		} else {
+			TargetAxis = transform.parent.right;
+		}
+	}
 
     protected override void Update()
     {
@@ -85,7 +90,11 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
             Turning = false;
             Quaternion sourceOrientation = this.transform.parent.rotation;
             sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
-            TargetAxis = transform.parent.up;
+			/*if (yRot) {
+				TargetAxis = transform.parent.up;
+			} else {
+				TargetAxis = transform.parent.right;
+			}*/
             CurrentTime = 0;
         }
     }

@@ -18,20 +18,35 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-		otherWorld = GetComponent<CharacterPicker>().GetWorld() == 'A' ? 'B' : 'A';
+		otherWorld = CharacterPicker.GetWorld() == CharacterPicker.CAT ? CharacterPicker.DOG : CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR ? ' ' : CharacterPicker.CAT;
 	}
 
 	public void Update () {
-		var players = GameObject.FindGameObjectsWithTag("Player");
-		if (isTracking && !isActive) {	
-			foreach (var player in players) {
-				player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-				isActive = true;
+		if (CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR) {
+			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+			foreach (var camera in cameras) {
+				if (camera.name.Contains("SpectatorCamera")) {
+					foreach (var other in cameras) {
+						if (other != camera) {
+							other.GetComponent<Camera>().enabled = false;
+							other.GetComponent<VuforiaBehaviour>().enabled = false;
+							camera.GetComponent<Camera>().enabled = true;
+						}
+					}
+				} 
 			}
-		} else if (!isTracking && isActive) {
-			foreach (var player in players) {
-				player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-				isActive = false;
+		} else {
+			var players = GameObject.FindGameObjectsWithTag("Player");
+			if (isTracking && !isActive) {	
+				foreach (var player in players) {
+					player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+					isActive = true;
+				}
+			} else if (!isTracking && isActive) {
+				foreach (var player in players) {
+					player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+					isActive = false;
+				}
 			}
 		}
 	}
