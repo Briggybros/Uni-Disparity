@@ -5,28 +5,36 @@ using UnityEngine;
 public class RotatingDoorBehaviour : DoorBehaviourScript {
 
 
-    private bool Turning;
+    public bool Turning;
     public float MinRot, MaxRot;
 
     private float Duration;
-    private float TargetAngle;
+    protected float TargetAngle;
     private float Facing;
     private float CurrentTime;
     private Vector3 SourceAxis;
     private Vector3 TargetAxis;
+	private Quaternion sourceOrientation;
+	private Quaternion baseRot;
 	public bool yRot;
-
-    protected override void Start()
+	public bool xRot;
+	protected override void Start()
     {
         init();
         CurrentTime = 0f;
         Duration = 1f;
-        Quaternion sourceOrientation = this.transform.parent.rotation;
+        sourceOrientation = this.transform.parent.rotation;
         sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
+		Vector3 v = sourceOrientation.eulerAngles;
 		if (yRot) {
-			TargetAxis = transform.parent.up;
+			TargetAxis = this.transform.parent.up;
+			baseRot = Quaternion.Euler(v.x, 0, v.z);
+		} else if (xRot) {
+			TargetAxis = this.transform.parent.right;
+			baseRot = Quaternion.Euler(0, v.y, v.z);
 		} else {
-			TargetAxis = transform.parent.right;
+			TargetAxis = this.transform.parent.forward;
+			baseRot = Quaternion.Euler(v.x, v.y, 0);
 		}
 	}
 
@@ -81,14 +89,14 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
             CurrentTime += Time.deltaTime;
             float progress = CurrentTime / Duration;
 
-            // Interpolate to get the current angle/axis between the source and target.
-            float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
-            this.transform.parent.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis);
+			// Interpolate to get the current angle/axis between the source and target.
+			float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
+            this.transform.parent.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis)*baseRot;
         }
         else
         {
             Turning = false;
-            Quaternion sourceOrientation = this.transform.parent.rotation;
+            sourceOrientation = this.transform.parent.rotation;
             sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
 			/*if (yRot) {
 				TargetAxis = transform.parent.up;

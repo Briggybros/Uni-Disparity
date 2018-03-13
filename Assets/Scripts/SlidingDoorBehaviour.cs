@@ -19,7 +19,6 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	
 	// Update is called once per frame
 	protected override void Update () {
-        Debug.Log(open);
         if (open)
         {   
             //Open the door

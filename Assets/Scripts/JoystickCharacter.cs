@@ -10,6 +10,7 @@ public class JoystickCharacter : NetworkBehaviour
 
     private float RotationSpeed = 8.0f;
     private float MovementSpeed;
+	private bool carrying = false;
     public JoystickMovement joystick; 
     private Vector3 pos;
     public bool interacting;
@@ -25,6 +26,8 @@ public class JoystickCharacter : NetworkBehaviour
 	private bool impetus = false;
 	private bool jumpReq = false;
 	private int impCount = 0;
+	private int grabLax;
+	private List<string> keys = new List<string>();
 
     private Vector3 HeldScale;
 
@@ -35,6 +38,7 @@ public class JoystickCharacter : NetworkBehaviour
         touching = false;
         targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
+		grabLax = 0;
     }
 
     [Command]
@@ -139,7 +143,6 @@ public class JoystickCharacter : NetworkBehaviour
         if (!canMove) {
             return;
         }
-
         if (GetComponent<Rigidbody>().IsSleeping()) {
             GetComponent<Animator>().SetBool("Running", false);
         } else {
@@ -148,18 +151,46 @@ public class JoystickCharacter : NetworkBehaviour
 
         if (!isLocalPlayer)
             return;
-
-        cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
+		cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
         transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
-        if (!interacting && isInteract() && touching) {
+
+		grabLax++;
+		if (isInteract() && touching && target.tag == "Key") {
+			keys.Add(target.name);
+			CmdsyncChange("Bopped", target);
+		}
+		else if (carrying && !interacting && isInteract() && grabLax > 20) {
+			carrying = false;
+			GameObject child = this.transform.GetComponentsInChildren<Interactable>()[0].gameObject;
+			child.transform.SetParent(null);
+			child.GetComponent<Rigidbody>().isKinematic = false;
+			child.transform.Translate(0.0f, -0.4f, 0.0f);
+			grabLax = 0;
+		}
+		else if(!interacting && isInteract() && touching && !carrying && target.tag == "Weight" && grabLax > 20) {
+			carrying = true;
+			target.transform.Translate(0.0f, 0.4f, 0.0f);
+			target.GetComponent<Rigidbody>().isKinematic = true;
+			target.transform.SetParent(this.transform);
+			grabLax = 0;
+		}
+        else if (!interacting && isInteract() && touching && !carrying && target.tag != "Weight") {
             interacting = true;
-            CmdsyncChange("Bopped", target);
+			if(target.GetComponent<ChestBehaviour>() != null) {
+				ChestBehaviour theirBe = target.GetComponent<ChestBehaviour>();
+				string Name = theirBe.key.name;
+				if (keys.Contains(Name)) {
+					CmdsyncChange("Bopped", target);
+				}
+			} else {
+				CmdsyncChange("Bopped", target);
+			}
         }
         if (interacting && !isInteract()) {
             interacting = false;
         }
-        if (transform.localPosition.y <= -2) {
+        if (transform.position.y <= -2) {
             ResetPlayerToCheckpoint();
         }
 
@@ -172,7 +203,7 @@ public class JoystickCharacter : NetworkBehaviour
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
         }
 
-        if (!IsJump() && impCount > 60) {
+        if (!IsJump() && impCount > 40) {
             impetus = false;
         }
         if (IsJump() && !impetus) {
