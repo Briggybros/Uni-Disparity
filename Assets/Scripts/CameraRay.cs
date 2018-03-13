@@ -7,7 +7,7 @@ public class CameraRay : Receiver {
 	public new GameObject camera;
 	public LineRenderer line;
 	bool laserActive;
-	public GameObject target;
+	//public GameObject target;
 	RaycastHit hit;
 
 	Vector3 prevForward;
