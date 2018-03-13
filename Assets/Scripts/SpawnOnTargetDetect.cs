@@ -16,11 +16,11 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-		otherWorld = CharacterPicker.GetWorld() == CharacterPicker.CAT ? CharacterPicker.DOG : CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR ? ' ' : CharacterPicker.CAT;
+		otherWorld = CharacterPicker.GetOtherWorld();
 	}
 
 	public void Update () {
-		if (CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR) {
+		if (CharacterPicker.IsSpectator()) {
 			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
 			foreach (var camera in cameras) {
 				if (camera.name.Contains("SpectatorCamera")) {
