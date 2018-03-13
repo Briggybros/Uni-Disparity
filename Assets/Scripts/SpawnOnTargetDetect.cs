@@ -7,6 +7,8 @@ using Vuforia;
 [RequireComponent(typeof(CharacterPicker))]
 public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
+	public ScoreboardController scoreboard;
+
 	private TrackableBehaviour trackableBehaviour;
 	private char otherWorld;
 	private bool isTracking, isActive;
@@ -49,6 +51,13 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
+		if (scoreboard != null) {
+			if (!scoreboard.isTimeStarted) {
+				scoreboard.StartTimer();
+			}
+		} else {
+			Debug.LogWarning("There's no scoreboard provided, are you sure this was intended?");
+		}
 		isTracking = true;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
