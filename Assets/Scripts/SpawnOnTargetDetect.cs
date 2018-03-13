@@ -91,8 +91,10 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			}
 		}
 		
-        foreach (var component in canvasComponents)
-            component.enabled = true;
+		// remove buttons if spectator
+        foreach (var component in canvasComponents) {
+			component.enabled = true;
+		}
     }
 
     protected virtual void OnTrackingLost()

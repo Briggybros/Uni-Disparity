@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class CharacterPicker : MonoBehaviour {
+public class CharacterPicker : MonoBehaviour {
     public const char CAT = 'A';
     public const char DOG = 'B';
     public const char SPECTATORCAT = 'C';
