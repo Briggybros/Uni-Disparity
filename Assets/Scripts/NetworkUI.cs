@@ -77,7 +77,7 @@ public class NetworkUI : MonoBehaviour {
 	}
 
 	public void CreateInternetMatch (string matchName) {
-		GetComponent<CharacterPicker>().SetWorld('A');
+		CharacterPicker.SetWorld(CharacterPicker.CAT);
 		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
 	}
 
@@ -105,10 +105,10 @@ public class NetworkUI : MonoBehaviour {
 					GameObject panel = Instantiate(matchJoinPanelPrefab, new Vector2(0, 0), Quaternion.identity);
 					panel.transform.SetParent(matchSelectPanel.transform, false);
 					panel.GetComponent<MatchJoinPanelInit>().Init(match.name, () => {
-						GetComponent<CharacterPicker>().SetWorld('B');
+						CharacterPicker.SetWorld(CharacterPicker.DOG);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 					}, () => {
-						GetComponent<CharacterPicker>().SetWorld('B');
+						CharacterPicker.SetWorld(CharacterPicker.SPECTATOR);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 					});
 				}
