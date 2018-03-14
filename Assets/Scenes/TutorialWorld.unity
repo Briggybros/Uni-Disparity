@@ -1844,6 +1844,11 @@ MonoBehaviour:
   positions:
   - {x: -12, y: 2, z: -10}
   - {x: -4.5, y: 2, z: -10}
+  height: 1
+  baseOffset: 0.25
+  radius: 1
+  angularSpeed: 360
+  positionalSpeed: 3.5
 --- !u!114 &697082561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2322,13 +2327,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827427547}
-  m_LocalRotation: {x: 0.28618157, y: -0.629102, z: 0.2682771, w: 0.6710874}
-  m_LocalPosition: {x: 0, y: 10.95, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 46.191, y: -86.301, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828884914
 GameObject:
   m_ObjectHideFlags: 0
@@ -6301,7 +6306,7 @@ GameObject:
   - component: {fileID: 1898510789}
   - component: {fileID: 1898510788}
   m_Layer: 0
-  m_Name: Enemy 2
+  m_Name: Enemy 2B1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6338,6 +6343,11 @@ MonoBehaviour:
   - {x: -5, y: 2, z: -4}
   - {x: -5, y: 2, z: 4.5}
   - {x: -11, y: 2, z: 4.5}
+  height: 1
+  baseOffset: 0.25
+  radius: 1
+  angularSpeed: 360
+  positionalSpeed: 3.5
 --- !u!114 &1898510789
 MonoBehaviour:
   m_ObjectHideFlags: 0
