@@ -15,6 +15,7 @@ TagManager:
   - Bopped
   - Weight
   - Key
+  - KeyDoor
   layers:
   - Default
   - TransparentFX
