@@ -5,6 +5,7 @@ using UnityEngine;
 // selfie stick since we essentially stick a camera on the end of a stick move it around
 public class SelfieStickController : MonoBehaviour {
 
+	private bool automaticControl = false;
 	// Use this for initialization
 	void Start () {
 		transform.position = Vector3.zero;
@@ -21,17 +22,28 @@ public class SelfieStickController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.D)) {
-            transform.Rotate(20 * Vector3.right * Time.deltaTime);
-        }
-		if (Input.GetKey(KeyCode.W)) {
-			transform.Rotate(20 * Vector3.forward * Time.deltaTime);
+		if(automaticControl){
+			transform.RotateAround(Vector3.zero, Vector3.up, 10 * Time.deltaTime);
+			if(Input.GetKey(KeyCode.Space)) {
+				automaticControl = !automaticControl;
+			}
 		}
-		if (Input.GetKey(KeyCode.A)) {
-			transform.Rotate(20 * Vector3.left * Time.deltaTime);
-		}
-		if (Input.GetKey(KeyCode.S)) {
-			transform.Rotate(20 * Vector3.back * Time.deltaTime);
+		else {
+			if (Input.GetKey(KeyCode.D)) {
+				transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+			}
+			if (Input.GetKey(KeyCode.W)) {
+				transform.Rotate(20 * Vector3.forward * Time.deltaTime);
+			}
+			if (Input.GetKey(KeyCode.A)) {
+				transform.RotateAround(Vector3.zero, Vector3.up, -20 * Time.deltaTime);
+			}
+			if (Input.GetKey(KeyCode.S)) {
+				transform.Rotate(20 * Vector3.back * Time.deltaTime);
+			}
+			if(Input.GetKey(KeyCode.Space)) {
+					automaticControl = !automaticControl;
+			}
 		}
 	}
 }

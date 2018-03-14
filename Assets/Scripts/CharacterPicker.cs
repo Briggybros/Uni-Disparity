@@ -28,4 +28,14 @@ public class CharacterPicker : MonoBehaviour {
             return true;
         return false;
     }
+
+    // Changes the world the Spectator sees
+    public static void ChangeSpectatorFocus (){
+        if (World == SPECTATORCAT){
+            World = SPECATORDOG;
+        }
+        if (World == SPECATORDOG){
+            World = SPECTATORCAT;
+        }
+    }
 }

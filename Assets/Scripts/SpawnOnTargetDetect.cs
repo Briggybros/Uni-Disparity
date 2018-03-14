@@ -21,6 +21,10 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	public void Update () {
 		if (CharacterPicker.IsSpectator()) {
+			if (Input.GetKey(KeyCode.P)){
+				CharacterPicker.ChangeSpectatorFocus();
+				OnTrackingFound();
+			}
 			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
 			foreach (var camera in cameras) {
 				if (camera.name.Contains("SpectatorCamera")) {
