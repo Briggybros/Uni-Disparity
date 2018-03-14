@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// selfie stick since we essentially stick a camera on the end of a stick move it around
 public class SelfieStickController : MonoBehaviour {
 
 	// Use this for initialization
@@ -24,13 +25,13 @@ public class SelfieStickController : MonoBehaviour {
             transform.Rotate(20 * Vector3.right * Time.deltaTime);
         }
 		if (Input.GetKey(KeyCode.W)) {
-			transform.Rotate(20 * Vector3.left * Time.deltaTime);
-		}
-		if (Input.GetKey(KeyCode.A)) {
 			transform.Rotate(20 * Vector3.forward * Time.deltaTime);
 		}
+		if (Input.GetKey(KeyCode.A)) {
+			transform.Rotate(20 * Vector3.left * Time.deltaTime);
+		}
 		if (Input.GetKey(KeyCode.S)) {
-			transform.Rotate(20 * Vector3.right * Time.deltaTime);
+			transform.Rotate(20 * Vector3.back * Time.deltaTime);
 		}
 	}
 }

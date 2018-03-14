@@ -78,7 +78,7 @@ public class NetworkUI : MonoBehaviour {
 
 	public void CreateInternetMatch (string matchName) {
 		CharacterPicker.SetWorld(CharacterPicker.CAT);
-		networkManager.matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnInternetMatchCreate);
+		networkManager.matchMaker.CreateMatch(matchName, 10, true, "", "", "", 0, 0, OnInternetMatchCreate);
 	}
 
 	private void OnInternetMatchCreate (bool success, string extendedInfo, MatchInfo matchInfo) {
