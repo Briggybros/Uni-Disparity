@@ -13,6 +13,9 @@ TagManager:
   - WorldA
   - Static
   - Bopped
+  - Weight
+  - Key
+  - KeyDoor
   layers:
   - Default
   - TransparentFX

@@ -2,67 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraRay : MonoBehaviour {
+public class CameraRay : Receiver {
 
-	public Camera camera;
+	public new GameObject camera;
+	public GameObject target;
 	public LineRenderer line;
 	bool laserActive;
-	GameObject target;
+	//public GameObject target;
 	RaycastHit hit;
 
+	Vector3 prevForward;
+
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
 		laserActive = false;
-		line.enabled = true;
-		target = GameObject.Find("keyDoor");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
+		line.enabled = false;
 	}
 
-	void SwitchReceived () {
-		Debug.Log("bamamam");
-		if (laserActive == false) {
-			Debug.Log("yassss");
-			shootRay();
-		}
-		else if (laserActive == true) {
-			stopShootRay();
-		}
+	protected override void SwitchReceived () {
+		 if (laserActive == false) {
+		 	shootRay();
+		 }
+		 else if (laserActive == true) {
+		 	stopShootRay();
+		 }
 	}
 
 	void shootRay () {
-		//StopAllCoroutines();
+		// StopAllCoroutines();
 		laserActive = true;
 		StartCoroutine(fireRay());
 	}
 
 	void stopShootRay () {
 		laserActive = false;
-		line.enabled = true;
+		line.enabled = false;
 	}
 
 	IEnumerator fireRay () {
 
-		line.enabled = true;
+		while (laserActive == true) {
+			line.enabled = true;
+			if(camera.transform.forward != prevForward) {
+				prevForward = camera.transform.forward;
+				Ray ray = new Ray(camera.transform.position, camera.transform.forward);
+				line.SetPosition(0, ray.origin);
 
-	while (laserActive == true) {
-			Debug.Log("here");
-			Ray ray = new Ray(camera.transform.position, camera.transform.forward);
-			line.SetPosition(0, ray.origin);
-
-			/*if (Physics.Raycast (ray, out hit, 100, QueryTriggerInteraction = false)) {
-				line.SetPosition(1, hit.point);
-				if (hit.rigidbody.gameObject.tag == "keyDoor") {
-					target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+				if (Physics.Raycast (ray, out hit, 100)) {
+					Debug.Log(hit.transform.gameObject.name);
+					line.SetPosition(1, hit.point);
+					if (hit.rigidbody.gameObject.tag == "KeyDoor") {
+						target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+					} 
+				}
+				else { 
+					line.SetPosition(1, ray.GetPoint(100));
 				} 
 			}
-			else { */
-				line.SetPosition(1, ray.GetPoint(100));
-			//}
+			yield return 0;
 		}
-		yield return 0;
-	}
+	}	
 }

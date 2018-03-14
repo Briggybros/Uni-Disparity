@@ -8,8 +8,8 @@ public class RotatingPlatformBehaviourScript: Receiver {
 	public bool TwoLocation;
     public int Increment;
     public float Duration;
-    private float TargetAngle;
-    private float Facing;
+    public float TargetAngle;
+    public float Facing;
     private float CurrentTime;
     private Vector3 SourceAxis;
     private Vector3 TargetAxis;
@@ -20,7 +20,8 @@ public class RotatingPlatformBehaviourScript: Receiver {
         CurrentTime = 0;
         TargetAngle = Increment;
         Quaternion sourceOrientation = this.transform.rotation;
-        sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
+		//sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
+		Facing = sourceOrientation.eulerAngles.y;
         TargetAxis = transform.up;
     }
 	
@@ -43,6 +44,9 @@ public class RotatingPlatformBehaviourScript: Receiver {
             float progress = CurrentTime / Duration;
 
             // Interpolate to get the current angle/axis between the source and target.
+			if(TargetAngle > -0.5 && TargetAngle < 0.5) {
+				TargetAngle = 360;
+			}
             float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
             Vector3 currentAxis = Vector3.Slerp(SourceAxis, TargetAxis, progress);
             this.transform.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis);
@@ -50,8 +54,9 @@ public class RotatingPlatformBehaviourScript: Receiver {
         else{
             Rotating = false;
             Quaternion sourceOrientation = this.transform.rotation;
-            sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
-            TargetAxis = transform.up;
+			//sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
+			Facing = sourceOrientation.eulerAngles.y;
+			TargetAxis = transform.up;
             CurrentTime = 0;
 			if (TwoLocation) {
 				Increment = -Increment;

@@ -10,13 +10,11 @@ public class JoystickCharacter : NetworkBehaviour
 
     private float RotationSpeed = 8.0f;
     private float MovementSpeed;
+	private bool carrying = false;
     public JoystickMovement joystick; 
     private Vector3 pos;
-    private Quaternion rot;
-    public bool BlockInput;
     public bool interacting;
     public bool touching;
-    private int count;
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
     public bool canMove;
@@ -28,39 +26,35 @@ public class JoystickCharacter : NetworkBehaviour
 	private bool impetus = false;
 	private bool jumpReq = false;
 	private int impCount = 0;
+	private int grabLax;
+	private List<string> keys = new List<string>();
 
     private Vector3 HeldScale;
 
-    void Start()
-    {
+    void Start() {
         joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
-        rot = transform.localRotation;
         pos = transform.localPosition;
-        BlockInput = false;
         interacting = false;
         touching = false;
-        count = 0;
-        targetNetworkIdent = null;// = this.GetComponent<NetworkIdentity>();
+        targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
+		grabLax = 0;
     }
 
     [Command]
-    void CmdsyncChange(string tag, GameObject target)
-    {
+    void CmdsyncChange(string tag, GameObject target) {
         targetNetworkIdent.AssignClientAuthority(connectionToClient);
         RpcupdateState(tag, target);
         targetNetworkIdent.RemoveClientAuthority(connectionToClient);
     }
 
     [ClientRpc]
-    void RpcupdateState(string tag, GameObject target)
-    {
+    void RpcupdateState(string tag, GameObject target) {
         target.tag = tag;
     }
 
     //Handles rotation
-    IEnumerator Rotate(Quaternion finalRotation)
-    {
+    IEnumerator Rotate(Quaternion finalRotation) {
         while (transform.localRotation != finalRotation)
         {
             transform.localRotation = Quaternion.Slerp(
@@ -80,19 +74,14 @@ public class JoystickCharacter : NetworkBehaviour
         Transform activeCheckpointTransform = Checkpoint.GetActiveCheckpointTransform();
         transform.SetPositionAndRotation(activeCheckpointTransform.position, activeCheckpointTransform.rotation);
         rigidbody.isKinematic = false;
-        if (BlockInput) BlockInput = false;
     }
 
     //Parents on interaction with collider
-    void OnCollisionEnter(Collision c)
-    {
+    void OnCollisionEnter(Collision c) {
         if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
         {
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
-            rot = transform.localRotation;
-            //MovementSpeed = 0.8f;
-            BlockInput = false;
         }
         else if ((c.gameObject.GetComponent<Interactable>() != null))
         {
@@ -106,14 +95,11 @@ public class JoystickCharacter : NetworkBehaviour
         }
     }
 
-    void OnCollisionExit(Collision c)
-    {
+    void OnCollisionExit(Collision c) {
         if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
         {
             transform.parent = null;
             pos = transform.localPosition;
-            rot = transform.localRotation;
-            //MovementSpeed = 4.0f;
         }
         else if ((c.gameObject.GetComponent<Interactable>() != null))
         {
@@ -124,10 +110,10 @@ public class JoystickCharacter : NetworkBehaviour
     }
 
     static bool IsJump() {
-#if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
-		return Input.GetKeyDown(KeyCode.Space);
-#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
+#if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
 		return Touch.Test("Jump");
+#elif UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+		return Input.GetKeyDown(KeyCode.Space);
 #endif
     }
 
@@ -143,23 +129,20 @@ public class JoystickCharacter : NetworkBehaviour
 		}
 	}
 
-    static bool isInteract()
-    {
-        #if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
-        return Input.GetKeyDown(KeyCode.E);
-        #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
+    static bool isInteract() {
+#if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
         return Touch.Test("Use");
-        #endif
+#elif UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
+        return Input.GetKeyDown(KeyCode.E);
+#endif
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (!canMove)
-        {
+        if (!canMove) {
             return;
         }
-
         if (GetComponent<Rigidbody>().IsSleeping()) {
             GetComponent<Animator>().SetBool("Running", false);
         } else {
@@ -168,73 +151,76 @@ public class JoystickCharacter : NetworkBehaviour
 
         if (!isLocalPlayer)
             return;
-
-        cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
-
-       // Debug.Log("camera" + cameraForwards);
+		cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
         transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
-        if (!interacting && isInteract() && touching)
-        {
+
+		grabLax++;
+		if (isInteract() && touching && target.tag == "Key") {
+			keys.Add(target.name);
+			CmdsyncChange("Bopped", target);
+		}
+		else if (carrying && !interacting && isInteract() && grabLax > 20) {
+			carrying = false;
+			GameObject child = this.transform.GetComponentsInChildren<Interactable>()[0].gameObject;
+			child.transform.SetParent(null);
+			child.GetComponent<Rigidbody>().isKinematic = false;
+			child.transform.Translate(0.0f, -0.4f, 0.0f);
+			grabLax = 0;
+		}
+		else if(!interacting && isInteract() && touching && !carrying && target.tag == "Weight" && grabLax > 20) {
+			carrying = true;
+			target.transform.Translate(0.0f, 0.4f, 0.0f);
+			target.GetComponent<Rigidbody>().isKinematic = true;
+			target.transform.SetParent(this.transform);
+			grabLax = 0;
+		}
+        else if (!interacting && isInteract() && touching && !carrying && target.tag != "Weight") {
             interacting = true;
-            //this.gameObject.tag = "PlayerInteract";
-            CmdsyncChange("Bopped", target);
+			if(target.GetComponent<ChestBehaviour>() != null) {
+				ChestBehaviour theirBe = target.GetComponent<ChestBehaviour>();
+				string Name = theirBe.key.name;
+				if (keys.Contains(Name)) {
+					CmdsyncChange("Bopped", target);
+				}
+			} else {
+				CmdsyncChange("Bopped", target);
+			}
         }
-        if (interacting && !isInteract())
-        {
+        if (interacting && !isInteract()) {
             interacting = false;
         }
-        if (transform.localPosition.y <= -2)
-        {
+        if (transform.position.y <= -2) {
             ResetPlayerToCheckpoint();
         }
 
-        //Rigidbody lines control jump start/end
-        if (BlockInput && GetComponent<Rigidbody>().IsSleeping())
-        {
-            pos = transform.localPosition;
-            rot = transform.localRotation;
-            BlockInput = false;
+        pos = transform.localPosition;
+        stickInput = StickInput();
+        if (stickInput != Vector3.zero) {   
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
+            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
+            pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
         }
 
-        if (!BlockInput)
-        {
-            pos = transform.localPosition;
-            rot = transform.localRotation;
-            stickInput = StickInput();
-            if (stickInput != Vector3.zero)
-            {   
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
-                MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
-                pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
-                transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
-            }
-
-            if (!IsJump() && impCount > 60) {
-				impetus = false;
-			}
-			if (IsJump() && !impetus) {
-				//GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
-				//GetComponent<Rigidbody>().velocity = Vector3.up * 7.0f;
-				jumpReq = true;
-				impetus = true;
-				impCount = 0;
-                //BlockInput = true;
-            }
-			impCount++;
+        if (!IsJump() && impCount > 40) {
+            impetus = false;
         }
-
+        if (IsJump() && !impetus) {
+            jumpReq = true;
+            impetus = true;
+            impCount = 0;
+        }
+        impCount++;
 	}
 
-    private Vector3 StickInput()
-    {
+    private Vector3 StickInput() {
         Vector3 dir = Vector3.zero;
 
         dir.x = joystick.Horizontal();
         dir.z = joystick.Vertical();
 
-        if(dir.magnitude > 1)
-        {
+        if(dir.magnitude > 1) {
             dir.Normalize();
         }
         return dir;
