@@ -13,6 +13,8 @@ TagManager:
   - WorldA
   - Static
   - Bopped
+  - Weight
+  - Key
   layers:
   - Default
   - TransparentFX
