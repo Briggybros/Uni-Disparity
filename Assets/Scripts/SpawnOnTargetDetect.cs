@@ -22,7 +22,10 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	public void Update () {
 		if (CharacterPicker.IsSpectator()) {
 			if (Input.GetKey(KeyCode.P)){
+				Debug.Log(otherWorld);
 				CharacterPicker.ChangeSpectatorFocus();
+				otherWorld = CharacterPicker.GetOtherWorld();
+				Debug.Log(otherWorld);
 				OnTrackingFound();
 			}
 			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");

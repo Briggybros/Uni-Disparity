@@ -34,7 +34,7 @@ public class CharacterPicker : MonoBehaviour {
         if (World == SPECTATORCAT){
             World = SPECATORDOG;
         }
-        if (World == SPECATORDOG){
+        else if (World == SPECATORDOG){
             World = SPECTATORCAT;
         }
     }
