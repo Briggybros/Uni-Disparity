@@ -31,7 +31,12 @@ public class ScoreboardController : MonoBehaviour {
 
 	public void EndGame() {
 		isTimeStarted = false;
-		NamePanel.SetActive(true);
+		if (Network.isServer) {
+			NamePanel.SetActive(true);
+		} else {
+			ScorePanel.SetActive(true);
+			ScorePanel.GetComponent<ScoreboardUI>().ShowScores();
+		}
 	}
 
 	public void OnNameEntered() {
