@@ -112,7 +112,6 @@ public class JoystickCharacter : NetworkBehaviour
 	//Parents on interaction with collider
 	void OnTriggerEnter(Collider c) {
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
-			Debug.Log("What the fuck Nintendo");
 			targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
 			target = c.gameObject;
 			touching = true;
