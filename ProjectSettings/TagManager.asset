@@ -18,6 +18,7 @@ TagManager:
   - KeyDoor
   - CheckpointA
   - CheckpointB
+  - ImageTarget
   layers:
   - Default
   - TransparentFX
