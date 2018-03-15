@@ -80,7 +80,8 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
         foreach (var component in rendererComponents) {
 			int strLen = component.gameObject.name.Length;
 			string name = component.gameObject.name;
-			if (component.gameObject.GetComponent<disparity>.World != otherWorld) {
+			if (component.gameObject.GetComponent<disparity>() == null ||
+				component.gameObject.GetComponent<disparity>().World != otherWorld) {
             	component.enabled = true;
 			}
 		}
@@ -89,8 +90,9 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
         foreach (var component in colliderComponents) {
 			int strLen = component.gameObject.name.Length;
 			string name = component.gameObject.name;
-			if (component.gameObject.GetComponent<disparity>.World != otherWorld ||
-				component.gameObject.GetComponent<disparity>.isColliderShared) {
+			if (component.gameObject.GetComponent<disparity>() == null ||
+				component.gameObject.GetComponent<disparity>().World != otherWorld ||
+				component.gameObject.GetComponent<disparity>().isColliderShared) {
             	component.enabled = true;
 			} else if (name[strLen-2] != otherWorld) {
 				component.enabled = true;
