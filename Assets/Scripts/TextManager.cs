@@ -14,10 +14,12 @@ public class TextManager : MonoBehaviour {
     private bool opened = false;
     private bool isOpen = false;
     private int chatMessage = 0;
+    private GameObject uiCanvas;
 
     public void createChat(string[] chats, Sprite[] avatars, int[] chatPics)
     {
-        GameObject.Find("Menu Canvas").SetActive(false);
+        uiCanvas = GameObject.Find("UI Canvas");
+        uiCanvas.SetActive(false);
         opened = true;
         GameObject toInstantiate = textBox;
         GameObject chatPane = Instantiate(toInstantiate, new Vector2(0, 0), Quaternion.identity) as GameObject;
@@ -32,7 +34,8 @@ public class TextManager : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && (repeated || !opened))
+        Debug.Log("Entered");
+        if (other.tag == "Player" && (repeated || !opened) && !isOpen)
         {
             createChat(chats, avatars, chatPictures);
         }
@@ -46,7 +49,7 @@ public class TextManager : MonoBehaviour {
            Destroy(GameObject.FindGameObjectWithTag("TextCanvas"));
            isOpen = false;
            chatMessage = 0;
-           GameObject.Find("Menu Canvas").SetActive(true);
+           uiCanvas.SetActive(true);
         }
         else
         {

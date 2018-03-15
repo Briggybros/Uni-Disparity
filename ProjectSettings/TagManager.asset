@@ -13,6 +13,7 @@ TagManager:
   - WorldA
   - Static
   - Bopped
+  - TextCanvas
   layers:
   - Default
   - TransparentFX
