@@ -56,14 +56,17 @@ function insertScore(score) {
 }
 
 function getScores(level, offset, size) {
-  return scoreboard[level].map((item, idx) => Object.assign(
-    {},
-    item,
-    {
-      rank: idx + 1,
-      level,
-    },
-  )).slice(offset, offset + size);
+  if (scoreboard[level]) {
+    return scoreboard[level].map((item, idx) => Object.assign(
+      {},
+      item,
+      {
+        rank: idx + 1,
+        level,
+      },
+    )).slice(offset, offset + size);
+  }
+  return [];
 }
 
 module.exports = {
