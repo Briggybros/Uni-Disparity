@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class portalEnd : Trigger {
+public class PortalEnd : Trigger {
 
 	public GameObject end;
 	private int count;

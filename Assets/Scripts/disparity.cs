@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class disparity : MonoBehaviour {
+public class Disparity : MonoBehaviour {
 
 	public char World = 'A';
 	public bool isColliderShared = false;

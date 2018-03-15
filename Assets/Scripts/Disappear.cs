@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dissappear : MonoBehaviour {
+public class Disappear : MonoBehaviour {
 
 	private int count;
 	// Use this for initialization
