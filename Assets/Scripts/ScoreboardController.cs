@@ -4,18 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
-public class ScoreboardController : MonoBehaviour {
+public class ScoreboardController : NetworkBehaviour {
 
 	public Text TimeText;
 	public GameObject NamePanel;
 	public GameObject ScorePanel;
 	public bool isTimeStarted = false;
 	private float timeElapsed = 0;
-
-	void Start () {
-		
-	}
 	
 	void Update () {
 		if (isTimeStarted) {
@@ -26,12 +23,25 @@ public class ScoreboardController : MonoBehaviour {
 	}
 
 	public void StartTimer() {
+		if (NetworkServer.active) {
+			RpcStartTimer();
+		}
+	}
+
+	[ClientRpc]
+	private void RpcStartTimer() {
 		isTimeStarted = true;
 	}
 
-	public void EndGame() {
+	[ClientRpc]
+	private void RpcStopTimer(float time) {
 		isTimeStarted = false;
-		if (Network.isServer) {
+		timeElapsed = time;
+	}
+
+	public void EndGame() {
+		if (NetworkServer.active) {
+			RpcStopTimer(timeElapsed);
 			NamePanel.SetActive(true);
 		} else {
 			ScorePanel.SetActive(true);
