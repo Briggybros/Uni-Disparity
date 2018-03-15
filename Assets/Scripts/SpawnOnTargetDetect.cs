@@ -7,6 +7,8 @@ using Vuforia;
 [RequireComponent(typeof(CharacterPicker))]
 public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
+	public ScoreboardController scoreboard;
+
 	private TrackableBehaviour trackableBehaviour;
 	private char otherWorld;
 	private bool isTracking, isActive;
@@ -16,20 +18,35 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-		otherWorld = GetComponent<CharacterPicker>().GetWorld() == 'A' ? 'B' : 'A';
+		otherWorld = CharacterPicker.GetWorld() == CharacterPicker.CAT ? CharacterPicker.DOG : CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR ? ' ' : CharacterPicker.CAT;
 	}
 
 	public void Update () {
-		var players = GameObject.FindGameObjectsWithTag("Player");
-		if (isTracking && !isActive) {	
-			foreach (var player in players) {
-				player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-				isActive = true;
+		if (CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR) {
+			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+			foreach (var camera in cameras) {
+				if (camera.name.Contains("SpectatorCamera")) {
+					foreach (var other in cameras) {
+						if (other != camera) {
+							other.GetComponent<Camera>().enabled = false;
+							other.GetComponent<VuforiaBehaviour>().enabled = false;
+							camera.GetComponent<Camera>().enabled = true;
+						}
+					}
+				} 
 			}
-		} else if (!isTracking && isActive) {
-			foreach (var player in players) {
-				player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-				isActive = false;
+		} else {
+			var players = GameObject.FindGameObjectsWithTag("Player");
+			if (isTracking && !isActive) {	
+				foreach (var player in players) {
+					player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+					isActive = true;
+				}
+			} else if (!isTracking && isActive) {
+				foreach (var player in players) {
+					player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+					isActive = false;
+				}
 			}
 		}
 	}
@@ -49,6 +66,13 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
+		if (scoreboard != null) {
+			if (!scoreboard.isTimeStarted) {
+				scoreboard.StartTimer();
+			}
+		} else {
+			Debug.LogWarning("There's no scoreboard provided, are you sure this was intended?");
+		}
 		isTracking = true;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);

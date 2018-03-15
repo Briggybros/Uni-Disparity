@@ -7,16 +7,22 @@ using UnityEditor.SceneManagement;
 public class NetworkUIEditor : Editor {
 
     private SerializedProperty buttonPrefab;
+    private SerializedProperty matchJoinPanelPrefab;
     private SerializedProperty levelSelectPanel;
     private SerializedProperty matchSelectPanel;
     private SerializedProperty errorMessageObject;
+    private SerializedProperty graphicsSlider;
+    private SerializedProperty graphicsText;
     private SerializedProperty levels;
 
     public void OnEnable () {
         buttonPrefab = serializedObject.FindProperty("buttonPrefab");
+        matchJoinPanelPrefab = serializedObject.FindProperty("matchJoinPanelPrefab");
         levelSelectPanel = serializedObject.FindProperty("levelSelectPanel");
         matchSelectPanel = serializedObject.FindProperty("matchSelectPanel");
         errorMessageObject = serializedObject.FindProperty("errorMessageObject");
+        graphicsSlider = serializedObject.FindProperty("graphicsSlider");
+        graphicsText = serializedObject.FindProperty("graphicsText");
         levels = serializedObject.FindProperty("levels");
     }
 
@@ -24,9 +30,12 @@ public class NetworkUIEditor : Editor {
         serializedObject.Update();
 
         EditorGUILayout.PropertyField(buttonPrefab);
+        EditorGUILayout.PropertyField(matchJoinPanelPrefab);
         EditorGUILayout.PropertyField(levelSelectPanel);
         EditorGUILayout.PropertyField(matchSelectPanel);
         EditorGUILayout.PropertyField(errorMessageObject);
+        EditorGUILayout.PropertyField(graphicsSlider);
+        EditorGUILayout.PropertyField(graphicsText);
 
         EditorGUILayout.PropertyField(levels);
         EditorGUI.indentLevel += 1;
