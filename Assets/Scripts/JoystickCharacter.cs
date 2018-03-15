@@ -28,6 +28,7 @@ public class JoystickCharacter : NetworkBehaviour
 	private int impCount = 0;
 	private int grabLax;
 	private List<string> keys = new List<string>();
+	private List<string> cores = new List<string>();
 
     private Vector3 HeldScale;
 
@@ -180,8 +181,12 @@ public class JoystickCharacter : NetworkBehaviour
 			if(target.GetComponent<ChestBehaviour>() != null) {
 				ChestBehaviour theirBe = target.GetComponent<ChestBehaviour>();
 				string Name = theirBe.key.name;
+				string Core = theirBe.gameObject.transform.GetChild(0).name;
 				if (keys.Contains(Name)) {
 					CmdsyncChange("Bopped", target);
+				}
+				if (!(cores.Contains(Core))) {
+					cores.Add(Core);
 				}
 			} else {
 				CmdsyncChange("Bopped", target);
