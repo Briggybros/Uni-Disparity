@@ -16,6 +16,8 @@ TagManager:
   - Weight
   - Key
   - KeyDoor
+  - CheckpointA
+  - CheckpointB
   layers:
   - Default
   - TransparentFX

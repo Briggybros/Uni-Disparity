@@ -16,7 +16,7 @@ public class JoystickCharacter : NetworkBehaviour
     public bool interacting;
     public bool touching;
     private NetworkIdentity targetNetworkIdent;
-    private GameObject target;
+    public GameObject target;
     public bool canMove;
     private Vector3 cameraForwards;
     private Vector3 stickInput;
@@ -27,8 +27,8 @@ public class JoystickCharacter : NetworkBehaviour
 	private bool jumpReq = false;
 	private int impCount = 0;
 	private int grabLax;
-	private List<string> keys = new List<string>();
-	private List<string> cores = new List<string>();
+	public List<string> keys = new List<string>();
+	public List<string> cores = new List<string>();
 
     private Vector3 HeldScale;
 
@@ -52,7 +52,7 @@ public class JoystickCharacter : NetworkBehaviour
 	[Command]
 	void CmdsyncNameChange(string name, GameObject target) {
 		targetNetworkIdent.AssignClientAuthority(connectionToClient);
-		RpcupdateState(name, target);
+		RpcupdateName(name, target);
 		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
@@ -96,33 +96,55 @@ public class JoystickCharacter : NetworkBehaviour
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
         }
-        else if ((c.gameObject.GetComponent<Interactable>() != null))
+        /*else if ((c.gameObject.GetComponent<Interactable>() != null))
         {
+			Debug.Log("What the fuck Nintendo");
             targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
             target = c.gameObject;
             touching = true;
-        }
+        }*/
         if (c.gameObject.tag == "Enemy")
         {
             ResetPlayerToCheckpoint();
         }
     }
 
-    void OnCollisionExit(Collision c) {
+	//Parents on interaction with collider
+	void OnTriggerEnter(Collider c) {
+		if ((c.gameObject.GetComponent<Interactable>() != null)) {
+			Debug.Log("What the fuck Nintendo");
+			targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
+			target = c.gameObject;
+			touching = true;
+		}
+		if (c.gameObject.tag == "Enemy") {
+			ResetPlayerToCheckpoint();
+		}
+	}
+
+	void OnCollisionExit(Collision c) {
         if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
         {
             transform.parent = null;
             pos = transform.localPosition;
         }
-        else if ((c.gameObject.GetComponent<Interactable>() != null))
+        /*else if ((c.gameObject.GetComponent<Interactable>() != null))
         {
             interacting = false;
             target = null;
             touching = false;
-        }
+        }*/
     }
 
-    static bool IsJump() {
+	void OnTriggerExit(Collider c) {
+		if ((c.gameObject.GetComponent<Interactable>() != null)) {
+			interacting = false;
+			target = null;
+			touching = false;
+		}
+	}
+
+	static bool IsJump() {
 #if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
 		return Touch.Test("Jump");
 #elif UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR
@@ -168,13 +190,20 @@ public class JoystickCharacter : NetworkBehaviour
 
         transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
 
+		// if (transform.localPosition.y <= Vector3.zero.y - 3) {
+		//	ResetPlayerToCheckpoint();
+		// }
+
 		grabLax++;
 		if (isInteract() && touching && target.tag == "Key") {
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
 		}else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
+			Debug.Log("touchy transporty");
 			foreach(string trans in cores) {
+				Debug.Log(trans);
 				CmdsyncNameChange(trans, target);
+				cores.Remove(trans);
 			}
 		}
 		else if (carrying && !interacting && isInteract() && grabLax > 20) {
