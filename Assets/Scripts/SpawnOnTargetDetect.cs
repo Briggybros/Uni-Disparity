@@ -18,31 +18,10 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-		otherWorld = CharacterPicker.GetOtherWorld();
 	}
 
 	public void Update () {
-		if (CharacterPicker.IsSpectator()) {
-			if (Input.GetKey(KeyCode.P)){
-				Debug.Log(otherWorld);
-				CharacterPicker.ChangeSpectatorFocus();
-				otherWorld = CharacterPicker.GetOtherWorld();
-				Debug.Log(otherWorld);
-				OnTrackingFound();
-			}
-			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-			foreach (var camera in cameras) {
-				if (camera.name.Contains("SpectatorCamera")) {
-					foreach (var other in cameras) {
-						if (other != camera) {
-							other.GetComponent<Camera>().enabled = false;
-							other.GetComponent<VuforiaBehaviour>().enabled = false;
-							camera.GetComponent<Camera>().enabled = true;
-						}
-					}
-				} 
-			}
-		} else {
+		if (!CharacterPicker.IsSpectator()) {
 			var players = GameObject.FindGameObjectsWithTag("Player");
 			if (isTracking && !isActive) {	
 				foreach (var player in players) {
@@ -73,6 +52,8 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
+		Debug.Log("hello");
+		otherWorld = CharacterPicker.GetOtherWorld();
 		if (scoreboard != null) {
 			if (!scoreboard.isTimeStarted) {
 				scoreboard.StartTimer();
@@ -81,29 +62,26 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			Debug.LogWarning("There's no scoreboard provided, are you sure this was intended?");
 		}
 		isTracking = true;
-        var rendererComponents = GetComponentsInChildren<Renderer>(true);
-        var colliderComponents = GetComponentsInChildren<Collider>(true);
-        var canvasComponents = GetComponentsInChildren<Canvas>(true);
+        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
+        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+        Canvas[] canvasComponents = GetComponentsInChildren<Canvas>(true);
 
 		// render components ONLY in the players world
         foreach (var component in rendererComponents) {
-			int strLen = component.gameObject.name.Length;
-			string name = component.gameObject.name;
-			if (component.gameObject.GetComponent<disparity>() == null ||
-				component.gameObject.GetComponent<disparity>().World != otherWorld) {
-            	component.enabled = true;
+			if (component.GetComponent<Disparity>() != null && component.GetComponent<Disparity>().World == otherWorld) {
+            	component.enabled = false;
+			} else {
+				component.enabled = true;
 			}
 		}
 
 		//render colliders only in players world
         foreach (var component in colliderComponents) {
-			int strLen = component.gameObject.name.Length;
-			string name = component.gameObject.name;
-			if (component.gameObject.GetComponent<disparity>() == null ||
-				component.gameObject.GetComponent<disparity>().World != otherWorld ||
-				component.gameObject.GetComponent<disparity>().isColliderShared) {
-            	component.enabled = true;
-			} else if (name[strLen-2] != otherWorld) {
+			if (component.gameObject.GetComponent<Disparity>() != null &&
+				component.gameObject.GetComponent<Disparity>().World == otherWorld &&
+				!component.gameObject.GetComponent<Disparity>().isColliderShared) {
+            	component.enabled = false;
+			} else {
 				component.enabled = true;
 			}
 		}
