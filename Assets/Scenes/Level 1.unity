@@ -1967,11 +1967,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114220348113320404, guid: 24326bc2528cf4512b135d2be756bdab,
-        type: 2}
-      propertyPath: ScorePanel
-      value: 
-      objectReference: {fileID: 106351591}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24326bc2528cf4512b135d2be756bdab, type: 2}
   m_IsPrefabParent: 0
@@ -1981,11 +1976,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 106351589}
   m_Script: {fileID: 11500000, guid: 22ca2b3f9c40d405ea7bab8d352db692, type: 3}
---- !u!1 &106351591 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1749125383682990, guid: 24326bc2528cf4512b135d2be756bdab,
-    type: 2}
-  m_PrefabInternal: {fileID: 106351589}
 --- !u!1 &106351592 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1861138602353286, guid: 24326bc2528cf4512b135d2be756bdab,
