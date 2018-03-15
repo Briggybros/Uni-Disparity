@@ -8,8 +8,8 @@ using UnityEngine.Networking;
 public class Character : NetworkBehaviour
 {
 
-    private float RotationSpeed = 15.0f;
-    private float MovementSpeed = 4.0f;
+    private float RotationSpeed = 30.0f;
+    private float MovementSpeed = 6.0f;
     private Vector3 pos;
     private Quaternion rot;
     public bool BlockInput;
@@ -159,12 +159,6 @@ public class Character : NetworkBehaviour
 
     void Update() {
 
-        if (!GetComponent<Rigidbody>().IsSleeping()) {
-            GetComponent<Animator>().SetBool("Running", true);
-        } else {
-            GetComponent<Animator>().SetBool("Running", false);
-        }
-
         if (!canMove) {
             return;
         }
@@ -211,7 +205,16 @@ public class Character : NetworkBehaviour
                 pos += transform.localRotation * Vector3.forward * 0.1f * (MovementSpeed / 4);
             }
 
-			//Update position
+            if(Vector3.Distance(pos, transform.localPosition) != 0)
+            {
+                GetComponent<Animator>().SetBool("Running", true);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("Running", false);
+            }
+
+            //Update position
             transform.localPosition = Vector3.MoveTowards(
             transform.localPosition,
             pos,

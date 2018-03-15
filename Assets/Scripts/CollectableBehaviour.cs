@@ -10,10 +10,12 @@ public class CollectableBehaviour : MonoBehaviour {
 	private float CurrentTime;
 	private Vector3 SourceAxis;
 	private Vector3 TargetAxis;
+	public int count;
 	// Use this for initialization
 
 	void Start () {
 		CurrentTime = 0;
+		count = 0;
 		TargetAngle = Increment;
 		Quaternion sourceOrientation = this.transform.parent.rotation;
 		sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
