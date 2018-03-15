@@ -49,10 +49,22 @@ public class JoystickCharacter : NetworkBehaviour
         targetNetworkIdent.RemoveClientAuthority(connectionToClient);
     }
 
-    [ClientRpc]
+	[Command]
+	void CmdsyncNameChange(string name, GameObject target) {
+		targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		RpcupdateState(name, target);
+		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+	}
+
+	[ClientRpc]
     void RpcupdateState(string tag, GameObject target) {
         target.tag = tag;
     }
+
+	[ClientRpc]
+	void RpcupdateName(string name,GameObject target) {
+		target.name = target.name + name;
+	}
 
     //Handles rotation
     IEnumerator Rotate(Quaternion finalRotation) {
@@ -160,6 +172,10 @@ public class JoystickCharacter : NetworkBehaviour
 		if (isInteract() && touching && target.tag == "Key") {
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
+		}else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
+			foreach(string trans in cores) {
+				CmdsyncNameChange(trans, target);
+			}
 		}
 		else if (carrying && !interacting && isInteract() && grabLax > 20) {
 			carrying = false;

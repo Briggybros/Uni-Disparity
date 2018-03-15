@@ -6,6 +6,7 @@ public class brokeScript : MonoBehaviour {
 	public Mesh brokeMesh;
 	public GameObject broke;
 	public GameObject intact;
+	public GameObject[] tiles;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,5 +21,8 @@ public class brokeScript : MonoBehaviour {
 		this.gameObject.GetComponent<Mesh>().Equals(brokeMesh);
 		intact.SetActive(false);
 		broke.SetActive(true);
+		foreach (GameObject tile in tiles) {
+			tile.SetActive(false);
+		}
 	}
 }
