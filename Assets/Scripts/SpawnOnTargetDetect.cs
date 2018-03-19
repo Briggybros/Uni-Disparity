@@ -52,11 +52,10 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
-		Debug.Log("hello");
 		otherWorld = CharacterPicker.GetOtherWorld();
 		if (scoreboard != null) {
 			if (!scoreboard.isTimeStarted) {
-				scoreboard.StartTimer();
+				scoreboard.CmdStartTimer();
 			}
 		} else {
 			Debug.LogWarning("There's no scoreboard provided, are you sure this was intended?");

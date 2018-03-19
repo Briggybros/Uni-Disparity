@@ -198,7 +198,6 @@ public class JoystickCharacter : NetworkBehaviour
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
 		}else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
-			Debug.Log("touchy transporty");
 			foreach(string trans in cores) {
 				Debug.Log(trans);
 				CmdsyncNameChange(trans, target);
@@ -233,6 +232,7 @@ public class JoystickCharacter : NetworkBehaviour
 					cores.Add(Core);
 				}
 			} else {
+				Debug.Log("Generic bop");
 				CmdsyncChange("Bopped", target);
 			}
         }
