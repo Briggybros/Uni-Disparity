@@ -14,7 +14,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	private bool isTracking, isActive;
 
     void Start () {
-		Debug.Log("spawnOnTArget start");
 		trackableBehaviour = GetComponent<TrackableBehaviour>();
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
@@ -22,7 +21,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	}
 
 	public void Update () {
-		Debug.Log("SpawnOnTarget update");
 		if (!CharacterPicker.IsSpectator()) {
 			var players = GameObject.FindGameObjectsWithTag("Player");
 			if (isTracking && !isActive) {	
@@ -55,7 +53,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
-		Debug.Log("hello");
 		otherWorld = CharacterPicker.GetOtherWorld();
 		if (scoreboard != null) {
 			if (!scoreboard.isTimeStarted) {
@@ -76,7 +73,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			} else {
 				component.enabled = true;
 			}
-			Debug.Log("Checking renderers");
 		}
 
 		//render colliders only in players world
@@ -88,7 +84,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			} else {
 				component.enabled = true;
 			}
-			Debug.Log("Checking colliders");
 		}
 		
 		// remove buttons if spectator
@@ -99,7 +94,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
     protected virtual void OnTrackingLost()
     {
-		Debug.Log("Tracking lost");
 		isTracking = false;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
