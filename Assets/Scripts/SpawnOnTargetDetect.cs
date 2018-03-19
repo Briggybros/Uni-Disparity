@@ -39,7 +39,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
-		Debug.Log("Tracking state changed");
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {

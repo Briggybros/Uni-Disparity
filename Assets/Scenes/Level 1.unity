@@ -1787,8 +1787,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 66
+  World: 65
   isColliderShared: 0
+--- !u!114 &85686162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85686154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 232
+    i1: 254
+    i2: 226
+    i3: 21
+    i4: 134
+    i5: 210
+    i6: 228
+    i7: 53
+    i8: 11
+    i9: 159
+    i10: 4
+    i11: 99
+    i12: 12
+    i13: 123
+    i14: 200
+    i15: 34
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &86946169
 Prefab:
   m_ObjectHideFlags: 0
@@ -4651,12 +4683,12 @@ LineRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 42c6720edd3329f4dbee35f426fd4e65, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7959,9 +7991,10 @@ GameObject:
   - component: {fileID: 462659150}
   - component: {fileID: 462659149}
   - component: {fileID: 462659148}
+  - component: {fileID: 462659152}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8034,6 +8067,18 @@ Transform:
   m_Father: {fileID: 1770711268}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &462659152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462659147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.0000000037252903}
 --- !u!1001 &466014058
 Prefab:
   m_ObjectHideFlags: 0
@@ -10368,6 +10413,10 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
+      propertyPath: m_TagString
+      value: KeyDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
   m_IsPrefabParent: 0
@@ -20737,7 +20786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238175490}
   m_Layer: 0
-  m_Name: SpyglassB
+  m_Name: SpyglassA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26936,7 +26985,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9671916
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
       propertyPath: m_LocalPosition.z
