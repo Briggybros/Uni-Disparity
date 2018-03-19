@@ -10,6 +10,7 @@ public class TextManager : MonoBehaviour {
     public int[] chatPictures;
     public GameObject textBox;
     public bool repeated;
+    public bool isTriggerable;
 
     private bool opened = false;
     private bool isOpen = false;
@@ -35,7 +36,7 @@ public class TextManager : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entered");
-        if (other.tag == "Player" && (repeated || !opened) && !isOpen)
+        if (other.tag == "Player" && (repeated || !opened) && !isOpen && isTriggerable)
         {
             createChat(chats, avatars, chatPictures);
         }
