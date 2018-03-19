@@ -11,7 +11,7 @@ public class Checkpoint : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		char World = CharacterPicker.GetWorld();
+		char World = CharacterPicker.GetWorld() == CharacterPicker.WORLDS.CAT ? 'A' : 'B';
 		string tag = "Checkpoint" + World;
 		CheckpointList = GameObject.FindGameObjectsWithTag(tag);
 	}

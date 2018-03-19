@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Disparity : MonoBehaviour {
 
-	public char World = 'A';
+	public CharacterPicker.WORLDS World = CharacterPicker.WORLDS.CAT;
 	public bool isColliderShared = false;
 
 }

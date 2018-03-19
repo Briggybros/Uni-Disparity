@@ -10,7 +10,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	public ScoreboardController scoreboard;
 
 	private TrackableBehaviour trackableBehaviour;
-	private char otherWorld;
+	private CharacterPicker.WORLDS otherWorld;
 	private bool isTracking, isActive;
 
     void Start () {

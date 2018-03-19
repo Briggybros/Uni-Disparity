@@ -6,13 +6,13 @@ using UnityEngine.Networking;
 public class MyNetworkManager : NetworkManager {
 
 	public class NetworkMessage : MessageBase {
-        public char world;
+        public CharacterPicker.WORLDS world;
     }
 
 	public override void OnServerAddPlayer (NetworkConnection connection, short playerControllerId, NetworkReader networkReader) {
 		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
-		char world = message.world;
-		GameObject spawn = spawnPrefabs[world == CharacterPicker.CAT ? 0 : CharacterPicker.IsSpectator(world) ? 2 : 1];
+		CharacterPicker.WORLDS world = message.world;
+		GameObject spawn = spawnPrefabs[world == CharacterPicker.WORLDS.CAT ? 0 : CharacterPicker.IsSpectator(world) ? 2 : 1];
 		Transform startPos = GetStartPosition();
 		if (CharacterPicker.IsSpectator()){
 			startPos.position += new Vector3(0, 10, 0);
