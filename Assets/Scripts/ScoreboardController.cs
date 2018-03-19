@@ -22,7 +22,9 @@ public class ScoreboardController : NetworkBehaviour {
 		}
 	}
 
-	public void StartTimer() {
+
+	[Command]
+	public void CmdStartTimer() {
 		if (NetworkServer.active) {
 			RpcStartTimer();
 		}

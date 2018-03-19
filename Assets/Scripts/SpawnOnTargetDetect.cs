@@ -14,6 +14,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	private bool isTracking, isActive;
 
     void Start () {
+		Debug.Log("spawnOnTArget start");
 		trackableBehaviour = GetComponent<TrackableBehaviour>();
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
@@ -21,6 +22,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	}
 
 	public void Update () {
+		Debug.Log("SpawnOnTarget update");
 		if (!CharacterPicker.IsSpectator()) {
 			var players = GameObject.FindGameObjectsWithTag("Player");
 			if (isTracking && !isActive) {	
@@ -39,6 +41,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
+		Debug.Log("Tracking state changed");
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
@@ -56,7 +59,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		otherWorld = CharacterPicker.GetOtherWorld();
 		if (scoreboard != null) {
 			if (!scoreboard.isTimeStarted) {
-				scoreboard.StartTimer();
+				scoreboard.CmdStartTimer();
 			}
 		} else {
 			Debug.LogWarning("There's no scoreboard provided, are you sure this was intended?");
@@ -73,6 +76,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			} else {
 				component.enabled = true;
 			}
+			Debug.Log("Checking renderers");
 		}
 
 		//render colliders only in players world
@@ -84,6 +88,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			} else {
 				component.enabled = true;
 			}
+			Debug.Log("Checking colliders");
 		}
 		
 		// remove buttons if spectator
@@ -94,6 +99,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
     protected virtual void OnTrackingLost()
     {
+		Debug.Log("Tracking lost");
 		isTracking = false;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
