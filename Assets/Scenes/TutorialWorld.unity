@@ -335,6 +335,7 @@ MonoBehaviour:
   OpenHeight: -8
   DownSpeed: 6
   UpSpeed: 4
+  looping: 0
 --- !u!114 &163697056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2043,70 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8017797, y: 0.3474306, z: 3.9650161}
   m_Center: {x: 0.00000023841858, y: 0.00000035762787, z: -0.00000047683716}
+--- !u!1 &759390481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 759390484}
+  - component: {fileID: 759390483}
+  - component: {fileID: 759390482}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &759390482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759390481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - I'm finally here!
+  - I wonder how I can escape!
+  - Oh...I'm never getting outta here!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  - {fileID: 21300000, guid: a4c0e79795476fe4ab56eeac6f26c367, type: 3}
+  chatPictures: 000000000100000002000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 1
+--- !u!65 &759390483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759390481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &759390484
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759390481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.46, y: 1.5500009, z: 18.33001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799052516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2161,7 @@ MonoBehaviour:
   OpenHeight: -9
   DownSpeed: 8
   UpSpeed: 4
+  looping: 0
 --- !u!114 &799052519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,6 +2822,7 @@ MonoBehaviour:
   OpenHeight: -6
   DownSpeed: 2
   UpSpeed: 4
+  looping: 0
 --- !u!114 &876343426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,6 +3175,7 @@ MonoBehaviour:
   timer: 0
   MinRot: 0
   MaxRot: 115
+  yRot: 0
 --- !u!114 &1038504387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4393,6 +4461,7 @@ MonoBehaviour:
   OpenHeight: -6
   DownSpeed: 2
   UpSpeed: 4
+  looping: 0
 --- !u!114 &1406192586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4736,6 +4805,7 @@ MonoBehaviour:
   OpenHeight: -7
   DownSpeed: 4
   UpSpeed: 4
+  looping: 0
 --- !u!114 &1442281416
 MonoBehaviour:
   m_ObjectHideFlags: 0

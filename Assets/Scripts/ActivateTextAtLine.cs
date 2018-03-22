@@ -5,7 +5,6 @@ using UnityEngine;
 public class ActivateTextAtLine : MonoBehaviour {
 
 	public TextAsset theText;
-
 	public int startLine;
 	public int endLine;
 
@@ -37,7 +36,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
-		if (other.name == "CatObj") {
+		if (other.tag == "Player") {
 			if (requireButtonPress) {
 				waitForPress = true;
 				return;
@@ -56,7 +55,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	void OnTriggerExit(Collider other){
 
-		if (other.name == "CatObj") {
+		if (other.tag == "Player") {
 			textManager.DisableTextBox();
 			waitForPress = false;
 		}
