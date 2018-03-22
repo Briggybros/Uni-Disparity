@@ -59,14 +59,4 @@ public class JoystickMovement : MonoBehaviour, IDragHandler, IPointerUpHandler, 
         else
             return Input.GetAxis("Vertical");
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

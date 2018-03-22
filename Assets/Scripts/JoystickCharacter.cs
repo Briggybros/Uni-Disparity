@@ -127,12 +127,6 @@ public class JoystickCharacter : NetworkBehaviour
             transform.parent = null;
             pos = transform.localPosition;
         }
-        /*else if ((c.gameObject.GetComponent<Interactable>() != null))
-        {
-            interacting = false;
-            target = null;
-            touching = false;
-        }*/
     }
 
 	void OnTriggerExit(Collider c) {
@@ -188,10 +182,6 @@ public class JoystickCharacter : NetworkBehaviour
 		cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
         transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
-
-		// if (transform.localPosition.y <= Vector3.zero.y - 3) {
-		//	ResetPlayerToCheckpoint();
-		// }
 
 		grabLax++;
 		if (isInteract() && touching && target.tag == "Key") {

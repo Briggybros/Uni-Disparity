@@ -92,9 +92,6 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
         {
             CurrentTime += Time.deltaTime;
             float progress = CurrentTime / Duration;
-			/*if (TargetAngle < 0) {
-				TargetA
-			}*/
 			// Interpolate to get the current angle/axis between the source and target.
 			float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
 			
@@ -117,12 +114,6 @@ public class RotatingDoorBehaviour : DoorBehaviourScript {
 					Turning = true;
 				}
 			}
-			//sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
-			/*if (yRot) {
-				TargetAxis = transform.parent.up;
-			} else {
-				TargetAxis = transform.parent.right;
-			}*/
 			CurrentTime = 0;
         }
     }
