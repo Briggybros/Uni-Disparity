@@ -52,7 +52,7 @@ public class CameraRay : Receiver {
 					Debug.Log(hit.transform.gameObject.name);
 					line.SetPosition(1, hit.point);
 					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
-						target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+						hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 					} 
 				}
 				else { 
