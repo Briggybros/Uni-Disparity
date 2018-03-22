@@ -7,8 +7,10 @@ using Vuforia;
 [RequireComponent(typeof(CharacterPicker))]
 public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
+	public ScoreboardController scoreboard;
+
 	private TrackableBehaviour trackableBehaviour;
-	private char otherWorld;
+	private CharacterPicker.WORLDS otherWorld;
 	private bool isTracking, isActive;
 
     void Start () {
@@ -16,24 +18,10 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 		if (trackableBehaviour) {
 			trackableBehaviour.RegisterTrackableEventHandler(this);
 		}
-		otherWorld = CharacterPicker.GetWorld() == CharacterPicker.CAT ? CharacterPicker.DOG : CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR ? ' ' : CharacterPicker.CAT;
 	}
 
 	public void Update () {
-		if (CharacterPicker.GetWorld() == CharacterPicker.SPECTATOR) {
-			GameObject[] cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-			foreach (var camera in cameras) {
-				if (camera.name.Contains("SpectatorCamera")) {
-					foreach (var other in cameras) {
-						if (other != camera) {
-							other.GetComponent<Camera>().enabled = false;
-							other.GetComponent<VuforiaBehaviour>().enabled = false;
-							camera.GetComponent<Camera>().enabled = true;
-						}
-					}
-				} 
-			}
-		} else {
+		if (!CharacterPicker.IsSpectator()) {
 			var players = GameObject.FindGameObjectsWithTag("Player");
 			if (isTracking && !isActive) {	
 				foreach (var player in players) {
@@ -64,29 +52,43 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 
 	protected virtual void OnTrackingFound()
     {
-		isTracking = true;
-        var rendererComponents = GetComponentsInChildren<Renderer>(true);
-        var colliderComponents = GetComponentsInChildren<Collider>(true);
-        var canvasComponents = GetComponentsInChildren<Canvas>(true);
-
-
-        foreach (var component in rendererComponents) {
-			if (component.gameObject.name[component.gameObject.name.Length-2] != otherWorld) {
-            	component.enabled = true;
+		otherWorld = CharacterPicker.GetOtherWorld();
+		if (scoreboard != null) {
+			if (!scoreboard.isTimeStarted) {
+				scoreboard.CmdStartTimer();
 			}
+		} else {
+			Debug.LogWarning("There's no scoreboard provided, are you sure this was intended?");
 		}
+		isTracking = true;
+        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
+        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+        Canvas[] canvasComponents = GetComponentsInChildren<Canvas>(true);
 
-        foreach (var component in colliderComponents) {
-			if (component.gameObject.name[component.gameObject.name.Length-2] == otherWorld &&
-				component.gameObject.name[component.gameObject.name.Length-1] == 1) {
-            	component.enabled = true;
-			} else if (component.gameObject.name[component.gameObject.name.Length-2] != otherWorld) {
+		// render components ONLY in the players world
+        foreach (var component in rendererComponents) {
+			if (component.GetComponent<Disparity>() != null && component.GetComponent<Disparity>().World == otherWorld) {
+            	component.enabled = false;
+			} else {
 				component.enabled = true;
 			}
 		}
 
-        foreach (var component in canvasComponents)
-            component.enabled = true;
+		//render colliders only in players world
+        foreach (var component in colliderComponents) {
+			if (component.gameObject.GetComponent<Disparity>() != null &&
+				component.gameObject.GetComponent<Disparity>().World == otherWorld &&
+				!component.gameObject.GetComponent<Disparity>().isColliderShared) {
+            	component.enabled = false;
+			} else {
+				component.enabled = true;
+			}
+		}
+		
+		// remove buttons if spectator
+        foreach (var component in canvasComponents) {
+			component.enabled = true;
+		}
     }
 
     protected virtual void OnTrackingLost()

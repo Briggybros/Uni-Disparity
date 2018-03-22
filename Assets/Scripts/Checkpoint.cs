@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +11,9 @@ public class Checkpoint : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        CheckpointList = GameObject.FindGameObjectsWithTag("Checkpoint");
-		
+		char World = CharacterPicker.GetWorld() == CharacterPicker.WORLDS.CAT ? 'A' : 'B';
+		string tag = "Checkpoint" + World;
+		CheckpointList = GameObject.FindGameObjectsWithTag(tag);
 	}
 
     private void ActivateCheckpoint() //Activated current, deactivate all else
@@ -27,7 +28,7 @@ public class Checkpoint : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && Array.Exists(CheckpointList, el => el == this))
         {
             ActivateCheckpoint();
         }

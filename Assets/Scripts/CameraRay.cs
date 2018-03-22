@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraRay : Receiver {
 
 	public new GameObject camera;
+	public GameObject target;
 	public LineRenderer line;
 	bool laserActive;
 	//public GameObject target;
@@ -50,9 +51,9 @@ public class CameraRay : Receiver {
 				if (Physics.Raycast (ray, out hit, 100)) {
 					Debug.Log(hit.transform.gameObject.name);
 					line.SetPosition(1, hit.point);
-				//	if (hit.rigidbody.gameObject.tag == "keyDoor") {
-						// target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
-				//	} 
+					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
+						hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+					} 
 				}
 				else { 
 					line.SetPosition(1, ray.GetPoint(100));

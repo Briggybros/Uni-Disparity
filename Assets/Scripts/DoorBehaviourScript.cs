@@ -12,7 +12,6 @@ public class DoorBehaviourScript : Receiver {
 	public int timer;
 
     protected void ToggleOpen(){
-        Debug.Log("toggling");
         open = !open;
     }
 
@@ -24,7 +23,7 @@ public class DoorBehaviourScript : Receiver {
         ToggleOpen();
     }
 
-    protected override void PulseReceived() { 
+	protected override void PulseReceived() { 
 		StartCoroutine(TimerWait());
 	}
 

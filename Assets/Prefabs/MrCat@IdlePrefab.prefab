@@ -2079,7 +2079,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
-  BlockInput: 0
   interacting: 0
   touching: 0
   canMove: 1
