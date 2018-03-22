@@ -17,7 +17,7 @@ public class TextManager : MonoBehaviour {
     private int chatMessage = 0;
     private GameObject uiCanvas;
 
-    public void createChat(string[] chats, Sprite[] avatars, int[] chatPics)
+    public void CreateChat(string[] chats, Sprite[] avatars, int[] chatPics)
     {
         uiCanvas = GameObject.Find("UI Canvas");
         uiCanvas.SetActive(false);
@@ -38,11 +38,11 @@ public class TextManager : MonoBehaviour {
         Debug.Log("Entered");
         if (other.tag == "Player" && (repeated || !opened) && !isOpen && isTriggerable)
         {
-            createChat(chats, avatars, chatPictures);
+            CreateChat(chats, avatars, chatPictures);
         }
     }
 
-    void incrementChat()
+    private void incrementChat()
     {
         chatMessage++;
         if (chatMessage == chats.Length)
@@ -59,7 +59,7 @@ public class TextManager : MonoBehaviour {
            updatePicture(avatars[chatPictures[chatMessage]]);
         }
     }
-    bool updatePicture(Sprite pic)
+    private bool updatePicture(Sprite pic)
     {
        GameObject o = GameObject.Find("ChatImage");
        if (o != null)
@@ -70,7 +70,7 @@ public class TextManager : MonoBehaviour {
        return false;
     }
 
-    bool updateChat(string message)
+    private bool updateChat(string message)
     {
         GameObject o = GameObject.Find("TextBoxText");
         if (o != null)
@@ -81,7 +81,7 @@ public class TextManager : MonoBehaviour {
         return false;
     }
 
-    IEnumerator updateAnimatedText(string strComplete)
+    private IEnumerator updateAnimatedText(string strComplete)
     {
         int i = 0;
         string str = "";
