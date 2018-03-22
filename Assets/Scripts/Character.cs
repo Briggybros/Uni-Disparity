@@ -18,6 +18,12 @@ public class Character : NetworkBehaviour
     private NetworkIdentity targetNetworkIdent;
     private GameObject target;
     public bool canMove;
+	private float fallMod = 2.5f;
+	private float lowMod = 2f;
+	private Rigidbody rb;
+	private bool impetus = false;
+	private bool jumpReq = false;
+	private int impCount = 0;
 
     private Vector3 HeldScale;
 
@@ -42,6 +48,7 @@ public class Character : NetworkBehaviour
         interacting = false;
         touching = false;
         targetNetworkIdent = GetComponent<NetworkIdentity>();
+		rb = GetComponent<Rigidbody>();
     }
 
     [Command]
@@ -73,7 +80,7 @@ public class Character : NetworkBehaviour
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
             rot = transform.localRotation;
-            //MovementSpeed = 0.8f;
+            MovementSpeed = 3.6f;
             BlockInput = false;
         } else if ((c.gameObject.GetComponent<Interactable>() != null)) {
             targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
@@ -138,6 +145,17 @@ public class Character : NetworkBehaviour
 #endif
     }
 
+	void FixedUpdate() {
+		if (jumpReq) {
+			GetComponent<Rigidbody>().AddForce(Vector3.up * 7.0f, ForceMode.Impulse);
+			jumpReq = false;
+		}
+		if (rb.velocity.y < 0) {
+			rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
+		} else if (rb.velocity.y > 0 && !IsJump()) {
+			rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+		}
+	}
 
     void Update() {
 
@@ -202,14 +220,18 @@ public class Character : NetworkBehaviour
             pos,
             Time.deltaTime * MovementSpeed
             );
-
-            if (IsJump())
-            {
-                GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
-                BlockInput = true;
-                GetComponent<Animator>().SetTrigger("Jumping");
-                GetComponent<Animator>().SetBool("Running", false);
+			if (!IsJump() && impCount > 60) {
+				impetus = false;
+			}
+			if (IsJump() && !impetus) {
+				//GetComponent<Rigidbody>().AddForce(Vector3.Scale((transform.forward + transform.up), new Vector3(6f, 6f, 6f)), ForceMode.Impulse);
+				//GetComponent<Rigidbody>().velocity = Vector3.up * 7.0f;
+				jumpReq = true;
+				impetus = true;
+				impCount = 0;
+                //BlockInput = true;
             }
-        }
+			impCount++;
+		}
     }
 }

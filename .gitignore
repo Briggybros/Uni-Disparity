@@ -36,3 +36,5 @@ sysinfo.txt
 unity.log
 .exe
 .dll
+
+/Assets/Editor/Vuforia

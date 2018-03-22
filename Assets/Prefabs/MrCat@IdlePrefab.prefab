@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4057358895377366}
   - component: {fileID: 95884893891138724}
-  - component: {fileID: 114423777243061048}
   - component: {fileID: 114999570179220530}
   - component: {fileID: 114888986527566380}
   - component: {fileID: 54630192044922074}
   - component: {fileID: 65684776646929186}
+  - component: {fileID: 114310973964045854}
   m_Layer: 0
   m_Name: MrCat@IdlePrefab
   m_TagString: Player
@@ -2067,7 +2067,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114423777243061048
+--- !u!114 &114310973964045854
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2075,10 +2075,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1007063932820308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae0b99cf7e09459e91d73a3bdb7d66c, type: 3}
+  m_Script: {fileID: 11500000, guid: 15c399b6ae27a40e59df941e9b37fa8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlockInput: 0
+  joystick: {fileID: 0}
   interacting: 0
   touching: 0
   canMove: 1

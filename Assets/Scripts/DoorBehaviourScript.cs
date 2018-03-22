@@ -11,7 +11,6 @@ public class DoorBehaviourScript : Receiver {
     public Vector3 target,home;
 	public int timer;
 
-
     protected void ToggleOpen(){
         open = !open;
     }
@@ -24,7 +23,7 @@ public class DoorBehaviourScript : Receiver {
         ToggleOpen();
     }
 
-    protected override void PulseReceived() { 
+	protected override void PulseReceived() { 
 		StartCoroutine(TimerWait());
 	}
 
@@ -44,4 +43,19 @@ public class DoorBehaviourScript : Receiver {
         target = transform.position;
         home = transform.position;
     }
+
+    protected void Looping()
+    {
+        StartCoroutine(TimerWaitLoop());
+    }
+
+    IEnumerator TimerWaitLoop() {
+        while(true)
+        {
+            ToggleOpen();
+            yield return new WaitForSeconds(timer);
+            ToggleOpen();
+            yield return new WaitForSeconds(timer);
+        }
+	}
 }
