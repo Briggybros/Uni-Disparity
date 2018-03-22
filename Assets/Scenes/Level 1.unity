@@ -8024,7 +8024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -122.02881, y: 21.847916}
+  m_AnchoredPosition: {x: -122.0293, y: 21.847916}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &457167440
@@ -9435,6 +9435,19 @@ MonoBehaviour:
     i15: 104
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &522075715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522075710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 66
+  isColliderShared: 0
 --- !u!1001 &529919501
 Prefab:
   m_ObjectHideFlags: 0
@@ -10472,6 +10485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e802a3c28df2b4e4899cd0b7fe90e16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  broke: {fileID: 0}
+  intact: {fileID: 0}
+  tiles: []
 --- !u!114 &575731743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27747,7 +27763,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4338f9b9e6924239bdbe8384c7f79c2a, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
