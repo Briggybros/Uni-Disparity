@@ -258,6 +258,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 86a918ecbfc19434bb4b3811dd8fe795, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86a918ecbfc19434bb4b3811dd8fe795, type: 3}
   m_IsPrefabParent: 0
@@ -945,6 +949,10 @@ Prefab:
     - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
       propertyPath: m_TagString
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
@@ -2082,7 +2090,7 @@ GameObject:
   - component: {fileID: 114493336}
   - component: {fileID: 114493337}
   - component: {fileID: 114493338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressurePlate1100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2453,6 +2461,10 @@ Prefab:
     - target: {fileID: 400000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
@@ -3810,7 +3822,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 212159696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4386,6 +4398,10 @@ Prefab:
     - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
       propertyPath: m_TagString
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
@@ -5439,6 +5455,14 @@ Prefab:
     - target: {fileID: 100002, guid: 370837579db09b846bda0ae2418d0754, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 370837579db09b846bda0ae2418d0754, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 370837579db09b846bda0ae2418d0754, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 370837579db09b846bda0ae2418d0754, type: 3}
@@ -6567,7 +6591,7 @@ GameObject:
   - component: {fileID: 398634840}
   - component: {fileID: 398634844}
   - component: {fileID: 398634845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spike(0)A (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -8495,7 +8519,7 @@ GameObject:
   - component: {fileID: 476586307}
   - component: {fileID: 476586306}
   - component: {fileID: 476586311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spike(1)A
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -8821,6 +8845,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 76555316df661734b876f54f6b896b20, type: 2}
+    - target: {fileID: 100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
   m_IsPrefabParent: 0
@@ -11266,7 +11294,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &618365751
 Prefab:
@@ -12004,6 +12032,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 72dff70fb253445d3b5fde848c7b0b4b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72dff70fb253445d3b5fde848c7b0b4b, type: 3}
   m_IsPrefabParent: 0
@@ -12471,7 +12503,7 @@ Transform:
   - {fileID: 1699412633}
   - {fileID: 1978686568}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &682916648
 GameObject:
@@ -12931,6 +12963,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 76555316df661734b876f54f6b896b20, type: 2}
+    - target: {fileID: 100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 760438ed8586310448ba716ecfcb6f69, type: 3}
   m_IsPrefabParent: 0
@@ -13587,7 +13623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793459961
 Prefab:
@@ -14073,7 +14109,7 @@ GameObject:
   - component: {fileID: 827167178}
   - component: {fileID: 827167182}
   - component: {fileID: 827167183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spike(2)A (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -14570,6 +14606,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 76555316df661734b876f54f6b896b20, type: 2}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -18083,7 +18123,7 @@ GameObject:
   - component: {fileID: 1061822186}
   - component: {fileID: 1061822187}
   - component: {fileID: 1061822188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressurePlate1100 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19882,6 +19922,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79b0e31320774fd44b365c1995c01076, type: 3}
   m_IsPrefabParent: 0
@@ -20448,7 +20492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1195421394
 Prefab:
@@ -20652,7 +20696,7 @@ GameObject:
   - component: {fileID: 1213447527}
   - component: {fileID: 1213447526}
   - component: {fileID: 1213447531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spike(0)A
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22188,6 +22232,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 93.06902
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e8fee21586d2e4350b9f04630c7bc822, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8fee21586d2e4350b9f04630c7bc822, type: 3}
   m_IsPrefabParent: 0
@@ -23340,7 +23388,7 @@ GameObject:
   - component: {fileID: 1377366697}
   - component: {fileID: 1377366701}
   - component: {fileID: 1377366702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spike(1)A (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -24034,6 +24082,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 76555316df661734b876f54f6b896b20, type: 2}
+    - target: {fileID: 100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
   m_IsPrefabParent: 0
@@ -25839,7 +25891,7 @@ GameObject:
   - component: {fileID: 1529796270}
   - component: {fileID: 1529796269}
   - component: {fileID: 1529796274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spike(2)A
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -27381,6 +27433,10 @@ Prefab:
     - target: {fileID: 100000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
       propertyPath: m_TagString
       value: Weight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
@@ -32651,7 +32707,7 @@ Camera:
     height: 1
   near clip plane: 0.05
   far clip plane: 2000
-  field of view: 60
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -34563,7 +34619,8 @@ GameObject:
   - component: {fileID: 2057118377}
   - component: {fileID: 2057118373}
   - component: {fileID: 2057118374}
-  m_Layer: 0
+  - component: {fileID: 2057118378}
+  m_Layer: 8
   m_Name: Lever,otherdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34664,6 +34721,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3878927, y: 3.7405624, z: 3.8597393}
   m_Center: {x: 0.14234114, y: -1.3702812, z: 1.6681814}
+--- !u!114 &2057118378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057118371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 65
+  isColliderShared: 0
 --- !u!1 &2064502175
 GameObject:
   m_ObjectHideFlags: 0
