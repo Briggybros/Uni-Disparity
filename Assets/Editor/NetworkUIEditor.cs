@@ -13,6 +13,7 @@ public class NetworkUIEditor : Editor {
     private SerializedProperty errorMessageObject;
     private SerializedProperty graphicsSlider;
     private SerializedProperty graphicsText;
+    private SerializedProperty loadingPanel;
     private SerializedProperty levels;
 
     public void OnEnable () {
@@ -23,6 +24,7 @@ public class NetworkUIEditor : Editor {
         errorMessageObject = serializedObject.FindProperty("errorMessageObject");
         graphicsSlider = serializedObject.FindProperty("graphicsSlider");
         graphicsText = serializedObject.FindProperty("graphicsText");
+        loadingPanel = serializedObject.FindProperty("loadingPanel");
         levels = serializedObject.FindProperty("levels");
     }
 
@@ -33,6 +35,7 @@ public class NetworkUIEditor : Editor {
         EditorGUILayout.PropertyField(matchJoinPanelPrefab);
         EditorGUILayout.PropertyField(levelSelectPanel);
         EditorGUILayout.PropertyField(matchSelectPanel);
+        EditorGUILayout.PropertyField(loadingPanel);
         EditorGUILayout.PropertyField(errorMessageObject);
         EditorGUILayout.PropertyField(graphicsSlider);
         EditorGUILayout.PropertyField(graphicsText);
