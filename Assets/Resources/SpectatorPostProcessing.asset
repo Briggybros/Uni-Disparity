@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: Level 1 Post Processing 1
+  m_Name: SpectatorPostProcessing
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -71,10 +71,10 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 10
+      focusDistance: 95.8
       aperture: 8.6
       focalLength: 50
-      useCameraFov: 0
+      useCameraFov: 1
       kernelSize: 1
   motionBlur:
     m_Enabled: 0
@@ -134,13 +134,13 @@ MonoBehaviour:
       colorWheels:
         mode: 0
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 0.95813423, g: 0.91626793, b: 1, a: 0}
+          power: {r: 0.97325295, g: 0.9881576, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 1, g: 0.9140765, b: 0.7534026, a: 0}
+          lift: {r: 1, g: 0.87061405, b: 0.99204236, a: 0}
           gamma: {r: 1, g: 1, b: 1, a: 0}
-          gain: {r: 0.7365708, g: 0.77815944, b: 1, a: 0}
+          gain: {r: 0.9940195, g: 0.98803854, b: 1, a: 0}
       curves:
         master:
           curve:
@@ -293,12 +293,12 @@ MonoBehaviour:
       size: 1
       luminanceContribution: 0.8
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.45
+      intensity: 0.209
       smoothness: 0.2
       roundness: 1
       mask: {fileID: 0}
