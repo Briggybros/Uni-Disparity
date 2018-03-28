@@ -111,7 +111,7 @@ public class NetworkUI : MonoBehaviour {
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 						loadingPanel.SetActive(true);
 					}, () => {
-						CharacterPicker.SetWorld(CharacterPicker.WORLDS.SPECTATORCAT);
+						CharacterPicker.SetWorld(CharacterPicker.WORLDS.SPECTATOR);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 						loadingPanel.SetActive(true);
 					});
