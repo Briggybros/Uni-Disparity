@@ -8,8 +8,8 @@ using Vuforia;
 [RequireComponent(typeof(NetworkIdentity))]
 public class SelfieStickController : NetworkBehaviour {
 
-	private bool automaticControl = false;
-	private SpawnOnTargetDetect spawnOnTargetDetect;
+	private float timeSinceLastInteract = 0.0f;
+	private const float AUTO_TIMEOUT = 0.5f * 1000;
 
 	// Use this for initialization
 	void Start () {
@@ -38,27 +38,25 @@ public class SelfieStickController : NetworkBehaviour {
 		if (!isLocalPlayer) {
 			return;
 		}
-		if (automaticControl) {
+		if (timeSinceLastInteract > AUTO_TIMEOUT) {
 			transform.RotateAround(Vector3.zero, Vector3.up, 10 * Time.deltaTime);
-			if(Input.GetKey(KeyCode.Space)) {
-				automaticControl = !automaticControl;
-			}
-		}
-		else {
+		} else {
+			timeSinceLastInteract += Time.deltaTime;
 			if (Input.GetKey(KeyCode.D)) {
 				transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+				timeSinceLastInteract = 0;
 			}
 			if (Input.GetKey(KeyCode.W)) {
 				transform.Rotate(20 * Vector3.forward * Time.deltaTime);
+				timeSinceLastInteract = 0;
 			}
 			if (Input.GetKey(KeyCode.A)) {
 				transform.RotateAround(Vector3.zero, Vector3.up, -20 * Time.deltaTime);
+				timeSinceLastInteract = 0;
 			}
 			if (Input.GetKey(KeyCode.S)) {
 				transform.Rotate(20 * Vector3.back * Time.deltaTime);
-			}
-			if(Input.GetKey(KeyCode.Space)) {
-					automaticControl = !automaticControl;
+				timeSinceLastInteract = 0;
 			}
 		}
 	}
