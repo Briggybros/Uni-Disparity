@@ -5,31 +5,24 @@ using UnityEngine.UI;
 
 public class PinMechanism : Receiver {
     
-    bool StopPlayerMovement;
     bool OverlayOn;
-    public GameObject PinEntryUI;
-    public GameObject MovementUI;
-    public GameObject[] Slot1;
-    public GameObject[] Slot2;
-    public GameObject[] Slot3;
-    public GameObject[] Slot4;
+    bool success;
+    private Vector3 spikeTarget;
+    public float DownSpeed, MovementRange;
+    public GameObject PinEntryUI, MovementUI;
+    public GameObject[] Slot1, Slot2, Slot3, Slot4;
     public GameObject Failed;
-    public GameObject target;
-    public Button up1;
-    public Button up2;
-    public Button up3;
-    public Button up4;
-    public Button down1;
-    public Button down2;
-    public Button down3;
-    public Button down4;
-    public Button Back;
-    public Button Unlock;
+    public GameObject target, target1, target2;
+    public GameObject Spikes;
+    public Button up1, up2, up3, up4, down1, down2, down3, down4, Back, Unlock;
     public int[] CurrentPin;
     private int[] pin = {1,2,3,4};
 
 	// Use this for initialization
 	protected override void Start () {
+        success = false;
+        spikeTarget = Spikes.transform.position;
+        spikeTarget.y += MovementRange;
         DisablePinEntry();
         CurrentPin = new int[4];
         up1.onClick.AddListener(delegate{TaskOnClickUp(1, Slot1);});
@@ -42,36 +35,28 @@ public class PinMechanism : Receiver {
         down4.onClick.AddListener(delegate{TaskOnClickDown(4, Slot4);});
         Back.onClick.AddListener(DisablePinEntry);
         Unlock.onClick.AddListener(Verify);
-        //populate slots
-        // Slot1 = new GameObject[10];
-        // Slot2 = new GameObject[10];
-        // Slot3 = new GameObject[10];
-        // Slot4 = new GameObject[10];
-
-        // for (int i = 0; i < 10; i++) {
-        //     Debug.Log("setting images to slots");
-        //     string a = "Slot1" + i;
-        //     string b = "Slot2" + i;
-        //     string c = "Slot3" + i;
-        //     string d = "Slot4" + i;
-        //     // Debug.Log(GameObject.Find(a).name);
-        //     Slot1[i] = GameObject.Find(a);
-        //     Slot2[i] = GameObject.Find(b);
-        //     Slot3[i] = GameObject.Find(c);
-        //     Slot4[i] = GameObject.Find(d);
-        // }
 	}
 
+    protected override void Update() {
+        // Debug.Log("update");
+        // if (success) {
+        //     Debug.Log("truenow");
+        //     Spikes.transform.position = Vector3.MoveTowards(Spikes.transform.position, spikeTarget, DownSpeed * Time.deltaTime);
+        // }
+        if (Spikes.transform.position == spikeTarget) {
+            target.SetActive(false);
+        }
+    }
+
     int mod(int x, int m) {
-    return (x%m + m)%m;
-}
+        return (x%m + m)%m;
+    }
+
     void TaskOnClickUp (int num, GameObject[] slotNum) {
         //check buttons are pressed
-        Debug.Log("upclicked");
         slotNum[CurrentPin[num-1]].SetActive(false);
         slotNum[mod(CurrentPin[num-1] + 1, 10)].SetActive(true);
         CurrentPin[num-1] = mod(CurrentPin[num-1] + 1, 10);
-        Debug.Log(CurrentPin[3]);
     }
 
     void TaskOnClickDown (int num, GameObject[] slotNum) {
@@ -80,7 +65,6 @@ public class PinMechanism : Receiver {
         slotNum[CurrentPin[num-1]].SetActive(false);
         slotNum[mod(CurrentPin[num-1] - 1, 10)].SetActive(true);
         CurrentPin[num-1] = mod(CurrentPin[num-1] - 1, 10);
-        Debug.Log(CurrentPin[0]);
     }
 
     void Verify () {
@@ -90,10 +74,11 @@ public class PinMechanism : Receiver {
                 return;
             }
         }
-        Debug.Log("success");
         // preferably have a textbox pop up saying successfully unlocked
         DisablePinEntry();
-        target.SetActive(false);
+        StartCoroutine(LowerSpikes());
+        target1.SetActive(false);
+        target2.SetActive(false);
     }
 
     protected override void SwitchReceived()
@@ -106,16 +91,23 @@ public class PinMechanism : Receiver {
         }
     }
 
+    IEnumerator LowerSpikes () {
+        Debug.Log("in the coroutine");
+        while (Spikes.transform.position.y > spikeTarget.y) {
+            Debug.Log("lowering");
+            Spikes.transform.position = Vector3.MoveTowards(Spikes.transform.position, spikeTarget, DownSpeed * Time.deltaTime);
+            yield return 0;
+        }
+    }
+
     public void EnablePinEntry () {
         OverlayOn = true;
         PinEntryUI.SetActive(true);
         MovementUI.SetActive(false);
         Failed.SetActive(false);
-        Debug.Log("disabled movement UI");
         for (int j = 0; j < 4; j++) {
             CurrentPin[j] = 0;
         }
-        Debug.Log("set current pin to 0000");
         // set numbers to 0000
         Slot1[0].SetActive(true);
         Slot2[0].SetActive(true);
@@ -130,10 +122,8 @@ public class PinMechanism : Receiver {
     }
 
     public void DisablePinEntry () {
-        Debug.Log("disabling");
         OverlayOn = false;
         PinEntryUI.SetActive(false);
         MovementUI.SetActive(true);
-        Debug.Log("disabled");
     }
 }
