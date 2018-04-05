@@ -90,12 +90,7 @@ public class SmoothCamera : MonoBehaviour {
     }
 
 	private bool AreQuaternionsClose(Quaternion q1, Quaternion q2){
-		float dot = Quaternion.Dot(q1, q2);
-		if(dot < 0.0f){
-			return false;
-		} else {
-			return true;
-		}
+		return Quaternion.Dot(q1, q2) >= 0.0f;
     }
 
 	private Quaternion InverseSignQuaternion(Quaternion q){
