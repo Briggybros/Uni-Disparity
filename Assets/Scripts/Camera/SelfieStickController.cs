@@ -9,7 +9,7 @@ using Vuforia;
 public class SelfieStickController : NetworkBehaviour {
 
 	private float timeSinceLastInteract = 0.0f;
-	private const float AUTO_TIMEOUT = 0.5f * 1000;
+	private const float AUTO_TIMEOUT = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +38,7 @@ public class SelfieStickController : NetworkBehaviour {
 		if (!isLocalPlayer) {
 			return;
 		}
-		if (timeSinceLastInteract > AUTO_TIMEOUT) {
+		if (timeSinceLastInteract >= AUTO_TIMEOUT) {
 			transform.RotateAround(Vector3.zero, Vector3.up, 10 * Time.deltaTime);
 		} else {
 			timeSinceLastInteract += Time.deltaTime;
