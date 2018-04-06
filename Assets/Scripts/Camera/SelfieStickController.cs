@@ -40,24 +40,23 @@ public class SelfieStickController : NetworkBehaviour {
 		}
 		if (timeSinceLastInteract >= AUTO_TIMEOUT) {
 			transform.RotateAround(Vector3.zero, Vector3.up, 10 * Time.deltaTime);
-		} else {
-			timeSinceLastInteract += Time.deltaTime;
-			if (Input.GetKey(KeyCode.D)) {
-				transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
-				timeSinceLastInteract = 0;
-			}
-			if (Input.GetKey(KeyCode.W)) {
-				transform.Rotate(20 * Vector3.forward * Time.deltaTime);
-				timeSinceLastInteract = 0;
-			}
-			if (Input.GetKey(KeyCode.A)) {
-				transform.RotateAround(Vector3.zero, Vector3.up, -20 * Time.deltaTime);
-				timeSinceLastInteract = 0;
-			}
-			if (Input.GetKey(KeyCode.S)) {
-				transform.Rotate(20 * Vector3.back * Time.deltaTime);
-				timeSinceLastInteract = 0;
-			}
+		}
+		timeSinceLastInteract += Time.deltaTime;
+		if (Input.GetKey(KeyCode.D)) {
+			transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+			timeSinceLastInteract = 0;
+		}
+		if (Input.GetKey(KeyCode.W)) {
+			transform.Rotate(20 * Vector3.forward * Time.deltaTime);
+			timeSinceLastInteract = 0;
+		}
+		if (Input.GetKey(KeyCode.A)) {
+			transform.RotateAround(Vector3.zero, Vector3.up, -20 * Time.deltaTime);
+			timeSinceLastInteract = 0;
+		}
+		if (Input.GetKey(KeyCode.S)) {
+			transform.Rotate(20 * Vector3.back * Time.deltaTime);
+			timeSinceLastInteract = 0;
 		}
 	}
 }
