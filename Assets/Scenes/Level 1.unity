@@ -10722,6 +10722,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0635749, y: 0.99999994, z: 1.0328695}
   m_Center: {x: -0.000000059604645, y: 0, z: -0.016432706}
+--- !u!114 &576224078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576224074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492b9a77c7d2ccd43b65c35624016ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 1, y: 10, z: 1}
+  initiallyHoley: 0
 --- !u!1001 &579295751
 Prefab:
   m_ObjectHideFlags: 0
@@ -11266,7 +11280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &618365751
 Prefab:
@@ -11838,6 +11852,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0635749, y: 0.9999998, z: 1.0328693}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.016433658}
+--- !u!114 &645351795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645351790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492b9a77c7d2ccd43b65c35624016ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 1, y: 10, z: 1}
+  initiallyHoley: 0
 --- !u!1001 &655993290
 Prefab:
   m_ObjectHideFlags: 0
@@ -12471,7 +12499,7 @@ Transform:
   - {fileID: 1699412633}
   - {fileID: 1978686568}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &682916648
 GameObject:
@@ -13587,7 +13615,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793459961
 Prefab:
@@ -20448,7 +20476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1195421394
 Prefab:
