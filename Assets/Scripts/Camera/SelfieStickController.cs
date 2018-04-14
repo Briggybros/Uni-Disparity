@@ -42,12 +42,16 @@ public class SelfieStickController : NetworkBehaviour {
 			transform.RotateAround(Vector3.zero, Vector3.up, 10 * Time.deltaTime);
 		}
 		timeSinceLastInteract += Time.deltaTime;
+		float angle = Vector3.Angle(GameObject.Find("SpectatorCameraDOG").transform.position, transform.up);
 		if (Input.GetKey(KeyCode.D)) {
 			transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
 			timeSinceLastInteract = 0;
 		}
 		if (Input.GetKey(KeyCode.W)) {
-			transform.Rotate(20 * Vector3.forward * Time.deltaTime);
+			print(angle);
+			if (!(angle < 5.0f || angle > 175.0f)) {
+				transform.Rotate(20 * Vector3.forward * Time.deltaTime);
+			}
 			timeSinceLastInteract = 0;
 		}
 		if (Input.GetKey(KeyCode.A)) {
