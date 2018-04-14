@@ -51,8 +51,8 @@ public class CameraRay : Receiver {
 				if (Physics.Raycast (ray, out hit, 100)) {
 					Debug.Log(hit.transform.gameObject.name);
 					line.SetPosition(1, hit.point);
-					if (hit.rigidbody.gameObject.tag == "KeyDoor") {
-						target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
+						hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 					} 
 				}
 				else { 

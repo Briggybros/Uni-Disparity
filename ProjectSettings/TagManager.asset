@@ -13,9 +13,13 @@ TagManager:
   - WorldA
   - Static
   - Bopped
+  - TextCanvas
   - Weight
   - Key
   - KeyDoor
+  - CheckpointA
+  - CheckpointB
+  - ImageTarget
   layers:
   - Default
   - TransparentFX

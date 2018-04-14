@@ -69,8 +69,8 @@ Material:
     m_Floats:
     - SHAPE: 0
     - SHAPEX: 0
-    - _Amount: 0.5
-    - _Angle: 1
+    - _Amount: 0.628
+    - _Angle: 2
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -82,7 +82,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Hard: 30
-    - _Height: 0.3
+    - _Height: 0.2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

@@ -546,10 +546,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4650104788517570}
   - component: {fileID: 95912104568235134}
-  - component: {fileID: 114844892201177982}
   - component: {fileID: 114951090808586378}
   - component: {fileID: 114636616416771536}
   - component: {fileID: 54633557854931950}
+  - component: {fileID: 114497105381746730}
   - component: {fileID: 65009883388204656}
   m_Layer: 0
   m_Name: Oz@IdlePrefab
@@ -1569,6 +1569,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114497105381746730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800447909254264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c399b6ae27a40e59df941e9b37fa8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  interacting: 0
+  touching: 0
+  canMove: 1
 --- !u!114 &114636616416771536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1590,21 +1605,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114844892201177982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1800447909254264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae0b99cf7e09459e91d73a3bdb7d66c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BlockInput: 0
-  interacting: 0
-  touching: 0
-  canMove: 1
 --- !u!114 &114951090808586378
 MonoBehaviour:
   m_ObjectHideFlags: 1

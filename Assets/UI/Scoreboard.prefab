@@ -402,8 +402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeText: {fileID: 114935997337974664}
   NamePanel: {fileID: 1995880449541612}
-  ScorePanel: {fileID: 0}
-  isTimeStarted: 1
+  ScorePanel: {fileID: 1749125383682990}
+  isTimeStarted: 0
 --- !u!114 &114269599865296402
 MonoBehaviour:
   m_ObjectHideFlags: 1
