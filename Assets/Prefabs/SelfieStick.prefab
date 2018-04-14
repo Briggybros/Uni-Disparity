@@ -123,20 +123,20 @@ Camera:
   m_BackGroundColor: {r: 0.2958477, g: 0.6414378, b: 0.83823526, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5
+    x: 0.501
     y: 0
-    width: 0.5
+    width: 0.499
     height: 1
   near clip plane: 0.01
   far clip plane: 200
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 30
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967039
-  m_RenderingPath: 1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -161,18 +161,18 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5
+    width: 0.499
     height: 1
   near clip plane: 0.01
   far clip plane: 200
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 30
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294966783
-  m_RenderingPath: 1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
