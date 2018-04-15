@@ -65,28 +65,43 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
         Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
         Canvas[] canvasComponents = GetComponentsInChildren<Canvas>(true);
 
-		// render components ONLY in the players world
-        foreach (var component in rendererComponents) {
-			if (component.GetComponent<Disparity>() != null && component.GetComponent<Disparity>().World == otherWorld) {
-            	component.enabled = false;
-			} else {
+		if (CharacterPicker.IsSpectator()) {
+			foreach (var component in rendererComponents) {
 				component.enabled = true;
+			}
+
+			foreach (var component in colliderComponents) {
+				component.enabled = true;
+			}
+		} else {
+			// render components ONLY in the players world
+			foreach (var component in rendererComponents) {
+				Disparity disparity = component.GetComponent<Disparity>();
+				if (disparity != null) {
+					if (disparity.World == otherWorld) {
+						component.enabled = false;
+					}
+					if (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG && disparity.altTexture != null) {
+						component.material.SetTexture("_MainTex", disparity.altTexture);
+					}
+				} else {
+					component.enabled = true;
+				}
+			}
+
+			//render colliders only in players world
+			foreach (var component in colliderComponents) {
+				if (component.gameObject.GetComponent<Disparity>() != null &&
+					component.gameObject.GetComponent<Disparity>().World == otherWorld &&
+					!component.gameObject.GetComponent<Disparity>().isColliderShared) {
+					component.enabled = false;
+				} else {
+					component.enabled = true;
+				}
 			}
 		}
 
-		//render colliders only in players world
-        foreach (var component in colliderComponents) {
-			if (component.gameObject.GetComponent<Disparity>() != null &&
-				component.gameObject.GetComponent<Disparity>().World == otherWorld &&
-				!component.gameObject.GetComponent<Disparity>().isColliderShared) {
-            	component.enabled = false;
-			} else {
-				component.enabled = true;
-			}
-		}
-		
-		// remove buttons if spectator
-        foreach (var component in canvasComponents) {
+		foreach (var component in canvasComponents) {
 			component.enabled = true;
 		}
     }
