@@ -25,14 +25,14 @@ public class PinMechanism : Receiver {
         spikeTarget.y += MovementRange;
         OverlayOn = false;
         CurrentPin = new int[4];
-        up1.onClick.AddListener(delegate{TaskOnClickUp(1, Slot1);});
-        up2.onClick.AddListener(delegate{TaskOnClickUp(2, Slot2);});
-        up3.onClick.AddListener(delegate{TaskOnClickUp(3, Slot3);});
-        up4.onClick.AddListener(delegate{TaskOnClickUp(4, Slot4);});
-        down1.onClick.AddListener(delegate{TaskOnClickDown(1, Slot1);});
-        down2.onClick.AddListener(delegate{TaskOnClickDown(2, Slot2);});
-        down3.onClick.AddListener(delegate{TaskOnClickDown(3, Slot3);});
-        down4.onClick.AddListener(delegate{TaskOnClickDown(4, Slot4);});
+        up1.onClick.AddListener(delegate{TaskOnClickUp(0, Slot1);});
+        up2.onClick.AddListener(delegate{TaskOnClickUp(1, Slot2);});
+        up3.onClick.AddListener(delegate{TaskOnClickUp(2, Slot3);});
+        up4.onClick.AddListener(delegate{TaskOnClickUp(3, Slot4);});
+        down1.onClick.AddListener(delegate{TaskOnClickDown(0, Slot1);});
+        down2.onClick.AddListener(delegate{TaskOnClickDown(1, Slot2);});
+        down3.onClick.AddListener(delegate{TaskOnClickDown(2, Slot3);});
+        down4.onClick.AddListener(delegate{TaskOnClickDown(3, Slot4);});
         Back.onClick.AddListener(DisablePinEntry);
         Unlock.onClick.AddListener(Verify);
 	}
@@ -49,16 +49,16 @@ public class PinMechanism : Receiver {
 
     void TaskOnClickUp (int num, GameObject[] slotNum) {
         //check buttons are pressed
-        slotNum[CurrentPin[num-1]].SetActive(false);
-        slotNum[mod(CurrentPin[num-1] + 1, 10)].SetActive(true);
-        CurrentPin[num-1] = mod(CurrentPin[num-1] + 1, 10);
+        slotNum[CurrentPin[num]].SetActive(false);
+        slotNum[mod(CurrentPin[num] + 1, 10)].SetActive(true);
+        CurrentPin[num] = mod(CurrentPin[num] + 1, 10);
     }
 
     void TaskOnClickDown (int num, GameObject[] slotNum) {
         //check buttons are pressed
-        slotNum[CurrentPin[num-1]].SetActive(false);
-        slotNum[mod(CurrentPin[num-1] - 1, 10)].SetActive(true);
-        CurrentPin[num-1] = mod(CurrentPin[num-1] - 1, 10);
+        slotNum[CurrentPin[num]].SetActive(false);
+        slotNum[mod(CurrentPin[num] - 1, 10)].SetActive(true);
+        CurrentPin[num] = mod(CurrentPin[num] - 1, 10);
     }
 
     void Verify () {
@@ -77,8 +77,7 @@ public class PinMechanism : Receiver {
 
     protected override void SwitchReceived()
     {
-        if (OverlayOn == false)
-        {
+        if (!OverlayOn) {
             EnablePinEntry();
         }
     }
@@ -93,7 +92,6 @@ public class PinMechanism : Receiver {
     public void EnablePinEntry () {
         OverlayOn = true;
         PinEntryUI.SetActive(true);
-        // MovementUI.SetActive(false);
         Failed.SetActive(false);
         for (int j = 0; j < 4; j++) {
             CurrentPin[j] = 0;
@@ -112,7 +110,6 @@ public class PinMechanism : Receiver {
     }
 
     public void DisablePinEntry () {
-        Debug.Log("disabling");
         OverlayOn = false;
         PinEntryUI.SetActive(false);
         MovementUI.SetActive(true);
