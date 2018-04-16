@@ -1842,6 +1842,28 @@ MonoBehaviour:
     i15: 34
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &85686163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 85686154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - What is this..?
+  - This spyglass looks useful for something...
+  - But what?
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  chatPictures: 010000000100000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1001 &86946169
 Prefab:
   m_ObjectHideFlags: 0
@@ -2747,6 +2769,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 152832283}
+  - component: {fileID: 152832284}
   m_Layer: 0
   m_Name: KeyBParent
   m_TagString: Untagged
@@ -2768,6 +2791,25 @@ Transform:
   m_Father: {fileID: 1770711268}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152832284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152832282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - A key! This will be useful!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1 &160312216
 GameObject:
   m_ObjectHideFlags: 0
@@ -11286,6 +11328,7 @@ GameObject:
   - component: {fileID: 616963532}
   - component: {fileID: 616963531}
   - component: {fileID: 616963533}
+  - component: {fileID: 616963534}
   m_Layer: 0
   m_Name: Checkpoint3
   m_TagString: CheckpointB
@@ -11330,6 +11373,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.520342, y: 4.1409254, z: 2.5249958}
   m_Center: {x: -0.7912111, y: 0.5460305, z: 0.13658047}
+--- !u!114 &616963534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616963530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Seems we are in some kind of...castle?
+  - Aha! There's a portal on that bridge over there!
+  - But it's damaged...if only I had a BOLT and a COG, I could fix it!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  chatPictures: 010000000000000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1001 &618365751
 Prefab:
   m_ObjectHideFlags: 0
@@ -12227,6 +12292,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 662313627}
+  - component: {fileID: 662313628}
   m_Layer: 0
   m_Name: KeyAParent
   m_TagString: Untagged
@@ -12248,6 +12314,25 @@ Transform:
   m_Father: {fileID: 1770711268}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &662313628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662313626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - A key! This will be useful!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1001 &665727378
 Prefab:
   m_ObjectHideFlags: 0
