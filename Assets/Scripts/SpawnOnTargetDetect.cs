@@ -80,6 +80,8 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 				if (disparity != null) {
 					if (disparity.World == otherWorld) {
 						component.enabled = false;
+					} else {
+						component.enabled = true;
 					}
 					if (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG && disparity.altTexture != null) {
 						component.material.SetTexture("_MainTex", disparity.altTexture);
