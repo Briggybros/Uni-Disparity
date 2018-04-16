@@ -28,15 +28,16 @@ public class TrackingArrow : NetworkBehaviour {
 				PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[1].transform;
 			}
 			view = PlayerTransform.GetComponentInChildren<OutOfView>();
-		}
-		Parent = transform.parent;
-		transform.parent = null;
-		transform.LookAt(PlayerTransform,Vector3.up);
-		transform.parent = Parent;
-		if (!view.vis) {
-			GetComponent<Renderer>().enabled = true;
 		} else {
-			GetComponent<Renderer>().enabled = false;
+			Parent = transform.parent;
+			transform.parent = null;
+			transform.LookAt(PlayerTransform,Vector3.up);
+			transform.parent = Parent;
+			if (view != null && !view.vis) {
+				GetComponent<Renderer>().enabled = true;
+			} else {
+				GetComponent<Renderer>().enabled = false;
+			}
 		}
 	}
 }
