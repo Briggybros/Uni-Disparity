@@ -36,6 +36,7 @@ public class NavMeshHole : MonoBehaviour {
 		if (agent != null && body != null) {
 			agent.enabled = false;
 			body.isKinematic = true;
+			body.useGravity = true;
 		}
 	}
 }
