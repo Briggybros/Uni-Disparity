@@ -18,7 +18,12 @@ ModelImporter:
     3300002: drawbridge
     4300000: drawbridge
     4300002: dbframe
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 61dce9c046331a347b7debfc5c297a78, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
