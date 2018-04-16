@@ -4,8 +4,7 @@ public class CharacterPicker : MonoBehaviour {
     public enum WORLDS {
         CAT = 'A',
         DOG = 'B',
-        SPECTATORCAT = 'C',
-        SPECATORDOG = 'D',
+        SPECTATOR = 'C',
     }
     private static WORLDS World;
 
@@ -19,30 +18,27 @@ public class CharacterPicker : MonoBehaviour {
 
     // Return the opposite, normal world value (not spectator world)
     public static WORLDS GetOtherWorld() {
-        if (World == WORLDS.SPECATORDOG || World == WORLDS.DOG)
+        if (World == WORLDS.SPECTATOR)
+            return WORLDS.SPECTATOR;
+        else if (World == WORLDS.DOG)
             return WORLDS.CAT;
         else return WORLDS.DOG;
     } 
 
     public static bool IsSpectator () {
-        if (World == WORLDS.SPECTATORCAT || World == WORLDS.SPECATORDOG)
+        if (World == WORLDS.SPECTATOR)
             return true;
         return false;
     }
     
     public static bool IsSpectator (WORLDS world) {
-        if (world == WORLDS.SPECTATORCAT || world == WORLDS.SPECATORDOG)
+        if (world == WORLDS.SPECTATOR)
             return true;
         return false;
     }
 
     // Changes the world the Spectator sees
     public static void ChangeSpectatorFocus (){
-        if (World == WORLDS.SPECTATORCAT){
-            World = WORLDS.SPECATORDOG;
-        }
-        else if (World == WORLDS.SPECATORDOG){
-            World = WORLDS.SPECTATORCAT;
-        }
+        Debug.LogError("Please don't use this anymore");
     }
 }

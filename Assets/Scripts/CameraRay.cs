@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraRay : Receiver {
 
 	public new GameObject camera;
-	public GameObject target;
 	public LineRenderer line;
+	public ParticleSystem laserParticles;
 	bool laserActive;
-	//public GameObject target;
 	RaycastHit hit;
+	private Light laserLight;
 
 	Vector3 prevForward;
 
@@ -17,6 +17,9 @@ public class CameraRay : Receiver {
 	protected override void Start () {
 		laserActive = false;
 		line.enabled = false;
+		laserLight = camera.GetComponent<Light>();
+		laserLight.enabled = false;
+
 	}
 
 	protected override void SwitchReceived () {
@@ -29,7 +32,6 @@ public class CameraRay : Receiver {
 	}
 
 	void shootRay () {
-		// StopAllCoroutines();
 		laserActive = true;
 		StartCoroutine(fireRay());
 	}
@@ -37,20 +39,26 @@ public class CameraRay : Receiver {
 	void stopShootRay () {
 		laserActive = false;
 		line.enabled = false;
+		laserLight.enabled = false;
+		laserParticles.Stop();
 	}
 
 	IEnumerator fireRay () {
 
 		while (laserActive == true) {
+			laserLight.enabled = true;
 			line.enabled = true;
+			laserParticles.Play();
 			if(camera.transform.forward != prevForward) {
 				prevForward = camera.transform.forward;
 				Ray ray = new Ray(camera.transform.position, camera.transform.forward);
 				line.SetPosition(0, ray.origin);
 
 				if (Physics.Raycast (ray, out hit, 100)) {
-					Debug.Log(hit.transform.gameObject.name);
 					line.SetPosition(1, hit.point);
+					laserParticles.transform.position = hit.point;
+					laserParticles.transform.rotation = Quaternion.LookRotation(ray.origin - hit.point);
+					
 					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
 						hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 					} 
