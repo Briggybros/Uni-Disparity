@@ -12,7 +12,7 @@ public class InheritSingleRot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this.tag == "Bopped") {
+		if (CompareTag("Bopped")) {
 			Vector3 angles = new Vector3(1, 1, 1);
 			angles.x = this.transform.localEulerAngles.x;
 			angles.y = this.transform.localEulerAngles.y;
