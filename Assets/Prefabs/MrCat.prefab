@@ -943,10 +943,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
-  BlockInput: 0
   interacting: 0
   touching: 0
+  target: {fileID: 0}
   canMove: 1
+  keys: []
+  cores: []
 --- !u!114 &114888406601374704
 MonoBehaviour:
   m_ObjectHideFlags: 1
