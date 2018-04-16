@@ -14,7 +14,6 @@ public class Checkpoint : MonoBehaviour {
 		char World = CharacterPicker.GetWorld() == CharacterPicker.WORLDS.CAT ? 'A' : 'B';
 		string tag = "Checkpoint" + World;
 		CheckpointList = GameObject.FindGameObjectsWithTag(tag);
-		Debug.Log("Start it");
 	}
 
     private void ActivateCheckpoint() //Activated current, deactivate all else
@@ -29,10 +28,8 @@ public class Checkpoint : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-		Debug.Log("COLLISSION");
         if (other.gameObject.CompareTag("Player") && Array.Exists(CheckpointList, el => el == this.gameObject))
         {
-			Debug.Log("Activate");
             ActivateCheckpoint();
         }
     }
