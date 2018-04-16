@@ -23,7 +23,7 @@ public class PinMechanism : Receiver {
         success = false;
         spikeTarget = Spikes.transform.position;
         spikeTarget.y += MovementRange;
-        DisablePinEntry();
+        OverlayOn = false;
         CurrentPin = new int[4];
         up1.onClick.AddListener(delegate{TaskOnClickUp(1, Slot1);});
         up2.onClick.AddListener(delegate{TaskOnClickUp(2, Slot2);});
@@ -93,7 +93,7 @@ public class PinMechanism : Receiver {
     public void EnablePinEntry () {
         OverlayOn = true;
         PinEntryUI.SetActive(true);
-        MovementUI.SetActive(false);
+        // MovementUI.SetActive(false);
         Failed.SetActive(false);
         for (int j = 0; j < 4; j++) {
             CurrentPin[j] = 0;
@@ -112,6 +112,7 @@ public class PinMechanism : Receiver {
     }
 
     public void DisablePinEntry () {
+        Debug.Log("disabling");
         OverlayOn = false;
         PinEntryUI.SetActive(false);
         MovementUI.SetActive(true);
