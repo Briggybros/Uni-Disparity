@@ -17355,53 +17355,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 4670494659506700, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4670494659506700, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.031157287
-      objectReference: {fileID: 0}
-    - target: {fileID: 4670494659506700, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.031157272
-      objectReference: {fileID: 0}
-    - target: {fileID: 4670494659506700, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.031157287
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561892999110622, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54154912679897340, guid: 32b166855ed90fc44889573917a2d49a,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 65746348655741366, guid: 32b166855ed90fc44889573917a2d49a,
-        type: 2}
-      propertyPath: m_Center.x
-      value: -0.18576089
-      objectReference: {fileID: 0}
-    - target: {fileID: 65746348655741366, guid: 32b166855ed90fc44889573917a2d49a,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 1.7163086
-      objectReference: {fileID: 0}
-    - target: {fileID: 65746348655741366, guid: 32b166855ed90fc44889573917a2d49a,
-        type: 2}
-      propertyPath: m_Center.z
-      value: -0.16525929
-      objectReference: {fileID: 0}
-    - target: {fileID: 65746348655741366, guid: 32b166855ed90fc44889573917a2d49a,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 3.365736
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114186909188208014, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &869875336 stripped
@@ -17409,63 +17363,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4670494659506700, guid: 32b166855ed90fc44889573917a2d49a,
     type: 2}
   m_PrefabInternal: {fileID: 869875335}
---- !u!1 &869875337 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1660063815082246, guid: 32b166855ed90fc44889573917a2d49a,
-    type: 2}
-  m_PrefabInternal: {fileID: 869875335}
---- !u!1 &869875338 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1561892999110622, guid: 32b166855ed90fc44889573917a2d49a,
-    type: 2}
-  m_PrefabInternal: {fileID: 869875335}
---- !u!65 &869875339
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 869875337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.2561805, y: 4.026847, z: 2.5324125}
-  m_Center: {x: -0.18576086, y: 1.3857529, z: -0.16525924}
---- !u!114 &869875340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 869875338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be5e3a62c15a1f46beeaf4e6137f9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positions:
-  - {x: -13.99096, y: 5.560055, z: 21.01439}
-  - {x: 9.18, y: 5.560055, z: 21.01439}
---- !u!195 &869875344
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 869875338}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2.7
-  m_BaseOffset: -0.05
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
 --- !u!1 &895416734 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 9503a2b1162b67f4a952ed0a3bd9e6fd, type: 3}

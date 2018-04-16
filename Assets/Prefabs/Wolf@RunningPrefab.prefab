@@ -566,14 +566,15 @@ GameObject:
   - component: {fileID: 95272992191263858}
   - component: {fileID: 114763242888853720}
   - component: {fileID: 54154912679897340}
-  - component: {fileID: 114186909188208014}
+  - component: {fileID: 114782964193212908}
+  - component: {fileID: 195256526843044812}
   m_Layer: 0
   m_Name: Wolf@RunningPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1562912636392164
 GameObject:
   m_ObjectHideFlags: 1
@@ -734,6 +735,7 @@ GameObject:
   - component: {fileID: 4735966194861980}
   - component: {fileID: 137431425111333620}
   - component: {fileID: 65746348655741366}
+  - component: {fileID: 65897719725907788}
   m_Layer: 0
   m_Name: WolfBoi2
   m_TagString: Untagged
@@ -1974,7 +1976,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &65746348655741366
 BoxCollider:
@@ -1984,6 +1986,18 @@ BoxCollider:
   m_GameObject: {fileID: 1660063815082246}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2561805, y: 3.365736, z: 2.5324125}
+  m_Center: {x: -0.18576089, y: 1.7163086, z: -0.16525929}
+--- !u!65 &65897719725907788
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660063815082246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.2561805, y: 4.026847, z: 2.5324125}
@@ -2005,17 +2019,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114186909188208014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1561892999110622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14de2b3cba950164ab24e9a4dc1c06ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114763242888853720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2030,11 +2033,20 @@ MonoBehaviour:
   positions:
   - {x: -13.99096, y: 5.560055, z: 21.01439}
   - {x: 9.18, y: 5.560055, z: 21.01439}
-  height: 1
-  baseOffset: 0.25
-  radius: 1
-  angularSpeed: 360
-  positionalSpeed: 3.5
+--- !u!114 &114782964193212908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561892999110622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be5e3a62c15a1f46beeaf4e6137f9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions:
+  - {x: -13.99096, y: 5.560055, z: 21.01439}
+  - {x: 9.18, y: 5.560055, z: 21.01439}
 --- !u!137 &137431425111333620
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2103,3 +2115,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.80398905, y: 0.016129732, z: 0.18576092}
     m_Extent: {x: 1.6333138, y: 1.5510004, z: 1.1280899}
   m_DirtyAABB: 0
+--- !u!195 &195256526843044812
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561892999110622}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2.7
+  m_BaseOffset: -0.05
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 1
