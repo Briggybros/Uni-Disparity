@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1697655331}
-  m_IndirectSpecularColor: {r: 0.11461336, g: 0.10296767, b: 0.09242001, a: 1}
+  m_IndirectSpecularColor: {r: 0.17919035, g: 0.21880499, b: 0.2740075, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &17795383
 Prefab:
   m_ObjectHideFlags: 0
@@ -1614,6 +1615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &81886926
 Prefab:
   m_ObjectHideFlags: 0
@@ -1807,6 +1809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!114 &85686162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2238,6 +2241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &114716890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,6 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &168678603
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &190483215
 Prefab:
   m_ObjectHideFlags: 0
@@ -4201,6 +4207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &237830993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,6 +4651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &282620231
 Prefab:
   m_ObjectHideFlags: 0
@@ -5101,6 +5109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &305438251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5197,6 +5206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &312021900
 Prefab:
   m_ObjectHideFlags: 0
@@ -5866,6 +5876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &350833754
 Prefab:
   m_ObjectHideFlags: 0
@@ -6713,6 +6724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &401872614
 Prefab:
   m_ObjectHideFlags: 0
@@ -8630,6 +8642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &478004635
 Prefab:
   m_ObjectHideFlags: 0
@@ -9164,6 +9177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &502043025
 Prefab:
   m_ObjectHideFlags: 0
@@ -9577,6 +9591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &529919501
 Prefab:
   m_ObjectHideFlags: 0
@@ -10134,6 +10149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &558241816
 GameObject:
   m_ObjectHideFlags: 0
@@ -11121,6 +11137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 1
+  altTexture: {fileID: 0}
 --- !u!114 &597711790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14231,6 +14248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &829181322
 Prefab:
   m_ObjectHideFlags: 0
@@ -15057,6 +15075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &855460191
 Prefab:
   m_ObjectHideFlags: 0
@@ -15579,6 +15598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!114 &895416738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15714,6 +15734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &905816720
 Prefab:
   m_ObjectHideFlags: 0
@@ -16800,6 +16821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 1
+  altTexture: {fileID: 0}
 --- !u!65 &957852430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17067,6 +17089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &969054906
 Prefab:
   m_ObjectHideFlags: 0
@@ -17682,6 +17705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!4 &1017666291 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
@@ -18250,6 +18274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1064471750
 GameObject:
   m_ObjectHideFlags: 0
@@ -18491,6 +18516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1078341624
 Prefab:
   m_ObjectHideFlags: 0
@@ -20799,6 +20825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1219534889
 Prefab:
   m_ObjectHideFlags: 0
@@ -23378,6 +23405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1377366695
 GameObject:
   m_ObjectHideFlags: 0
@@ -23510,6 +23538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1378800724
 Prefab:
   m_ObjectHideFlags: 0
@@ -23775,6 +23804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1387494628
 Prefab:
   m_ObjectHideFlags: 0
@@ -23901,6 +23931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!43 &1396207087
 Mesh:
   m_ObjectHideFlags: 0
@@ -26002,6 +26033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1551618892
 GameObject:
   m_ObjectHideFlags: 0
@@ -29008,6 +29040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1723138369
 Prefab:
   m_ObjectHideFlags: 0
@@ -29156,6 +29189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1743566582
 Prefab:
   m_ObjectHideFlags: 0
@@ -29284,6 +29318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!114 &1748985353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30974,6 +31009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &1853741157
 Prefab:
   m_ObjectHideFlags: 0
@@ -32356,6 +32392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1947091827 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 9e206055227af9145b43d0ca8ed15d7b, type: 3}
@@ -32577,6 +32614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1957953959
 GameObject:
   m_ObjectHideFlags: 0
@@ -32671,9 +32709,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959054192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47f92041efbb4b429a4eafca855ebe3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b5d009ffeaf04d658679f30ffbea771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreboard: {fileID: 106351590}
 --- !u!114 &1959054194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33080,6 +33119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1978686567
 GameObject:
   m_ObjectHideFlags: 0
@@ -33347,6 +33387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &1994038647 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 40af251adf8c48240af2f47409b461b8, type: 3}
@@ -34271,6 +34312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &2042696608
 GameObject:
   m_ObjectHideFlags: 0
@@ -34751,6 +34793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1 &2064502175
 GameObject:
   m_ObjectHideFlags: 0
@@ -35082,6 +35125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderShared: 0
+  altTexture: {fileID: 0}
 --- !u!1001 &2076946015
 Prefab:
   m_ObjectHideFlags: 0
