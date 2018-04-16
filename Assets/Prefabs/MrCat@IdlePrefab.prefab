@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54630192044922074}
   - component: {fileID: 65684776646929186}
   - component: {fileID: 114310973964045854}
+  - component: {fileID: 114717827347190860}
   m_Layer: 0
   m_Name: MrCat@IdlePrefab
   m_TagString: Player
@@ -2081,7 +2082,21 @@ MonoBehaviour:
   joystick: {fileID: 0}
   interacting: 0
   touching: 0
+  target: {fileID: 0}
   canMove: 1
+  keys: []
+  cores: []
+--- !u!114 &114717827347190860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1007063932820308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14de2b3cba950164ab24e9a4dc1c06ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114888986527566380
 MonoBehaviour:
   m_ObjectHideFlags: 1
