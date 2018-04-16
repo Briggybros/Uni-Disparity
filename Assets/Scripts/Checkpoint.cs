@@ -30,6 +30,7 @@ public class Checkpoint : MonoBehaviour {
     {
         if (other.tag == "Player" && Array.Exists(CheckpointList, el => el == this))
         {
+            Debug.Log(this.name);
             ActivateCheckpoint();
         }
     }
