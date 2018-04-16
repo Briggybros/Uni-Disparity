@@ -12361,7 +12361,7 @@ GameObject:
   - component: {fileID: 673374289}
   - component: {fileID: 673374288}
   m_Layer: 0
-  m_Name: Spawn2
+  m_Name: Spawn Position 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12385,11 +12385,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673374287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.8, y: 7.36, z: 18.45}
+  m_LocalPosition: {x: -4.8, y: 7.36, z: -20.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &676423498
 Prefab:
@@ -19426,7 +19426,7 @@ GameObject:
   - component: {fileID: 1115233729}
   - component: {fileID: 1115233728}
   m_Layer: 0
-  m_Name: Spawn1
+  m_Name: Spawn Position 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19450,11 +19450,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115233727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 6.28, z: -20.93}
+  m_LocalPosition: {x: -22.86, y: 6.28, z: 18.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117326555
 GameObject:
@@ -31781,7 +31781,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1918573876
 BoxCollider:
