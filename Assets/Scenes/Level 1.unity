@@ -1854,14 +1854,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chats:
-  - What's this?
-  - I think I can use this spyglass as a laser to break something...
+  - What is this..?
+  - This spyglass looks useful for something...
+  - But what?
   avatars:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  - {fileID: 21300000, guid: a4c0e79795476fe4ab56eeac6f26c367, type: 3}
-  chatPictures: 0100000000000000
-  textBox: {fileID: 0}
+  chatPictures: 010000000100000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 0
 --- !u!1001 &86946169
@@ -2769,6 +2769,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 152832283}
+  - component: {fileID: 152832284}
   m_Layer: 0
   m_Name: KeyBParent
   m_TagString: Untagged
@@ -2790,6 +2791,25 @@ Transform:
   m_Father: {fileID: 1770711268}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152832284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152832282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - A key! This will be useful!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1 &160312216
 GameObject:
   m_ObjectHideFlags: 0
@@ -11308,6 +11328,7 @@ GameObject:
   - component: {fileID: 616963532}
   - component: {fileID: 616963531}
   - component: {fileID: 616963533}
+  - component: {fileID: 616963534}
   m_Layer: 0
   m_Name: Checkpoint3
   m_TagString: CheckpointB
@@ -11352,6 +11373,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.520342, y: 4.1409254, z: 2.5249958}
   m_Center: {x: -0.7912111, y: 0.5460305, z: 0.13658047}
+--- !u!114 &616963534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616963530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Seems we are in some kind of...castle?
+  - Aha! There's a portal on that bridge over there!
+  - But it's damaged...if only I had a BOLT and a COG, I could fix it!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  chatPictures: 010000000000000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1001 &618365751
 Prefab:
   m_ObjectHideFlags: 0
@@ -12249,6 +12292,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 662313627}
+  - component: {fileID: 662313628}
   m_Layer: 0
   m_Name: KeyAParent
   m_TagString: Untagged
@@ -12270,6 +12314,25 @@ Transform:
   m_Father: {fileID: 1770711268}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &662313628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662313626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - A key! This will be useful!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 0
 --- !u!1001 &665727378
 Prefab:
   m_ObjectHideFlags: 0
@@ -12559,7 +12622,7 @@ Transform:
   - {fileID: 1699412633}
   - {fileID: 1978686568}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &682916648
 GameObject:
@@ -13679,7 +13742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793459961
 Prefab:
@@ -20550,7 +20613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1173194165
 BoxCollider:
@@ -31151,71 +31214,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
---- !u!1 &1855337570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1855337573}
-  - component: {fileID: 1855337572}
-  - component: {fileID: 1855337571}
-  m_Layer: 0
-  m_Name: Talk1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1855337571
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1855337570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1855337572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1855337570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chats:
-  - It seems we're in some kind of castle...
-  - There! In the centre! A portal!
-  - But it's damaged, I think with a COG and BOLT I could fix it!
-  avatars:
-  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
-  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  - {fileID: 21300000, guid: a4c0e79795476fe4ab56eeac6f26c367, type: 3}
-  chatPictures: 010000000000000001000000
-  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
-  repeated: 0
-  isTriggerable: 1
---- !u!4 &1855337573
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1855337570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.8, y: 7.5, z: 18.45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1859354379
 Prefab:
   m_ObjectHideFlags: 0
@@ -31870,42 +31868,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!114 &1918573876
-MonoBehaviour:
-=======
 --- !u!65 &1918573876
 BoxCollider:
->>>>>>> master
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1918573873}
-<<<<<<< HEAD
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chats:
-  - It seems we're in some kind of castle...
-  - There! In the centre! A portal!
-  - But it's damaged, I think with a COG and BOLT I could fix it!
-  avatars:
-  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
-  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  chatPictures: 010000000000000001000000
-  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
-  repeated: 0
-  isTriggerable: 1
-=======
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.20405, y: 4.16741, z: 3.7097988}
   m_Center: {x: -0.109562874, y: 1.583705, z: 0.47658253}
->>>>>>> master
 --- !u!1001 &1919401596
 Prefab:
   m_ObjectHideFlags: 0
