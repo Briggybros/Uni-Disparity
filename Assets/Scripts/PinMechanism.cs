@@ -38,11 +38,6 @@ public class PinMechanism : Receiver {
 	}
 
     protected override void Update() {
-        // Debug.Log("update");
-        // if (success) {
-        //     Debug.Log("truenow");
-        //     Spikes.transform.position = Vector3.MoveTowards(Spikes.transform.position, spikeTarget, DownSpeed * Time.deltaTime);
-        // }
         if (Spikes.transform.position == spikeTarget) {
             target.SetActive(false);
         }
@@ -61,7 +56,6 @@ public class PinMechanism : Receiver {
 
     void TaskOnClickDown (int num, GameObject[] slotNum) {
         //check buttons are pressed
-        // Debug.Log((CurrentPin[num-1] - 1)%10);
         slotNum[CurrentPin[num-1]].SetActive(false);
         slotNum[mod(CurrentPin[num-1] - 1, 10)].SetActive(true);
         CurrentPin[num-1] = mod(CurrentPin[num-1] - 1, 10);
@@ -83,18 +77,14 @@ public class PinMechanism : Receiver {
 
     protected override void SwitchReceived()
     {
-        Debug.Log("switch triggered");
         if (OverlayOn == false)
         {
-            Debug.Log("here");
             EnablePinEntry();
         }
     }
 
     IEnumerator LowerSpikes () {
-        Debug.Log("in the coroutine");
         while (Spikes.transform.position.y > spikeTarget.y) {
-            Debug.Log("lowering");
             Spikes.transform.position = Vector3.MoveTowards(Spikes.transform.position, spikeTarget, DownSpeed * Time.deltaTime);
             yield return 0;
         }

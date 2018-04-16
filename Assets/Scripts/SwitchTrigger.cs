@@ -12,7 +12,6 @@ public class SwitchTrigger : InteractTrigger {
 					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 				}
 				interacted = false;
-				Debug.Log("chaging to static");
 				this.tag = "Static";
 			}
 		}
