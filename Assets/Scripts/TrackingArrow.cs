@@ -33,12 +33,9 @@ public class TrackingArrow : NetworkBehaviour {
 		transform.parent = null;
 		transform.LookAt(PlayerTransform,Vector3.up);
 		transform.parent = Parent;
-		//transform.rotation = Quaternion.LookRotation((PlayerTransform.position - transform.position), transform.up);
 		if (!view.vis) {
-			Debug.Log("HIDDEN BOY");
 			GetComponent<Renderer>().enabled = true;
 		} else {
-			Debug.Log("BOY FOUND");
 			GetComponent<Renderer>().enabled = false;
 		}
 	}
