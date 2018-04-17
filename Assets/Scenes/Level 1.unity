@@ -12207,7 +12207,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 10, z: 1}
+  m_Size: {x: 1, y: 25, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &579295751
 Prefab:
@@ -13313,7 +13313,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 10, z: 1}
+  m_Size: {x: 1, y: 25, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &655993290
 Prefab:
@@ -17374,6 +17374,21 @@ Prefab:
     - target: {fileID: 4670494659506700, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 195146472625081288, guid: 32b166855ed90fc44889573917a2d49a,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 195146472625081288, guid: 32b166855ed90fc44889573917a2d49a,
+        type: 2}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195146472625081288, guid: 32b166855ed90fc44889573917a2d49a,
+        type: 2}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b166855ed90fc44889573917a2d49a, type: 2}

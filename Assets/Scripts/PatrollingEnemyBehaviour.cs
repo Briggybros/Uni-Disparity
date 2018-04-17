@@ -7,7 +7,8 @@ public class PatrollingEnemyBehaviour : Receiver {
 	public Vector3[] positions;
 
 	private int destination = 0;
-	private bool moved = true;
+
+	public float accuracy = 0.5f;
 	private NavMeshAgent agent;
 
 	// Use this for initialization
@@ -17,12 +18,12 @@ public class PatrollingEnemyBehaviour : Receiver {
 
 	protected override void Update() {
 		if (agent.enabled) {
-			if (moved && agent.velocity == Vector3.zero) {
-				destination++;
-				agent.destination = positions[destination % positions.Length];
-				moved = false;
-			} else {
-				moved = true;
+			if (
+				agent.remainingDistance != Mathf.Infinity &&
+				agent.remainingDistance <= accuracy
+			) {
+				destination = (destination + 1) % (positions.Length);
+				agent.destination = positions[destination];
 			}
 		}
 	}
