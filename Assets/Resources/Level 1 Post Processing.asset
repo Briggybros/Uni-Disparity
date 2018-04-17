@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 2
+        preset: 1
       taaSettings:
         jitterSpread: 0.75
         sharpen: 0.3
@@ -42,13 +42,13 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 1.27
-      radius: 0.33
-      sampleCount: 10
-      downsampling: 1
+      intensity: 1
+      radius: 0.25
+      sampleCount: 6
+      downsampling: 0
       forceForwardCompatibility: 0
       ambientOnly: 0
-      highPrecision: 0
+      highPrecision: 1
   screenSpaceReflection:
     m_Enabled: 0
     m_Settings:
@@ -97,14 +97,14 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.5
-        threshold: 1.1
+        intensity: 0.7
+        threshold: 1.2
         softKnee: 0.5
-        radius: 4
-        antiFlicker: 0
+        radius: 4.5
+        antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
@@ -138,9 +138,9 @@ MonoBehaviour:
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 1, g: 0.9140765, b: 0.7534026, a: 0}
+          lift: {r: 1, g: 0.82951885, b: 0.7730379, a: 0}
           gamma: {r: 1, g: 1, b: 1, a: 0}
-          gain: {r: 0.7365708, g: 0.77815944, b: 1, a: 0}
+          gain: {r: 0.89141226, g: 0.86821836, b: 1, a: 0}
       curves:
         master:
           curve:
