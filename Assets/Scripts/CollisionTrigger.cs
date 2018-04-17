@@ -17,7 +17,9 @@ public class CollisionTrigger : Trigger {
     }
     protected virtual void OnTriggerEnter(Collider other){
         if (other.gameObject == owner || (playerInteract == true && other.tag == "Player")){
+            Debug.Log("should be true");
             foreach (GameObject target in base.targets){
+                Debug.Log("broadcast to spikes");
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
             }
         }

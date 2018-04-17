@@ -18,10 +18,12 @@ public class DoorBehaviourScript : Receiver {
     }
 
     protected override void ColliderEnter(){
+        Debug.Log("collider enter");
         ToggleOpen();
     }
 
     protected override void ColliderExit(){
+        Debug.Log("Collider Exit");
         ToggleOpen();
     }
 

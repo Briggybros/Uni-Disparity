@@ -2067,11 +2067,11 @@ GameObject:
   m_Component:
   - component: {fileID: 517138945}
   - component: {fileID: 517138944}
+  - component: {fileID: 517138943}
   - component: {fileID: 517138942}
   - component: {fileID: 517138941}
   - component: {fileID: 517138940}
   - component: {fileID: 517138946}
-  - component: {fileID: 517138943}
   m_Layer: 0
   m_Name: PortcullisSpikesCat
   m_TagString: Untagged
