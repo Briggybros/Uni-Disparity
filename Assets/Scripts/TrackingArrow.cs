@@ -10,36 +10,41 @@ public class TrackingArrow : NetworkBehaviour {
 	public Transform PlayerTransform;
 	public Transform Parent;
 	private Image dispImage;
+	private GameObject[] players;
+
+	private Color Filled = new Color(255, 255, 255, 255);
+	private Color Transparent = new Color(255, 255, 255, 0);
 	// Use this for initialization
 	void Start () {
 		dispImage = GetComponent<Image>();
-		dispImage.color = new Color(255, 255, 255, 255);
-		if (!local) {
-			PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
-		} else {
-			PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[1].transform;
-		}
-		view = PlayerTransform.GetComponentInChildren<OutOfView>();
+		GetPlayers();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (PlayerTransform == null) {
-			if (!local) {
-				PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[0].transform;
-			} else {
-				PlayerTransform = GameObject.FindGameObjectsWithTag("Player")[1].transform;
-			}
-			view = PlayerTransform.GetComponentInChildren<OutOfView>();
+			GetPlayers();
 		} else {
 			Vector3 lookAtPos = new Vector3(PlayerTransform.position.x, transform.position.y, PlayerTransform.position.z);
 
 			transform.LookAt(lookAtPos);
 			if (view != null && !view.vis) {
-				dispImage.color = new Color(255, 255, 255, 255);
+				dispImage.color = Filled;
 			} else {
-				dispImage.color = new Color(255, 255, 255, 0);
+				dispImage.color = Transparent;
 			}
+		}
+	}
+
+	void GetPlayers() {
+		players = GameObject.FindGameObjectsWithTag("Player");
+		if (!local && players.Length > 0) {
+			PlayerTransform = players[0].transform;
+		} else if (players.Length > 1) {
+			PlayerTransform = players[1].transform;
+		}
+		if (PlayerTransform != null) {
+			view = PlayerTransform.GetComponentInChildren<OutOfView>();
 		}
 	}
 }

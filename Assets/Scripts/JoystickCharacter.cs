@@ -163,11 +163,6 @@ public class JoystickCharacter : NetworkBehaviour {
         if (!canMove) {
             return;
         }
-        if (rb.IsSleeping()) {
-            animator.SetBool("Running", false);
-        } else {
-            animator.SetBool("Running", true);
-        }
 
         if (!isLocalPlayer)
             return;
@@ -224,11 +219,16 @@ public class JoystickCharacter : NetworkBehaviour {
 
         pos = transform.localPosition;
         stickInput = StickInput();
-        if (stickInput != Vector3.zero) {   
+        if (stickInput != Vector3.zero) {
+            if(!GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", true);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
             MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
             pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
+        }
+        else
+        {
+            if (GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", false);
         }
 
         if (!IsJump() && impCount > 40) {
