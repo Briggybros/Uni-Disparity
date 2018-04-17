@@ -15,7 +15,7 @@ public class JoystickCharacter : NetworkBehaviour
     private Vector3 pos;
     public bool interacting;
     public bool touching;
-    private NetworkIdentity targetNetworkIdent;
+    public NetworkIdentity targetNetworkIdent;
     public GameObject target;
     public bool canMove;
     private Vector3 cameraForwards;
@@ -40,11 +40,18 @@ public class JoystickCharacter : NetworkBehaviour
         targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
 		grabLax = 0;
-    }
+        if(!isLocalPlayer){
+            var collider = GetComponentsInChildren<Collider>();
+            foreach (var collided in collider) {
+                collided.enabled = false;
+            }
+        }
+     }
 
     [Command]
     void CmdsyncChange(string tag, GameObject target) {
         targetNetworkIdent.AssignClientAuthority(connectionToClient);
+        Debug.Log("hererrerer");
         RpcupdateState(tag, target);
         targetNetworkIdent.RemoveClientAuthority(connectionToClient);
     }

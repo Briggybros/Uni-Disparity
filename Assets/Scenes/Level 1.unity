@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &17795383
 Prefab:
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &41977353
 Prefab:
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &81886926
 Prefab:
@@ -2137,7 +2137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!114 &85686162
 MonoBehaviour:
@@ -2640,7 +2640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &114716890
 GameObject:
@@ -3418,7 +3418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &162558902
 GameObject:
@@ -4088,7 +4088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &190483215
 Prefab:
@@ -4892,7 +4892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &237830993
 GameObject:
@@ -5582,7 +5582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &282620231
 Prefab:
@@ -6192,7 +6192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &305438251
 GameObject:
@@ -6289,7 +6289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &312021900
 Prefab:
@@ -7098,7 +7098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &350833754
 Prefab:
@@ -7946,7 +7946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &401872614
 Prefab:
@@ -9959,7 +9959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &483412357
 Prefab:
@@ -10415,7 +10415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &502043025
 Prefab:
@@ -10864,7 +10864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &529919501
 Prefab:
@@ -11558,7 +11558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &558241816
 GameObject:
@@ -12476,7 +12476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 1
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!114 &597711790
 MonoBehaviour:
@@ -15986,7 +15986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &829181322
 Prefab:
@@ -16881,7 +16881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &855460191
 Prefab:
@@ -17404,7 +17404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!114 &895416738
 MonoBehaviour:
@@ -17540,7 +17540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &904187782
 GameObject:
@@ -18597,7 +18597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 1
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!65 &957852430
 BoxCollider:
@@ -18865,7 +18865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &969054906
 Prefab:
@@ -19549,7 +19549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!4 &1017666291 stripped
 Transform:
@@ -20118,7 +20118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1064471750
 GameObject:
@@ -20434,7 +20434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1078341624
 Prefab:
@@ -21356,7 +21356,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115233727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.86, y: 6.28, z: 18.55}
+  m_LocalPosition: {x: 14.45, y: 6.28, z: -17.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22934,7 +22934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1219534889
 Prefab:
@@ -25710,7 +25710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1377366695
 GameObject:
@@ -25843,7 +25843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1378800724
 Prefab:
@@ -26281,7 +26281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1393779372
 GameObject:
@@ -26329,7 +26329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!43 &1396207087
 Mesh:
@@ -28546,7 +28546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1529425384
 GameObject:
@@ -28705,7 +28705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1549215955
 GameObject:
@@ -33363,7 +33363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1615313938
 Prefab:
@@ -35549,7 +35549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1723138369
 Prefab:
@@ -35698,7 +35698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1743566582
 Prefab:
@@ -35827,7 +35827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!114 &1748985353
 MonoBehaviour:
@@ -37652,7 +37652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &1853741157
 Prefab:
@@ -39159,7 +39159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1947091827 stripped
 GameObject:
@@ -39381,7 +39381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1957953959
 GameObject:
@@ -39828,7 +39828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1978686567
 GameObject:
@@ -40158,7 +40158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &1994038647 stripped
 GameObject:
@@ -41287,7 +41287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1 &2042696608
 GameObject:
@@ -42153,7 +42153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
   altTexture: {fileID: 0}
 --- !u!1001 &2076946015
 Prefab:

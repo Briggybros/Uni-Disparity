@@ -22,13 +22,11 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         if (open)
         {   
             //Open the door
-            Debug.Log("opening");
             transform.position = Vector3.MoveTowards(transform.position, target, DownSpeed * Time.deltaTime);
         }
         else
         {   
             //Close the door
-            Debug.Log("closing");
             transform.position = Vector3.MoveTowards(transform.position, home, UpSpeed * Time.deltaTime);
         }
     
