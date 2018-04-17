@@ -84,7 +84,7 @@ public class NetworkUI : MonoBehaviour {
 	public void CreateInternetMatch (string matchName) {
 		CharacterPicker.SetWorld(CharacterPicker.WORLDS.CAT);
 		networkManager.matchMaker.CreateMatch(matchName, 10, true, "", "", "", 0, 0, OnInternetMatchCreate);
-        loadingStuff();
+        ShowLevelPanel();
 	}
 
 	private void OnInternetMatchCreate (bool success, string extendedInfo, MatchInfo matchInfo) {
@@ -97,7 +97,7 @@ public class NetworkUI : MonoBehaviour {
 		}
 	}
 
-    void loadingStuff()
+    void ShowLevelPanel()
     {
         GameObject.Find("BackingOutput").GetComponent<AudioSource>().mute = true;
         audioout.PlayOneShot(buttonClick);
@@ -120,11 +120,11 @@ public class NetworkUI : MonoBehaviour {
 					panel.GetComponent<MatchJoinPanelInit>().Init(match.name, () => {
 						CharacterPicker.SetWorld(CharacterPicker.WORLDS.DOG);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
-						loadingStuff();
+						ShowLevelPanel();
 					}, () => {
 						CharacterPicker.SetWorld(CharacterPicker.WORLDS.SPECTATOR);
 						networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
-						loadingStuff();
+						ShowLevelPanel();
 					});
 				}
 			} else {
