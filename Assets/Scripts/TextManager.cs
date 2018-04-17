@@ -35,8 +35,7 @@ public class TextManager : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
-        if (other.tag == "Player" && (repeated || !opened) && !isOpen && isTriggerable)
+        if (other.CompareTag("Player") && (repeated || !opened) && !isOpen && isTriggerable)
         {
             CreateChat(chats, avatars, chatPictures);
         }
@@ -87,15 +86,18 @@ public class TextManager : MonoBehaviour {
         string str = "";
         while (i < strComplete.Length)
         {
-            str += strComplete[i++];
+            float time = 0.04f;
+            if (strComplete[i] == '.') time *= 2;
+            str += strComplete[i];
             if (updateChat(str))
             {
-                yield return new WaitForSeconds(0.04F);
+                yield return new WaitForSeconds(time);
             }
             else
             {
                 yield break;
             }
+            i++;
         }
     }
 }
