@@ -56,16 +56,12 @@ public class JoystickCharacter : NetworkBehaviour
 
     [Command]
     void CmdsyncChange(string tag, GameObject target) {
-        targetNetworkIdent.AssignClientAuthority(connectionToClient);
         RpcupdateState(tag, target);
-        targetNetworkIdent.RemoveClientAuthority(connectionToClient);
     }
 
 	[Command]
 	void CmdsyncNameChange(string name, GameObject target) {
-		targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcupdateName(name, target);
-		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
