@@ -16,7 +16,7 @@ public class PinMechanism : Receiver {
     public GameObject Spikes;
     public Button up1, up2, up3, up4, down1, down2, down3, down4, Back, Unlock;
     public int[] CurrentPin;
-    private int[] pin = {1,2,3,4};
+    private int[] pin = {5,7,3,2};
 
 	// Use this for initialization
 	protected override void Start () {
