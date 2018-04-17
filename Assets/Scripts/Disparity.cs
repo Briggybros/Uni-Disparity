@@ -5,8 +5,7 @@ using UnityEngine;
 public class Disparity : MonoBehaviour {
 
 	public CharacterPicker.WORLDS World = CharacterPicker.WORLDS.CAT;
-	public bool isColliderShared = false;
+	public bool isColliderOpposite = false;
 
 	public Texture altTexture;
-
 }

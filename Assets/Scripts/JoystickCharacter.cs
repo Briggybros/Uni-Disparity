@@ -40,6 +40,18 @@ public class JoystickCharacter : NetworkBehaviour
         targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
 		grabLax = 0;
+
+        if (!isLocalPlayer)
+        {
+            var colliders = GetComponentsInChildren<Collider>();
+            foreach (var collider in colliders){
+                collider.enabled = false;
+            }
+            var rigidbodys = GetComponentsInChildren<Rigidbody>();
+            foreach (var rigidbody in rigidbodys){
+                rigidbody.isKinematic = true;
+            }
+        }
     }
 
     [Command]
