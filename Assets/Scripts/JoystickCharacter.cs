@@ -169,8 +169,6 @@ public class JoystickCharacter : NetworkBehaviour
             return;
 		cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
-        transform.localRotation.eulerAngles.Set(0, transform.localRotation.eulerAngles.y, 0); //Force upright
-
 		grabLax++;
 		if (isInteract() && touching && target.tag == "Key") {
 			keys.Add(target.name);
