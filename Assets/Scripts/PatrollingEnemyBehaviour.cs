@@ -26,5 +26,9 @@ public class PatrollingEnemyBehaviour : Receiver {
 				agent.destination = positions[destination];
 			}
 		}
+
+		if (gameObject.transform.position.y <= -10) {
+			Destroy(gameObject);
+		}
 	}
 }
