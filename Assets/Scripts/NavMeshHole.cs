@@ -25,9 +25,9 @@ public class NavMeshHole : MonoBehaviour {
 		box.enabled = !box.enabled;
 	}
 
-	public void OnCollisionEnter(Collision collision) {
-		NavMeshAgent agent = collision.gameObject.GetComponent<NavMeshAgent>();
-		Rigidbody body = collision.gameObject.GetComponent<Rigidbody>();
+	public void OnTriggerEnter(Collider collider) {
+		NavMeshAgent agent = collider.gameObject.GetComponent<NavMeshAgent>();
+		Rigidbody body = collider.gameObject.GetComponent<Rigidbody>();
 		if (agent != null && body != null) {
 			agent.enabled = false;
 			body.isKinematic = true;
