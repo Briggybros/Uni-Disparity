@@ -6,26 +6,26 @@ public class TrapdoorBehaviour : RotatingDoorBehaviour {
     protected override void ColliderEnter()
     {
         base.ColliderEnter();
-        NavMeshHole hole = this.gameObject.GetComponent(typeof(NavMeshHole)) as NavMeshHole;
+        NavMeshHole hole = GetComponent<NavMeshHole>();
         hole.Toggle();
     }
 
     protected override void ColliderExit()
     {
         base.ColliderEnter();
-        NavMeshHole hole = this.gameObject.GetComponent(typeof(NavMeshHole)) as NavMeshHole;
+        NavMeshHole hole = GetComponent<NavMeshHole>();
         hole.Toggle();
     }
 
     protected override void PulseReceived() {
         base.ColliderEnter();
-        NavMeshHole hole = this.gameObject.GetComponent(typeof(NavMeshHole)) as NavMeshHole;
+        NavMeshHole hole = GetComponent<NavMeshHole>();
         hole.Toggle();
     }
 
     protected override void SwitchReceived() {
         base.ColliderEnter();
-        NavMeshHole hole = this.gameObject.GetComponent(typeof(NavMeshHole)) as NavMeshHole;
+        NavMeshHole hole = GetComponent<NavMeshHole>();
         hole.Toggle();
     }
 }
