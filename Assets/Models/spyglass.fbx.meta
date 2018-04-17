@@ -6,12 +6,38 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Base
+    100004: Eye
+    100006: Ring
+    100008: Base1
     400000: //RootNode
+    400002: Base
+    400004: Eye
+    400006: Ring
+    400008: Base1
     2100000: lambert1
+    2100002: spyglass
     2300000: //RootNode
+    2300002: Base
+    2300004: Eye
+    2300006: Ring
+    2300008: Base1
     3300000: //RootNode
+    3300002: Base
+    3300004: Eye
+    3300006: Ring
+    3300008: Base1
     4300000: spyglass
-  externalObjects: {}
+    4300002: Eye
+    4300004: Ring
+    4300006: Base
+    4300008: Base1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spyglass
+    second: {fileID: 2100000, guid: c554a9cf4ce156f40b3f24994c8dd9b6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -60,7 +86,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

@@ -28,7 +28,7 @@ public class Checkpoint : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && Array.Exists(CheckpointList, el => el == this))
+        if (other.gameObject.CompareTag("Player") && Array.Exists(CheckpointList, el => el == this.gameObject))
         {
             ActivateCheckpoint();
         }
