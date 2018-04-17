@@ -1333,7 +1333,7 @@ GameObject:
   - component: {fileID: 63653812}
   m_Layer: 0
   m_Name: Colliders (1)
-  m_TagString: Untagged
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3599,6 +3599,10 @@ Prefab:
     - target: {fileID: 100000, guid: 187efa89f6d236241a824e1b0cdce127, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 187efa89f6d236241a824e1b0cdce127, type: 3}
+      propertyPath: m_TagString
+      value: Bridge
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 187efa89f6d236241a824e1b0cdce127, type: 3}
@@ -13840,7 +13844,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673374287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: 7.36, z: -20.52}
+  m_LocalPosition: {x: -23.5, y: 7.36, z: -0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20130,7 +20134,7 @@ GameObject:
   - component: {fileID: 1064471751}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23517,6 +23521,10 @@ Prefab:
     - target: {fileID: 100000, guid: 187efa89f6d236241a824e1b0cdce127, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 187efa89f6d236241a824e1b0cdce127, type: 3}
+      propertyPath: m_TagString
+      value: Bridge
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 187efa89f6d236241a824e1b0cdce127, type: 3}

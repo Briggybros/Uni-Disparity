@@ -20,6 +20,7 @@ TagManager:
   - CheckpointA
   - CheckpointB
   - ImageTarget
+  - Bridge
   layers:
   - Default
   - TransparentFX

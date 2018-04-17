@@ -91,7 +91,8 @@ public class JoystickCharacter : NetworkBehaviour
 
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
-        if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
+		Debug.Log(c.gameObject.name);
+        if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null	) || c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
