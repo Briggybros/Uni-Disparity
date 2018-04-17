@@ -35,8 +35,7 @@ public class TextManager : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
-        if (other.tag == "Player" && (repeated || !opened) && !isOpen && isTriggerable)
+        if (other.CompareTag("Player") && (repeated || !opened) && !isOpen && isTriggerable)
         {
             CreateChat(chats, avatars, chatPictures);
         }
