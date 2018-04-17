@@ -16,12 +16,14 @@ public class PatrollingEnemyBehaviour : Receiver {
 	}
 
 	protected override void Update() {
-		if (moved && agent.velocity == Vector3.zero) {
-			destination++;
-			agent.destination = positions[destination % positions.Length];
-			moved = false;
-		} else {
-			moved = true;
+		if (agent.enabled) {
+			if (moved && agent.velocity == Vector3.zero) {
+				destination++;
+				agent.destination = positions[destination % positions.Length];
+				moved = false;
+			} else {
+				moved = true;
+			}
 		}
 	}
 }

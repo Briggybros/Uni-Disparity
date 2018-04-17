@@ -4,34 +4,29 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class NavMeshHole : MonoBehaviour {
-	public bool initiallyHoley = false;
+	public bool isActive = false;
 
 	private BoxCollider box;
 
 	void Start() {
 		box = GetComponent<BoxCollider>();
-		box.enabled = initiallyHoley;
-	}
-
-	public void EnableHole() {
-		box.enabled = true;
-	}
-
-	public void DisableHole() {
-		box.enabled = false;
 	}
 
 	public void Toggle() {
-		box.enabled = !box.enabled;
+		isActive = !isActive;
 	}
 
 	public void OnTriggerEnter(Collider collider) {
-		NavMeshAgent agent = collider.gameObject.GetComponent<NavMeshAgent>();
-		Rigidbody body = collider.gameObject.GetComponent<Rigidbody>();
-		if (agent != null && body != null) {
-			agent.enabled = false;
-			body.isKinematic = true;
-			body.useGravity = true;
+		if (isActive) {
+			NavMeshAgent agent = collider.gameObject.GetComponent<NavMeshAgent>();
+			Rigidbody body = collider.gameObject.GetComponent<Rigidbody>();
+			if (agent.enabled && agent != null && body != null) {
+				Vector3 vel = agent.velocity;
+				agent.enabled = false;
+				body.useGravity = true;
+				body.velocity = new Vector3(vel.x, vel.y + 2f, vel.z);
+				body.constraints = RigidbodyConstraints.None;
+			}
 		}
 	}
 }
