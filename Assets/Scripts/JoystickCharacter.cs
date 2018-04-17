@@ -91,18 +91,11 @@ public class JoystickCharacter : NetworkBehaviour
 
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
-        if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
+        if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
         }
-        /*else if ((c.gameObject.GetComponent<Interactable>() != null))
-        {
-			Debug.Log("What the fuck Nintendo");
-            targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
-            target = c.gameObject;
-            touching = true;
-        }*/
         if (c.gameObject.tag == "Enemy")
         {
             ResetPlayerToCheckpoint();
@@ -122,7 +115,7 @@ public class JoystickCharacter : NetworkBehaviour
 	}
 
 	void OnCollisionExit(Collision c) {
-        if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
+        if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.parent = null;
             pos = transform.localPosition;
