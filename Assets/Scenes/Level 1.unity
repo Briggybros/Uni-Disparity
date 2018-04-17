@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.6985294, g: 0.6985294, b: 0.6985294, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2.2
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: eed7bd1925a324a4c924fc1b265d2361, type: 2}
@@ -34,11 +34,11 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1697655331}
-  m_IndirectSpecularColor: {r: 0.13527602, g: 0.12981173, b: 0.11522456, a: 1}
+  m_IndirectSpecularColor: {r: 0.41928738, g: 0.382579, b: 0.34313175, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000522, guid: d7f762282ff114ca0b1ca57d9d61e003,
+  m_LightingDataAsset: {fileID: 112000484, guid: d7f762282ff114ca0b1ca57d9d61e003,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -5724,7 +5724,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.25
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -14573,11 +14573,6 @@ Prefab:
     - target: {fileID: 4044666951250554, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224915454660457264, guid: 92c7b0c886df9524e898dd503bb3b077,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -170
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
@@ -28839,7 +28834,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -780804366
+  randomSeed: -526576342
   InitialModule:
     serializedVersion: 3
     enabled: 1
