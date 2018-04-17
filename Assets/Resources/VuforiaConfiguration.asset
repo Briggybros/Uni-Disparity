@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AQ/w/Kn/////AAAAGT2qB2yV00pfnHtgfzA2uDRGPjnY0wROIgqPmHPeQaHnr8NPeDn2JGAGmACB0qUI9blMghNf6AfqzxD8aF11tBpwqaGYX3ZFKBohPZ4w2Eb6I1C4pC2lkwyb67b4skEBFhF8hGsJSz+tKvelXWxeGDkYnnm1rxzMmO+4lOxzsbwIyN+Mf0uUi+GWkfTR5yd1mHyTHKgxO8vUynICVyeGB765b/hpsY4fVKkqwo+a1ha/5SmC5+egygVbQ4U03cC8SdNWGdE5EFISz/j0k0hr8TsppQl9MNaORtPXMX4Mpn5024cXDQmdmWratImpIvvi1S4h4cyNoEmC74rHDzRp3EgqXHgVCfaYXD6ccGSKCIKE
+    vuforiaLicenseKey: AacCODT/////AAABmSL0+JQcRkDpvLBX2OeHQVoAX57U/G+iH2S1xte5TkwML5D4ooAjbKvelXmq6Uh8vGKMSfwm6AYVZRA+AU1kL5Fxuu9LIoSN9TxdizR9OO90gtvWgYuHRpW9yMdHhHBNuoAfvi4pvHciC4kqXUGOX2pho5hMYpA1oaetiRFLKW28Aas4qmybHbvcwnrEiF1binIAyMXIYfAcnWy6yBOr5laRMVqxehbDVudNz4aXB57/OFARl3HerdDT9GwgGZiy9GGh9GweM4nskv51pSsWguBzCLkvEhWtGd0oy9EJoEko4QoovMaromPza4rKnEYNX0zbX/CzNFttbepMUN2cAQc4d+7Qc8tvIS0zwIoUsc3b
     ufoLicenseKey: QWYwd05mbi8vLy8vQUFBQUtOYVBDTG5Pa0VETWlya09WcHJPQk0yRHNZQVdYUVhEaTU2Y1hadEloVWg2akwzVlMvRm54ZDFRcllHamgwbHpoZWR1Z1FLM2VhcUtKdTBTdGNac0I2dGRRbGs0R2JuMXAwVUdTRElnZGdyeXBYS3phTDZPTU92clhkQUE3LytwMk5iYnpBRVp2T0NkUjRvRUF1Y2MrVVBlanBBM0hYZHpmbWNtYktYckt5VzBFc2RPT0dzSTl2L1NCbThuWWEwOFhYbXFhSUxWNDFvdGdEK2hHY1dBbG9XWW1HU280cmdVN1R2enUzQ0ZyTkd2K2xZWkpOK2hZSVVsV1VPZHR2R0tGMHRZazdJMHNpQmhuOCsydXE1Q3dOVUJkNWt4azJiL2NLRVhSM2RxVGkzZksvWnNSdVRkUEJvQjcxc3UxN0xIQUhDSnhZY0NLSW9FVFdlaTBvMnhIY01nMFJ3VERrc0pzZTg5dElnZFJ4V1I=
     delayedInitialization: 0
     cameraDeviceModeSetting: -3
     maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
-    useDelayedLoadingObjectTargets: 0
+    useDelayedLoadingObjectTargets: 1
     cameraDirection: 0
     mirrorVideoBackground: 0
   digitalEyewear:
@@ -27,8 +27,8 @@ MonoBehaviour:
     eyewearType: 0
     stereoFramework: 0
     seeThroughConfiguration: 0
-    viewerName: 
-    viewerManufacturer: 
+    viewerName: Generic Cardboard
+    viewerManufacturer: Vuforia
     useCustomViewer: 0
     customViewer:
       Version: 0
@@ -44,9 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - Disparity
+    - VuforiaSureIsBad
     dataSetsToActivate:
-    - Disparity
+    - VuforiaSureIsBad
   videoBackground:
     clippingMode: 0
     numDivisions: 2
@@ -68,5 +68,5 @@ MonoBehaviour:
   webcam:
     deviceNameSetInEditor: 
     flipHorizontally: 0
-    turnOffWebCam: 1
+    turnOffWebCam: 0
     renderTextureLayer: 30

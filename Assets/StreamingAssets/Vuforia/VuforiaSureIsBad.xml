@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="VuforiaSureIsBad"/>
+</Tracking>
+
+<Assembly name="VuforiaSureIsBads_assembly">
+<Part name="VuforiaSureIsBad" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-0.000230061 0.0237293 0.132652" rotation="AD: 0.9999918694091714 0.023137811985854847 -0.17851682874171967 194.539">
+
+</EntryPoint>
+
+</Assembly>
+</QCARConfig>

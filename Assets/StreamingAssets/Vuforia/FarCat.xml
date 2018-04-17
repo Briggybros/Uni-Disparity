@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="FarCat"/>
+</Tracking>
+
+<Assembly name="FarCats_assembly">
+<Part name="FarCat" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="0.000393702 0.0430198 0.242437" rotation="AD: 0.999990000076906 0.02649204524945802 -0.1733142879603291 197.124">
+
+</EntryPoint>
+
+</Assembly>
+</QCARConfig>

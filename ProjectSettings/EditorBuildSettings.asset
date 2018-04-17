@@ -6,17 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Ardemo.unity
-    guid: 8d534ce44d0f02b42a53cc553d015f50
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Netdemo.unity
-    guid: a30281780797d314f8537a6c84f66499
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Menu.unity
     guid: bbd280f146f3eb146bfb51ccf3c33e50
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialWorld.unity
     guid: e32384b339286d343927c141a32fbc11
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 00555d8608afb574099f7a4b7dccf8a4
+  - enabled: 1
+    path: Assets/Scenes/Testo.unity
+    guid: f8545de89a6e28e4d8a8689de1034304
