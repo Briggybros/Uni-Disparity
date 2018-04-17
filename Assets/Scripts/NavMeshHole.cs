@@ -26,6 +26,10 @@ public class NavMeshHole : MonoBehaviour {
 				body.useGravity = true;
 				body.velocity = new Vector3(vel.x, vel.y + 2f, vel.z);
 				body.constraints = RigidbodyConstraints.None;
+				BoxCollider[] colliders = collider.gameObject.GetComponents<BoxCollider>();
+				foreach (BoxCollider c in colliders) {
+					c.enabled = false;
+				}
 			}
 		}
 	}
