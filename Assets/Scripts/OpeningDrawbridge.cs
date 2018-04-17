@@ -14,7 +14,6 @@ public class OpeningDrawbridge : Receiver {
 	
 	// Update is called once per frame
 	protected override void SwitchReceived () {
-		Debug.Log("switch received");
 		StopAllCoroutines();
 		if (opened == false) {
 			opened = true;
@@ -27,9 +26,7 @@ public class OpeningDrawbridge : Receiver {
 	}
 	
 	IEnumerator OpenDrawbridge () {
-		Debug.Log("setting new rotation");
 		newRotation = Quaternion.Euler(-90, Drawbridge.transform.rotation.y, Drawbridge.transform.rotation.z);
-		Debug.Log("maybe doing the rotation");
 		while (Drawbridge.transform.rotation.x > -90) {
 			Drawbridge.transform.rotation = Quaternion.Lerp(Drawbridge.transform.rotation, newRotation, 2*Time.deltaTime);
 			yield return 0;

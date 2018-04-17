@@ -23,7 +23,7 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 	public void Update () {
 		if (!CharacterPicker.IsSpectator()) {
 			var players = GameObject.FindGameObjectsWithTag("Player");
-			if (isTracking && !isActive) {	
+			if (isTracking && !isActive) {
 				foreach (var player in players) {
 					player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
 					isActive = true;
