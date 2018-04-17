@@ -77,15 +77,8 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
 			// render components ONLY in the players world
 			foreach (var component in rendererComponents) {
 				Disparity disparity = component.GetComponent<Disparity>();
-				if (disparity != null) {
-					if (disparity.World == otherWorld) {
-						component.enabled = false;
-					} else {
-						component.enabled = true;
-					}
-					if (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG && disparity.altTexture != null) {
-						component.material.SetTexture("_MainTex", disparity.altTexture);
-					}
+				if (disparity != null && disparity.World == otherWorld) {
+					component.enabled = false;
 				} else {
 					component.enabled = true;
 				}
