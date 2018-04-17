@@ -21,6 +21,7 @@ public class CollisionTrigger : Trigger {
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
             }
         }
+        
     }
 
     protected virtual void OnTriggerExit(Collider other){
@@ -30,6 +31,7 @@ public class CollisionTrigger : Trigger {
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("ExitFlag");
             }
         }
+        
     }
 
     protected virtual void OnTriggerStay(Collider other){

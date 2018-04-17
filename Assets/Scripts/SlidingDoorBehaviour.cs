@@ -31,4 +31,20 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         }
     
     }
+
+    // protected void ColliderWithin(){
+    //     Debug.Log("sdafsd");
+    //     blocked = true;
+    // }
+
+    // protected override void ColliderExit(){
+    //     blocked=false;
+    //     ToggleOpen();
+    // }
+
+    // protected override void ToggleOpen(){
+    //     if (!blocked) {
+    //         open = !open;
+    //     }
+    // }
 }
