@@ -1859,11 +1859,11 @@ MonoBehaviour:
   - But what?
   avatars:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
-  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  chatPictures: 010000000100000001000000
+  - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
+  chatPictures: 010000000000000001000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
-  isTriggerable: 0
+  isTriggerable: 1
 --- !u!1001 &86946169
 Prefab:
   m_ObjectHideFlags: 0
@@ -10945,7 +10945,6 @@ GameObject:
   - component: {fileID: 616963532}
   - component: {fileID: 616963531}
   - component: {fileID: 616963533}
-  - component: {fileID: 616963534}
   m_Layer: 0
   m_Name: Checkpoint3
   m_TagString: CheckpointB
@@ -10990,28 +10989,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.520342, y: 4.1409254, z: 2.5249958}
   m_Center: {x: -0.7912111, y: 0.5460305, z: 0.13658047}
---- !u!114 &616963534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 616963530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chats:
-  - Seems we are in some kind of...castle?
-  - Aha! There's a portal on that bridge over there!
-  - But it's damaged...if only I had a BOLT and a COG, I could fix it!
-  avatars:
-  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
-  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  chatPictures: 010000000000000001000000
-  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
-  repeated: 0
-  isTriggerable: 0
 --- !u!1001 &618365751
 Prefab:
   m_ObjectHideFlags: 0
@@ -30547,6 +30524,7 @@ GameObject:
   - component: {fileID: 1918573875}
   - component: {fileID: 1918573874}
   - component: {fileID: 1918573876}
+  - component: {fileID: 1918573877}
   m_Layer: 0
   m_Name: Checkpoint2
   m_TagString: CheckpointA
@@ -30573,7 +30551,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1918573873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.95, y: 6.58, z: -20.93}
+  m_LocalPosition: {x: -3.74, y: 6.58, z: -20.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30591,6 +30569,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.20405, y: 4.16741, z: 3.7097988}
   m_Center: {x: -0.109562874, y: 1.583705, z: 0.47658253}
+--- !u!114 &1918573877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918573873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Seems we are in some kind of...castle?
+  - Aha! There's a portal on that bridge over there!
+  - But it's damaged...if only I had a BOLT and a COG, I could fix it!
+  avatars:
+  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  chatPictures: 010000000000000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
 --- !u!1001 &1919401596
 Prefab:
   m_ObjectHideFlags: 0
