@@ -564,10 +564,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4670494659506700}
   - component: {fileID: 95272992191263858}
-  - component: {fileID: 114763242888853720}
-  - component: {fileID: 54154912679897340}
-  - component: {fileID: 114782964193212908}
-  - component: {fileID: 195256526843044812}
   m_Layer: 0
   m_Name: Wolf@RunningPrefab
   m_TagString: Untagged
@@ -736,6 +732,9 @@ GameObject:
   - component: {fileID: 137431425111333620}
   - component: {fileID: 65746348655741366}
   - component: {fileID: 65897719725907788}
+  - component: {fileID: 54819794351786884}
+  - component: {fileID: 195346786554653936}
+  - component: {fileID: 114921056781343586}
   m_Layer: 0
   m_Name: WolfBoi2
   m_TagString: Untagged
@@ -1963,12 +1962,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340510386880084}
   m_Mesh: {fileID: 4300002, guid: 69322d490e8947d489ad749452021aa7, type: 3}
---- !u!54 &54154912679897340
+--- !u!54 &54819794351786884
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1561892999110622}
+  m_GameObject: {fileID: 1660063815082246}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -2019,26 +2018,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114763242888853720
+--- !u!114 &114921056781343586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1561892999110622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be5e3a62c15a1f46beeaf4e6137f9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positions:
-  - {x: -13.99096, y: 5.560055, z: 21.01439}
-  - {x: 9.18, y: 5.560055, z: 21.01439}
---- !u!114 &114782964193212908
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1561892999110622}
+  m_GameObject: {fileID: 1660063815082246}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1be5e3a62c15a1f46beeaf4e6137f9e2, type: 3}
@@ -2115,12 +2100,12 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.80398905, y: 0.016129732, z: 0.18576092}
     m_Extent: {x: 1.6333138, y: 1.5510004, z: 1.1280899}
   m_DirtyAABB: 0
---- !u!195 &195256526843044812
+--- !u!195 &195346786554653936
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1561892999110622}
+  m_GameObject: {fileID: 1660063815082246}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
