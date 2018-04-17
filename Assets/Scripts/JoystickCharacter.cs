@@ -91,18 +91,11 @@ public class JoystickCharacter : NetworkBehaviour
 
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
-        if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
+        if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
         }
-        /*else if ((c.gameObject.GetComponent<Interactable>() != null))
-        {
-			Debug.Log("What the fuck Nintendo");
-            targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
-            target = c.gameObject;
-            touching = true;
-        }*/
         if (c.gameObject.tag == "Enemy")
         {
             ResetPlayerToCheckpoint();
@@ -122,7 +115,7 @@ public class JoystickCharacter : NetworkBehaviour
 	}
 
 	void OnCollisionExit(Collision c) {
-        if (!(c.gameObject.GetComponent<RotatingPlatformBehaviourScript>() == null && c.gameObject.GetComponent<MovingPlatformBehaviour>() == null))
+        if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.parent = null;
             pos = transform.localPosition;
@@ -170,11 +163,6 @@ public class JoystickCharacter : NetworkBehaviour
 
         if (!canMove) {
             return;
-        }
-        if (GetComponent<Rigidbody>().IsSleeping()) {
-            GetComponent<Animator>().SetBool("Running", false);
-        } else {
-            GetComponent<Animator>().SetBool("Running", true);
         }
 
         if (!isLocalPlayer)
@@ -233,11 +221,16 @@ public class JoystickCharacter : NetworkBehaviour
 
         pos = transform.localPosition;
         stickInput = StickInput();
-        if (stickInput != Vector3.zero) {   
+        if (stickInput != Vector3.zero) {
+            if(!GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", true);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
             MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
             pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
+        }
+        else
+        {
+            if (GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", false);
         }
 
         if (!IsJump() && impCount > 40) {
