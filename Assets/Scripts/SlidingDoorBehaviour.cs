@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class SlidingDoorBehaviour : DoorBehaviourScript {
     public float OpenHeight;
 	public int DownSpeed;
 	public int UpSpeed;
     public bool looping;
+	public bool blocked;
 	// Use this for initialization
 	protected override void Start () {
         init();
@@ -32,19 +34,37 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
     
     }
 
-    // protected void ColliderWithin(){
-    //     Debug.Log("sdafsd");
-    //     blocked = true;
-    // }
+	[Command]
+	void CmdsyncChange() {
+		RpcupdateState();
+	}
 
-    // protected override void ColliderExit(){
-    //     blocked=false;
-    //     ToggleOpen();
-    // }
+	[ClientRpc]
+	void RpcupdateState() {
+		blocked = true;
+		open = true;
+	}
 
-    // protected override void ToggleOpen(){
-    //     if (!blocked) {
-    //         open = !open;
-    //     }
-    // }
+
+	[Command]
+	void CmdsyncRevert() {
+		RpcupdateRevert();
+	}
+
+	[ClientRpc]
+	void RpcupdateRevert() {
+		blocked = false;
+		open = false;
+	}
+
+
+	protected override void ColliderWithin(){
+		Debug.Log("sdafsd");
+		CmdsyncChange();
+     }
+
+     protected override void ColliderExit(){
+         blocked=false;
+         
+     }
 }

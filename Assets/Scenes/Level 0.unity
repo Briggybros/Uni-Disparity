@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571343, b: 0.30692208, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2165,6 +2165,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  blocked: 0
 --- !u!114 &517138944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2819,7 +2820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresInteract: 0
   targets:
-  - {fileID: 517138939}
+  - {fileID: 1705751177}
   owner: {fileID: 0}
   playerInteract: 1
 --- !u!65 &624232372
@@ -5773,7 +5774,6 @@ GameObject:
   - component: {fileID: 1705751179}
   - component: {fileID: 1705751183}
   - component: {fileID: 1705751182}
-  - component: {fileID: 1705751181}
   - component: {fileID: 1705751184}
   m_Layer: 0
   m_Name: PortcullisSpikesDog
@@ -5818,6 +5818,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  blocked: 0
 --- !u!114 &1705751180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5829,20 +5830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76850984dce2ac44fa0512b6546e0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1705751181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1705751177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  World: 66
-  isColliderOpposite: 0
-  altTexture: {fileID: 0}
 --- !u!114 &1705751182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6118,6 +6105,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  blocked: 0
 --- !u!114 &1823356593
 MonoBehaviour:
   m_ObjectHideFlags: 0
