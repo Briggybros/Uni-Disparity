@@ -40,20 +40,28 @@ public class JoystickCharacter : NetworkBehaviour {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 		grabLax = 0;
+
+        if (!isLocalPlayer)
+        {
+            var colliders = GetComponentsInChildren<Collider>();
+            foreach (var collider in colliders){
+                collider.enabled = false;
+            }
+            var rigidbodys = GetComponentsInChildren<Rigidbody>();
+            foreach (var rigidbody in rigidbodys){
+                rigidbody.useGravity = false;
+            }
+        }
     }
 
     [Command]
     void CmdsyncChange(string tag, GameObject target) {
-        targetNetworkIdent.AssignClientAuthority(connectionToClient);
         RpcupdateState(tag, target);
-        targetNetworkIdent.RemoveClientAuthority(connectionToClient);
     }
 
 	[Command]
 	void CmdsyncNameChange(string name, GameObject target) {
-		targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcupdateName(name, target);
-		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
@@ -65,6 +73,9 @@ public class JoystickCharacter : NetworkBehaviour {
 	void RpcupdateName(string name,GameObject target) {
 		target.name = target.name + name;
 	}
+
+
+
 
     //Handles rotation
     IEnumerator Rotate(Quaternion finalRotation) {
@@ -128,6 +139,93 @@ public class JoystickCharacter : NetworkBehaviour {
 			touching = false;
 		}
 	}
+	void Block(GameObject thingy) {
+		if (isServer) {
+			RpcBlocker(thingy);
+		} else {
+			CmdBlocker(thingy);
+		}
+	}
+
+	void Unblock(GameObject thingy) {
+		if (isServer) {
+			RpcUnblocker(thingy);
+		} else {
+			CmdUnblock(thingy);
+		}
+	}
+
+    void IncCount(GameObject thingy){
+        if(isServer){
+            RpcCount(thingy);
+        }else{
+            CmdCount(thingy);
+        }
+    }
+    [Command]
+    void CmdCount(GameObject thingy){
+        RpcCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count++;
+    }
+
+
+    void DecCount(GameObject thingy){
+        if(isServer){
+            RpcdCount(thingy);
+        }else{
+            CmddCount(thingy);
+        }
+    }
+    [Command]
+    void CmddCount(GameObject thingy){
+        RpcdCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcdCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count--;
+    }
+
+	[Command]
+	void CmdForceOwnership() {
+		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
+	}
+
+	[Command]
+	void CmdBlocker( GameObject thingy) {
+		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		RpcBlocker(thingy);
+		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+	}
+
+	[Command]
+	void CmdUnblock(GameObject thingy) {
+		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		RpcUnblocker(thingy);
+		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+	}
+
+	[ClientRpc]
+	void RpcBlocker(GameObject target) {
+		target.GetComponent<SlidingDoorBehaviour>().blocked = true;
+		target.GetComponent<SlidingDoorBehaviour>().open = true;
+	}
+
+	[Command]
+	void CmdRevokeOwnership() {
+		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+	}
+
+
+	[ClientRpc]
+	void RpcUnblocker(GameObject target) {
+		target.GetComponent<SlidingDoorBehaviour>().blocked = false;
+		target.GetComponent<SlidingDoorBehaviour>().open = false;
+	}
 
 	static bool IsJump() {
 #if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
@@ -172,7 +270,9 @@ public class JoystickCharacter : NetworkBehaviour {
 		if (isInteract() && touching && target.CompareTag("Key")) {
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
-		} else if (isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
+		}else if(touching && target.GetComponent<PinMechanism>()){
+            target.tag = "Bopped";
+        }else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
 			foreach(string trans in cores) {
 				CmdsyncNameChange(trans, target);
 				cores.Remove(trans);

@@ -31,4 +31,14 @@ public class PulseTrigger : InteractTrigger {
 	protected override void OnTriggerExit(Collider other) {
 
 	}
+
+	protected void Update(){
+		if(this.tag == "Bopped" && !GetComponent<Collider>().enabled){
+			foreach (GameObject target in base.targets) {
+					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("PulseFlag");
+				}
+				interacted = false;
+				this.tag = "Static";
+		}
+	}
 }

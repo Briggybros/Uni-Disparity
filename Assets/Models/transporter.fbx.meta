@@ -22,7 +22,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: fa792d0a0645d7141a9103f17f8c759e, type: 2}
+    second: {fileID: 2100000, guid: ad4119b4d12af49f2b35dba2ba836df1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -53,7 +53,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 1
+    meshCompression: 2
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
