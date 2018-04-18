@@ -561,24 +561,6 @@ MonoBehaviour:
   World: 65
   isColliderOpposite: 0
   altTexture: {fileID: 0}
---- !u!1 &173431576 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 16be3d3a308d04c1ba122cfc08792d08, type: 3}
-  m_PrefabInternal: {fileID: 811006496}
---- !u!114 &173431577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 173431576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  World: 66
-  isColliderOpposite: 0
-  altTexture: {fileID: 0}
 --- !u!1 &205010313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,24 +2051,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.1594925, y: 5.5536647, z: 0.21666904}
   m_Center: {x: -0.82096905, y: -2.9801447, z: 12.703694}
---- !u!1 &522868973 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 16be3d3a308d04c1ba122cfc08792d08, type: 3}
-  m_PrefabInternal: {fileID: 1161665939}
---- !u!114 &522868974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 522868973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  World: 66
-  isColliderOpposite: 0
-  altTexture: {fileID: 0}
 --- !u!1001 &527695767
 Prefab:
   m_ObjectHideFlags: 0
@@ -2431,24 +2395,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 527695797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  World: 66
-  isColliderOpposite: 0
-  altTexture: {fileID: 0}
---- !u!1 &568257916 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 16be3d3a308d04c1ba122cfc08792d08, type: 3}
-  m_PrefabInternal: {fileID: 1184512694}
---- !u!114 &568257917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 568257916}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
@@ -5981,24 +5927,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 16be3d3a308d04c1ba122cfc08792d08, type: 3}
   m_PrefabInternal: {fileID: 1928559083}
---- !u!1 &1928559085 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 16be3d3a308d04c1ba122cfc08792d08, type: 3}
-  m_PrefabInternal: {fileID: 1928559083}
---- !u!114 &1928559087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1928559085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  World: 66
-  isColliderOpposite: 0
-  altTexture: {fileID: 0}
 --- !u!1 &1941637188
 GameObject:
   m_ObjectHideFlags: 0
