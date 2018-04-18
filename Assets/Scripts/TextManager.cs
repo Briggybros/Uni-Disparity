@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class TextManager : MonoBehaviour {
+public class TextManager : NetworkBehaviour {
 
     public string[] chats;
     public Sprite[] avatars;
@@ -17,6 +18,7 @@ public class TextManager : MonoBehaviour {
     private bool printing = false;
     private int chatMessage = 0;
     private GameObject uiCanvas;
+    private JoystickCharacter movement;
 
     public void CreateChat(string[] chats, Sprite[] avatars, int[] chatPics)
     {
@@ -38,6 +40,10 @@ public class TextManager : MonoBehaviour {
     {
         if (other.CompareTag("Player") && (repeated || !opened) && !isOpen && isTriggerable)
         {
+            if (other.gameObject.GetComponent<JoystickCharacter>().isLocalPlayer){
+                movement = other.GetComponent<JoystickCharacter>();
+                movement.canMove = false;
+            }
             CreateChat(chats, avatars, chatPictures);
         }
     }
@@ -58,6 +64,8 @@ public class TextManager : MonoBehaviour {
                 Destroy(GameObject.FindGameObjectWithTag("TextCanvas"));
                 isOpen = false;
                 chatMessage = 0;
+                movement.canMove = true;
+                movement = null;
                 uiCanvas.SetActive(true);
             }
             else
