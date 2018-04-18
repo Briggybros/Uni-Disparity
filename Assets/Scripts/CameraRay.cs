@@ -59,7 +59,7 @@ public class CameraRay : Receiver {
 					laserParticles.transform.position = hit.point;
 					laserParticles.transform.rotation = Quaternion.LookRotation(ray.origin - hit.point);
 					
-					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
+					if (hit.rigidbody != null && hit.rigidbody.gameObject.CompareTag("KeyDoor")) {
 						hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 					} 
 				}

@@ -11,7 +11,6 @@ public class RotatingPlatformBehaviourScript: Receiver {
     public float TargetAngle;
     public float Facing;
     private float CurrentTime;
-    private Vector3 SourceAxis;
     private Vector3 TargetAxis;
 	private bool pulse;
 
@@ -48,13 +47,11 @@ public class RotatingPlatformBehaviourScript: Receiver {
 				TargetAngle = 360;
 			}
             float currentAngle = Mathf.Lerp(Facing, TargetAngle, progress);
-            Vector3 currentAxis = Vector3.Slerp(SourceAxis, TargetAxis, progress);
             this.transform.rotation = Quaternion.AngleAxis(currentAngle, TargetAxis);
         }
         else{
             Rotating = false;
             Quaternion sourceOrientation = this.transform.rotation;
-			//sourceOrientation.ToAngleAxis(out Facing, out SourceAxis);
 			Facing = sourceOrientation.eulerAngles.y;
 			TargetAxis = transform.up;
             CurrentTime = 0;

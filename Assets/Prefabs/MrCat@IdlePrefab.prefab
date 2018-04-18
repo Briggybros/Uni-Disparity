@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 54630192044922074}
   - component: {fileID: 65684776646929186}
   - component: {fileID: 114310973964045854}
-  - component: {fileID: 114717827347190860}
   m_Layer: 0
   m_Name: MrCat@IdlePrefab
   m_TagString: Player
@@ -1133,7 +1132,7 @@ Transform:
   m_GameObject: {fileID: 1007063932820308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.215683, y: 1.5000005, z: 19.212543}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 4574269591965854}
   - {fileID: 4815987040023404}

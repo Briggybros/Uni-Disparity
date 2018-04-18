@@ -16,7 +16,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public GameObject[] players;
 	public GameObject heldPlayer;
 	// Use this for initialization
-	protected void Start () {
+	protected override void Start () {
         init();
         target.y += OpenHeight;
         if (looping) 

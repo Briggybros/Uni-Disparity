@@ -13,7 +13,6 @@ public class JoystickCharacter : NetworkBehaviour {
     private Vector3 pos;
     public bool interacting;
     public bool touching;
-    private NetworkIdentity targetNetworkIdent;
     public GameObject target;
     public bool canMove;
     private Vector3 cameraForwards;
@@ -36,7 +35,6 @@ public class JoystickCharacter : NetworkBehaviour {
         pos = transform.localPosition;
         interacting = false;
         touching = false;
-        targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 		grabLax = 0;
@@ -115,7 +113,6 @@ public class JoystickCharacter : NetworkBehaviour {
 	//Parents on interaction with collider
 	void OnTriggerEnter(Collider c) {
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
-			targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
 			target = c.gameObject;
 			touching = true;
 		}
@@ -237,7 +234,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
     void FixedUpdate() {
 		if (jumpReq) {
-			rb.AddForce(Vector3.up * 7.0f, ForceMode.Impulse);
+			rb.AddForce(Vector3.up * 18.0f, ForceMode.Impulse);
 			jumpReq = false;
 		}
 		if (rb.velocity.y < 0) {
@@ -318,15 +315,17 @@ public class JoystickCharacter : NetworkBehaviour {
         pos = transform.localPosition;
         stickInput = StickInput();
         if (stickInput != Vector3.zero) {
-            if(!GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", true);
+            if (!animator.GetBool("Running")) {
+                animator.SetBool("Running", true);
+            }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
-            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
+            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 15;
             pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
-        }
-        else
-        {
-            if (GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", false);
+        } else {
+            if (animator.GetBool("Running")) {
+                animator.SetBool("Running", false);
+            }
         }
 
         if (!IsJump() && impCount > 40) {

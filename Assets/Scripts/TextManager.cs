@@ -18,18 +18,21 @@ public class TextManager : NetworkBehaviour {
     private bool printing = false;
     private int chatMessage = 0;
     private GameObject uiCanvas;
+    private GameObject textCanvas;
     private JoystickCharacter movement;
+
+    public void Start() {
+        uiCanvas = GameObject.Find("UI Canvas");
+    }
 
     public void CreateChat(string[] chats, Sprite[] avatars, int[] chatPics)
     {
-        uiCanvas = GameObject.Find("UI Canvas");
         uiCanvas.SetActive(false);
         opened = true;
-        GameObject toInstantiate = textBox;
-        GameObject chatPane = Instantiate(toInstantiate, new Vector2(0, 0), Quaternion.identity) as GameObject;
-        GameObject o = GameObject.Find("ChatImage");
+        textCanvas = Instantiate(textBox, new Vector2(0, 0), Quaternion.identity);
+        GameObject o = textCanvas.transform.Find("ChatImage").gameObject;
         o.GetComponent<Image>().sprite = avatars[chatPics[0]];
-        o = GameObject.Find("TextBox");
+        o = textCanvas.transform.Find("TextBox").gameObject;
         o.GetComponent<Button>().onClick.AddListener(incrementChat);
         StartCoroutine(updateAnimatedText(chats[chatMessage]));
         isOpen = true;
@@ -59,11 +62,12 @@ public class TextManager : NetworkBehaviour {
             chatMessage++;
             if (chatMessage == chats.Length)
             {
-                Destroy(GameObject.FindGameObjectWithTag("TextCanvas"));
+                Destroy(textCanvas);
                 isOpen = false;
                 chatMessage = 0;
                 movement.canMove = true;
                 movement = null;
+                textCanvas = null;
                 uiCanvas.SetActive(true);
             }
             else
@@ -73,11 +77,10 @@ public class TextManager : NetworkBehaviour {
                 updatePicture(avatars[chatPictures[chatMessage]]);
             }
         }
-        
     }
     private bool updatePicture(Sprite pic)
     {
-       GameObject o = GameObject.Find("ChatImage");
+       GameObject o = textCanvas.transform.Find("ChatImage").gameObject;
        if (o != null)
        {
            o.GetComponent<Image>().sprite = pic;
@@ -88,7 +91,7 @@ public class TextManager : NetworkBehaviour {
 
     private bool updateChat(string message)
     {
-        GameObject o = GameObject.Find("TextBoxText");
+        GameObject o = textCanvas.transform.Find("TextBox/TextBoxText").gameObject;
         if (o != null)
         {
             o.GetComponent<Text>().text = message;

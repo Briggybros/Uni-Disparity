@@ -12,7 +12,7 @@ public class Disappear : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this.tag == "Bopped") {
+		if (CompareTag("Bopped")) {
 			count++;
 			this.transform.Translate(Vector3.up * Time.deltaTime);
 		}

@@ -8,7 +8,7 @@ public class OpeningDrawbridge : Receiver {
 	private Quaternion newRotation;
 	private bool opened;
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
 		opened = false;
 	}
 	

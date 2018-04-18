@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PinMechanism : Receiver {
     
     bool OverlayOn;
-    bool success;
     private Vector3 spikeTarget;
     public float DownSpeed, MovementRange;
     public GameObject PinEntryUI, MovementUI;
@@ -20,7 +19,6 @@ public class PinMechanism : Receiver {
 
 	// Use this for initialization
 	protected void Awake () {
-        success = false;
         spikeTarget = Spikes.transform.position;
         spikeTarget.y += MovementRange;
         OverlayOn = false;

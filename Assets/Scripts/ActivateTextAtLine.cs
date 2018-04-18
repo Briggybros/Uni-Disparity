@@ -36,7 +36,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
-		if (other.tag == "Player") {
+		if (other.CompareTag("Player")) {
 			if (requireButtonPress) {
 				waitForPress = true;
 				return;
@@ -55,7 +55,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	void OnTriggerExit(Collider other){
 
-		if (other.tag == "Player") {
+		if (other.CompareTag("Player")) {
 			textManager.DisableTextBox();
 			waitForPress = false;
 		}

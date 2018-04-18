@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PulseTrigger : InteractTrigger {
 
+	private Collider c;
+
+	protected override void Start() {
+		c = GetComponent<Collider>();
+	}
 
 	protected override void OnTriggerStay(Collider other) {
 		if (requiresInteract) {
@@ -32,8 +37,8 @@ public class PulseTrigger : InteractTrigger {
 
 	}
 
-	protected void Update(){
-		if(this.tag == "Bopped" && !GetComponent<Collider>().enabled){
+	protected override void Update() {
+		if(CompareTag("Bopped") && !c.enabled){
 			foreach (GameObject target in base.targets) {
 					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("PulseFlag");
 				}
