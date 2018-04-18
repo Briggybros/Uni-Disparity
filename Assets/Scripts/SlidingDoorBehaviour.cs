@@ -16,7 +16,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public GameObject[] players;
 	public GameObject heldPlayer;
 	// Use this for initialization
-	protected void Awake () {
+	protected void Start () {
         init();
         target.y += OpenHeight;
         if (looping) 
@@ -41,6 +41,21 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	
 	// Update is called once per frame
 	protected override void Update () {
+		if(heldPlayer = null){
+			players = GameObject.FindGameObjectsWithTag("Player");
+		foreach (GameObject player in players) {
+			/*i/*f (mirror) {
+				if (!(player.GetComponent<JoystickCharacter>().isLocalPlayer)) {
+					heldPlayer = player;
+				}	
+			}
+			else {*/
+					if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+					heldPlayer = player;
+			//	}	
+			}
+		}
+		}
         if (open)
         {   
             //Open the door
