@@ -5,7 +5,7 @@ using UnityEngine;
 public class PortalEnd : Trigger {
 
 	public GameObject end;
-	private int count;
+	public int count;
 	// Use this for initialization
 	protected override void Start () {
 		count = 0;
@@ -18,18 +18,21 @@ public class PortalEnd : Trigger {
 			end.GetComponent<ScoreboardController>().EndGame();
 			count = 0;
 		}
+		if(count < 0){
+			count = 0;
+		}
 		base.Update();
 	}
 
 	protected virtual void OnTriggerEnter(Collider other) {
-		if (other.tag == "Player") {
-			count++;
+		if (other.tag == "Player" && this.gameObject != null) {
+			other.gameObject.BroadcastMessage("IncCount",this.gameObject);
 		}
 	}
 
 	protected virtual void OnTriggerExit(Collider other) {
-		if (other.tag == "Player") {
-			count--;
+		if (other.tag == "Player" && this.gameObject != null) {
+			other.gameObject.BroadcastMessage("DecCount",this.gameObject);
 		}
 	}
 }

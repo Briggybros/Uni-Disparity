@@ -155,6 +155,42 @@ public class JoystickCharacter : NetworkBehaviour
 			CmdUnblock(thingy);
 		}
 	}
+
+    void IncCount(GameObject thingy){
+        if(isServer){
+            RpcCount(thingy);
+        }else{
+            CmdCount(thingy);
+        }
+    }
+    [Command]
+    void CmdCount(GameObject thingy){
+        RpcCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count++;
+    }
+
+
+    void DecCount(GameObject thingy){
+        if(isServer){
+            RpcdCount(thingy);
+        }else{
+            CmddCount(thingy);
+        }
+    }
+    [Command]
+    void CmddCount(GameObject thingy){
+        RpcdCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcdCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count--;
+    }
+
 	[Command]
 	void CmdForceOwnership() {
 		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
@@ -235,7 +271,9 @@ public class JoystickCharacter : NetworkBehaviour
 		if (isInteract() && touching && target.tag == "Key") {
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
-		}else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
+		}else if(touching && target.GetComponent<PinMechanism>()){
+            target.tag = "Bopped";
+        }else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
 			foreach(string trans in cores) {
 				Debug.Log(trans);
 				CmdsyncNameChange(trans, target);

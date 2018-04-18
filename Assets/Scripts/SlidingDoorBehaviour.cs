@@ -8,6 +8,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public int DownSpeed;
 	public int UpSpeed;
     public bool looping;
+	public bool mirror;
 
 	[SyncVar]
 	public bool blocked;
@@ -15,7 +16,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public GameObject[] players;
 	public GameObject heldPlayer;
 	// Use this for initialization
-	protected override void Start () {
+	protected void Start () {
         init();
         target.y += OpenHeight;
         if (looping) 
@@ -24,8 +25,15 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         }
 		players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject player in players) {
-			if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
-				heldPlayer = player;
+			/*i/*f (mirror) {
+				if (!(player.GetComponent<JoystickCharacter>().isLocalPlayer)) {
+					heldPlayer = player;
+				}	
+			}
+			else {*/
+					if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+					heldPlayer = player;
+			//	}	
 			}
 		}
 
@@ -33,6 +41,21 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	
 	// Update is called once per frame
 	protected override void Update () {
+		if(heldPlayer == null){
+			players = GameObject.FindGameObjectsWithTag("Player");
+		foreach (GameObject player in players) {
+			/*i/*f (mirror) {
+				if (!(player.GetComponent<JoystickCharacter>().isLocalPlayer)) {
+					heldPlayer = player;
+				}	
+			}
+			else {*/
+					if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+					heldPlayer = player;
+			//	}	
+			}
+		}
+		}
         if (open)
         {   
             //Open the door
@@ -48,16 +71,21 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 	protected override void ColliderWithin(){
 		Debug.Log("sdafsd");
+		if(heldPlayer != null){
+			heldPlayer.BroadcastMessage("Block",gameObject);
+		}
 		//blocked = true;
 		//open = true;
 	//	heldPlayer.BroadcastMessage("CmdForceOwnership");
-		heldPlayer.BroadcastMessage("Block",gameObject);
+		
 	//	heldPlayer.BroadcastMessage("CmdRevokeOwnership");
 	}
 
      protected override void ColliderExit(){
 	//	heldPlayer.BroadcastMessage("CmdForceOwnership");
+	if(heldPlayer != null){
 		heldPlayer.BroadcastMessage("Unblock",gameObject);
+	}
 		//heldPlayer.BroadcastMessage("CmdRevokeOwnership");
 		//blocked = false;
 		//open = false;
