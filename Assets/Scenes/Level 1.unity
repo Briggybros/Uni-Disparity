@@ -7793,6 +7793,7 @@ GameObject:
   - component: {fileID: 398634840}
   - component: {fileID: 398634844}
   - component: {fileID: 398634845}
+  - component: {fileID: 398634846}
   m_Layer: 8
   m_Name: Spike(0)A (1)
   m_TagString: Enemy
@@ -7844,6 +7845,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -7915,6 +7917,38 @@ MonoBehaviour:
   World: 66
   isColliderOpposite: 0
   altTexture: {fileID: 0}
+--- !u!114 &398634846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398634838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 55
+    i1: 8
+    i2: 55
+    i3: 87
+    i4: 157
+    i5: 176
+    i6: 155
+    i7: 132
+    i8: 107
+    i9: 218
+    i10: 10
+    i11: 226
+    i12: 65
+    i13: 141
+    i14: 7
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &401872614
 Prefab:
   m_ObjectHideFlags: 0
@@ -10082,6 +10116,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -12885,6 +12920,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -16483,6 +16519,7 @@ GameObject:
   - component: {fileID: 827167178}
   - component: {fileID: 827167182}
   - component: {fileID: 827167183}
+  - component: {fileID: 827167184}
   m_Layer: 8
   m_Name: Spike(2)A (1)
   m_TagString: Enemy
@@ -16534,6 +16571,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -16605,6 +16643,38 @@ MonoBehaviour:
   World: 66
   isColliderOpposite: 0
   altTexture: {fileID: 0}
+--- !u!114 &827167184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827167176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 55
+    i1: 8
+    i2: 55
+    i3: 87
+    i4: 157
+    i5: 176
+    i6: 155
+    i7: 132
+    i8: 107
+    i9: 218
+    i10: 10
+    i11: 226
+    i12: 65
+    i13: 141
+    i14: 7
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &829181322
 Prefab:
   m_ObjectHideFlags: 0
@@ -23972,6 +24042,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -26965,6 +27036,7 @@ GameObject:
   - component: {fileID: 1377366697}
   - component: {fileID: 1377366701}
   - component: {fileID: 1377366702}
+  - component: {fileID: 1377366703}
   m_Layer: 8
   m_Name: Spike(1)A (1)
   m_TagString: Enemy
@@ -27016,6 +27088,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -27087,6 +27160,38 @@ MonoBehaviour:
   World: 66
   isColliderOpposite: 0
   altTexture: {fileID: 0}
+--- !u!114 &1377366703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377366695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 55
+    i1: 8
+    i2: 55
+    i3: 87
+    i4: 157
+    i5: 176
+    i6: 155
+    i7: 132
+    i8: 107
+    i9: 218
+    i10: 10
+    i11: 226
+    i12: 65
+    i13: 141
+    i14: 7
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &1378800724
 Prefab:
   m_ObjectHideFlags: 0
@@ -29868,6 +29973,7 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  mirror: 0
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
