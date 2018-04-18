@@ -155,6 +155,42 @@ public class JoystickCharacter : NetworkBehaviour
 			CmdUnblock(thingy);
 		}
 	}
+
+    void incCount(GameObject thingy){
+        if(isServer){
+            RpcCount(thingy);
+        }else{
+            CmddCount(thingy);
+        }
+    }
+    [Command]
+    void CmdCount(GameObject thingy){
+        RpcCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count++;
+    }
+
+
+    void decCount(GameObject thingy){
+        if(isServer){
+            RpcdCount(thingy);
+        }else{
+            CmddCount(thingy);
+        }
+    }
+    [Command]
+    void CmddCount(GameObject thingy){
+        RpcdCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcdCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count--;
+    }
+
 	[Command]
 	void CmdForceOwnership() {
 		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
