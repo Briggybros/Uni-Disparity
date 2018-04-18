@@ -12827,7 +12827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderOpposite: 0
+  isColliderOpposite: 1
   altTexture: {fileID: 0}
 --- !u!114 &597711790
 MonoBehaviour:
