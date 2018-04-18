@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 68760014}
   - component: {fileID: 68760013}
   - component: {fileID: 68760012}
+  - component: {fileID: 68760019}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -413,6 +414,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68760010}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &68760019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68760010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60c50ab5dcee6d49a6847c0158e3cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &103966261
 Prefab:
   m_ObjectHideFlags: 0
@@ -2011,6 +2023,8 @@ MonoBehaviour:
   UpSpeed: 2
   looping: 0
   blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!114 &517138944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2550,6 +2564,7 @@ GameObject:
   - component: {fileID: 624232371}
   - component: {fileID: 624232370}
   - component: {fileID: 624232369}
+  - component: {fileID: 624232376}
   m_Layer: 0
   m_Name: PressurePlate (1)
   m_TagString: Untagged
@@ -2697,6 +2712,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 624232367}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &624232376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624232367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60c50ab5dcee6d49a6847c0158e3cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &689243246
 Prefab:
   m_ObjectHideFlags: 0
@@ -5372,6 +5398,8 @@ MonoBehaviour:
   UpSpeed: 2
   looping: 0
   blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!114 &1705751180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,6 +5687,8 @@ MonoBehaviour:
   UpSpeed: 2
   looping: 0
   blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!114 &1823356593
 MonoBehaviour:
   m_ObjectHideFlags: 0

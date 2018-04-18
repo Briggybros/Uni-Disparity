@@ -46,45 +46,21 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
     
     }
 
-	[Command]
-	void CmdsyncChange(GameObject heldplayer) {
-		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
-		RpcupdateState();
-		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
-	}
-
-	[ClientRpc]
-	void RpcupdateState() {
-		blocked = true;
-		open = true;
-	}
-
-
-	[Command]
-	void CmdsyncRevert(GameObject heldplayer) {
-		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
-		RpcupdateRevert();
-		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
-	}
-
-	[ClientRpc]
-	void RpcupdateRevert() {
-		blocked = false;
-		open = false;
-	}
-
-
 	protected override void ColliderWithin(){
 		Debug.Log("sdafsd");
-		blocked = true;
-		open = true;
-		//CmdsyncChange(heldPlayer);
-     }
+		//blocked = true;
+		//open = true;
+		heldPlayer.BroadcastMessage("CmdForceOwnership");
+		heldPlayer.BroadcastMessage("CmdBlocker");
+		heldPlayer.BroadcastMessage("CmdRevokeOwnership");
+	}
 
      protected override void ColliderExit(){
-		//CmdsyncRevert(heldPlayer);
-		blocked = false;
-		open = false;
+		heldPlayer.BroadcastMessage("CmdForceOwnership");
+		heldPlayer.BroadcastMessage("CmdUnblocker");
+		heldPlayer.BroadcastMessage("CmdRevokeOwnership");
+		//blocked = false;
+		//open = false;
          
      }
 

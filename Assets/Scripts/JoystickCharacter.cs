@@ -74,6 +74,9 @@ public class JoystickCharacter : NetworkBehaviour
 		target.name = target.name + name;
 	}
 
+
+
+
     //Handles rotation
     IEnumerator Rotate(Quaternion finalRotation) {
         while (transform.localRotation != finalRotation)
@@ -143,6 +146,39 @@ public class JoystickCharacter : NetworkBehaviour
 			target = null;
 			touching = false;
 		}
+	}
+
+	[Command]
+	void CmdForceOwnership() {
+		targetNetworkIdent.AssignClientAuthority(connectionToClient);
+	}
+
+	[Command]
+	void CmdBlock() {
+		RpcBlocker(target);
+	}
+
+	[Command]
+	void Unblock() {
+		RpcUnblocker(target);
+	}
+
+	[ClientRpc]
+	void RpcBlocker(GameObject target) {
+		target.GetComponent<SlidingDoorBehaviour>().blocked = true;
+		target.GetComponent<SlidingDoorBehaviour>().open = true;
+	}
+
+	[Command]
+	void CmdRevokeOwnership() {
+		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+	}
+
+
+	[ClientRpc]
+	void RpcUnblocker(GameObject target) {
+		target.GetComponent<SlidingDoorBehaviour>().blocked = false;
+		target.GetComponent<SlidingDoorBehaviour>().open = false;
 	}
 
 	static bool IsJump() {
