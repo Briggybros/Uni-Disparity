@@ -1943,62 +1943,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114102896348759504, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &473899755 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1707622760111404, guid: 0979a00114c3b4f808cd829dec9a6c18,
-    type: 2}
-  m_PrefabInternal: {fileID: 473899754}
---- !u!114 &473899756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 473899755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9c3d30e30284f76b7c1971f84a6784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requiresInteract: 0
-  targets: []
-  end: {fileID: 0}
-  count: 0
---- !u!114 &473899757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 473899755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 9
-    i1: 121
-    i2: 160
-    i3: 1
-    i4: 20
-    i5: 195
-    i6: 180
-    i7: 248
-    i8: 8
-    i9: 205
-    i10: 130
-    i11: 157
-    i12: 236
-    i13: 154
-    i14: 108
-    i15: 24
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!1 &517138939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4056,8 +4003,8 @@ MonoBehaviour:
   mExtendedTracking: 1
   mAspectRatio: 1.6047618
   mImageTargetType: 0
-  mWidth: 12.675757
-  mHeight: 20.341572
+  mWidth: 79.2235
+  mHeight: 127.13485
 --- !u!4 &964223654
 Transform:
   m_ObjectHideFlags: 0
@@ -4066,7 +4013,7 @@ Transform:
   m_GameObject: {fileID: 964223648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -6.93, z: -5.42}
-  m_LocalScale: {x: 20.341572, y: 20.341572, z: 20.341572}
+  m_LocalScale: {x: 127.13485, y: 127.13485, z: 127.13485}
   m_Children:
   - {fileID: 1777689136}
   m_Father: {fileID: 0}

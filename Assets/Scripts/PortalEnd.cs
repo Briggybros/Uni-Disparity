@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class PortalEnd : Trigger {
 
+	public bool isTransition;
 	public GameObject end;
 	public int count;
 	// Use this for initialization
@@ -15,7 +17,11 @@ public class PortalEnd : Trigger {
 	// Update is called once per frame
 	protected override void Update () {
 		if(count > 1) {
-			end.GetComponent<ScoreboardController>().EndGame();
+			if (isTransition) {
+				NetworkManager.singleton.ServerChangeScene("Level 1");
+			} else {
+				end.GetComponent<ScoreboardController>().EndGame();
+			}
 			count = 0;
 		}
 		if(count < 0){

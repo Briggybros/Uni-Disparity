@@ -58,7 +58,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4438793301580814}
   - component: {fileID: 65477763789384716}
-  - component: {fileID: 114102896348759504}
+  - component: {fileID: 114100283759077266}
+  - component: {fileID: 114245420529368500}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -89,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1707622760111404}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.43, y: 0.6700001, z: -0.1}
+  m_LocalPosition: {x: -0.43, y: 0.6700001, z: -0.07}
   m_LocalScale: {x: 0.24713838, y: 0.2577217, z: 0.45667174}
   m_Children:
   - {fileID: 4861576017291102}
@@ -295,7 +296,39 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114102896348759504
+--- !u!114 &114100283759077266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707622760111404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 9
+    i1: 121
+    i2: 160
+    i3: 1
+    i4: 20
+    i5: 195
+    i6: 180
+    i7: 248
+    i8: 8
+    i9: 205
+    i10: 130
+    i11: 157
+    i12: 236
+    i13: 154
+    i14: 108
+    i15: 24
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114245420529368500
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -308,7 +341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresInteract: 0
   targets: []
+  isTransition: 0
   end: {fileID: 0}
+  count: 0
 --- !u!198 &198738277546378918
 ParticleSystem:
   m_ObjectHideFlags: 1
