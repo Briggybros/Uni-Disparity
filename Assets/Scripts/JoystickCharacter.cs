@@ -159,7 +159,7 @@ public class JoystickCharacter : NetworkBehaviour
 	}
 
 	[Command]
-	void Unblock() {
+	void CmdUnblock() {
 		RpcUnblocker(target);
 	}
 
