@@ -41,7 +41,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	
 	// Update is called once per frame
 	protected override void Update () {
-		if(heldPlayer = null){
+		if(heldPlayer == null){
 			players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject player in players) {
 			/*i/*f (mirror) {
