@@ -147,19 +147,19 @@ public class JoystickCharacter : NetworkBehaviour
 			touching = false;
 		}
 	}
-	void Block() {
+	void Block(GameObject thingy) {
 		if (isServer) {
-			RpcBlocker(target);
+			RpcBlocker(thingy);
 		} else {
-			CmdBlocker();
+			CmdBlocker(thingy);
 		}
 	}
 
-	void Unblock() {
+	void Unblock(GameObject thingy) {
 		if (isServer) {
-			RpcUnblocker(target);
+			RpcUnblocker(thingy);
 		} else {
-			CmdUnblock();
+			CmdUnblock(thingy);
 		}
 	}
 	[Command]
@@ -168,16 +168,16 @@ public class JoystickCharacter : NetworkBehaviour
 	}
 
 	[Command]
-	void CmdBlocker() {
+	void CmdBlocker( GameObject thingy) {
 		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
-		RpcBlocker(target);
+		RpcBlocker(thingy);
 		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[Command]
-	void CmdUnblock() {
+	void CmdUnblock(GameObject thingy) {
 		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
-		RpcUnblocker(target);
+		RpcUnblocker(thingy);
 		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 

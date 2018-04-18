@@ -51,13 +51,13 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 		//blocked = true;
 		//open = true;
 	//	heldPlayer.BroadcastMessage("CmdForceOwnership");
-		heldPlayer.BroadcastMessage("Block");
+		heldPlayer.BroadcastMessage("Block",gameObject);
 	//	heldPlayer.BroadcastMessage("CmdRevokeOwnership");
 	}
 
      protected override void ColliderExit(){
 	//	heldPlayer.BroadcastMessage("CmdForceOwnership");
-		heldPlayer.BroadcastMessage("Unblock");
+		heldPlayer.BroadcastMessage("Unblock",gameObject);
 		//heldPlayer.BroadcastMessage("CmdRevokeOwnership");
 		//blocked = false;
 		//open = false;
