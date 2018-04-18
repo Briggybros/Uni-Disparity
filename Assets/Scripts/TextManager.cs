@@ -40,10 +40,8 @@ public class TextManager : NetworkBehaviour {
     {
         if (other.CompareTag("Player") && (repeated || !opened) && !isOpen && isTriggerable)
         {
-            if (other.gameObject.GetComponent<JoystickCharacter>().isLocalPlayer){
                 movement = other.GetComponent<JoystickCharacter>();
                 movement.canMove = false;
-            }
             CreateChat(chats, avatars, chatPictures);
         }
     }
