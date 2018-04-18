@@ -33,7 +33,6 @@ public class TrackingArrow : NetworkBehaviour {
 			view = PlayerTransform.GetComponentInChildren<OutOfView>();
 		} else {
 			Vector3 lookAtPos = new Vector3(PlayerTransform.position.x, transform.position.y, PlayerTransform.position.z);
-			Debug.Log(lookAtPos);
 
 			transform.LookAt(lookAtPos);
 			if (view != null && !view.vis) {

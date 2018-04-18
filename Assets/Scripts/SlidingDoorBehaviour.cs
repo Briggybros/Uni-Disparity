@@ -36,7 +36,9 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 	[Command]
 	void CmdsyncChange() {
+		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToServer);
 		RpcupdateState();
+		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToServer);
 	}
 
 	[ClientRpc]
@@ -48,7 +50,9 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 	[Command]
 	void CmdsyncRevert() {
+		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToServer);
 		RpcupdateRevert();
+		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToServer);
 	}
 
 	[ClientRpc]
@@ -67,4 +71,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 		CmdsyncRevert();
          
      }
+
+	protected override void ColliderEnter() {
+	}
 }
