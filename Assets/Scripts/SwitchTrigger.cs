@@ -36,4 +36,14 @@ public class SwitchTrigger : InteractTrigger {
 			}
 		}
 	}
+
+	protected void Update(){
+		if(this.tag == "Bopped" && !GetComponent<Collider>().enabled){
+			foreach (GameObject target in base.targets) {
+					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+				}
+				interacted = false;
+				this.tag = "Static";
+		}
+	}
 }

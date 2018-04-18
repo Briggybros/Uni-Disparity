@@ -1,28 +1,17 @@
 fileFormatVersion: 2
-guid: d18522efc2347f747903705b1e3cebaa
-timeCreated: 1521062383
+guid: 2a3cacbc97cf147e5affbcad24fdb65e
+timeCreated: 1522316617
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: ControlBox
-    2100002: lambert1
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube19
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ControlBox
-    second: {fileID: 2100000, guid: f4775c001653adf4bb4da0cc215a8529, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: ad4119b4d12af49f2b35dba2ba836df1, type: 2}
+    4300000: portcullisFrame
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

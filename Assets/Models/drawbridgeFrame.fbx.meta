@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: d18522efc2347f747903705b1e3cebaa
-timeCreated: 1521062383
+guid: 68d1d2035024f4c7db4f17439bf6e49e
+timeCreated: 1522277324
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: ControlBox
-    2100002: lambert1
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube19
+    4300000: drawbridge_frame
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ControlBox
-    second: {fileID: 2100000, guid: f4775c001653adf4bb4da0cc215a8529, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: ad4119b4d12af49f2b35dba2ba836df1, type: 2}
+    second: {fileID: 2100000, guid: d7cc6d9be0314e544aaadb04f6588d69, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
