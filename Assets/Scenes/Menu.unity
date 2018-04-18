@@ -1610,9 +1610,8 @@ MonoBehaviour:
   graphicsText: {fileID: 391331852}
   loadingPanel: {fileID: 925634470}
   levels:
-  - TutorialWorld
-  - Level 1
   - Level 0
+  - Level 1
 --- !u!114 &421164866
 MonoBehaviour:
   m_ObjectHideFlags: 0
