@@ -18,6 +18,9 @@ public class PortalEnd : Trigger {
 			end.GetComponent<ScoreboardController>().EndGame();
 			count = 0;
 		}
+		if(count < 0){
+			count = 0;
+		}
 		base.Update();
 	}
 

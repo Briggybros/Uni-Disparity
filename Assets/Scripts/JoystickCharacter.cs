@@ -160,7 +160,7 @@ public class JoystickCharacter : NetworkBehaviour
         if(isServer){
             RpcCount(thingy);
         }else{
-            CmddCount(thingy);
+            CmdCount(thingy);
         }
     }
     [Command]
