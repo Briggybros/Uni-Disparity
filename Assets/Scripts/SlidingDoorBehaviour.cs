@@ -26,7 +26,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 		players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject player in players) {
 			if (mirror) {
-				if (!player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+				if (!(player.GetComponent<JoystickCharacter>().isLocalPlayer)) {
 					heldPlayer = player;
 				}	
 			}
