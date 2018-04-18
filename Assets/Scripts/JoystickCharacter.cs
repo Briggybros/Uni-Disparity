@@ -147,7 +147,21 @@ public class JoystickCharacter : NetworkBehaviour
 			touching = false;
 		}
 	}
+	void Block() {
+		if (isServer) {
+			RpcBlocker(target);
+		} else {
+			CmdBlocker();
+		}
+	}
 
+	void Unblock() {
+		if (isServer) {
+			RpcUnblocker(target);
+		} else {
+			CmdUnblock();
+		}
+	}
 	[Command]
 	void CmdForceOwnership() {
 		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
