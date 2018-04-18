@@ -14,6 +14,7 @@ public class TextManager : MonoBehaviour {
 
     private bool opened = false;
     private bool isOpen = false;
+    private bool printing = false;
     private int chatMessage = 0;
     private GameObject uiCanvas;
 
@@ -43,20 +44,30 @@ public class TextManager : MonoBehaviour {
 
     private void incrementChat()
     {
-        chatMessage++;
-        if (chatMessage == chats.Length)
+        if (printing)
         {
-           Destroy(GameObject.FindGameObjectWithTag("TextCanvas"));
-           isOpen = false;
-           chatMessage = 0;
-           uiCanvas.SetActive(true);
+            StopAllCoroutines();
+            updateChat(chats[chatMessage]);
+            printing = false;
         }
         else
         {
-           StopAllCoroutines();
-           StartCoroutine(updateAnimatedText(chats[chatMessage]));
-           updatePicture(avatars[chatPictures[chatMessage]]);
+            chatMessage++;
+            if (chatMessage == chats.Length)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("TextCanvas"));
+                isOpen = false;
+                chatMessage = 0;
+                uiCanvas.SetActive(true);
+            }
+            else
+            {
+                StopAllCoroutines();
+                StartCoroutine(updateAnimatedText(chats[chatMessage]));
+                updatePicture(avatars[chatPictures[chatMessage]]);
+            }
         }
+        
     }
     private bool updatePicture(Sprite pic)
     {
@@ -86,6 +97,7 @@ public class TextManager : MonoBehaviour {
         string str = "";
         while (i < strComplete.Length)
         {
+            printing = true;
             float time = 0.04f;
             if (strComplete[i] == '.') time *= 2;
             str += strComplete[i];
@@ -95,9 +107,11 @@ public class TextManager : MonoBehaviour {
             }
             else
             {
+                printing = false;
                 yield break;
             }
             i++;
         }
+        printing = false;
     }
 }
