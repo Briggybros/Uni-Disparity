@@ -174,7 +174,7 @@ public class JoystickCharacter : NetworkBehaviour
     }
 
 
-    void decCount(GameObject thingy){
+    void DecCount(GameObject thingy){
         if(isServer){
             RpcdCount(thingy);
         }else{
