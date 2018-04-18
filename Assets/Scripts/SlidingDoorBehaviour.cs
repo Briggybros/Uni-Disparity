@@ -64,7 +64,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
      }
 
      protected override void ColliderExit(){
-         blocked=false;
+		CmdsyncRevert();
          
      }
 }
