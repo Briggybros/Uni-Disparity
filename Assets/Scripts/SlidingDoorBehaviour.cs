@@ -8,7 +8,12 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public int DownSpeed;
 	public int UpSpeed;
     public bool looping;
+
+	[SyncVar]
 	public bool blocked;
+	[SyncVar]
+	public bool open;
+
 	public GameObject[] players;
 	public GameObject heldPlayer;
 	// Use this for initialization
@@ -73,11 +78,15 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 	protected override void ColliderWithin(){
 		Debug.Log("sdafsd");
-		CmdsyncChange(heldPlayer);
+		blocked = true;
+		open = true;
+		//CmdsyncChange(heldPlayer);
      }
 
      protected override void ColliderExit(){
-		CmdsyncRevert(heldPlayer);
+		//CmdsyncRevert(heldPlayer);
+		blocked = false;
+		open = false;
          
      }
 
