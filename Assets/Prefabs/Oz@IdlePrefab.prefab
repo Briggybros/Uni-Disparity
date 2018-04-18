@@ -350,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4554624593071652}
   - component: {fileID: 137184827328548760}
+  - component: {fileID: 114691911086312528}
   m_Layer: 10
   m_Name: DogAssembled
   m_TagString: Untagged
@@ -551,7 +552,6 @@ GameObject:
   - component: {fileID: 54633557854931950}
   - component: {fileID: 114497105381746730}
   - component: {fileID: 65009883388204656}
-  - component: {fileID: 114433678687955518}
   m_Layer: 0
   m_Name: Oz@IdlePrefab
   m_TagString: Player
@@ -1609,6 +1609,18 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114691911086312528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586342688162022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5b6e5f74a8c3e49a2ce7f859651b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vis: 0
 --- !u!114 &114951090808586378
 MonoBehaviour:
   m_ObjectHideFlags: 1
