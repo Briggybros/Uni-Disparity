@@ -11,8 +11,6 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 	[SyncVar]
 	public bool blocked;
-	[SyncVar]
-	public bool open;
 
 	public GameObject[] players;
 	public GameObject heldPlayer;
