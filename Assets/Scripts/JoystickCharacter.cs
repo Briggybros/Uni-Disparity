@@ -49,7 +49,7 @@ public class JoystickCharacter : NetworkBehaviour
             }
             var rigidbodys = GetComponentsInChildren<Rigidbody>();
             foreach (var rigidbody in rigidbodys){
-                rigidbody.isKinematic = true;
+                rigidbody.useGravity = false;
             }
         }
     }
