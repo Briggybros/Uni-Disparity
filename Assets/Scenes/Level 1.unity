@@ -319,6 +319,10 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 86a918ecbfc19434bb4b3811dd8fe795, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f73eb73e9eaea744281a4be117eeb5be, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86a918ecbfc19434bb4b3811dd8fe795, type: 3}
   m_IsPrefabParent: 0
@@ -342,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &17795383
 Prefab:
   m_ObjectHideFlags: 0
@@ -810,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &41977353
 Prefab:
   m_ObjectHideFlags: 0
@@ -2042,7 +2046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &81886926
 Prefab:
   m_ObjectHideFlags: 0
@@ -2278,7 +2282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!114 &85686162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2792,7 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &114716890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,7 +3623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!114 &160312222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4352,7 +4356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &190483215
 Prefab:
   m_ObjectHideFlags: 0
@@ -5215,7 +5219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &237830993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,7 +5920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &282620231
 Prefab:
   m_ObjectHideFlags: 0
@@ -6562,7 +6566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &305438251
 GameObject:
   m_ObjectHideFlags: 0
@@ -6658,7 +6662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &312021900
 Prefab:
   m_ObjectHideFlags: 0
@@ -7080,20 +7084,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a3cacbc97cf147e5affbcad24fdb65e, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &323458443
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 323458442}
-  m_GameObject: {fileID: 1976742568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1199968840}
-  m_Father: {fileID: 1904982994}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &333538801
 GameObject:
   m_ObjectHideFlags: 0
@@ -7524,7 +7514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &350833754
 Prefab:
   m_ObjectHideFlags: 0
@@ -8381,6 +8371,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!23 &398634842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8447,7 +8440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &401872614
 Prefab:
   m_ObjectHideFlags: 0
@@ -9823,10 +9816,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4d4d98648a31c874ba1093e5f0f5978a, type: 3}
---- !u!4 &445670676 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: 2a3cacbc97cf147e5affbcad24fdb65e, type: 3}
-  m_PrefabInternal: {fileID: 323458442}
 --- !u!114 &441389662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9839,6 +9828,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altMaterial: {fileID: 2100000, guid: a37590ff9dc3d4caf822c5e97e62bd97, type: 2}
+--- !u!4 &445670676 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 2a3cacbc97cf147e5affbcad24fdb65e, type: 3}
+  m_PrefabInternal: {fileID: 323458442}
 --- !u!1001 &452595164
 Prefab:
   m_ObjectHideFlags: 0
@@ -10543,6 +10536,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!23 &476586308
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10611,7 +10607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &483412357
 Prefab:
   m_ObjectHideFlags: 0
@@ -11103,7 +11099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &502043025
 Prefab:
   m_ObjectHideFlags: 0
@@ -11551,7 +11547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &529919501
 Prefab:
   m_ObjectHideFlags: 0
@@ -12304,7 +12300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &558241816
 GameObject:
   m_ObjectHideFlags: 0
@@ -13305,7 +13301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 1
+  isColliderOpposite: 0
 --- !u!114 &597711790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13325,6 +13321,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!65 &597711792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14419,6 +14418,10 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 72dff70fb253445d3b5fde848c7b0b4b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b79b0817bca66945be60d69a90b5ca6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72dff70fb253445d3b5fde848c7b0b4b, type: 3}
   m_IsPrefabParent: 0
@@ -17010,6 +17013,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!23 &827167180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17076,7 +17082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &829181322
 Prefab:
   m_ObjectHideFlags: 0
@@ -18047,7 +18053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &855460191
 Prefab:
   m_ObjectHideFlags: 0
@@ -18567,7 +18573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!114 &895416738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18714,7 +18720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &904187782
 GameObject:
   m_ObjectHideFlags: 0
@@ -19875,7 +19881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 1
+  isColliderOpposite: 0
 --- !u!65 &957852430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20166,7 +20172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &969054906
 Prefab:
   m_ObjectHideFlags: 0
@@ -20226,6 +20232,10 @@ Prefab:
       propertyPath: m_Name
       value: leverHolder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 86a918ecbfc19434bb4b3811dd8fe795, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f73eb73e9eaea744281a4be117eeb5be, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86a918ecbfc19434bb4b3811dd8fe795, type: 3}
   m_IsPrefabParent: 0
@@ -20917,7 +20927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!4 &1017666291 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 162515a9a5f4ec44a9d7620316545f68, type: 3}
@@ -21537,7 +21547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1064471750
 GameObject:
   m_ObjectHideFlags: 0
@@ -21864,7 +21874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1078341624
 Prefab:
   m_ObjectHideFlags: 0
@@ -24420,34 +24430,6 @@ Transform:
   m_Father: {fileID: 1770711268}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &1199968839
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 323458442}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1199968840}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1199968840
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 323458442}
-  m_GameObject: {fileID: 1199968839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 323458443}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201425414
 GameObject:
   m_ObjectHideFlags: 0
@@ -24540,6 +24522,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!23 &1213447528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24608,7 +24593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1219534889
 Prefab:
   m_ObjectHideFlags: 0
@@ -27443,6 +27428,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 72dff70fb253445d3b5fde848c7b0b4b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b79b0817bca66945be60d69a90b5ca6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72dff70fb253445d3b5fde848c7b0b4b, type: 3}
   m_IsPrefabParent: 0
@@ -27622,7 +27611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1377366695
 GameObject:
   m_ObjectHideFlags: 0
@@ -27688,6 +27677,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 0
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!23 &1377366699
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27754,7 +27746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1378800724
 Prefab:
   m_ObjectHideFlags: 0
@@ -28215,7 +28207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1393779372
 GameObject:
   m_ObjectHideFlags: 0
@@ -28262,7 +28254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!43 &1396207087
 Mesh:
   m_ObjectHideFlags: 0
@@ -30663,7 +30655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1529425384
 GameObject:
   m_ObjectHideFlags: 0
@@ -30753,6 +30745,9 @@ MonoBehaviour:
   DownSpeed: 2
   UpSpeed: 2
   looping: 1
+  blocked: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!23 &1529796271
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30821,7 +30816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1549215955
 GameObject:
   m_ObjectHideFlags: 0
@@ -35571,7 +35566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1615313938
 Prefab:
   m_ObjectHideFlags: 0
@@ -37956,7 +37951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1723138369
 Prefab:
   m_ObjectHideFlags: 0
@@ -38116,7 +38111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1743566582
 Prefab:
   m_ObjectHideFlags: 0
@@ -38244,7 +38239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!114 &1748985353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40192,7 +40187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &1853741157
 Prefab:
   m_ObjectHideFlags: 0
@@ -41311,40 +41306,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114538804758448646, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 72734539}
-    - target: {fileID: 114538804758448646, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 114538804758448646, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114471193450040908, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 72734539}
-    - target: {fileID: 114471193450040908, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
+    - target: {fileID: 114538804758448646, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 224255685477996192, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1248606673767966, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 72734539}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
   m_IsPrefabParent: 0
@@ -41865,7 +41836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1947091827 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 9e206055227af9145b43d0ca8ed15d7b, type: 3}
@@ -42102,7 +42073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1957953959
 GameObject:
   m_ObjectHideFlags: 0
@@ -42560,22 +42531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 66
-  isColliderShared: 0
---- !u!1 &1976742568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 323458442}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 323458443}
-  m_Layer: 0
-  m_Name: Missing Prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  isColliderOpposite: 0
 --- !u!1 &1978686567
 GameObject:
   m_ObjectHideFlags: 0
@@ -42933,7 +42889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &1994038647 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 40af251adf8c48240af2f47409b461b8, type: 3}
@@ -44145,7 +44101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1 &2042696608
 GameObject:
   m_ObjectHideFlags: 0
@@ -45050,7 +45006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: 65
-  isColliderShared: 0
+  isColliderOpposite: 0
 --- !u!1001 &2076946015
 Prefab:
   m_ObjectHideFlags: 0
