@@ -5,7 +5,7 @@ using UnityEngine;
 public class PortalEnd : Trigger {
 
 	public GameObject end;
-	private int count;
+	public int count;
 	// Use this for initialization
 	protected override void Start () {
 		count = 0;
