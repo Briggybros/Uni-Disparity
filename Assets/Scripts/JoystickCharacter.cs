@@ -154,7 +154,7 @@ public class JoystickCharacter : NetworkBehaviour
 	}
 
 	[Command]
-	void CmdBlock() {
+	void CmdBlocker() {
 		RpcBlocker(target);
 	}
 
