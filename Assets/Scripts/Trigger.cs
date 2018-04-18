@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Trigger : MonoBehaviour {
+public class Trigger : NetworkBehaviour {
 
 	public bool requiresInteract;
     public GameObject[] targets;
