@@ -29,7 +29,7 @@ public class PortalEnd : Trigger {
 
 	protected virtual void OnTriggerExit(Collider other) {
 		if (other.tag == "Player") {
-			other.gameObject.BroadcastMessage("DecCount",this;
+			other.gameObject.BroadcastMessage("DecCount",this);
 		}
 	}
 }
