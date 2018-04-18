@@ -90,6 +90,9 @@ public class PinMechanism : Receiver {
     }
 
     public void EnablePinEntry () {
+        if (CharacterPicker.GetWorld() != CharacterPicker.WORLDS.DOG){
+            return;
+        }
         OverlayOn = true;
         PinEntryUI.SetActive(true);
         Failed.SetActive(false);
