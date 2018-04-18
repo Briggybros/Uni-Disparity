@@ -9,8 +9,8 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public int UpSpeed;
     public bool looping;
 	public bool blocked;
-	GameObject[] players;
-	GameObject heldPlayer;
+	public GameObject[] players;
+	public GameObject heldPlayer;
 	// Use this for initialization
 	protected override void Start () {
         init();
