@@ -156,7 +156,7 @@ public class JoystickCharacter : NetworkBehaviour
 		}
 	}
 
-    void incCount(GameObject thingy){
+    void IncCount(GameObject thingy){
         if(isServer){
             RpcCount(thingy);
         }else{
