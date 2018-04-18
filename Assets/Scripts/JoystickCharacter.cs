@@ -150,21 +150,21 @@ public class JoystickCharacter : NetworkBehaviour
 
 	[Command]
 	void CmdForceOwnership() {
-		targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 	}
 
 	[Command]
 	void CmdBlocker() {
-		targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcBlocker(target);
-		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[Command]
 	void CmdUnblock() {
-		targetNetworkIdent.AssignClientAuthority(connectionToClient);
+		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcUnblocker(target);
-		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
@@ -175,7 +175,7 @@ public class JoystickCharacter : NetworkBehaviour
 
 	[Command]
 	void CmdRevokeOwnership() {
-		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
+		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 
