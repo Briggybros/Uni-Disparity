@@ -155,12 +155,16 @@ public class JoystickCharacter : NetworkBehaviour
 
 	[Command]
 	void CmdBlocker() {
+		targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcBlocker(target);
+		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[Command]
 	void CmdUnblock() {
+		targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcUnblocker(target);
+		targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
