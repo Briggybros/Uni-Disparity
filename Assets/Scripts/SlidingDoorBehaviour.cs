@@ -8,6 +8,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public int DownSpeed;
 	public int UpSpeed;
     public bool looping;
+	public bool mirror;
 
 	[SyncVar]
 	public bool blocked;
@@ -24,8 +25,15 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         }
 		players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject player in players) {
-			if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
-				heldPlayer = player;
+			if (mirror) {
+				if (!player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+					heldPlayer = player;
+				}	
+			}
+			else {
+					if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+					heldPlayer = player;
+				}	
 			}
 		}
 
