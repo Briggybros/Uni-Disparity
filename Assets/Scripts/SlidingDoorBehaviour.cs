@@ -9,6 +9,8 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 	public int UpSpeed;
     public bool looping;
 	public bool blocked;
+	GameObject[] players;
+	GameObject heldPlayer;
 	// Use this for initialization
 	protected override void Start () {
         init();
@@ -17,6 +19,13 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         {
             Looping();
         }
+		players = GameObject.FindGameObjectsWithTag("Player");
+		foreach (GameObject player in players) {
+			if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+				heldPlayer = player;
+			}
+		}
+
     }
 	
 	// Update is called once per frame
@@ -35,10 +44,10 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
     }
 
 	[Command]
-	void CmdsyncChange() {
-		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToServer);
+	void CmdsyncChange(GameObject heldplayer) {
+		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
 		RpcupdateState();
-		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToServer);
+		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
 	}
 
 	[ClientRpc]
@@ -49,10 +58,10 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 
 	[Command]
-	void CmdsyncRevert() {
-		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToServer);
+	void CmdsyncRevert(GameObject heldplayer) {
+		gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
 		RpcupdateRevert();
-		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToServer);
+		gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority(heldplayer.GetComponent<NetworkIdentity>().connectionToClient);
 	}
 
 	[ClientRpc]
@@ -64,11 +73,11 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 
 	protected override void ColliderWithin(){
 		Debug.Log("sdafsd");
-		CmdsyncChange();
+		CmdsyncChange(heldPlayer);
      }
 
      protected override void ColliderExit(){
-		CmdsyncRevert();
+		CmdsyncRevert(heldPlayer);
          
      }
 
