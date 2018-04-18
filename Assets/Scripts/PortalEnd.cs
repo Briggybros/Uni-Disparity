@@ -23,13 +23,13 @@ public class PortalEnd : Trigger {
 
 	protected virtual void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
-			other.gameObject.BroadcastMessage("IncCount",this);
+			other.gameObject.BroadcastMessage("IncCount",this.gameObject);
 		}
 	}
 
 	protected virtual void OnTriggerExit(Collider other) {
 		if (other.tag == "Player") {
-			other.gameObject.BroadcastMessage("DecCount",this);
+			other.gameObject.BroadcastMessage("DecCount",this.gameObject);
 		}
 	}
 }
