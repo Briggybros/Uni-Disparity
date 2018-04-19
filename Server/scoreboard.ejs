@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Disparity Scoreboard</title>
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+    </head>
+    <body>
+        <img id="logo" src="/logo.png" alt="Disparity" />
+        <div class="table">
+            <% scores.forEach(function (score) { %>
+                <div class="border table-row">
+                    <div class="table-row__content">
+                        <span>
+                            #<%= score.rank %>
+                        </span>
+                        <span>
+                            <%= score.name %>
+                        </span>
+                        <span>
+                            <%= score.time %> seconds
+                        </span>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </body>
+</html>
