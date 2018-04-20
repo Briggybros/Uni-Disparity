@@ -60,7 +60,10 @@ public class CameraRay : Receiver {
 					laserParticles.transform.rotation = Quaternion.LookRotation(ray.origin - hit.point);
 					
 					if (hit.rigidbody != null && hit.rigidbody.gameObject.CompareTag("KeyDoor")) {
-						hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+                        // hit.rigidbody.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+                        hit.rigidbody.gameObject.SetActive(false);
+
+                        //maybe rubble blow up sounds effect
 					} 
 				}
 				else { 

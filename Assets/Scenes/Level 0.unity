@@ -4421,6 +4421,46 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 114.896
       objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 233.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 104.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -202.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.28756663
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9577607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -33.425003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558723992724490, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92c7b0c886df9524e898dd503bb3b077, type: 2}
   m_IsPrefabParent: 0
@@ -5425,8 +5465,8 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 0
   OpenHeight: -53
-  DownSpeed: 18
-  UpSpeed: 18
+  DownSpeed: 22
+  UpSpeed: 22
   looping: 0
   mirror: 0
   blocked: 0
@@ -5715,8 +5755,8 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 0
   OpenHeight: -53
-  DownSpeed: 18
-  UpSpeed: 18
+  DownSpeed: 22
+  UpSpeed: 22
   looping: 0
   mirror: 0
   blocked: 0

@@ -6205,6 +6205,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altMaterial: {fileID: 2100000, guid: 31427b40815c140a1b1764117f4f4aa2, type: 2}
+--- !u!1 &314574985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 314574990}
+  - component: {fileID: 314574989}
+  - component: {fileID: 314574988}
+  - component: {fileID: 314574987}
+  - component: {fileID: 314574986}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: KeyDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &314574986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 65
+  isColliderOpposite: 0
+--- !u!23 &314574987
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &314574988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &314574989
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &314574990
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 144.3, y: 172.3, z: -4.4}
+  m_LocalScale: {x: 3.0379314, y: 46.214302, z: 40.69524}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322148068
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,9 +9994,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: 2.78
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: 10
+  DownSpeed: 10
+  UpSpeed: 10
   looping: 1
   mirror: 0
   blocked: 0
@@ -17630,6 +17728,16 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 23643306148290802, guid: 32b166855ed90fc44889573917a2d49a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb5df90f3e9b6ab4195b6ac5e0d838e4, type: 2}
+    - target: {fileID: 23889479150403510, guid: 32b166855ed90fc44889573917a2d49a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb5df90f3e9b6ab4195b6ac5e0d838e4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b166855ed90fc44889573917a2d49a, type: 2}
   m_IsPrefabParent: 0
@@ -18618,7 +18726,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18631,14 +18739,14 @@ Prefab:
     - target: {fileID: 2300000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0ba188e515510eb438b331c8aaee45ce, type: 2}
+      objectReference: {fileID: 2100000, guid: da9be9adb49921c4d9bae32b996e5c04, type: 2}
     - target: {fileID: 3300000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_TagString
-      value: KeyDoor
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_Name
@@ -18663,10 +18771,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 935435245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5acec5348c247aa9469d833c32b693, type: 3}
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  altMaterial: {fileID: 2100000, guid: da9be9adb49921c4d9bae32b996e5c04, type: 2}
+  World: 66
+  isColliderOpposite: 0
 --- !u!1001 &941206988
 Prefab:
   m_ObjectHideFlags: 0
@@ -23488,9 +23597,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: 2.78
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: 10
+  DownSpeed: 10
+  UpSpeed: 10
   looping: 1
   mirror: 0
   blocked: 0
@@ -24492,6 +24601,10 @@ Prefab:
       propertyPath: m_ScaleInLightmap
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e6131efe8c0d9f4b965e92ac820a1c6, type: 2}
     m_RemovedComponents:
     - {fileID: 9500000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -24759,7 +24872,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1df5d90fd245fc54fa6e54ff55c61eca, type: 2}
+  - {fileID: 2100000, guid: cc24cc8ded9af9f4184debbcb539c9ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29356,9 +29469,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: -2.78
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: -10
+  DownSpeed: 10
+  UpSpeed: 10
   looping: 1
   mirror: 0
   blocked: 0
@@ -37996,7 +38109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1832064157
 Transform:
   m_ObjectHideFlags: 0
@@ -38105,7 +38218,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38125,7 +38238,7 @@ Prefab:
       objectReference: {fileID: 4300000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_TagString
-      value: KeyDoor
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_Name
