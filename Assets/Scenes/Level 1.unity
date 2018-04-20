@@ -7709,6 +7709,7 @@ GameObject:
   - component: {fileID: 398634840}
   - component: {fileID: 398634844}
   - component: {fileID: 398634845}
+  - component: {fileID: 398634846}
   m_Layer: 8
   m_Name: Spike(0)A (1)
   m_TagString: Enemy
@@ -7756,9 +7757,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: -2.78
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: -100
+  DownSpeed: 10
+  UpSpeed: 10
   looping: 0
   mirror: 0
   blocked: 0
@@ -7831,6 +7832,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderOpposite: 0
+--- !u!114 &398634846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398634838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 55
+    i1: 8
+    i2: 55
+    i3: 87
+    i4: 157
+    i5: 176
+    i6: 155
+    i7: 132
+    i8: 107
+    i9: 218
+    i10: 10
+    i11: 226
+    i12: 65
+    i13: 141
+    i14: 7
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &401872614
 Prefab:
   m_ObjectHideFlags: 0
@@ -16150,9 +16183,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: -2.78
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: -100
+  DownSpeed: 10
+  UpSpeed: 10
   looping: 0
   mirror: 0
   blocked: 0
@@ -26531,9 +26564,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: -2.78
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: -100
+  DownSpeed: 10
+  UpSpeed: 10
   looping: 0
   mirror: 0
   blocked: 0
@@ -44537,7 +44570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DownSpeed: 2
-  MovementRange: -5
+  MovementRange: -500
   PinEntryUI: {fileID: 1492437280}
   MovementUI: {fileID: 72734539}
   Slot1: {fileID: 15924472}

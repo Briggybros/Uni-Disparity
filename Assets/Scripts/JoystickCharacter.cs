@@ -319,7 +319,7 @@ public class JoystickCharacter : NetworkBehaviour {
                 animator.SetBool("Running", true);
             }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
-            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 15;
+            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 70;
             pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
         } else {
