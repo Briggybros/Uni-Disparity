@@ -1172,7 +1172,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 342015053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.496, z: -21.95}
+  m_LocalPosition: {x: 3.6, y: 62, z: -99.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5424,9 +5424,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 0
-  OpenHeight: -9
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: -53
+  DownSpeed: 18
+  UpSpeed: 18
   looping: 0
   mirror: 0
   blocked: 0
@@ -5714,9 +5714,9 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 0
-  OpenHeight: -9
-  DownSpeed: 2
-  UpSpeed: 2
+  OpenHeight: -53
+  DownSpeed: 18
+  UpSpeed: 18
   looping: 0
   mirror: 0
   blocked: 0
