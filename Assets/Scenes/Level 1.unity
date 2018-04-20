@@ -6217,6 +6217,7 @@ GameObject:
   - component: {fileID: 314574988}
   - component: {fileID: 314574987}
   - component: {fileID: 314574986}
+  - component: {fileID: 314574991}
   m_Layer: 0
   m_Name: Cube
   m_TagString: KeyDoor
@@ -6303,6 +6304,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314574991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &322148068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6467,7 +6500,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 2a3cacbc97cf147e5affbcad24fdb65e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d332e9d0d4dc7ad49884379d3428862f, type: 2}
+      objectReference: {fileID: 2100000, guid: a5737acd3a485894dbe4dce11b1fff26, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a3cacbc97cf147e5affbcad24fdb65e, type: 3}
   m_IsPrefabParent: 0
@@ -18776,6 +18809,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderOpposite: 0
+--- !u!114 &935435247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 935435245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 108
+    i1: 98
+    i2: 199
+    i3: 55
+    i4: 255
+    i5: 9
+    i6: 217
+    i7: 68
+    i8: 201
+    i9: 66
+    i10: 86
+    i11: 3
+    i12: 16
+    i13: 243
+    i14: 145
+    i15: 5
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &941206988
 Prefab:
   m_ObjectHideFlags: 0
@@ -38268,6 +38333,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!114 &1832749281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832749279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 108
+    i1: 98
+    i2: 199
+    i3: 55
+    i4: 255
+    i5: 9
+    i6: 217
+    i7: 68
+    i8: 201
+    i9: 66
+    i10: 86
+    i11: 3
+    i12: 16
+    i13: 243
+    i14: 145
+    i15: 5
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1841646754 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1667156250135740, guid: 32b166855ed90fc44889573917a2d49a,
