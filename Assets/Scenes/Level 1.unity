@@ -2248,6 +2248,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
   chatPictures: 010000000000000001000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  uiCanvas: {fileID: 0}
   repeated: 0
   isTriggerable: 1
 --- !u!1001 &86946169
@@ -3386,6 +3387,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
   chatPictures: 00000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  uiCanvas: {fileID: 0}
   repeated: 0
   isTriggerable: 0
 --- !u!1 &160312216
@@ -14285,6 +14287,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
   chatPictures: 00000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  uiCanvas: {fileID: 0}
   repeated: 0
   isTriggerable: 0
 --- !u!1001 &665727378
@@ -39606,6 +39609,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
   chatPictures: 010000000000000001000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  uiCanvas: {fileID: 0}
   repeated: 0
   isTriggerable: 1
 --- !u!1001 &1919401596
@@ -44053,6 +44057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreboard: {fileID: 106351590}
+  StartText: {fileID: 0}
+  WaitingForPlayers: {fileID: 0}
 --- !u!114 &2099837644
 MonoBehaviour:
   m_ObjectHideFlags: 0

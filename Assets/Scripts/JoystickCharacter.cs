@@ -263,6 +263,11 @@ public class JoystickCharacter : NetworkBehaviour {
             return;
 		cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
+        // vibrate
+        // if (isInteract() || IsJump()) {
+        //     Handheld.Vibrate();
+        // }
+
 		grabLax++;
 		if (isInteract() && touching && target.CompareTag("Key")) {
 			keys.Add(target.name);
