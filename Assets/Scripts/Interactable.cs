@@ -9,8 +9,8 @@ public class Interactable : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
-	void Update() {
+    // Update is called once per frame
+    void Update() {
 
 	}
 	//Being used as a glorified tag atm
