@@ -10,6 +10,7 @@ public class TextManager : NetworkBehaviour {
     public Sprite[] avatars;
     public int[] chatPictures;
     public GameObject textBox;
+    public GameObject uiCanvas;
     public bool repeated;
     public bool isTriggerable;
 
@@ -17,12 +18,10 @@ public class TextManager : NetworkBehaviour {
     private bool isOpen = false;
     private bool printing = false;
     private int chatMessage = 0;
-    private GameObject uiCanvas;
     private GameObject textCanvas;
     private JoystickCharacter movement;
 
     public void Start() {
-        uiCanvas = GameObject.Find("UI Canvas");
     }
 
     public void CreateChat(string[] chats, Sprite[] avatars, int[] chatPics)
