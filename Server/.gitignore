@@ -58,3 +58,4 @@ typings/
 .env
 
 scores.json
+dist/

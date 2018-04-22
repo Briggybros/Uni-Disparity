@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const ejs = require('ejs');
+const socketIO = require('socket.io');
 
 const scoreboard = require('./scoreboard');
 
@@ -12,10 +12,10 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use(express.static('./static'));
+app.use(express.static('./dist'));
 
 app.post('/score', (req, res) => {
-  res.status(200).send(JSON.stringify(scoreboard.insertScore({
+  res.send(JSON.stringify(scoreboard.insertScore({
     name: req.body.name,
     level: req.body.level,
     time: req.body.time,
@@ -23,24 +23,41 @@ app.post('/score', (req, res) => {
 });
 
 app.get('/score', (req, res) => {
-  res.status(200).send(JSON.stringify(scoreboard.getScores(
+  res.send(JSON.stringify(scoreboard.getScores(
     req.query.level,
     req.query.offset,
     req.query.size,
   )));
 });
 
-app.get('/:level', (req, res) => {
-  const pageNumber = req.query.page ? parseInt(req.query.page, 10) : 0;
-  ejs.renderFile('scoreboard.ejs', {
-    scores: scoreboard.getScores(
-      req.params.level,
-      pageNumber * 10,
-      (pageNumber * 10) + 9,
-    ),
-  }, (err, page) => {
-    res.status(200).send(page);
+app.get('*', (req, res) => {
+  res.sendFile('/dist/index.html');
+});
+
+const http = app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+
+const io = socketIO(http);
+
+let clientLUT = {};
+
+io.on('connection', (socket) => {
+  console.log('connection');
+  socket.on('board', (board, page) => {
+    console.log('Board: ', board, ', ', page);
+    clientLUT = Object.assign({}, clientLUT, {
+      [socket.id]: { board, page },
+    });
+
+    socket.emit('update', scoreboard.getScores(board, 10 * (page - 1), 10));
   });
 });
 
-app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+scoreboard.on('update', (score) => {
+  Object.entries(clientLUT).forEach(([key, value]) => {
+    if (value.board === score.level) {
+      if (score.rank >= 10 * (value.page - 1) && score.rank <= (10 * (value.page - 1)) + 10) {
+        io.sockets.connected[key].emit('update', scoreboard.getScores(value.board, 10 * (value.page - 1), 10));
+      }
+    }
+  });
+});
