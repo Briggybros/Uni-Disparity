@@ -10,6 +10,22 @@ body {
     align-items: center;
 }
 
+button {
+    background: none;
+    padding: 0;
+}
+
+button > div {
+    background: #818687;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#nav-buttons {
+    margin-top: auto;
+    margin: auto 2.5vw 2.5vh;
+}
+
 #logo {
     width: 50vw;
     height: auto;

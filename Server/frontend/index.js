@@ -33,22 +33,40 @@ function createResult(result) {
 window.addEventListener('load', () => {
   const socket = io();
 
-  socket.on('update', (results) => {
-    console.log('Update', results);
+  const board = query('board');
+  const page = query('page');
+
+  const prevButton = document.getElementById('prevPage');
+  const nextButton = document.getElementById('nextPage');
+
+  socket.on('update', (response) => {
+    const { results, pages } = response;
     const DOMResults = document.getElementById('results');
     DOMResults.innerHTML = '';
 
     results.forEach((result) => {
       DOMResults.appendChild(createResult(result));
     });
+
+    if (page < pages) {
+      nextButton.style.display = 'block';
+    } else {
+      nextButton.style.display = 'none';
+    }
   });
 
-  function changeBoard(board, page) {
-    socket.emit('board', board, page);
+  if (page > 1) {
+    prevButton.style.display = 'block';
+  } else {
+    prevButton.style.display = 'none';
   }
 
-  const board = query('board');
-  const page = query('page');
+  prevButton.addEventListener('click', () => {
+    window.location.href = `/?board=${board}&page=${parseInt(page, 10) - 1}`;
+  });
+  nextButton.addEventListener('click', () => {
+    window.location.href = `/?board=${board}&page=${parseInt(page, 10) + 1}`;
+  });
 
-  changeBoard(board, page);
+  socket.emit('board', board, page);
 });

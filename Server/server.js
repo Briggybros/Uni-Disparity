@@ -41,14 +41,17 @@ const io = socketIO(http);
 let clientLUT = {};
 
 io.on('connection', (socket) => {
-  console.log('connection');
   socket.on('board', (board, page) => {
-    console.log('Board: ', board, ', ', page);
     clientLUT = Object.assign({}, clientLUT, {
       [socket.id]: { board, page },
     });
 
-    socket.emit('update', scoreboard.getScores(board, 10 * (page - 1), 10));
+    const data = {
+      results: scoreboard.getScores(board, 10 * (page - 1), 10),
+      pages: Math.ceil(scoreboard.count(board) / 10),
+    };
+
+    socket.emit('update', data);
   });
 });
 
@@ -56,7 +59,12 @@ scoreboard.on('update', (score) => {
   Object.entries(clientLUT).forEach(([key, value]) => {
     if (value.board === score.level) {
       if (score.rank >= 10 * (value.page - 1) && score.rank <= (10 * (value.page - 1)) + 10) {
-        io.sockets.connected[key].emit('update', scoreboard.getScores(value.board, 10 * (value.page - 1), 10));
+        const data = {
+          results: scoreboard.getScores(value.board, 10 * (value.page - 1), 10),
+          pages: Math.ceil(scoreboard.count(value.board) / 10),
+        };
+
+        io.sockets.connected[key].emit('update', data);
       }
     }
   });

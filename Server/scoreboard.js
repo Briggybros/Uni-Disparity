@@ -104,9 +104,20 @@ function getScores(level, offset, size) {
   return [];
 }
 
+function count(level) {
+  if (level) {
+    if (scoreboard[level]) {
+      return scoreboard[level].length;
+    }
+    return 0;
+  }
+  return Object.values(scoreboard).reduce((acc, board) => acc + board.length, 0);
+}
+
 module.exports = {
+  on,
   writeScoreboard,
   insertScore,
   getScores,
-  on,
+  count,
 };
