@@ -157,34 +157,21 @@ public class JoystickCharacter : NetworkBehaviour
 			CmdUnblock(thingy);
 		}
 	}
-	[Command]
-	void CmdForceOwnership() {
-		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
-	}
 
 	[Command]
 	void CmdBlocker( GameObject thingy) {
-		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcBlocker(thingy);
-		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[Command]
 	void CmdUnblock(GameObject thingy) {
-		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcUnblocker(thingy);
-		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
 	void RpcBlocker(GameObject target) {
 		target.GetComponent<SlidingDoorBehaviour>().blocked = true;
 		target.GetComponent<SlidingDoorBehaviour>().open = true;
-	}
-
-	[Command]
-	void CmdRevokeOwnership() {
-		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 
@@ -209,7 +196,6 @@ public class JoystickCharacter : NetworkBehaviour
 
 	[ClientRpc]
 	void RpcSyncAnim(GameObject character,bool running) {
-		//GetComponent<Animator>().SetBool("Running", running);
 		pedantsAnimator.SetBool("Running", running);
 	}
 
