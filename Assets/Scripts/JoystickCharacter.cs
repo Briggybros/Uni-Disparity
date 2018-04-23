@@ -192,6 +192,24 @@ public class JoystickCharacter : NetworkBehaviour
 		target.GetComponent<SlidingDoorBehaviour>().open = false;
 	}
 
+	void SyncAnim(bool running) {
+		if (isServer) {
+			RpcSyncAnim(gameObject, running);
+		} else {
+			CmdSyncAnim(gameObject, running);
+		}
+	}
+
+	[Command]
+	void CmdSyncAnim(GameObject character,bool running) {
+		RpcSyncAnim(character,running);
+	}
+
+	[ClientRpc]
+	void RpcSyncAnim(GameObject character,bool running) {
+		GetComponent<Animator>().SetBool("Running", running);
+	}
+
 	static bool IsJump() {
 #if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE || UNITY_EDITOR
 		return Touch.Test("Jump");
@@ -284,7 +302,7 @@ public class JoystickCharacter : NetworkBehaviour
         pos = transform.localPosition;
         stickInput = StickInput();
         if (stickInput != Vector3.zero) {
-            if(!GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", true);
+            if(!GetComponent<Animator>().GetBool("Running")) SyncAnim(true);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
             MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
             pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
@@ -292,7 +310,7 @@ public class JoystickCharacter : NetworkBehaviour
         }
         else
         {
-            if (GetComponent<Animator>().GetBool("Running")) GetComponent<Animator>().SetBool("Running", false);
+            if (GetComponent<Animator>().GetBool("Running")) SyncAnim(false);
         }
 
         if (!IsJump() && impCount > 40) {
