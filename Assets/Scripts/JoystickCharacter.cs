@@ -27,6 +27,7 @@ public class JoystickCharacter : NetworkBehaviour
 	private bool jumpReq = false;
 	private int impCount = 0;
 	private int grabLax;
+	private Animator pedantsAnimator;
 	public List<string> keys = new List<string>();
 	public List<string> cores = new List<string>();
 
@@ -52,6 +53,7 @@ public class JoystickCharacter : NetworkBehaviour
                 rigidbody.useGravity = false;
             }
         }
+		pedantsAnimator = GetComponent<Animator>();
     }
 
     [Command]
@@ -207,7 +209,8 @@ public class JoystickCharacter : NetworkBehaviour
 
 	[ClientRpc]
 	void RpcSyncAnim(GameObject character,bool running) {
-		GetComponent<Animator>().SetBool("Running", running);
+		//GetComponent<Animator>().SetBool("Running", running);
+		pedantsAnimator.SetBool("Running", running);
 	}
 
 	static bool IsJump() {
