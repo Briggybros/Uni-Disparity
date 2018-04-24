@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1697655331}
-  m_IndirectSpecularColor: {r: 0.4196821, g: 0.38107646, b: 0.3422297, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -27032,8 +27032,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.9607844, g: 0.8196079, b: 0.3019608, a: 1}
-  m_Intensity: 1.5
-  m_Range: 5
+  m_Intensity: 5
+  m_Range: 12
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -29187,7 +29187,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1966167493
+  randomSeed: -1674218062
   InitialModule:
     serializedVersion: 3
     enabled: 1
