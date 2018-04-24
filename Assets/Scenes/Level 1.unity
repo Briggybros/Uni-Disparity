@@ -9665,7 +9665,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: 10
+  OpenHeight: 20
   DownSpeed: 10
   UpSpeed: 10
   looping: 1
@@ -23368,7 +23368,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: 10
+  OpenHeight: 20
   DownSpeed: 10
   UpSpeed: 10
   looping: 1
@@ -29032,7 +29032,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: -10
+  OpenHeight: -20
   DownSpeed: 10
   UpSpeed: 10
   looping: 1
