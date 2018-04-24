@@ -18,7 +18,7 @@ public class PinMechanism : Receiver {
     private int[] pin = {5,7,3,2};
 
 	// Use this for initialization
-	protected void Awake () {
+	protected void Start () {
         spikeTarget = Spikes.transform.position;
         spikeTarget.y += MovementRange;
         OverlayOn = false;
@@ -73,7 +73,8 @@ public class PinMechanism : Receiver {
 
     protected override void SwitchReceived()
     {
-        if (!OverlayOn) {
+        Debug.Log("switchrecevied");
+        if ((!OverlayOn) && (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG)) {
             EnablePinEntry();
         }
     }
@@ -86,6 +87,7 @@ public class PinMechanism : Receiver {
     }
 
     public void EnablePinEntry () {
+        Debug.Log("enabling");
         OverlayOn = true;
         PinEntryUI.SetActive(true);
         Failed.SetActive(false);

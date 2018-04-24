@@ -272,8 +272,8 @@ public class JoystickCharacter : NetworkBehaviour {
 		if (isInteract() && touching && target.CompareTag("Key")) {
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
-		}else if(touching && target.GetComponent<PinMechanism>()){
-            target.tag = "Bopped";
+		//}else if(touching && target.GetComponent<PinMechanism>()){
+            //target.tag = "Bopped";
         }else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
 			foreach(string trans in cores) {
 				CmdsyncNameChange(trans, target);
