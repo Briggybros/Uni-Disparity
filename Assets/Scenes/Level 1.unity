@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1697655331}
-  m_IndirectSpecularColor: {r: 0.21809326, g: 0.19815145, b: 0.17752342, a: 1}
+  m_IndirectSpecularColor: {r: 0.21819286, g: 0.19925036, b: 0.17830446, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -12408,7 +12408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
+  World: 66
   isColliderOpposite: 1
 --- !u!114 &597711790
 MonoBehaviour:
@@ -12424,8 +12424,8 @@ MonoBehaviour:
   open: 0
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
-  timer: 3
-  OpenHeight: -10
+  timer: 5
+  OpenHeight: -20
   DownSpeed: 8
   UpSpeed: 8
   looping: 1
@@ -12440,8 +12440,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597711788}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01230873, y: 1.4248754, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.01230873, y: 2.61, z: 0}
+  m_LocalScale: {x: 1, y: 1.4324352, z: 1}
   m_Children: []
   m_Father: {fileID: 80770931}
   m_RootOrder: 0
