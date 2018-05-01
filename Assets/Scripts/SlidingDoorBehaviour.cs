@@ -25,15 +25,8 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
         }
 		players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject player in players) {
-			/*i/*f (mirror) {
-				if (!(player.GetComponent<JoystickCharacter>().isLocalPlayer)) {
-					heldPlayer = player;
-				}	
-			}
-			else {*/
-					if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
-					heldPlayer = player;
-			//	}	
+				if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+				heldPlayer = player;	
 			}
 		}
 
@@ -44,15 +37,8 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 		if(heldPlayer == null){
 			players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject player in players) {
-			/*i/*f (mirror) {
-				if (!(player.GetComponent<JoystickCharacter>().isLocalPlayer)) {
-					heldPlayer = player;
-				}	
-			}
-			else {*/
-					if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
-					heldPlayer = player;
-			//	}	
+				if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+				heldPlayer = player;
 			}
 		}
 		}
@@ -74,21 +60,12 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 		if(heldPlayer != null){
 			heldPlayer.BroadcastMessage("Block",gameObject);
 		}
-		//blocked = true;
-		//open = true;
-	//	heldPlayer.BroadcastMessage("CmdForceOwnership");
-		
-	//	heldPlayer.BroadcastMessage("CmdRevokeOwnership");
 	}
 
      protected override void ColliderExit(){
-	//	heldPlayer.BroadcastMessage("CmdForceOwnership");
 	if(heldPlayer != null){
 		heldPlayer.BroadcastMessage("Unblock",gameObject);
 	}
-		//heldPlayer.BroadcastMessage("CmdRevokeOwnership");
-		//blocked = false;
-		//open = false;
          
      }
 

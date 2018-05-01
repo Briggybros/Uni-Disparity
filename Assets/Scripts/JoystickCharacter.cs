@@ -136,6 +136,25 @@ public class JoystickCharacter : NetworkBehaviour {
 			touching = false;
 		}
 	}
+
+	void TargetSwitch(GameObject target) {
+		if (isServer) {
+			CmdHit(target);
+		} else {
+			RpcHit(target);
+		}
+	}
+
+	[Command]
+	void CmdHit(GameObject target) {
+		target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+	}
+
+	[ClientRpc]
+	void RpcHit(GameObject target) {
+		CmdHit(target);
+	}
+
 	void Block(GameObject thingy) {
 		if (isServer) {
 			RpcBlocker(thingy);

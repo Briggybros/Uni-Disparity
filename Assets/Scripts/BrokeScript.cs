@@ -8,7 +8,7 @@ public class BrokeScript : MonoBehaviour {
 	public GameObject[] tiles;
 
 	void SwitchReceived() {
-		broke.SetActive(true);
+		//broke.SetActive(true);
 		intact.SetActive(false);
 		foreach (GameObject tile in tiles) {
 			tile.SetActive(false);
