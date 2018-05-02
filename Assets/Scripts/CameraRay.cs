@@ -10,6 +10,7 @@ public class CameraRay : Receiver {
 	public ParticleSystem laserParticles;
 	bool laserActive;
 	RaycastHit hit;
+	public GameObject targetHit;
 	private Light laserLight;
 
 	Vector3 prevForward;
@@ -34,10 +35,12 @@ public class CameraRay : Receiver {
 	}
 
 	protected override void SwitchReceived() {
-		if (laserActive == false) {
-			shootRay();
-		} else if (laserActive == true) {
-			stopShootRay();
+		if (!isServer) {
+			if (laserActive == false) {
+				shootRay();
+			} else if (laserActive == true) {
+				stopShootRay();
+			}
 		}
 	}
 
@@ -76,7 +79,8 @@ public class CameraRay : Receiver {
 				Ray ray = new Ray(camera.transform.position, camera.transform.forward);
 				line.SetPosition(0, ray.origin);
 
-				if (Physics.Raycast(ray, out hit, 100)) {
+				if (Physics.Raycast(ray, out hit, 300)) {
+					targetHit = hit.rigidbody.gameObject;
 					line.SetPosition(1, hit.point);
 					laserParticles.transform.position = hit.point;
 					laserParticles.transform.rotation = Quaternion.LookRotation(ray.origin - hit.point);
@@ -85,7 +89,7 @@ public class CameraRay : Receiver {
 						heldPlayer.BroadcastMessage("TargetSwitch", hit.rigidbody.gameObject);
 					}
 				} else {
-					line.SetPosition(1, ray.GetPoint(100));
+					line.SetPosition(1, ray.GetPoint(300));
 				}
 			}
 			yield return 0;

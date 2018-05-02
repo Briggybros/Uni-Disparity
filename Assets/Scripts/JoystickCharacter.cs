@@ -139,9 +139,9 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	void TargetSwitch(GameObject target) {
 		if (isServer) {
-			CmdHit(target);
-		} else {
 			RpcHit(target);
+		} else {
+			CmdHit(target);
 		}
 	}
 
