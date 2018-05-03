@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
+  World: 66
   isColliderOpposite: 0
 --- !u!114 &160312222
 MonoBehaviour:
@@ -9301,7 +9301,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 469436846}
-  - component: {fileID: 469436847}
   m_Layer: 0
   m_Name: NormCol
   m_TagString: Untagged
@@ -9323,18 +9322,6 @@ Transform:
   m_Father: {fileID: 575731740}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &469436847
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469436845}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
-  m_Center: {x: 0.0000076293945, y: 0.00000011920929, z: -0.000000014901161}
 --- !u!1 &472009110 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
@@ -9422,7 +9409,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: 20
+  OpenHeight: 25
   DownSpeed: 10
   UpSpeed: 10
   looping: 1
@@ -9480,7 +9467,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 476586305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.72157, y: 0.6771918, z: 1.247667}
+  m_LocalPosition: {x: 14.72157, y: 0.23, z: 1.247667}
   m_LocalScale: {x: 0.37550253, y: 0.4915337, z: 0.37550253}
   m_Children: []
   m_Father: {fileID: 1770711268}
@@ -10586,6 +10573,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c08544c1414bee4fb75c1dbce72a761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &529013163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529013156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 1.28
+  y: -0.2687628
+  z: -0.6653967
 --- !u!1001 &529919501
 Prefab:
   m_ObjectHideFlags: 0
@@ -11692,7 +11693,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_DynamicOccludee
@@ -11812,6 +11813,20 @@ MonoBehaviour:
     i15: 5
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &575731747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575731741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 13.673
+  y: 3.41
+  z: -0.81
 --- !u!1001 &576224072
 Prefab:
   m_ObjectHideFlags: 0
@@ -12241,8 +12256,8 @@ MonoBehaviour:
   open: 0
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
-  timer: 5
-  OpenHeight: -20
+  timer: 6
+  OpenHeight: -30
   DownSpeed: 8
   UpSpeed: 8
   looping: 1
@@ -13314,7 +13329,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_ScaleInLightmap
@@ -14706,7 +14721,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_ScaleInLightmap
@@ -15359,7 +15374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_ScaleInLightmap
@@ -18717,7 +18732,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_DynamicOccludee
@@ -23774,7 +23789,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: 20
+  OpenHeight: 25
   DownSpeed: 10
   UpSpeed: 10
   looping: 1
@@ -23832,7 +23847,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1213447525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.72157, y: 0.683368, z: 4.0676665}
+  m_LocalPosition: {x: 14.72157, y: 0.23, z: 4.0676665}
   m_LocalScale: {x: 0.37550253, y: 0.4915337, z: 0.37550253}
   m_Children: []
   m_Father: {fileID: 1770711268}
@@ -27509,7 +27524,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_ScaleInLightmap
@@ -29186,7 +29201,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 3
-  OpenHeight: -20
+  OpenHeight: -25
   DownSpeed: 10
   UpSpeed: 10
   looping: 1
@@ -34232,6 +34247,7 @@ GameObject:
   - component: {fileID: 1811560095}
   - component: {fileID: 1811560094}
   - component: {fileID: 1811560098}
+  - component: {fileID: 1811560099}
   m_Layer: 0
   m_Name: DogSpikes
   m_TagString: Untagged
@@ -34347,6 +34363,20 @@ MonoBehaviour:
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
+--- !u!114 &1811560099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1811560092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -9.227381
+  y: 1.781286
+  z: 6.017858
 --- !u!1001 &1813333849
 Prefab:
   m_ObjectHideFlags: 0
@@ -34716,7 +34746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6c62c737ff09d944c942560310f39105, type: 3}
       propertyPath: m_DynamicOccludee
@@ -35293,7 +35323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ad3ad44acda93194a80a883c642543b8, type: 3}
       propertyPath: m_ScaleInLightmap
@@ -35631,6 +35661,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7767215, y: 3.3944411, z: 6.2586484}
   m_Center: {x: 0.27566287, y: 0.05831777, z: 1.1942046}
+--- !u!114 &1872696267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872696260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -0.28
+  y: 0.5912392
+  z: -0.62
 --- !u!1001 &1889407176
 Prefab:
   m_ObjectHideFlags: 0
