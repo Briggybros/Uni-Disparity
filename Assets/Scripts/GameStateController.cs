@@ -5,14 +5,14 @@ using UnityEngine.Networking;
 
 [RequireComponent(typeof(NetworkIdentity))]
 public class GameStateController : NetworkBehaviour {
-    
-    [SyncVar]
+
+    private static bool created = false;    
     private string level = "Menu";
     void Awake () {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    void Start () {
+        if (!created) {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+        }
         EventManager.AddEventListener("levelchange", OnLevelChange);
     }
 

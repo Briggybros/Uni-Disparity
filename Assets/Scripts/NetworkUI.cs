@@ -75,6 +75,7 @@ public class NetworkUI : MonoBehaviour {
 		}
 		foreach (string level in levels) {
 			MakeButton(levelSelectPanel, level, new Vector2(0, 0), () => {
+				EventManager.TriggerEvent("levelchange", level);
 				networkManager.onlineScene = level;
 				CreateInternetMatch(matchName);
 			});

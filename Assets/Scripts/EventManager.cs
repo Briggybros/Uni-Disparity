@@ -52,4 +52,11 @@ public class EventManager : MonoBehaviour {
             Debug.LogError("No such event found");
         }
     }
+
+    public static void TriggerEvent (string eventName, string data) {
+        GameEvent thisEvent = null;
+        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent)) {
+            thisEvent.Invoke(data);
+        }
+    }
 }
