@@ -91,9 +91,6 @@ public class PinMechanism : Receiver {
         OverlayOn = true;
         PinEntryUI.SetActive(true);
         Failed.SetActive(false);
-        for (int j = 0; j < 4; j++) {
-            CurrentPin[j] = 0;
-        }
     }
 
     public void DisablePinEntry () {
