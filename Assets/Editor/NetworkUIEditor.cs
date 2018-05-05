@@ -14,6 +14,7 @@ public class NetworkUIEditor : Editor {
     private SerializedProperty errorMessageObject;
     private SerializedProperty graphicsSlider;
     private SerializedProperty graphicsText;
+    private SerializedProperty muteButton;
     private SerializedProperty loadingPanel;
     private SerializedProperty levels;
 
@@ -26,6 +27,7 @@ public class NetworkUIEditor : Editor {
         errorMessageObject = serializedObject.FindProperty("errorMessageObject");
         graphicsSlider = serializedObject.FindProperty("graphicsSlider");
         graphicsText = serializedObject.FindProperty("graphicsText");
+        muteButton = serializedObject.FindProperty("muteButton");
         loadingPanel = serializedObject.FindProperty("loadingPanel");
         levels = serializedObject.FindProperty("levels");
     }
@@ -42,6 +44,7 @@ public class NetworkUIEditor : Editor {
         EditorGUILayout.PropertyField(errorMessageObject);
         EditorGUILayout.PropertyField(graphicsSlider);
         EditorGUILayout.PropertyField(graphicsText);
+        EditorGUILayout.PropertyField(muteButton);
 
         EditorGUILayout.PropertyField(levels);
         EditorGUI.indentLevel += 1;

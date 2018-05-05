@@ -18,6 +18,7 @@ public class NetworkUI : MonoBehaviour {
 	public GameObject errorMessageObject;
 	public GameObject graphicsSlider;
 	public GameObject graphicsText;
+	public GameObject muteButton;
 	public GameObject loadingPanel;
 	public string[] levels;
 
@@ -152,5 +153,10 @@ public class NetworkUI : MonoBehaviour {
 		int val = (int) graphicsSlider.GetComponent<Slider>().value;
 		graphicsText.GetComponent<Text>().text = "Quality: " + QualitySettings.names[val];
 		QualitySettings.SetQualityLevel(val, true);
+	}
+
+	public void MuteAudio() {
+		AudioListener.pause = !AudioListener.pause;
+		muteButton.GetComponentInChildren<Text>().text = AudioListener.pause ? "Unmute" : "Mute";
 	}
 }
