@@ -131,6 +131,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1282519163948930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4968834647956538}
+  - component: {fileID: 33699882584936650}
+  - component: {fileID: 23365875012119246}
+  m_Layer: 0
+  m_Name: Exclamation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1285566133475920
 GameObject:
   m_ObjectHideFlags: 1
@@ -291,24 +308,6 @@ GameObject:
   - component: {fileID: 4748426789788436}
   m_Layer: 10
   m_Name: Character2_Ctrl_RightAnkleEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1467115345388772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4454053686531924}
-  - component: {fileID: 33135909132442096}
-  - component: {fileID: 23422981030606922}
-  - component: {fileID: 114643209981461282}
-  m_Layer: 0
-  m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,19 +1162,6 @@ Transform:
   m_Father: {fileID: 4900302542525492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4454053686531924
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1467115345388772}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.019069672, y: 4.01, z: -0.02}
-  m_LocalScale: {x: 0.08244121, y: 0.18447575, z: 0.18447575}
-  m_Children: []
-  m_Father: {fileID: 4650104788517570}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4488769483078332
 Transform:
   m_ObjectHideFlags: 1
@@ -1267,7 +1253,7 @@ Transform:
   m_LocalPosition: {x: -153.13, y: 112.95, z: 79.872}
   m_LocalScale: {x: 5.8954287, y: 5.8954287, z: 5.8954287}
   m_Children:
-  - {fileID: 4454053686531924}
+  - {fileID: 4968834647956538}
   - {fileID: 4298536444443364}
   - {fileID: 4554624593071652}
   - {fileID: 4254099268509242}
@@ -1545,6 +1531,19 @@ Transform:
   m_Father: {fileID: 4932228590992676}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4968834647956538
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282519163948930}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.019069672, y: 4.01, z: -0.02}
+  m_LocalScale: {x: 0.08244121, y: 0.18447575, z: 0.18447575}
+  m_Children: []
+  m_Father: {fileID: 4650104788517570}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4972021312804508
 Transform:
   m_ObjectHideFlags: 1
@@ -1558,12 +1557,12 @@ Transform:
   m_Father: {fileID: 4298536444443364}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23422981030606922
+--- !u!23 &23365875012119246
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1467115345388772}
+  m_GameObject: {fileID: 1282519163948930}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1592,12 +1591,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33135909132442096
+--- !u!33 &33699882584936650
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1467115345388772}
+  m_GameObject: {fileID: 1282519163948930}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54633557854931950
 Rigidbody:
@@ -1659,6 +1658,7 @@ MonoBehaviour:
   touching: 0
   target: {fileID: 0}
   canMove: 1
+  animator: {fileID: 0}
   keys: []
   cores: []
 --- !u!114 &114636616416771536

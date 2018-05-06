@@ -22,12 +22,11 @@ public class JoystickCharacter : NetworkBehaviour {
 	private float fallMod = 2.5f;
 	private float lowMod = 2f;
 	private Rigidbody rb;
-    public Animator pedantsAnimator;
+    public Animator animator;
 	private bool impetus = false;
 	private bool jumpReq = false;
 	private int impCount = 0;
 	private int grabLax;
-	private Animator pedantsAnimator;
 	public List<string> keys = new List<string>();
 	public List<string> cores = new List<string>();
 
@@ -41,7 +40,7 @@ public class JoystickCharacter : NetworkBehaviour {
         interacting = false;
         touching = false;
         rb = GetComponent<Rigidbody>();
-        pedantsAnimator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 		grabLax = 0;
         mark = transform.GetChild(0).gameObject;
         mark.SetActive(false);
@@ -57,12 +56,7 @@ public class JoystickCharacter : NetworkBehaviour {
                 rigidbody.useGravity = false;
             }
         }
-		pedantsAnimator = GetComponent<Animator>();
     }
-
-	void Awake() {
-		pedantsAnimator = GetComponent<Animator>();
-	}
 
     [Command]
     void CmdsyncChange(string tag, GameObject target) {
@@ -181,7 +175,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	[Command]
 	void CmdAnim(bool running) {
-		pedantsAnimator.SetBool("Running", running);
+		animator.SetBool("Running", running);
 	}
 
 	[ClientRpc]
@@ -272,20 +266,20 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	void SyncAnim(bool running) {
 		if (isServer) {
-			RpcSyncAnim(gameObject, running);
+			RpcSyncAnim(running);
 		} else {
-			CmdSyncAnim(gameObject, running);
+			CmdSyncAnim(running);
 		}
 	}
 
 	[Command]
-	void CmdSyncAnim(GameObject character,bool running) {
-		RpcSyncAnim(character,running);
+	void CmdSyncAnim(bool running) {
+		RpcSyncAnim(running);
 	}
 
 	[ClientRpc]
-	void RpcSyncAnim(GameObject character,bool running) {
-		pedantsAnimator.SetBool("Running", running);
+	void RpcSyncAnim(bool running) {
+		animator.SetBool("Running", running);
 	}
 
 	static bool IsJump() {
