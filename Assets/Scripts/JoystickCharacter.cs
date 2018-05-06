@@ -18,6 +18,8 @@ public class JoystickCharacter : NetworkBehaviour
     private NetworkIdentity targetNetworkIdent;
     public GameObject target;
     public bool canMove;
+
+    private GameObject mark;
     private Vector3 cameraForwards;
     private Vector3 stickInput;
 	private float fallMod = 2.5f;
@@ -41,6 +43,8 @@ public class JoystickCharacter : NetworkBehaviour
         targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
 		grabLax = 0;
+        mark = transform.GetChild(0).gameObject;
+        mark.SetActive(false);
 
         if (!isLocalPlayer)
         {
@@ -121,6 +125,8 @@ public class JoystickCharacter : NetworkBehaviour
 			targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
 			target = c.gameObject;
 			touching = true;
+            //display exclamation mark
+            mark.SetActive(true);
 		}
 		if (c.gameObject.tag == "Enemy") {
 			ResetPlayerToCheckpoint();
@@ -140,6 +146,8 @@ public class JoystickCharacter : NetworkBehaviour
 			interacting = false;
 			target = null;
 			touching = false;
+            //hide exclamation mark
+            mark.SetActive(false);
 		}
 	}
 	void Block(GameObject thingy) {
