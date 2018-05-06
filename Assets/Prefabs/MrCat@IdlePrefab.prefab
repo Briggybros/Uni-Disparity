@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 4552867569876950}
   - component: {fileID: 33161550373457386}
   - component: {fileID: 23320860204515584}
+  - component: {fileID: 114223253616166606}
   m_Layer: 0
   m_Name: Exclamation
   m_TagString: Untagged
@@ -2152,6 +2153,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vis: 0
+--- !u!114 &114223253616166606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1080634794830116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9c5da0221ea6449b886f5fe83e6187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114310973964045854
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 4968834647956538}
   - component: {fileID: 33699882584936650}
   - component: {fileID: 23365875012119246}
+  - component: {fileID: 114429162251003164}
   m_Layer: 0
   m_Name: Exclamation
   m_TagString: Untagged
@@ -1642,6 +1643,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114429162251003164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282519163948930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9c5da0221ea6449b886f5fe83e6187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114497105381746730
 MonoBehaviour:
   m_ObjectHideFlags: 1
