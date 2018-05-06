@@ -22,7 +22,7 @@ public class JoystickCharacter : NetworkBehaviour {
 	private float fallMod = 2.5f;
 	private float lowMod = 2f;
 	private Rigidbody rb;
-    public Animator animator;
+    public Animator pedantsAnimator;
 	private bool impetus = false;
 	private bool jumpReq = false;
 	private int impCount = 0;
@@ -39,7 +39,7 @@ public class JoystickCharacter : NetworkBehaviour {
         interacting = false;
         touching = false;
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        pedantsAnimator = GetComponent<Animator>();
 		grabLax = 0;
         mark = transform.GetChild(0).gameObject;
         mark.SetActive(false);
@@ -57,6 +57,10 @@ public class JoystickCharacter : NetworkBehaviour {
         }
 		pedantsAnimator = GetComponent<Animator>();
     }
+
+	void Awake() {
+		pedantsAnimator = GetComponent<Animator>();
+	}
 
     [Command]
     void CmdsyncChange(string tag, GameObject target) {
@@ -175,7 +179,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	[Command]
 	void CmdAnim(bool running) {
-		animator.SetBool("Running", running);
+		pedantsAnimator.SetBool("Running", running);
 	}
 
 	[ClientRpc]
