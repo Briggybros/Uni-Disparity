@@ -22,7 +22,7 @@ public class JoystickCharacter : NetworkBehaviour {
 	private float fallMod = 2.5f;
 	private float lowMod = 2f;
 	private Rigidbody rb;
-    private Animator animator;
+    public Animator animator;
 	private bool impetus = false;
 	private bool jumpReq = false;
 	private int impCount = 0;
@@ -163,6 +163,24 @@ public class JoystickCharacter : NetworkBehaviour {
 	[ClientRpc]
 	void RpcHit(GameObject target) {
 		CmdHit(target);
+	}
+
+	void syncAnima(bool running, GameObject target) {
+		if (isServer) {
+			RpcAnim(target, running);
+		} else {
+			CmdAnim(target, running);
+		}
+	}
+
+	[Command]
+	void CmdAnim(GameObject target, bool running) {
+		target.GetComponent<Animator>().SetBool("Running", running);
+	}
+
+	[ClientRpc]
+	void RpcAnim(GameObject target, bool running) {
+		CmdAnim(target, running);
 	}
 
 	void Block(GameObject thingy) {
