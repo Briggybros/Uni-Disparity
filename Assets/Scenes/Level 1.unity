@@ -18836,11 +18836,11 @@ MonoBehaviour:
   broke: {fileID: 0}
   intact: {fileID: 314574985}
   tiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 714611724}
+  - {fileID: 1431510925}
+  - {fileID: 635566484}
+  - {fileID: 786675049}
+  - {fileID: 1859595805}
 --- !u!114 &935435250
 MonoBehaviour:
   m_ObjectHideFlags: 0
