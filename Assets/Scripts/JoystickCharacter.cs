@@ -165,22 +165,22 @@ public class JoystickCharacter : NetworkBehaviour {
 		CmdHit(target);
 	}
 
-	void syncAnima(bool running, GameObject target) {
+	void syncAnima(bool running) {
 		if (isServer) {
-			RpcAnim(target, running);
+			RpcAnim(running);
 		} else {
-			CmdAnim(target, running);
+			CmdAnim(running);
 		}
 	}
 
 	[Command]
-	void CmdAnim(GameObject target, bool running) {
+	void CmdAnim(bool running) {
 		animator.SetBool("Running", running);
 	}
 
 	[ClientRpc]
-	void RpcAnim(GameObject target, bool running) {
-		CmdAnim(target, running);
+	void RpcAnim(bool running) {
+		CmdAnim(running);
 	}
 
 	void Block(GameObject thingy) {
