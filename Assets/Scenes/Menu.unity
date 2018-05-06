@@ -3823,6 +3823,7 @@ GameObject:
   - component: {fileID: 1380941714}
   - component: {fileID: 1380941715}
   - component: {fileID: 1380941716}
+  - component: {fileID: 1380941717}
   m_Layer: 0
   m_Name: Network Manager
   m_TagString: Untagged
@@ -3867,7 +3868,7 @@ MonoBehaviour:
   m_AutoCreatePlayer: 0
   m_PlayerSpawnMethod: 1
   m_OfflineScene: Menu
-  m_OnlineScene: 
+  m_OnlineScene: Level 1
   m_SpawnPrefabs:
   - {fileID: 1007063932820308, guid: 31b32e2cef2d67240be27558844b93ca, type: 2}
   - {fileID: 1800447909254264, guid: 021cf54edc2e9d94d89d5cc98462980c, type: 2}
@@ -3938,6 +3939,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a77b12662c643378753bba6f62ecb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1380941717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380941713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d0aa9ab5e0b439bba6e3a60b37e045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BroadcastPort: 47777
+  m_BroadcastKey: 2222
+  m_BroadcastVersion: 1
+  m_BroadcastSubVersion: 1
+  m_BroadcastInterval: 1000
+  m_UseNetworkManager: 1
+  m_BroadcastData: HELLO
+  m_ShowGUI: 1
+  m_OffsetX: 0
+  m_OffsetY: 0
 --- !u!1 &1488347975
 GameObject:
   m_ObjectHideFlags: 0
