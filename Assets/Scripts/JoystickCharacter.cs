@@ -175,7 +175,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	[Command]
 	void CmdAnim(GameObject target, bool running) {
-		target.GetComponent<Animator>().SetBool("Running", running);
+		animator.SetBool("Running", running);
 	}
 
 	[ClientRpc]
