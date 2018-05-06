@@ -15,6 +15,8 @@ public class JoystickCharacter : NetworkBehaviour {
     public bool touching;
     public GameObject target;
     public bool canMove;
+
+    private GameObject mark;
     private Vector3 cameraForwards;
     private Vector3 stickInput;
 	private float fallMod = 2.5f;
@@ -25,6 +27,7 @@ public class JoystickCharacter : NetworkBehaviour {
 	private bool jumpReq = false;
 	private int impCount = 0;
 	private int grabLax;
+	private Animator pedantsAnimator;
 	public List<string> keys = new List<string>();
 	public List<string> cores = new List<string>();
 
@@ -38,6 +41,8 @@ public class JoystickCharacter : NetworkBehaviour {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 		grabLax = 0;
+        mark = transform.GetChild(0).gameObject;
+        mark.SetActive(false);
 
         if (!isLocalPlayer)
         {
@@ -50,6 +55,7 @@ public class JoystickCharacter : NetworkBehaviour {
                 rigidbody.useGravity = false;
             }
         }
+		pedantsAnimator = GetComponent<Animator>();
     }
 
     [Command]
@@ -115,6 +121,8 @@ public class JoystickCharacter : NetworkBehaviour {
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
 			target = c.gameObject;
 			touching = true;
+            //display exclamation mark
+            mark.SetActive(true);
 		}
 		if (c.gameObject.CompareTag("Enemy")) {
 			ResetPlayerToCheckpoint();
@@ -134,6 +142,8 @@ public class JoystickCharacter : NetworkBehaviour {
 			interacting = false;
 			target = null;
 			touching = false;
+            //hide exclamation mark
+            mark.SetActive(false);
 		}
 	}
 
@@ -213,16 +223,12 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	[Command]
 	void CmdBlocker( GameObject thingy) {
-		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcBlocker(thingy);
-		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[Command]
 	void CmdUnblock(GameObject thingy) {
-		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
 		RpcUnblocker(thingy);
-		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
 	}
 
 	[ClientRpc]
@@ -231,16 +237,29 @@ public class JoystickCharacter : NetworkBehaviour {
 		target.GetComponent<SlidingDoorBehaviour>().open = true;
 	}
 
-	[Command]
-	void CmdRevokeOwnership() {
-		//targetNetworkIdent.RemoveClientAuthority(connectionToClient);
-	}
-
 
 	[ClientRpc]
 	void RpcUnblocker(GameObject target) {
 		target.GetComponent<SlidingDoorBehaviour>().blocked = false;
 		target.GetComponent<SlidingDoorBehaviour>().open = false;
+	}
+
+	void SyncAnim(bool running) {
+		if (isServer) {
+			RpcSyncAnim(gameObject, running);
+		} else {
+			CmdSyncAnim(gameObject, running);
+		}
+	}
+
+	[Command]
+	void CmdSyncAnim(GameObject character,bool running) {
+		RpcSyncAnim(character,running);
+	}
+
+	[ClientRpc]
+	void RpcSyncAnim(GameObject character,bool running) {
+		pedantsAnimator.SetBool("Running", running);
 	}
 
 	static bool IsJump() {
@@ -340,7 +359,7 @@ public class JoystickCharacter : NetworkBehaviour {
         stickInput = StickInput();
         if (stickInput != Vector3.zero) {
             if (!animator.GetBool("Running")) {
-                animator.SetBool("Running", true);
+                SyncAnim(true);
             }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
             MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 30;
@@ -348,7 +367,7 @@ public class JoystickCharacter : NetworkBehaviour {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
         } else {
             if (animator.GetBool("Running")) {
-                animator.SetBool("Running", false);
+                SyncAnim(false);
             }
         }
 
