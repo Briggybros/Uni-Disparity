@@ -34,7 +34,9 @@ public class JoystickCharacter : NetworkBehaviour {
     private Vector3 HeldScale;
 
     void Start() {
-        joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
+		if (isLocalPlayer) {
+			joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
+		}
         pos = transform.localPosition;
         interacting = false;
         touching = false;
@@ -184,7 +186,9 @@ public class JoystickCharacter : NetworkBehaviour {
 
 	[ClientRpc]
 	void RpcAnim(bool running) {
+		GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
 		CmdAnim(running);
+		GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToClient);
 	}
 
 	void Block(GameObject thingy) {
@@ -293,14 +297,16 @@ public class JoystickCharacter : NetworkBehaviour {
     }
 
     void FixedUpdate() {
-		if (jumpReq) {
-			rb.AddForce(Vector3.up * 18.0f, ForceMode.Impulse);
-			jumpReq = false;
-		}
-		if (rb.velocity.y < 0) {
-			rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
-		} else if (rb.velocity.y > 0 && !IsJump()) {
-			rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+		if (isLocalPlayer) {
+			if (jumpReq) {
+				rb.AddForce(Vector3.up * 18.0f, ForceMode.Impulse);
+				jumpReq = false;
+			}
+			if (rb.velocity.y < 0) {
+				rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
+			} else if (rb.velocity.y > 0 && !IsJump()) {
+				rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+			}
 		}
 	}
 
@@ -373,9 +379,9 @@ public class JoystickCharacter : NetworkBehaviour {
         if (interacting && !isInteract()) {
             interacting = false;
         }
-        if (transform.position.y <= -2) {
+        /*if (transform.position.y <= -2) {
             ResetPlayerToCheckpoint();
-        }
+        }*/
 
         pos = transform.localPosition;
         stickInput = StickInput();
