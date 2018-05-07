@@ -13,6 +13,7 @@ public class Touch : EventTrigger {
 
 	public static bool Test(string label) {
 		foreach (string touchedLabel in buttonTouches) {
+			Debug.Log(touchedLabel);
 			if (touchedLabel == label) {
 				return true;
 			}

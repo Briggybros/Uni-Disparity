@@ -12705,11 +12705,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623855414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0023574, y: 1.2823228, z: 1.0059896}
-  m_Center: {x: -0.42883578, y: -0.17829242, z: 0.116519414}
+  m_Size: {x: 1.3333371, y: 1.2823228, z: 1.2025715}
+  m_Center: {x: -0.43343163, y: -0.17829242, z: 0.14629816}
 --- !u!54 &623855420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12759,6 +12759,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!65 &623855425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623855414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.94246864, y: 1.2372637, z: 0.92919314}
+  m_Center: {x: -0.44552842, y: -0.19776732, z: 0.094869815}
 --- !u!1001 &625714892
 Prefab:
   m_ObjectHideFlags: 0
@@ -15476,7 +15488,8 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114098013823457428, guid: 41ac88a3b45f246aeb3bfbf3355cff37, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 41ac88a3b45f246aeb3bfbf3355cff37, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &802837656
@@ -46048,6 +46061,7 @@ GameObject:
   - component: {fileID: 2137107643}
   - component: {fileID: 2137107647}
   - component: {fileID: 2137107642}
+  - component: {fileID: 2137107648}
   m_Layer: 0
   m_Name: DoorBlockerB
   m_TagString: Untagged
@@ -46188,6 +46202,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60c50ab5dcee6d49a6847c0158e3cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2137107648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137107640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 66
+  isColliderOpposite: 0
 --- !u!1001 &2138662965
 Prefab:
   m_ObjectHideFlags: 0

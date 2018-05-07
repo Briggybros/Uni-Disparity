@@ -316,7 +316,7 @@ public class JoystickCharacter : NetworkBehaviour {
     void FixedUpdate() {
 		if (isLocalPlayer) {
 			if (jumpReq) {
-				rb.AddForce(Vector3.up * 18.0f, ForceMode.Impulse);
+				rb.AddForce(Vector3.up * 36.0f, ForceMode.Impulse);
 				jumpReq = false;
 			}
 			if (rb.velocity.y < 0) {
@@ -396,9 +396,9 @@ public class JoystickCharacter : NetworkBehaviour {
         if (interacting && !isInteract()) {
             interacting = false;
         }
-        /*if (transform.position.y <= -2) {
+        if (transform.position.y <= -5) {
             ResetPlayerToCheckpoint();
-        }*/
+        }
 
         pos = transform.localPosition;
         stickInput = StickInput();
