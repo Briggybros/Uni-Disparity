@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 68760012}
   - component: {fileID: 68760019}
   - component: {fileID: 68760020}
+  - component: {fileID: 68760021}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -449,6 +450,20 @@ MonoBehaviour:
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
+--- !u!114 &68760021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68760010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -0.09
+  y: 0.34
+  z: -5.04
 --- !u!1001 &103966261
 Prefab:
   m_ObjectHideFlags: 0
@@ -2654,6 +2669,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &473899755 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1707622760111404, guid: 0979a00114c3b4f808cd829dec9a6c18,
+    type: 2}
+  m_PrefabInternal: {fileID: 473899754}
+--- !u!114 &473899756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 473899755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -0.43
+  y: 0.6700001
+  z: -0.07
 --- !u!1 &517138939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,6 +3409,7 @@ GameObject:
   - component: {fileID: 624232370}
   - component: {fileID: 624232369}
   - component: {fileID: 624232376}
+  - component: {fileID: 624232377}
   m_Layer: 0
   m_Name: PressurePlate (1)
   m_TagString: Untagged
@@ -3532,6 +3567,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60c50ab5dcee6d49a6847c0158e3cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &624232377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624232367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0.04
+  y: 0.3400002
+  z: 2.28
 --- !u!1001 &689243246
 Prefab:
   m_ObjectHideFlags: 0
@@ -5097,6 +5146,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.5536003, y: 6.5265694, z: 3.02905}
   m_Center: {x: 2.355249, y: 3.8717527, z: 1.4018618}
+--- !u!114 &930990058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930990047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 1.38
+  y: 0.6355519
+  z: -22.68
 --- !u!1 &964223648
 GameObject:
   m_ObjectHideFlags: 0
@@ -8749,6 +8812,7 @@ GameObject:
   - component: {fileID: 1705751183}
   - component: {fileID: 1705751182}
   - component: {fileID: 1705751184}
+  - component: {fileID: 1705751181}
   m_Layer: 0
   m_Name: PortcullisSpikesDog
   m_TagString: Untagged
@@ -8807,6 +8871,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76850984dce2ac44fa0512b6546e0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1705751181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1705751177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 2.567384
+  y: 4.095704
+  z: -6.109375
 --- !u!114 &1705751182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9277,6 +9355,7 @@ GameObject:
   - component: {fileID: 1823356592}
   - component: {fileID: 1823356594}
   - component: {fileID: 1823356595}
+  - component: {fileID: 1823356596}
   m_Layer: 0
   m_Name: PortcullisSpikes
   m_TagString: Untagged
@@ -9388,6 +9467,20 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &1823356596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1823356590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 2.567384
+  y: 4.095704
+  z: -6.109375
 --- !u!1001 &1830583973
 Prefab:
   m_ObjectHideFlags: 0
@@ -10222,6 +10315,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76850984dce2ac44fa0512b6546e0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2002800592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002800584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -1.05
+  y: 0.6355517
+  z: -9.47
 --- !u!1 &2002800593 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1329086747930500, guid: 5893199d6097fed4f8488dcda7aef74c,
