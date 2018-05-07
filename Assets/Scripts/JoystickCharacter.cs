@@ -29,6 +29,7 @@ public class JoystickCharacter : NetworkBehaviour {
 	private int grabLax;
 	public List<string> keys = new List<string>();
 	public List<string> cores = new List<string>();
+	private float MovementOffset;
 
     private Vector3 HeldScale;
 
@@ -44,6 +45,7 @@ public class JoystickCharacter : NetworkBehaviour {
 		grabLax = 0;
         mark = transform.GetChild(0).gameObject;
         mark.SetActive(false);
+		MovementOffset = 30.0f;
 
         if (!isLocalPlayer)
         {
@@ -105,19 +107,34 @@ public class JoystickCharacter : NetworkBehaviour {
 
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
-        if (c.gameObject.transform.parent.CompareTag("Bridge"))
+        /*if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
-        }
+			MovementOffset = 10.0f;
+        }*/
         if (c.gameObject.CompareTag("Enemy"))
         {
             ResetPlayerToCheckpoint();
         }
     }
 
+	void onTriggerWithin(Collider c) {
+		if (c.gameObject.transform.parent.CompareTag("Bridge")) {
+			transform.SetParent(c.gameObject.transform.parent.transform, true);
+			pos = transform.localPosition;
+			MovementOffset = 3.0f;
+		}
+	}
+
+
 	//Parents on interaction with collider
 	void OnTriggerEnter(Collider c) {
+		if (c.gameObject.transform.parent.CompareTag("Bridge")) {
+			transform.SetParent(c.gameObject.transform.parent.transform, true);
+			pos = transform.localPosition;
+			MovementOffset = 3.0f;
+		}
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
 			target = c.gameObject;
 			touching = true;
@@ -130,14 +147,20 @@ public class JoystickCharacter : NetworkBehaviour {
 	}
 
 	void OnCollisionExit(Collision c) {
-        if (c.gameObject.transform.parent.CompareTag("Bridge"))
+        /*if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.parent = null;
             pos = transform.localPosition;
-        }
+			MovementOffset = 30.0f;
+        }*/
     }
 
 	void OnTriggerExit(Collider c) {
+		if (c.gameObject.transform.parent.CompareTag("Bridge")) {
+			transform.parent = null;
+			pos = transform.localPosition;
+			MovementOffset = 30.0f;
+		}
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
 			interacting = false;
 			target = null;
@@ -384,8 +407,8 @@ public class JoystickCharacter : NetworkBehaviour {
                 SyncAnim(true);
             }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
-            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 30;
-            pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
+            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * MovementOffset;
+            pos +=  transform.localRotation * Vector3.forward * 0.1f  * MovementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
         } else {
             if (animator.GetBool("Running")) {
