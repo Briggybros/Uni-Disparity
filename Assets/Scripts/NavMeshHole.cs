@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class NavMeshHole : MonoBehaviour {
 	public bool isActive = false;
 
-	public void Toggle() {
-		isActive = !isActive;
+	public void Toggle(bool state) {
+		isActive = state;
 	}
 
 	public void OnTriggerEnter(Collider collider) {
