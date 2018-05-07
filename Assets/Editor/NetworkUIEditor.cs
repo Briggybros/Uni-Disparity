@@ -6,6 +6,7 @@ using UnityEditor.SceneManagement;
 [CustomEditor(typeof(NetworkUI))]
 public class NetworkUIEditor : Editor {
 
+    private SerializedProperty discovery;
     private SerializedProperty buttonClick;
     private SerializedProperty buttonPrefab;
     private SerializedProperty matchJoinPanelPrefab;
@@ -19,6 +20,7 @@ public class NetworkUIEditor : Editor {
     private SerializedProperty levels;
 
     public void OnEnable () {
+        discovery = serializedObject.FindProperty("discovery");
         buttonClick = serializedObject.FindProperty("buttonClick");
         buttonPrefab = serializedObject.FindProperty("buttonPrefab");
         matchJoinPanelPrefab = serializedObject.FindProperty("matchJoinPanelPrefab");
@@ -35,6 +37,7 @@ public class NetworkUIEditor : Editor {
     public override void OnInspectorGUI () {
         serializedObject.Update();
 
+        EditorGUILayout.PropertyField(discovery);
         EditorGUILayout.PropertyField(buttonClick);
         EditorGUILayout.PropertyField(buttonPrefab);
         EditorGUILayout.PropertyField(matchJoinPanelPrefab);

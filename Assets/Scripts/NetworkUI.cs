@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class NetworkUI : MonoBehaviour {
 
 
+	public NetworkDiscovery discovery;
     public AudioClip buttonClick;
 	public GameObject buttonPrefab;
 	public GameObject matchJoinPanelPrefab;
@@ -62,11 +63,13 @@ public class NetworkUI : MonoBehaviour {
 	}
 
 	public void StartButtonClicked () {
-		networkManager.StartMatchMaker();
+		// networkManager.StartMatchMaker();
+		discovery.Initialize();
 	}
 
 	public void StopMatchMaker () {
-		networkManager.StopMatchMaker();
+		// networkManager.StopMatchMaker();
+		discovery.StopBroadcast();
 	}
 
 	public void LevelSelect (Text textObject) {
@@ -84,7 +87,9 @@ public class NetworkUI : MonoBehaviour {
 
 	public void CreateInternetMatch (string matchName) {
 		CharacterPicker.SetWorld(CharacterPicker.WORLDS.CAT);
-		networkManager.matchMaker.CreateMatch(matchName, 10, true, "", "", "", 0, 0, OnInternetMatchCreate);
+		discovery.StartAsServer();
+		networkManager.StartHost();
+		// networkManager.matchMaker.CreateMatch(matchName, 4, true, "", "", "", 0, 0, OnInternetMatchCreate);
         ShowLevelPanel();
 	}
 
@@ -106,7 +111,8 @@ public class NetworkUI : MonoBehaviour {
     }
 
 	public void FindInternetMatch (Text textObject) {
-		networkManager.matchMaker.ListMatches(0 ,10, "", true, 0, 0, OnInternetMatchList);
+		// networkManager.matchMaker.ListMatches(0 ,10, "", true, 0, 0, OnInternetMatchList);
+		discovery.StartAsClient();
 	}
 
 	private void OnInternetMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> internetMatches) {

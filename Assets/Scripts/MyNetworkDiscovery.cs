@@ -9,7 +9,6 @@ public class MyNetworkDiscovery : NetworkDiscovery {
 	}
 
 	public override void OnReceivedBroadcast(string fromAddress, string data) {
-		Debug.Log("henlo");
 		MyNetworkManager.singleton.networkAddress = fromAddress;
 		MyNetworkManager.singleton.StartClient();
 	}

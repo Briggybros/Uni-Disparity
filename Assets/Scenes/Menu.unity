@@ -1904,6 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d749073b4504c8ea815a061afb2638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  discovery: {fileID: 1380941717}
   buttonClick: {fileID: 8300000, guid: 10e5aea11ca545d4fb76b46b67deb222, type: 3}
   buttonPrefab: {fileID: 1512204687729164, guid: 9f7a6786a6922454b931b64fb4937a3a,
     type: 2}
@@ -3861,19 +3862,19 @@ MonoBehaviour:
   m_NetworkAddress: localhost
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
-  m_ScriptCRCCheck: 1
+  m_ScriptCRCCheck: 0
   m_MaxDelay: 0.01
   m_LogLevel: 2
   m_PlayerPrefab: {fileID: 0}
   m_AutoCreatePlayer: 0
   m_PlayerSpawnMethod: 1
   m_OfflineScene: Menu
-  m_OnlineScene: Level 1
+  m_OnlineScene: 
   m_SpawnPrefabs:
   - {fileID: 1007063932820308, guid: 31b32e2cef2d67240be27558844b93ca, type: 2}
   - {fileID: 1800447909254264, guid: 021cf54edc2e9d94d89d5cc98462980c, type: 2}
   - {fileID: 1876376276672238, guid: 1ec24bd667f5bca4b8feb7893938e412, type: 2}
-  m_CustomConfig: 1
+  m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
     m_PacketSize: 1440
@@ -3916,7 +3917,7 @@ MonoBehaviour:
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
   m_Channels: 0500000000000000
-  m_UseWebSockets: 1
+  m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
   m_PacketLossPercentage: 0
