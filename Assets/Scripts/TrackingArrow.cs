@@ -27,7 +27,7 @@ public class TrackingArrow : NetworkBehaviour {
 		} else {
 			Vector3 lookAtPos = new Vector3(PlayerTransform.position.x, transform.position.y, PlayerTransform.position.z);
 
-			transform.LookAt(lookAtPos);
+			transform.forward = lookAtPos;
 			if (view != null && !view.vis) {
 				dispImage.color = Filled;
 			} else {
