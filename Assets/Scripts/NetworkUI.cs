@@ -22,6 +22,7 @@ public class NetworkUI : MonoBehaviour {
 	public GameObject muteButton;
 	public GameObject loadingPanel;
 	public string[] levels;
+	public bool isInternet = false;
 
 	private NetworkManager networkManager;
     private AudioSource audioout;
@@ -63,15 +64,22 @@ public class NetworkUI : MonoBehaviour {
         audioout = GameObject.Find("AudioOutput").GetComponent<AudioSource>();
 	}
 
-	public void StartButtonClicked () {
-		// networkManager.StartMatchMaker();
-		discovery.Initialize();
+	public void StartButtonClicked (bool isInternet) {
+		this.isInternet = isInternet;
+		if (isInternet) {
+			networkManager.StartMatchMaker();
+		} else {
+			discovery.Initialize();
+		}
 	}
 
 	public void StopMatchMaker () {
-		// networkManager.StopMatchMaker();
-		lookingForMatches = false;
-		discovery.StopBroadcast();
+		if (isInternet) {
+			networkManager.StopMatchMaker();
+		} else {
+			lookingForMatches = false;
+			// discovery.StopBroadcast();
+		}
 	}
 
 	public void LevelSelect (Text textObject) {
@@ -89,16 +97,18 @@ public class NetworkUI : MonoBehaviour {
 
 	public void CreateInternetMatch (string matchName) {
 		CharacterPicker.SetWorld(CharacterPicker.WORLDS.CAT);
-		discovery.StartAsServer();
-		networkManager.StartHost();
-		// networkManager.matchMaker.CreateMatch(matchName, 4, true, "", "", "", 0, 0, OnInternetMatchCreate);
+		if (isInternet) {
+			networkManager.matchMaker.CreateMatch(matchName, 4, true, "", "", "", 0, 0, OnInternetMatchCreate);
+		} else {
+			discovery.StartAsServer();
+			networkManager.StartHost();
+		}
         ShowLevelPanel();
 	}
 
 	private void OnInternetMatchCreate (bool success, string extendedInfo, MatchInfo matchInfo) {
 		if (success) {
 			NetworkServer.Listen(matchInfo, 9000);
-
 			networkManager.StartHost(matchInfo);
 		} else {
 			ShowError("Failed to connect to the match");
@@ -113,10 +123,13 @@ public class NetworkUI : MonoBehaviour {
     }
 
 	public void FindInternetMatch (Text textObject) {
-		// networkManager.matchMaker.ListMatches(0 ,10, "", true, 0, 0, OnInternetMatchList);
-		discovery.StartAsClient();
-		lookingForMatches = true;
-		StartCoroutine(FindMatches());
+		if (isInternet) {
+			networkManager.matchMaker.ListMatches(0 ,10, "", true, 0, 0, OnInternetMatchList);
+		} else {
+			discovery.StartAsClient();
+			lookingForMatches = true;
+			StartCoroutine(FindMatches());
+		}
 	}
 
 	private IEnumerator FindMatches() {
@@ -139,24 +152,22 @@ public class NetworkUI : MonoBehaviour {
 			networkManager.networkAddress = fromAddress;
 			networkManager.StartClient();
 			this.lookingForMatches = false;
-			// networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 			ShowLevelPanel();
 		}, () => {
 			CharacterPicker.SetWorld(CharacterPicker.WORLDS.SPECTATOR);
 			networkManager.networkAddress = fromAddress;
 			networkManager.StartClient();
 			this.lookingForMatches = false;
-			// networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
 			ShowLevelPanel();
 		});
 	}
 
 	private void OnInternetMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> internetMatches) {
+		foreach (Transform child in matchSelectPanel.transform) {
+			GameObject.Destroy(child.gameObject);
+		}
 		if (success) {
 			if (internetMatches.Count != 0) {
-				foreach (Transform child in matchSelectPanel.transform) {
-					GameObject.Destroy(child.gameObject);
-				}
 				foreach (MatchInfoSnapshot match in internetMatches) {
 					GameObject panel = Instantiate(matchJoinPanelPrefab, new Vector2(0, 0), Quaternion.identity);
 					panel.transform.SetParent(matchSelectPanel.transform, false);
