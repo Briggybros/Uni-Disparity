@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 68760012}
   - component: {fileID: 68760019}
   - component: {fileID: 68760020}
+  - component: {fileID: 68760021}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -449,6 +450,20 @@ MonoBehaviour:
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
+--- !u!114 &68760021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68760010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -0.09
+  y: 0.34
+  z: -5.04
 --- !u!1001 &103966261
 Prefab:
   m_ObjectHideFlags: 0
@@ -784,9 +799,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chats: []
-  avatars: []
-  chatPictures: 
+  chats:
+  - Look over there! It's the portal...if we could get to it I bet we can get back
+    together
+  - But there doesn;t seem to be a way through...can you see anything?
+  - Well there is this lever.... I wonder
+  avatars:
+  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  chatPictures: 000000000100000002000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
@@ -832,20 +854,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 41.12033, y: 16.49556, z: 30.844063}
-  m_Center: {x: -0.77249146, y: 3.4461746, z: 0.21606064}
+  m_Size: {x: 34.119495, y: 12.115189, z: 21.607468}
+  m_Center: {x: -0.6141567, y: 1.2559891, z: -2.782753}
 --- !u!4 &151792747
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151792743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7, y: 59.5, z: -103.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.051, y: 0.573, z: -0.746}
+  m_LocalScale: {x: 0.0102378735, y: 0.0102378735, z: 0.0102378735}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 964223654}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &155445509
 Prefab:
@@ -932,7 +954,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MrCatMaterial
+  m_Name: MrDogMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -945,7 +967,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 711bc3e6b64344638a616bc1960d4cc1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 770f050b625944ac9d368455cbe6b6fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1745,7 +1767,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 342015053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.1, y: 62, z: -108.6}
+  m_LocalPosition: {x: 3.2, y: 42.3, z: -83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2619,9 +2641,53 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65477763789384716, guid: 0979a00114c3b4f808cd829dec9a6c18,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 6.0594525
+      objectReference: {fileID: 0}
+    - target: {fileID: 65477763789384716, guid: 0979a00114c3b4f808cd829dec9a6c18,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -1.8712263
+      objectReference: {fileID: 0}
+    - target: {fileID: 65477763789384716, guid: 0979a00114c3b4f808cd829dec9a6c18,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -3.0611012
+      objectReference: {fileID: 0}
+    - target: {fileID: 65477763789384716, guid: 0979a00114c3b4f808cd829dec9a6c18,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0.7937666
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245420529368500, guid: 0979a00114c3b4f808cd829dec9a6c18,
+        type: 2}
+      propertyPath: isTransition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &473899755 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1707622760111404, guid: 0979a00114c3b4f808cd829dec9a6c18,
+    type: 2}
+  m_PrefabInternal: {fileID: 473899754}
+--- !u!114 &473899756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 473899755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -0.43
+  y: 0.6700001
+  z: -0.07
 --- !u!1 &517138939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,6 +3409,7 @@ GameObject:
   - component: {fileID: 624232370}
   - component: {fileID: 624232369}
   - component: {fileID: 624232376}
+  - component: {fileID: 624232377}
   m_Layer: 0
   m_Name: PressurePlate (1)
   m_TagString: Untagged
@@ -3500,6 +3567,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60c50ab5dcee6d49a6847c0158e3cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &624232377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624232367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0.04
+  y: 0.3400002
+  z: 2.28
 --- !u!1001 &689243246
 Prefab:
   m_ObjectHideFlags: 0
@@ -4179,7 +4260,8 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114098013823457428, guid: 41ac88a3b45f246aeb3bfbf3355cff37, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 41ac88a3b45f246aeb3bfbf3355cff37, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &832679677
@@ -5072,18 +5154,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 930990047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chats:
-  - This is a lever!
-  - Pressing interact on a lever causes an effect! Try it!
-  avatars:
-  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
-  chatPictures: 0000000000000000
-  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
-  repeated: 0
-  isTriggerable: 1
+  x: 1.38
+  y: 0.6355519
+  z: -22.68
 --- !u!1 &964223648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,15 +5256,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: MrCat
+  mTrackableName: MrDog
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Disparity.xml
   mExtendedTracking: 1
-  mAspectRatio: 1.6047618
+  mAspectRatio: 1.6279423
   mImageTargetType: 0
-  mWidth: 79.2235
-  mHeight: 127.13485
+  mWidth: 60
+  mHeight: 97.67654
 --- !u!4 &964223654
 Transform:
   m_ObjectHideFlags: 0
@@ -5197,9 +5273,12 @@ Transform:
   m_GameObject: {fileID: 964223648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -6.93, z: -5.42}
-  m_LocalScale: {x: 127.13485, y: 127.13485, z: 127.13485}
+  m_LocalScale: {x: 97.67654, y: 97.67654, z: 97.67654}
   m_Children:
   - {fileID: 1777689136}
+  - {fileID: 2143514665}
+  - {fileID: 151792747}
+  - {fileID: 1218322385}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6944,6 +7023,100 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altMaterial: {fileID: 2100000, guid: 31427b40815c140a1b1764117f4f4aa2, type: 2}
+--- !u!1 &1218322381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1218322385}
+  - component: {fileID: 1218322384}
+  - component: {fileID: 1218322383}
+  - component: {fileID: 1218322382}
+  m_Layer: 0
+  m_Name: EndText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1218322382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218322381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Right let's hope this portal takes us home
+  avatars:
+  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
+--- !u!114 &1218322383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218322381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!65 &1218322384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218322381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.47561, y: 10.4271965, z: 2.147293}
+  m_Center: {x: 2.0454178, y: 4.7135983, z: 8.935432}
+--- !u!4 &1218322385
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218322381}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.002, y: 0.513, z: 1.156}
+  m_LocalScale: {x: 0.0102378735, y: 0.0102378735, z: 0.0102378735}
+  m_Children: []
+  m_Father: {fileID: 964223654}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1238910071
 Prefab:
   m_ObjectHideFlags: 0
@@ -8070,7 +8243,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.3115727, y: 0, z: 0.5}
+      m_Extent: {x: 0.30713618, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -8123,7 +8296,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 75869fbe00000000000000bf000000000000803f00000000000000000000000075869fbe000000000000003f000000000000803f00000000000000000000803f75869f3e00000000000000bf000000000000803f000000000000803f0000000075869f3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: f4409dbe00000000000000bf00000000ffff7f3f000000000000000000000000f4409dbe000000000000003f00000000ffff7f3f00000000000000000000803ff4409d3e00000000000000bf00000000ffff7f3f000000000000803f00000000f4409d3e000000000000003f00000000ffff7f3f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -8514,7 +8687,7 @@ Transform:
   - {fileID: 1705751178}
   - {fileID: 232211915}
   m_Father: {fileID: 1777689136}
-  m_RootOrder: 20
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1655423976
 MonoBehaviour:
@@ -8639,6 +8812,7 @@ GameObject:
   - component: {fileID: 1705751183}
   - component: {fileID: 1705751182}
   - component: {fileID: 1705751184}
+  - component: {fileID: 1705751181}
   m_Layer: 0
   m_Name: PortcullisSpikesDog
   m_TagString: Untagged
@@ -8697,6 +8871,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76850984dce2ac44fa0512b6546e0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1705751181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1705751177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 2.567384
+  y: 4.095704
+  z: -6.109375
 --- !u!114 &1705751182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9133,11 +9321,11 @@ Transform:
   - {fileID: 1915292183}
   - {fileID: 1090274126}
   - {fileID: 721472637}
-  - {fileID: 1861228135}
+  - {fileID: 1655423975}
   - {fileID: 391423603}
   - {fileID: 362053918}
   - {fileID: 527695768}
-  - {fileID: 1655423975}
+  - {fileID: 1861228135}
   - {fileID: 2002800583}
   - {fileID: 68760011}
   - {fileID: 624232368}
@@ -9167,6 +9355,7 @@ GameObject:
   - component: {fileID: 1823356592}
   - component: {fileID: 1823356594}
   - component: {fileID: 1823356595}
+  - component: {fileID: 1823356596}
   m_Layer: 0
   m_Name: PortcullisSpikes
   m_TagString: Untagged
@@ -9278,6 +9467,20 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &1823356596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1823356590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 2.567384
+  y: 4.095704
+  z: -6.109375
 --- !u!1001 &1830583973
 Prefab:
   m_ObjectHideFlags: 0
@@ -9316,23 +9519,6 @@ Prefab:
     - target: {fileID: 4926346962038424, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926346962038424, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5937151
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926346962038424, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.5937151
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926346962038424, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.5937151
-      objectReference: {fileID: 0}
-    - target: {fileID: 224255685477996192, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3edbccd04d2864614ba7e4c1e3bc2223, type: 2}
@@ -9374,7 +9560,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef2cfb8b0f792648bd9378f5e493ae7, type: 3}
@@ -9683,7 +9869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5acec5348c247aa9469d833c32b693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  altMaterial: {fileID: 2100000, guid: 31427b40815c140a1b1764117f4f4aa2, type: 2}
+  altMaterial: {fileID: 0}
 --- !u!1001 &1915292182
 Prefab:
   m_ObjectHideFlags: 0
@@ -10129,6 +10315,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76850984dce2ac44fa0512b6546e0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2002800592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002800584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -1.05
+  y: 0.6355517
+  z: -9.47
 --- !u!1 &2002800593 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1329086747930500, guid: 5893199d6097fed4f8488dcda7aef74c,
@@ -10685,12 +10885,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chats:
-  - There's a hole here!
-  - But there doesn't seem to be anything here to lower that drawbridge...
+  - Woah! I almost fell down this hole.
+  - We need to lower that drawbridge if I'm to get across.
+  - Well I can't see any drawbridge but I can see something else that could help
   avatars:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  chatPictures: 0000000001000000
+  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  chatPictures: 000000000100000002000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
@@ -10712,10 +10914,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2143514661}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 2.2146683, z: -11.64}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.001, y: -0.04, z: 0.062}
+  m_LocalScale: {x: 0.0102378735, y: 0.0102378735, z: 0.0102378735}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 964223654}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
