@@ -32439,8 +32439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!195 &1696441225
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -32524,8 +32524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!114 &1696441233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32537,8 +32537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!114 &1696441234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32550,8 +32550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!1 &1697655329
 GameObject:
   m_ObjectHideFlags: 0
