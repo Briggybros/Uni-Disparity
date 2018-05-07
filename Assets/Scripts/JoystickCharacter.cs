@@ -15,6 +15,7 @@ public class JoystickCharacter : NetworkBehaviour {
     public bool touching;
     public GameObject target;
     public bool canMove;
+	public AudioClip deathSound;
 
     private GameObject mark;
     private Vector3 cameraForwards;
@@ -118,8 +119,8 @@ public class JoystickCharacter : NetworkBehaviour {
             pos = transform.localPosition;
 			MovementOffset = 10.0f;
         }*/
-        if (c.gameObject.CompareTag("Enemy"))
-        {
+        if (c.gameObject.CompareTag("Enemy")) {
+			audioout.PlayOneShot(deathSound);
             ResetPlayerToCheckpoint();
         }
     }
@@ -147,6 +148,7 @@ public class JoystickCharacter : NetworkBehaviour {
             mark.SetActive(true);
 		}
 		if (c.gameObject.CompareTag("Enemy")) {
+			audioout.PlayOneShot(deathSound);
 			ResetPlayerToCheckpoint();
 		}
 	}
@@ -363,8 +365,10 @@ public class JoystickCharacter : NetworkBehaviour {
 				jumpReq = false;
 			}
 			if (rb.velocity.y < 0) {
+				Debug.Log("falling");
 				rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
 			} else if (rb.velocity.y > 0 && !IsJump()) {
+				Debug.Log("climbing");
 				rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
 			}
 		}

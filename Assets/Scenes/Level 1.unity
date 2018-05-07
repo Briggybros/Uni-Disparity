@@ -10215,6 +10215,10 @@ Prefab:
       propertyPath: m_TagString
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
+      propertyPath: m_Name
+      value: key B
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
   m_IsPrefabParent: 0
@@ -10236,8 +10240,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.7767215, y: 3.3944411, z: 6.2586484}
-  m_Center: {x: 0.27566287, y: 0.05831777, z: 1.1942046}
+  m_Size: {x: 12.02505, y: 8.444315, z: 10.699829}
+  m_Center: {x: 0.4910493, y: 0.7444738, z: 1.2951704}
 --- !u!114 &529013158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14259,7 +14263,7 @@ GameObject:
   - component: {fileID: 673374289}
   - component: {fileID: 673374288}
   m_Layer: 0
-  m_Name: Spawn Position 2
+  m_Name: StartPosCAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15538,6 +15542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792154114}
   - component: {fileID: 792154113}
+  - component: {fileID: 792154115}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -15638,6 +15643,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &792154115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792154112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a466c1e462f744e4abb943f1d5cf68b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enable: 1
 --- !u!1001 &794252263
 Prefab:
   m_ObjectHideFlags: 0
@@ -21537,7 +21554,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1078061823
 Transform:
@@ -22661,7 +22678,7 @@ GameObject:
   - component: {fileID: 1115233729}
   - component: {fileID: 1115233728}
   m_Layer: 0
-  m_Name: Spawn Position 1
+  m_Name: StartPosDOG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22920,7 +22937,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1127248216
 Transform:
@@ -25714,7 +25731,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1297247689
 GameObject:
@@ -26149,7 +26166,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9503a2b1162b67f4a952ed0a3bd9e6fd, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9503a2b1162b67f4a952ed0a3bd9e6fd, type: 3}
@@ -29819,7 +29836,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1001 &1562996300
 Prefab:
@@ -32747,6 +32764,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 630a3dabcfb4f1747a33d4f81bbb4a61, type: 2}
+    - target: {fileID: 100124, guid: 69322d490e8947d489ad749452021aa7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69322d490e8947d489ad749452021aa7, type: 3}
   m_IsPrefabParent: 0
@@ -35980,7 +36001,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1844372535
 MonoBehaviour:
@@ -35993,7 +36014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c6bde3b1f26ef4db073824f1729443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 0}
+  key: {fileID: 529013156}
 --- !u!4 &1844372536
 Transform:
   m_ObjectHideFlags: 0
@@ -36674,7 +36695,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
       propertyPath: m_Name
-      value: key (1)
+      value: key A
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ea2515a40bb564401841e1cf7278a261, type: 3}
       propertyPath: m_TagString
@@ -36782,8 +36803,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.7767215, y: 3.3944411, z: 6.2586484}
-  m_Center: {x: 0.27566287, y: 0.05831777, z: 1.1942046}
+  m_Size: {x: 12.1156435, y: 9.260811, z: 9.147878}
+  m_Center: {x: -0.2142673, y: 0.13709944, z: -0.25042114}
 --- !u!114 &1872696267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40525,7 +40546,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2030819059
 Transform:
@@ -40708,7 +40729,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2041481649
 Transform:
@@ -41547,7 +41568,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2071925167
 Transform:
@@ -41617,7 +41638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c6bde3b1f26ef4db073824f1729443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 0}
+  key: {fileID: 1872696260}
 --- !u!114 &2071925171
 MonoBehaviour:
   m_ObjectHideFlags: 0
