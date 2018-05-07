@@ -12186,7 +12186,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8a3a91cab2c0c435db97f4f74784ae17, type: 2}
+  - {fileID: 2100000, guid: b4b8e972a5f364008bb22ef873efd0fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24581,7 +24581,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9746224d087e67b43b0fa5a1f1e1b0e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fed90b6418c5d46cd859e294cb82613f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -31307,7 +31307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144f295064ef14073becf8d4bf4b6ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockBreak: {fileID: 8300000, guid: 91f9f6e90035b4acbb99fa5add04c0f6, type: 3}
+  rockBreak: {fileID: 8300000, guid: fed90b6418c5d46cd859e294cb82613f, type: 3}
   camera: {fileID: 836853234}
   line: {fileID: 284257109}
   laserParticles: {fileID: 2099138333}
