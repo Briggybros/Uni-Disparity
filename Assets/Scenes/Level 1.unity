@@ -12359,6 +12359,10 @@ GameObject:
   - component: {fileID: 616963532}
   - component: {fileID: 616963531}
   - component: {fileID: 616963533}
+  - component: {fileID: 616963536}
+  - component: {fileID: 616963535}
+  - component: {fileID: 616963534}
+  - component: {fileID: 616963537}
   m_Layer: 0
   m_Name: Checkpoint3
   m_TagString: CheckpointB
@@ -12403,6 +12407,89 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 31.139725, y: 20.960545, z: 17.21785}
   m_Center: {x: 2.9176407, y: 8.955839, z: 3.6121902}
+--- !u!114 &616963534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616963530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 66
+  isColliderOpposite: 0
+--- !u!114 &616963535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616963530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Well....we aren't back home yet.
+  - Seems we are in some kind of...castle?
+  - Aha! There's another transporter on that bridge over there!
+  - But it's damaged...if only I had a BOLT and a COG, I could fix it!
+  avatars:
+  - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  - {fileID: 21300000, guid: 3aa36b03edfdb0747b05b75db6ed23e4, type: 3}
+  chatPictures: 02000000010000000100000000000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
+--- !u!114 &616963536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616963530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &616963537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616963530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -9.55381
+  y: 1.780192
+  z: 9.023666
 --- !u!1001 &618365751
 Prefab:
   m_ObjectHideFlags: 0
