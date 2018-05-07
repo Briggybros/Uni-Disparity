@@ -3902,6 +3902,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049615048, y: 11.972769, z: 0.23483726}
   m_Center: {x: -1.5063348, y: 6.4863887, z: -1.0133023}
+--- !u!114 &192342909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192342907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 66
+  isColliderOpposite: 0
 --- !u!1001 &203678003
 Prefab:
   m_ObjectHideFlags: 0
@@ -4530,6 +4543,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049615048, y: 11.972767, z: 0.2348373}
   m_Center: {x: -1.5063341, y: 6.486376, z: -1.0133023}
+--- !u!114 &242016849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242016847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 66
+  isColliderOpposite: 0
 --- !u!1001 &249397304
 Prefab:
   m_ObjectHideFlags: 0
@@ -12218,8 +12244,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4894044, y: 3.4816668, z: 2.7693846}
-  m_Center: {x: -0.085563235, y: 0.12144164, z: 0.018723143}
+  m_Size: {x: 2.4894044, y: 3.2311394, z: 2.7693846}
+  m_Center: {x: -0.085563235, y: -0.0038220903, z: 0.018723143}
 --- !u!114 &597711798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20816,7 +20842,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1707622760111404, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114245420529368500, guid: 0979a00114c3b4f808cd829dec9a6c18,
         type: 2}
@@ -20848,12 +20874,12 @@ Prefab:
     - target: {fileID: 65477763789384716, guid: 0979a00114c3b4f808cd829dec9a6c18,
         type: 2}
       propertyPath: m_Center.z
-      value: 0.663845
+      value: 2.7155316
       objectReference: {fileID: 0}
     - target: {fileID: 65477763789384716, guid: 0979a00114c3b4f808cd829dec9a6c18,
         type: 2}
       propertyPath: m_Size.z
-      value: 5.799603
+      value: 9.902977
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
