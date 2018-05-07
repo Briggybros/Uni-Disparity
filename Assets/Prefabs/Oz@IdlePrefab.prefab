@@ -1670,6 +1670,7 @@ MonoBehaviour:
   touching: 0
   target: {fileID: 0}
   canMove: 1
+  deathSound: {fileID: 8300000, guid: 4194fe6cd165845cbbafe1ee2fdf09dd, type: 3}
   stickInput: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
   keys: []
