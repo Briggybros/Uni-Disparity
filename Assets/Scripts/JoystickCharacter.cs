@@ -15,6 +15,7 @@ public class JoystickCharacter : NetworkBehaviour {
     public bool touching;
     public GameObject target;
     public bool canMove;
+	public AudioClip deathSound;
 
     private GameObject mark;
     private Vector3 cameraForwards;
@@ -118,8 +119,8 @@ public class JoystickCharacter : NetworkBehaviour {
             pos = transform.localPosition;
 			MovementOffset = 10.0f;
         }*/
-        if (c.gameObject.CompareTag("Enemy"))
-        {
+        if (c.gameObject.CompareTag("Enemy")) {
+			audioout.PlayOneShot(deathSound);
             ResetPlayerToCheckpoint();
         }
     }
@@ -147,6 +148,7 @@ public class JoystickCharacter : NetworkBehaviour {
             mark.SetActive(true);
 		}
 		if (c.gameObject.CompareTag("Enemy")) {
+			audioout.PlayOneShot(deathSound);
 			ResetPlayerToCheckpoint();
 		}
 	}
