@@ -11671,6 +11671,8 @@ MonoBehaviour:
   yRot: 0
   xRot: 1
   autoClose: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!65 &576224077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11720,6 +11722,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderOpposite: 0
+--- !u!114 &576224081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576224074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 96
+    i1: 137
+    i2: 172
+    i3: 128
+    i4: 71
+    i5: 202
+    i6: 249
+    i7: 212
+    i8: 57
+    i9: 228
+    i10: 96
+    i11: 245
+    i12: 148
+    i13: 224
+    i14: 103
+    i15: 243
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &576224082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576224074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: -0.04421575
+  z: -0.9659955
 --- !u!1001 &579295751
 Prefab:
   m_ObjectHideFlags: 0
@@ -13279,12 +13327,14 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 3
   Turning: 0
-  MinRot: 360
+  MinRot: 0
   MaxRot: 75
   Facing: 0
   yRot: 0
   xRot: 1
   autoClose: 0
+  players: []
+  heldPlayer: {fileID: 0}
 --- !u!114 &645351793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13345,6 +13395,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderOpposite: 0
+--- !u!114 &645351798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645351790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 96
+    i1: 137
+    i2: 172
+    i3: 128
+    i4: 71
+    i5: 202
+    i6: 249
+    i7: 212
+    i8: 57
+    i9: 228
+    i10: 96
+    i11: 245
+    i12: 148
+    i13: 224
+    i14: 103
+    i15: 243
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &645351799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645351790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: -0.04421902
+  z: 0.97
 --- !u!1001 &655993290
 Prefab:
   m_ObjectHideFlags: 0
@@ -32439,8 +32535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!195 &1696441225
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -32524,8 +32620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!114 &1696441233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32537,8 +32633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!114 &1696441234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32550,8 +32646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  World: 65
-  isColliderOpposite: 1
+  World: 66
+  isColliderOpposite: 0
 --- !u!1 &1697655329
 GameObject:
   m_ObjectHideFlags: 0

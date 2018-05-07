@@ -208,22 +208,6 @@ public class JoystickCharacter : NetworkBehaviour {
 		GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToClient);
 	}
 
-	void Block(GameObject thingy) {
-		if (isServer) {
-			RpcBlocker(thingy);
-		} else {
-			CmdBlocker(thingy);
-		}
-	}
-
-	void Unblock(GameObject thingy) {
-		if (isServer) {
-			RpcUnblocker(thingy);
-		} else {
-			CmdUnblock(thingy);
-		}
-	}
-
     void IncCount(GameObject thingy){
         if(isServer){
             RpcCount(thingy);
@@ -259,9 +243,20 @@ public class JoystickCharacter : NetworkBehaviour {
         thingy.GetComponent<PortalEnd>().count--;
     }
 
-	[Command]
-	void CmdForceOwnership() {
-		//targetNetworkIdent.AssignClientAuthority(connectionToClient);
+	void Block(GameObject thingy) {
+		if (isServer) {
+			RpcBlocker(thingy);
+		} else {
+			CmdBlocker(thingy);
+		}
+	}
+
+	void Unblock(GameObject thingy) {
+		if (isServer) {
+			RpcUnblocker(thingy);
+		} else {
+			CmdUnblock(thingy);
+		}
 	}
 
 	[Command]
@@ -286,6 +281,49 @@ public class JoystickCharacter : NetworkBehaviour {
 		target.GetComponent<SlidingDoorBehaviour>().blocked = false;
 		target.GetComponent<SlidingDoorBehaviour>().open = false;
 	}
+
+
+	void Trap(GameObject thingy) {
+		if (isServer) {
+			RpcTrapper(thingy);
+		} else {
+			CmdTrapper(thingy);
+		}
+	}
+
+	void UnTrap(GameObject thingy) {
+		if (isServer) {
+			RpcUnTrapper(thingy);
+		} else {
+			CmdUnTrapper(thingy);
+		}
+	}
+
+	[Command]
+	void CmdTrapper(GameObject thingy) {
+		RpcBlocker(thingy);
+	}
+
+	[Command]
+	void CmdUnTrapper(GameObject thingy) {
+		RpcUnblocker(thingy);
+	}
+
+	[ClientRpc]
+	void RpcTrapper(GameObject target) {
+		target.GetComponent<TrapdoorBehaviour>().open = true;
+		target.GetComponent<TrapdoorBehaviour>().Turning = true;
+		target.GetComponent<NavMeshHole>().Toggle(true);
+	}
+
+
+	[ClientRpc]
+	void RpcUnTrapper(GameObject target) {
+		target.GetComponent<TrapdoorBehaviour>().open = false;
+		target.GetComponent<TrapdoorBehaviour>().Turning = true;
+		target.GetComponent<NavMeshHole>().Toggle(false);
+	}
+
 
 	void SyncAnim(bool running) {
 		if (isServer) {
