@@ -26,6 +26,7 @@ public class NetworkUI : MonoBehaviour {
 	private NetworkManager networkManager;
     private AudioSource audioout;
 	private IEnumerator errorHideCoroutine = null;
+	private bool lookingForMatches = false;
 
 	private GameObject MakeButton (GameObject container, string text, Vector2 position, UnityAction clickListener = null) {
 		GameObject button = Instantiate(buttonPrefab, new Vector2(0, 0), Quaternion.identity);
@@ -69,6 +70,7 @@ public class NetworkUI : MonoBehaviour {
 
 	public void StopMatchMaker () {
 		// networkManager.StopMatchMaker();
+		lookingForMatches = false;
 		discovery.StopBroadcast();
 	}
 
@@ -113,6 +115,40 @@ public class NetworkUI : MonoBehaviour {
 	public void FindInternetMatch (Text textObject) {
 		// networkManager.matchMaker.ListMatches(0 ,10, "", true, 0, 0, OnInternetMatchList);
 		discovery.StartAsClient();
+		lookingForMatches = true;
+		StartCoroutine(FindMatches());
+	}
+
+	private IEnumerator FindMatches() {
+		while (lookingForMatches) {
+			foreach (Transform child in matchSelectPanel.transform) {
+				GameObject.Destroy(child.gameObject);
+			}
+			foreach (string addr in discovery.broadcastsReceived.Keys) {
+				AddClientMatch(addr);
+			}
+			yield return new WaitForSeconds(1);
+		}
+	}
+
+	public void AddClientMatch(string fromAddress) {
+		GameObject panel = Instantiate(matchJoinPanelPrefab, new Vector2(0, 0), Quaternion.identity);
+		panel.transform.SetParent(matchSelectPanel.transform, false);
+		panel.GetComponent<MatchJoinPanelInit>().Init(fromAddress, () => {
+			CharacterPicker.SetWorld(CharacterPicker.WORLDS.DOG);
+			networkManager.networkAddress = fromAddress;
+			networkManager.StartClient();
+			this.lookingForMatches = false;
+			// networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
+			ShowLevelPanel();
+		}, () => {
+			CharacterPicker.SetWorld(CharacterPicker.WORLDS.SPECTATOR);
+			networkManager.networkAddress = fromAddress;
+			networkManager.StartClient();
+			this.lookingForMatches = false;
+			// networkManager.matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnJoinInternetMatch);
+			ShowLevelPanel();
+		});
 	}
 
 	private void OnInternetMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> internetMatches) {
