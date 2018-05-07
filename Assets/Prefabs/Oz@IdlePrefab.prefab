@@ -1670,9 +1670,11 @@ MonoBehaviour:
   touching: 0
   target: {fileID: 0}
   canMove: 1
+  stickInput: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
   keys: []
   cores: []
+  soundEffect: {fileID: 8300000, guid: 3cfd9b8fd120447cea78240bbe6a4dcf, type: 3}
 --- !u!114 &114636616416771536
 MonoBehaviour:
   m_ObjectHideFlags: 1

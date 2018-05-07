@@ -18,6 +18,7 @@ public class PulseTrigger : InteractTrigger {
 				}
 				interacted = false;
 				this.tag = "Static";
+                audioout.PlayOneShot(soundEffect);
 			}
 		} else {
 		}

@@ -2184,6 +2184,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   keys: []
   cores: []
+  soundEffect: {fileID: 8300000, guid: 3cfd9b8fd120447cea78240bbe6a4dcf, type: 3}
 --- !u!114 &114888986527566380
 MonoBehaviour:
   m_ObjectHideFlags: 1

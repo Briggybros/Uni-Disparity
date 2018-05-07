@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchTrigger : InteractTrigger {
-
-	private Collider c;
+    
+    private Collider c;
 
 	protected override void Start() {
+        base.Start();
 		c = GetComponent<Collider>();
 	}
 
@@ -16,6 +17,7 @@ public class SwitchTrigger : InteractTrigger {
 				foreach (GameObject target in base.targets) {
 					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 				}
+                audioout.PlayOneShot(soundEffect);
 				interacted = false;
 				this.tag = "Static";
 			}
@@ -28,7 +30,7 @@ public class SwitchTrigger : InteractTrigger {
 				foreach (GameObject target in base.targets) {
 					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
 				}
-			}
+            }
 		}
 	}
 

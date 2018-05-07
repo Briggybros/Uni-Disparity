@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CollisionTrigger : Trigger {
 
-
     public GameObject owner;
 	public bool playerInteract;
 
-    protected override void Start(){
+    protected override void Start()
+    {
         base.Start();
     }
 
@@ -20,6 +20,7 @@ public class CollisionTrigger : Trigger {
             foreach (GameObject target in base.targets) {
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("EnterFlag");
             }
+            audioout.PlayOneShot(soundEffect);
         }
     }
 
