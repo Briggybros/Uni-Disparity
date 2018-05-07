@@ -363,8 +363,10 @@ public class JoystickCharacter : NetworkBehaviour {
 				jumpReq = false;
 			}
 			if (rb.velocity.y < 0) {
+				Debug.Log("falling");
 				rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
 			} else if (rb.velocity.y > 0 && !IsJump()) {
+				Debug.Log("climbing");
 				rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
 			}
 		}

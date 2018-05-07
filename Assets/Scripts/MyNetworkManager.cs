@@ -13,7 +13,8 @@ public class MyNetworkManager : NetworkManager {
 		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
 		CharacterPicker.WORLDS world = message.world;
 		GameObject spawn = spawnPrefabs[world == CharacterPicker.WORLDS.CAT ? 0 : CharacterPicker.IsSpectator(world) ? 2 : 1];
-		Transform startPos = GetStartPosition();
+		Transform startPos = startPositions.Find(x => x.gameObject.name == "StartPos" + world.ToString());
+		//Transform startPos = GetStartPosition();
 		if (CharacterPicker.IsSpectator()){
 			startPos.position += new Vector3(0, 10, 0);
 		}
