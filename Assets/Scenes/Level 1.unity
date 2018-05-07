@@ -12185,7 +12185,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7146325f67edd44448f967ce32837737, type: 2}
+  - {fileID: 2100000, guid: 8a3a91cab2c0c435db97f4f74784ae17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20660,7 +20660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1707622760111404, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114245420529368500, guid: 0979a00114c3b4f808cd829dec9a6c18,
         type: 2}
@@ -42023,7 +42023,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 200504239
+  randomSeed: 1978419238
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -42175,8 +42175,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.1
+      scalar: 3.51
+      minScalar: 3.16
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -42488,7 +42488,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0.51
     randomPositionAmount: 0.09
     radius:
-      value: 0.3
+      value: 6.13
       mode: 0
       spread: 0
       speed:
@@ -45398,7 +45398,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099138332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.22, z: 0}
+  m_LocalPosition: {x: 0, y: 2.22, z: 0.18}
   m_LocalScale: {x: 1.0010165, y: 1.0010167, z: 1.0010167}
   m_Children: []
   m_Father: {fileID: 891223869}
