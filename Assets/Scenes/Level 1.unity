@@ -10063,7 +10063,7 @@ Transform:
   m_LocalScale: {x: 0.11870561, y: 0.46911922, z: 0.11870561}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &528195353
 MonoBehaviour:
@@ -10333,6 +10333,25 @@ MonoBehaviour:
   x: 1.28
   y: -0.2687628
   z: -0.6653967
+--- !u!114 &529013164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529013156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Yes! I bet this key unlocks that chest by the brazier!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
 --- !u!1001 &529919501
 Prefab:
   m_ObjectHideFlags: 0
@@ -12017,6 +12036,9 @@ GameObject:
   - component: {fileID: 597711792}
   - component: {fileID: 597711789}
   - component: {fileID: 597711790}
+  - component: {fileID: 597711797}
+  - component: {fileID: 597711796}
+  - component: {fileID: 597711795}
   m_Layer: 9
   m_Name: Spike10
   m_TagString: Enemy
@@ -12128,6 +12150,71 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597711788}
   m_Mesh: {fileID: 4300000, guid: 370837579db09b846bda0ae2418d0754, type: 3}
+--- !u!114 &597711795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597711788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Eeeep! I just got hurt...but there's nothing there.
+  - I wonder if the worlds have collided and o-Z can see something
+  avatars:
+  - {fileID: 21300000, guid: a4c0e79795476fe4ab56eeac6f26c367, type: 3}
+  - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
+  chatPictures: 0000000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
+--- !u!114 &597711796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597711788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 55
+    i1: 8
+    i2: 55
+    i3: 87
+    i4: 157
+    i5: 176
+    i6: 155
+    i7: 132
+    i8: 107
+    i9: 218
+    i10: 10
+    i11: 226
+    i12: 65
+    i13: 141
+    i14: 7
+    i15: 84
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!65 &597711797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597711788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4894044, y: 3.4816668, z: 2.7693846}
+  m_Center: {x: -0.085563235, y: 0.12144164, z: 0.018723143}
 --- !u!1001 &613641112
 Prefab:
   m_ObjectHideFlags: 0
@@ -12287,7 +12374,7 @@ Transform:
   m_LocalScale: {x: 0.080000006, y: 0.080000006, z: 0.080000006}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 51
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &616963533
 BoxCollider:
@@ -12866,6 +12953,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.94246864, y: 1.2372637, z: 0.92919314}
   m_Center: {x: -0.44552842, y: -0.19776732, z: 0.094869815}
+--- !u!114 &623855426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623855414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - This looks heavy enough to keep one of those pressure plates weighed down!
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
 --- !u!1001 &625714892
 Prefab:
   m_ObjectHideFlags: 0
@@ -17390,7 +17496,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 57
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &863772918
 MonoBehaviour:
@@ -17615,7 +17721,7 @@ Transform:
   - {fileID: 891937578}
   - {fileID: 1633930135}
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891937572
 GameObject:
@@ -21321,6 +21427,9 @@ GameObject:
   - component: {fileID: 1078061824}
   - component: {fileID: 1078061826}
   - component: {fileID: 1078061827}
+  - component: {fileID: 1078061830}
+  - component: {fileID: 1078061829}
+  - component: {fileID: 1078061828}
   m_Layer: 9
   m_Name: Box
   m_TagString: Untagged
@@ -21409,6 +21518,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!114 &1078061828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078061822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Finally! I can get the key and head back to the transporter.
+  avatars:
+  - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
+--- !u!114 &1078061829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078061822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 1
+    i1: 138
+    i2: 28
+    i3: 159
+    i4: 135
+    i5: 65
+    i6: 173
+    i7: 244
+    i8: 153
+    i9: 100
+    i10: 50
+    i11: 171
+    i12: 245
+    i13: 9
+    i14: 58
+    i15: 43
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!65 &1078061830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078061822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7259877, y: 1.6720446, z: 1.7953005}
+  m_Center: {x: 0.36299092, y: 0.33601847, z: 0.06525786}
 --- !u!1001 &1078341624
 Prefab:
   m_ObjectHideFlags: 0
@@ -23580,12 +23752,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1173194162}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 158.9, y: 159.1, z: 3.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.79819, y: 2.388193, z: 0.18366668}
+  m_LocalScale: {x: 0.080000006, y: 0.080000006, z: 0.080000006}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1770711268}
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1173194165
 BoxCollider:
@@ -24541,7 +24713,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1257180488
 Prefab:
@@ -25473,7 +25645,7 @@ Transform:
   m_LocalScale: {x: 0.11870561, y: 0.46911922, z: 0.11870561}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1297247691
 MonoBehaviour:
@@ -26174,7 +26346,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2dec5269d2c172a43845101b4d7f1671, type: 3}
       propertyPath: m_RootOrder
-      value: 52
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2dec5269d2c172a43845101b4d7f1671, type: 3}
       propertyPath: m_LocalScale.x
@@ -27371,7 +27543,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 56
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1415363582
 MonoBehaviour:
@@ -31032,6 +31204,7 @@ GameObject:
   - component: {fileID: 1633930143}
   - component: {fileID: 1633930145}
   - component: {fileID: 1633930146}
+  - component: {fileID: 1633930147}
   m_Layer: 0
   m_Name: Base1
   m_TagString: Untagged
@@ -31237,6 +31410,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8225958, y: 3.118092, z: 2.5373297}
   m_Center: {x: -0.0000019073486, y: 0, z: -0.0000019073486}
+--- !u!114 &1633930147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633930134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - I wonder if this laser is meant to break something?
+  - But there doesnt seem to be anything to break in this world...
+  avatars:
+  - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
+  chatPictures: 0000000000000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
 --- !u!1 &1637801231
 GameObject:
   m_ObjectHideFlags: 0
@@ -31268,7 +31461,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 62
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1637801233
 MonoBehaviour:
@@ -33794,7 +33987,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 63
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1767775233
 MonoBehaviour:
@@ -33961,6 +34154,7 @@ Transform:
   - {fileID: 818397453}
   - {fileID: 1061822185}
   - {fileID: 114493334}
+  - {fileID: 1173194164}
   - {fileID: 891223869}
   - {fileID: 1918573875}
   - {fileID: 616963532}
@@ -34010,7 +34204,7 @@ Transform:
   m_LocalScale: {x: 0.11870561, y: 0.46911922, z: 0.11870561}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1776065164
 MonoBehaviour:
@@ -34964,7 +35158,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 59
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1808457469
 MonoBehaviour:
@@ -36502,6 +36696,27 @@ MonoBehaviour:
   x: -0.28
   y: 0.5912392
   z: -0.62
+--- !u!114 &1872696268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872696260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - A key! I bet that unlocks the chest
+  - '...but it''s guarded by that mean wolf.'
+  avatars:
+  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  - {fileID: 21300000, guid: 3aa36b03edfdb0747b05b75db6ed23e4, type: 3}
+  chatPictures: 0000000001000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
 --- !u!1001 &1889407176
 Prefab:
   m_ObjectHideFlags: 0
@@ -37214,7 +37429,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 60
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1918018223
 MonoBehaviour:
@@ -37349,7 +37564,7 @@ Transform:
   m_LocalScale: {x: 0.080000006, y: 0.080000006, z: 0.080000006}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 50
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1918573876
 BoxCollider:
@@ -38829,7 +39044,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 61
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1965512704
 MonoBehaviour:
@@ -40383,6 +40598,9 @@ GameObject:
   - component: {fileID: 2041481650}
   - component: {fileID: 2041481652}
   - component: {fileID: 2041481653}
+  - component: {fileID: 2041481656}
+  - component: {fileID: 2041481655}
+  - component: {fileID: 2041481654}
   m_Layer: 8
   m_Name: Box
   m_TagString: Untagged
@@ -40471,6 +40689,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderOpposite: 0
+--- !u!65 &2041481654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041481648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9297377, y: 0.9999999, z: 1.4583127}
+  m_Center: {x: 0.4648689, y: -0.000003841044, z: -0.044215288}
+--- !u!114 &2041481655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041481648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b375fb2d380264aee8d4560b31b32024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chats:
+  - Yes! Time to get this bolt and head back to the transporter!
+  avatars:
+  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  chatPictures: 00000000
+  textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
+  repeated: 0
+  isTriggerable: 1
+--- !u!114 &2041481656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041481648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 1
+    i1: 138
+    i2: 28
+    i3: 159
+    i4: 135
+    i5: 65
+    i6: 173
+    i7: 244
+    i8: 153
+    i9: 100
+    i10: 50
+    i11: 171
+    i12: 245
+    i13: 9
+    i14: 58
+    i15: 43
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &2042696608
 GameObject:
   m_ObjectHideFlags: 0
@@ -41487,7 +41768,7 @@ Transform:
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.1435792}
   m_Children: []
   m_Father: {fileID: 1770711268}
-  m_RootOrder: 58
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2083196970
 MonoBehaviour:
