@@ -18,7 +18,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
     private GameObject mark;
     private Vector3 cameraForwards;
-    private Vector3 stickInput;
+    public Vector3 stickInput;
 	private float fallMod = 4.5f;
 	private float lowMod = 2f;
 	private Rigidbody rb;

@@ -3885,6 +3885,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: aad8e53daab169047bb0852569283468, type: 3}
   m_PrefabInternal: {fileID: 192342905}
+--- !u!1 &192342907 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: aad8e53daab169047bb0852569283468, type: 3}
+  m_PrefabInternal: {fileID: 192342905}
+--- !u!65 &192342908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192342907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.049615048, y: 11.972769, z: 0.23483726}
+  m_Center: {x: -1.5063348, y: 6.4863887, z: -1.0133023}
 --- !u!1001 &203678003
 Prefab:
   m_ObjectHideFlags: 0
@@ -4497,6 +4513,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: aad8e53daab169047bb0852569283468, type: 3}
   m_PrefabInternal: {fileID: 242016845}
+--- !u!1 &242016847 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: aad8e53daab169047bb0852569283468, type: 3}
+  m_PrefabInternal: {fileID: 242016845}
+--- !u!65 &242016848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242016847}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.049615048, y: 11.972767, z: 0.2348373}
+  m_Center: {x: -1.5063341, y: 6.486376, z: -1.0133023}
 --- !u!1001 &249397304
 Prefab:
   m_ObjectHideFlags: 0
@@ -9708,6 +9740,19 @@ MonoBehaviour:
   yRot: 1
   xRot: 0
   autoClose: 0
+--- !u!114 &508528163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508528161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 65
+  isColliderOpposite: 0
 --- !u!114 &508528165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11957,7 +12002,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   home: {x: 0, y: 0, z: 0}
   timer: 6
-  OpenHeight: -30
+  OpenHeight: -35
   DownSpeed: 8
   UpSpeed: 8
   looping: 1
@@ -20688,6 +20733,7 @@ GameObject:
   - component: {fileID: 1061822186}
   - component: {fileID: 1061822187}
   - component: {fileID: 1061822188}
+  - component: {fileID: 1061822189}
   m_Layer: 8
   m_Name: PressurePlate1100 (1)
   m_TagString: Untagged
@@ -20823,6 +20869,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!65 &1061822189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1061822181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 7.030661, z: 0.9999999}
+  m_Center: {x: 0.00000093395533, y: 3.0153155, z: 0.0000004548103}
 --- !u!1 &1064471750
 GameObject:
   m_ObjectHideFlags: 0
@@ -24656,7 +24714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1264882315
 Transform:
   m_ObjectHideFlags: 0
@@ -34539,6 +34597,19 @@ MonoBehaviour:
   yRot: 1
   xRot: 0
   autoClose: 0
+--- !u!114 &1805154976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805154974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752e9093baf197d449edd4bb7773b141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World: 65
+  isColliderOpposite: 0
 --- !u!114 &1805154978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34920,7 +34991,7 @@ GameObject:
   - component: {fileID: 1811560099}
   m_Layer: 0
   m_Name: DogSpikes
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34952,8 +35023,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0424995, y: 1.7661608, z: 4.662762}
-  m_Center: {x: -0.019026108, y: 0.6663446, z: -0.4865907}
+  m_Size: {x: 2.0424995, y: 1.2826257, z: 4.14236}
+  m_Center: {x: -0.019026108, y: 0.42457703, z: -0.74679106}
 --- !u!114 &1811560095
 MonoBehaviour:
   m_ObjectHideFlags: 0

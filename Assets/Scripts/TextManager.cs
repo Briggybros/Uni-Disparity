@@ -44,6 +44,9 @@ public class TextManager : NetworkBehaviour {
         if (other.CompareTag("Player") && (repeated || !opened) && !isOpen && isTriggerable)
         {
                 movement = other.GetComponent<JoystickCharacter>();
+                movement.joystick.inputVector = Vector3.zero;
+                movement.joystick.joystickImage.rectTransform.anchoredPosition = Vector3.zero;
+                movement.stickInput = Vector3.zero;
                 movement.canMove = false;
             CreateChat(chats, avatars, chatPictures);
         }
