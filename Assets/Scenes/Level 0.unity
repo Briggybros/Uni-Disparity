@@ -2646,6 +2646,11 @@ Prefab:
       propertyPath: m_Center.z
       value: 0.7937666
       objectReference: {fileID: 0}
+    - target: {fileID: 114245420529368500, guid: 0979a00114c3b4f808cd829dec9a6c18,
+        type: 2}
+      propertyPath: isTransition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979a00114c3b4f808cd829dec9a6c18, type: 2}
   m_IsPrefabParent: 0
