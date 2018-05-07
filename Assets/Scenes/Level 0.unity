@@ -802,7 +802,7 @@ MonoBehaviour:
   chats:
   - Look over there! It's the portal...if we could get to it I bet we can get back
     together
-  - But there doesn;t seem to be a way through...can you see anything?
+  - But there doesn't seem to be a way through...can you see anything?
   - Well there is this lever.... I wonder
   avatars:
   - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
@@ -7053,7 +7053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chats:
-  - Right let's hope this portal takes us home
+  - Right let's hope this portal takes us home.
   avatars:
   - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
   chatPictures: 00000000
@@ -9869,7 +9869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5acec5348c247aa9469d833c32b693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  altMaterial: {fileID: 0}
+  altMaterial: {fileID: 2100000, guid: 31427b40815c140a1b1764117f4f4aa2, type: 2}
 --- !u!1001 &1915292182
 Prefab:
   m_ObjectHideFlags: 0
@@ -10887,7 +10887,7 @@ MonoBehaviour:
   chats:
   - Woah! I almost fell down this hole.
   - We need to lower that drawbridge if I'm to get across.
-  - Well I can't see any drawbridge but I can see something else that could help
+  - Well I can't see any drawbridge but I can see something else that could help.
   avatars:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
