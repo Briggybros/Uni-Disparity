@@ -5,11 +5,13 @@ using UnityEngine.Networking;
 
 public class CameraRay : Receiver {
 
+	public AudioClip rockBreak;
 	public new GameObject camera;
 	public LineRenderer line;
 	public ParticleSystem laserParticles;
 	bool laserActive;
 	RaycastHit hit;
+	public AudioSource audioout;
 	public GameObject targetHit;
 	private Light laserLight;
 
@@ -86,6 +88,7 @@ public class CameraRay : Receiver {
 					laserParticles.transform.rotation = Quaternion.LookRotation(ray.origin - hit.point);
 
 					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
+						audioout.PlayOneShot(rockBreak);
 						heldPlayer.BroadcastMessage("TargetSwitch", hit.rigidbody.gameObject);
 					}
 				} else {

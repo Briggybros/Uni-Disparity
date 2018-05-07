@@ -793,7 +793,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
   - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  chatPictures: 
+  chatPictures: 000000000100000002000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
@@ -939,7 +939,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MrCatMaterial
+  m_Name: MrDogMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -952,7 +952,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 711bc3e6b64344638a616bc1960d4cc1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 770f050b625944ac9d368455cbe6b6fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5207,15 +5207,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: MrCat
+  mTrackableName: MrDog
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Disparity.xml
   mExtendedTracking: 1
-  mAspectRatio: 1.6047618
+  mAspectRatio: 1.6279423
   mImageTargetType: 0
-  mWidth: 79.2235
-  mHeight: 127.13485
+  mWidth: 20
+  mHeight: 32.558846
 --- !u!4 &964223654
 Transform:
   m_ObjectHideFlags: 0
@@ -5224,7 +5224,7 @@ Transform:
   m_GameObject: {fileID: 964223648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -6.93, z: -5.42}
-  m_LocalScale: {x: 127.13485, y: 127.13485, z: 127.13485}
+  m_LocalScale: {x: 32.558846, y: 32.558846, z: 32.558846}
   m_Children:
   - {fileID: 1777689136}
   m_Father: {fileID: 0}
@@ -7004,7 +7004,7 @@ MonoBehaviour:
   - Right let's hope this portal takes us home
   avatars:
   - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
-  chatPictures: 
+  chatPictures: 00000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
@@ -8191,7 +8191,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.3115727, y: 0, z: 0.5}
+      m_Extent: {x: 0.30713618, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -8244,7 +8244,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 75869fbe00000000000000bf000000000000803f00000000000000000000000075869fbe000000000000003f000000000000803f00000000000000000000803f75869f3e00000000000000bf000000000000803f000000000000803f0000000075869f3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: f4409dbe00000000000000bf00000000ffff7f3f000000000000000000000000f4409dbe000000000000003f00000000ffff7f3f00000000000000000000803ff4409d3e00000000000000bf00000000ffff7f3f000000000000803f00000000f4409d3e000000000000003f00000000ffff7f3f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -10910,7 +10910,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d6b4be743b69c1e42aa270e282a8fdf7, type: 3}
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
   - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
-  chatPictures: 0000000001000000
+  chatPictures: 000000000100000002000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1

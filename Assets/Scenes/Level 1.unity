@@ -24556,6 +24556,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altMaterial: {fileID: 2100000, guid: 31427b40815c140a1b1764117f4f4aa2, type: 2}
+--- !u!1 &1255420932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1255420934}
+  - component: {fileID: 1255420933}
+  m_Layer: 0
+  m_Name: Sound Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1255420933
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255420932}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9746224d087e67b43b0fa5a1f1e1b0e8, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1255420934
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255420932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 28.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1257180488
 Prefab:
   m_ObjectHideFlags: 0
@@ -31198,9 +31307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144f295064ef14073becf8d4bf4b6ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rockBreak: {fileID: 8300000, guid: 91f9f6e90035b4acbb99fa5add04c0f6, type: 3}
   camera: {fileID: 836853234}
   line: {fileID: 284257109}
   laserParticles: {fileID: 2099138333}
+  audioout: {fileID: 1255420933}
   targetHit: {fileID: 0}
   players: []
   heldPlayer: {fileID: 0}
@@ -37456,13 +37567,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chats:
+  - Well....we aren't back home yet.
   - Seems we are in some kind of...castle?
-  - Aha! There's a portal on that bridge over there!
+  - Aha! There's another transporter on that bridge over there!
   - But it's damaged...if only I had a BOLT and a COG, I could fix it!
   avatars:
-  - {fileID: 21300000, guid: 3227c5c8f73ffa64ba2e861bd3aa779e, type: 3}
+  - {fileID: 21300000, guid: b3f740990d924da46afdcb99a4473022, type: 3}
   - {fileID: 21300000, guid: 36e22ec4e0cc0344ab3a4570466afcd8, type: 3}
-  chatPictures: 010000000000000001000000
+  - {fileID: 21300000, guid: 3aa36b03edfdb0747b05b75db6ed23e4, type: 3}
+  chatPictures: 02000000010000000100000000000000
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
@@ -42107,7 +42220,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1978419238
+  randomSeed: -2070769276
   InitialModule:
     serializedVersion: 3
     enabled: 1
