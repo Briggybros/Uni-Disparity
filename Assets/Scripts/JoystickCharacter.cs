@@ -29,12 +29,17 @@ public class JoystickCharacter : NetworkBehaviour {
 	private int grabLax;
 	public List<string> keys = new List<string>();
 	public List<string> cores = new List<string>();
+
 	private float MovementOffset;
+    public AudioClip soundEffect;
+    protected AudioSource audioout;
 
     private Vector3 HeldScale;
 
-    void Start() {
-		if (isLocalPlayer) {
+    void Start()
+    {
+        audioout = GameObject.Find("FXSource").GetComponent<AudioSource>();
+        if (isLocalPlayer) {
 			joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
 		}
         pos = transform.localPosition;
@@ -391,6 +396,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
 		grabLax++;
 		if (isInteract() && touching && target.CompareTag("Key")) {
+            audioout.PlayOneShot(soundEffect);
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
 		//}else if(touching && target.GetComponent<PinMechanism>()){

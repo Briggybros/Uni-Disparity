@@ -8,13 +8,18 @@ public class BrokeScript : NetworkBehaviour {
 	public GameObject intact;
 	public GameObject[] tiles;
 
-	void SwitchReceived() {
+    public AudioClip soundEffect;
+    protected AudioSource audioout;
+
+    void SwitchReceived() {
 		//broke.SetActive(true);
 		intact.SetActive(false);
 		if (isServer) {
 			foreach (GameObject tile in tiles) {
 				tile.SetActive(false);
-			}
+            }
+            audioout = GameObject.Find("FXSource").GetComponent<AudioSource>();
+            audioout.PlayOneShot(soundEffect);
 		}
 	}
 }

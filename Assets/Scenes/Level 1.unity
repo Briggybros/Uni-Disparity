@@ -2294,6 +2294,7 @@ MonoBehaviour:
   requiresInteract: 0
   targets:
   - {fileID: 1811560092}
+  soundEffect: {fileID: 8300000, guid: ceea5c88a3676473d8edbc9e239925dd, type: 3}
   owner: {fileID: 623855414}
   playerInteract: 1
 --- !u!114 &114493337
@@ -11487,6 +11488,7 @@ MonoBehaviour:
   - {fileID: 635566484}
   - {fileID: 786675049}
   - {fileID: 1859595805}
+  soundEffect: {fileID: 8300000, guid: fed90b6418c5d46cd859e294cb82613f, type: 3}
 --- !u!114 &575731743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14776,6 +14778,7 @@ MonoBehaviour:
   targets:
   - {fileID: 1947091827}
   - {fileID: 2126295735}
+  soundEffect: {fileID: 8300000, guid: ceea5c88a3676473d8edbc9e239925dd, type: 3}
   owner: {fileID: 0}
   playerInteract: 1
   interacted: 0
@@ -18786,25 +18789,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
   m_Center: {x: 0.0000076293945, y: 0, z: -0.000000011175871}
---- !u!114 &935435249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935435245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e802a3c28df2b4e4899cd0b7fe90e16f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  broke: {fileID: 0}
-  intact: {fileID: 314574985}
-  tiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &935435250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20918,6 +20902,7 @@ MonoBehaviour:
   targets:
   - {fileID: 576224074}
   - {fileID: 645351790}
+  soundEffect: {fileID: 8300000, guid: ceea5c88a3676473d8edbc9e239925dd, type: 3}
   owner: {fileID: 0}
   playerInteract: 1
 --- !u!114 &1061822187
@@ -24459,7 +24444,7 @@ GameObject:
   - component: {fileID: 1255420934}
   - component: {fileID: 1255420933}
   m_Layer: 0
-  m_Name: Sound Effects
+  m_Name: FXSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24474,7 +24459,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9746224d087e67b43b0fa5a1f1e1b0e8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -31222,6 +31207,7 @@ MonoBehaviour:
   requiresInteract: 1
   targets:
   - {fileID: 1633930134}
+  soundEffect: {fileID: 0}
   owner: {fileID: 0}
   playerInteract: 1
   interacted: 0
@@ -36705,6 +36691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731c88e2f0e6ae84a8b4dcdbb7bf3cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 8300000, guid: ccad236cd2e63440f8e3e28630ef49f7, type: 3}
 --- !u!114 &1901981350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37590,11 +37577,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 72734539}
+      objectReference: {fileID: 1255420933}
     - target: {fileID: 114471193450040908, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: PlayOneShot
       objectReference: {fileID: 0}
     - target: {fileID: 224255685477996192, guid: 3edbccd04d2864614ba7e4c1e3bc2223,
         type: 2}
@@ -40964,6 +40951,7 @@ MonoBehaviour:
   - {fileID: 508528161}
   - {fileID: 1805154974}
   - {fileID: 660037444}
+  soundEffect: {fileID: 8300000, guid: ceea5c88a3676473d8edbc9e239925dd, type: 3}
   owner: {fileID: 0}
   playerInteract: 1
   interacted: 0
@@ -46265,6 +46253,7 @@ MonoBehaviour:
   requiresInteract: 1
   targets:
   - {fileID: 2137107640}
+  soundEffect: {fileID: 0}
   owner: {fileID: 0}
   playerInteract: 1
   interacted: 0
