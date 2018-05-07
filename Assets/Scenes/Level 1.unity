@@ -31307,7 +31307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144f295064ef14073becf8d4bf4b6ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockBreak: {fileID: 8300000, guid: 91f9f6e90035b4acbb99fa5add04c0f6, type: 3}
+  rockBreak: {fileID: 8300000, guid: fed90b6418c5d46cd859e294cb82613f, type: 3}
   camera: {fileID: 836853234}
   line: {fileID: 284257109}
   laserParticles: {fileID: 2099138333}
