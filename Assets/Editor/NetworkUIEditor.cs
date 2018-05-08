@@ -6,6 +6,7 @@ using UnityEditor.SceneManagement;
 [CustomEditor(typeof(NetworkUI))]
 public class NetworkUIEditor : Editor {
 
+    private SerializedProperty discovery;
     private SerializedProperty buttonClick;
     private SerializedProperty buttonPrefab;
     private SerializedProperty matchJoinPanelPrefab;
@@ -14,10 +15,12 @@ public class NetworkUIEditor : Editor {
     private SerializedProperty errorMessageObject;
     private SerializedProperty graphicsSlider;
     private SerializedProperty graphicsText;
+    private SerializedProperty muteButton;
     private SerializedProperty loadingPanel;
     private SerializedProperty levels;
 
     public void OnEnable () {
+        discovery = serializedObject.FindProperty("discovery");
         buttonClick = serializedObject.FindProperty("buttonClick");
         buttonPrefab = serializedObject.FindProperty("buttonPrefab");
         matchJoinPanelPrefab = serializedObject.FindProperty("matchJoinPanelPrefab");
@@ -26,6 +29,7 @@ public class NetworkUIEditor : Editor {
         errorMessageObject = serializedObject.FindProperty("errorMessageObject");
         graphicsSlider = serializedObject.FindProperty("graphicsSlider");
         graphicsText = serializedObject.FindProperty("graphicsText");
+        muteButton = serializedObject.FindProperty("muteButton");
         loadingPanel = serializedObject.FindProperty("loadingPanel");
         levels = serializedObject.FindProperty("levels");
     }
@@ -33,6 +37,7 @@ public class NetworkUIEditor : Editor {
     public override void OnInspectorGUI () {
         serializedObject.Update();
 
+        EditorGUILayout.PropertyField(discovery);
         EditorGUILayout.PropertyField(buttonClick);
         EditorGUILayout.PropertyField(buttonPrefab);
         EditorGUILayout.PropertyField(matchJoinPanelPrefab);
@@ -42,6 +47,7 @@ public class NetworkUIEditor : Editor {
         EditorGUILayout.PropertyField(errorMessageObject);
         EditorGUILayout.PropertyField(graphicsSlider);
         EditorGUILayout.PropertyField(graphicsText);
+        EditorGUILayout.PropertyField(muteButton);
 
         EditorGUILayout.PropertyField(levels);
         EditorGUI.indentLevel += 1;

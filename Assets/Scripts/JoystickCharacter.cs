@@ -39,7 +39,7 @@ public class JoystickCharacter : NetworkBehaviour {
 
     void Start()
     {
-        audioout = GameObject.Find("FXSource").GetComponent<AudioSource>();
+		audioout = GameObject.Find("FXSource").GetComponent<AudioSource>();
         if (isLocalPlayer) {
 			joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
 		}
@@ -405,6 +405,7 @@ public class JoystickCharacter : NetworkBehaviour {
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
 			touching = false;
+			target = null;
 		//}else if(touching && target.GetComponent<PinMechanism>()){
             //target.tag = "Bopped";
         }else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
