@@ -53,6 +53,7 @@ public class ScoreboardController : NetworkBehaviour {
 
 	public void OnNameEntered() {
 		string name = NamePanel.GetComponentInChildren<InputField>().text;
+		ScorePanel.SetActive(true);
 		Scoreboard.Score score = new Scoreboard.Score(SceneManager.GetActiveScene().name, name, timeElapsed);
 		ScorePanel.GetComponent<ScoreboardUI>().ShowScores();
 		StartCoroutine(Scoreboard.PostScore((results) => {

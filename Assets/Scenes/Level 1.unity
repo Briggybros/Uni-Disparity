@@ -2107,6 +2107,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 106351589}
   m_Script: {fileID: 11500000, guid: 22ca2b3f9c40d405ea7bab8d352db692, type: 3}
+--- !u!1 &106351591 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1749125383682990, guid: 24326bc2528cf4512b135d2be756bdab,
+    type: 2}
+  m_PrefabInternal: {fileID: 106351589}
 --- !u!1 &106351592 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1861138602353286, guid: 24326bc2528cf4512b135d2be756bdab,
@@ -2144,6 +2149,19 @@ MonoBehaviour:
     i15: 171
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &106351594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106351591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7915d4709813441e6aa5e7f8368bffd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreDisplayPrefab: {fileID: 1882715927332018, guid: acc5e9d52d68b43568b6253ac1360553,
+    type: 2}
 --- !u!1 &107915587
 GameObject:
   m_ObjectHideFlags: 0
