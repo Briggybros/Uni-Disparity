@@ -42,16 +42,18 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 			}
 		}
 		}
-        if (open)
-        {   
-            //Open the door
-            transform.position = Vector3.MoveTowards(transform.position, target, DownSpeed * Time.deltaTime);
-        }
-        else
-        {   
-            //Close the door
-            transform.position = Vector3.MoveTowards(transform.position, home, UpSpeed * Time.deltaTime);
-        }
+		if (!mirror){
+			if (open)
+			{   
+				//Open the door
+				transform.position = Vector3.MoveTowards(transform.position, target, DownSpeed * Time.deltaTime);
+			}
+			else
+			{   
+				//Close the door
+				transform.position = Vector3.MoveTowards(transform.position, home, UpSpeed * Time.deltaTime);
+			}
+		}
     
     }
 

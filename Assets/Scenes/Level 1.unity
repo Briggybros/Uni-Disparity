@@ -12166,7 +12166,7 @@ MonoBehaviour:
   DownSpeed: 16
   UpSpeed: 8
   looping: 1
-  mirror: 0
+  mirror: 1
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -35760,7 +35760,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1808457467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.112, y: 0.14000097, z: 1.4100009}
+  m_LocalPosition: {x: 14.112, y: 0.14000097, z: 1.036}
   m_LocalScale: {x: 0.1435792, y: 0.44191283, z: 0.07488786}
   m_Children: []
   m_Father: {fileID: 1770711268}
