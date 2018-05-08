@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1697655331}
-  m_IndirectSpecularColor: {r: 0.50446033, g: 0.4836856, b: 0.45932388, a: 1}
+  m_IndirectSpecularColor: {r: 0.21819286, g: 0.19925036, b: 0.17830446, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -12184,7 +12184,7 @@ MonoBehaviour:
   DownSpeed: 16
   UpSpeed: 8
   looping: 1
-  mirror: 0
+  mirror: 1
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
