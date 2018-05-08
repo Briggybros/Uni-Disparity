@@ -2065,6 +2065,7 @@ MonoBehaviour:
   levels:
   - Level 0
   - Level 1
+  isInternet: 0
 --- !u!114 &421164866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3062,7 +3063,7 @@ Prefab:
     - target: {fileID: 224793206793487220, guid: 7be98c6e903354544b7a772d998e7b71,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224793206793487220, guid: 7be98c6e903354544b7a772d998e7b71,
         type: 2}
