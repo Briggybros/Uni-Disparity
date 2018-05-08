@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public static class Scoreboard {
     public delegate void ScoreCallback(Score score);
     public delegate void ScoresCallback(Score[] scores);
-    public static string serverURL = "http://10.42.0.1:8090/score";
+    public static string serverURL = "http://6342f9d3.ngrok.io/score";
 
     public static IEnumerator PostScore(ScoreCallback callback, Score score) {
         string jsonData = JsonUtility.ToJson(score);
