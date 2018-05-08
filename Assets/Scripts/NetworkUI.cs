@@ -149,13 +149,13 @@ public class NetworkUI : MonoBehaviour {
 		panel.transform.SetParent(matchSelectPanel.transform, false);
 		panel.GetComponent<MatchJoinPanelInit>().Init(fromAddress, () => {
 			CharacterPicker.SetWorld(CharacterPicker.WORLDS.DOG);
-			networkManager.networkAddress = fromAddress;
+			NetworkManager.singleton.networkAddress = fromAddress;
 			networkManager.StartClient();
 			this.lookingForMatches = false;
 			ShowLevelPanel();
 		}, () => {
 			CharacterPicker.SetWorld(CharacterPicker.WORLDS.SPECTATOR);
-			networkManager.networkAddress = fromAddress;
+			NetworkManager.singleton.networkAddress = fromAddress;
 			networkManager.StartClient();
 			this.lookingForMatches = false;
 			ShowLevelPanel();
