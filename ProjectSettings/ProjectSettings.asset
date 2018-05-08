@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
-  targetDevice: 2
+  targetDevice: 1
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
@@ -46,7 +46,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
@@ -60,7 +60,7 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 1
+  use32BitDisplayBuffer: 0
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidBlitType: 0
@@ -76,7 +76,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
@@ -152,15 +152,16 @@ PlayerSettings:
       dashSupport: 0
   protectGraphicsMemory: 0
   useHDRDisplay: 0
-  m_ColorGamuts: 00000000
-  targetPixelDensity: 0
+  m_ColorGamuts: 0000000003000000
+  targetPixelDensity: 30
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    iOS: com.loungeolizards.disparity
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 16
+  AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -172,15 +173,15 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 
+  iOSTargetOSVersionString: 10.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 
+  tvOSTargetOSVersionString: 9.0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -255,13 +256,127 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 99a6a38bb43d44ee69e919fc7ed3eb18, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 48acde3ead6f83d4398065e8f64eae92, type: 3}
+      m_Width: 180
+      m_Height: 180
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 167
+      m_Height: 167
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 152
+      m_Height: 152
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 114
+      m_Height: 114
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 76
+      m_Height: 76
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 57
+      m_Height: 57
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 3
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 3
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 87
+      m_Height: 87
+      m_Kind: 1
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 60
+      m_Height: 60
+      m_Kind: 2
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 20
+      m_Height: 20
+      m_Kind: 2
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 4
   m_BuildTargetBatching: []
-  m_BuildTargetGraphicsAPIs: []
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: iOSSupport
+    m_APIs: 10000000
+    m_Automatic: 0
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 0b000000
+    m_Automatic: 0
   m_BuildTargetVRSettings: []
-  m_BuildTargetEnableVuforiaSettings: []
-  openGLRequireES31: 0
-  openGLRequireES31AEP: 0
+  m_BuildTargetEnableVuforiaSettings:
+  - m_BuildTarget: iOS
+    m_Enabled: 1
+  - m_BuildTarget: Android
+    m_Enabled: 1
+  openGLRequireES31: 1
+  openGLRequireES31AEP: 1
   m_TemplateCustomTags: {}
   mobileMTRendering:
     Android: 1
@@ -291,7 +406,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: 
+  cameraUsageDescription: Camera access requirewd for target detection and tracking
   locationUsageDescription: 
   microphoneUsageDescription: 
   switchNetLibKey: 
@@ -629,12 +744,13 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 486ef441-c8c7-407e-bd6d-0441b0c1c275
+  projectName: disparity
+  organizationId: gregory-sims
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
