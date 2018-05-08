@@ -12196,7 +12196,7 @@ MonoBehaviour:
   DownSpeed: 16
   UpSpeed: 8
   looping: 1
-  mirror: 0
+  mirror: 1
   blocked: 0
   players: []
   heldPlayer: {fileID: 0}
@@ -12319,7 +12319,7 @@ MonoBehaviour:
     i13: 141
     i14: 7
     i15: 84
-  m_ServerOnly: 1
+  m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!65 &597711797
 BoxCollider:
