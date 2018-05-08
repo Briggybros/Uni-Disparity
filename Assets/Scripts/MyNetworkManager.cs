@@ -12,9 +12,10 @@ public class MyNetworkManager : NetworkManager {
 	public override void OnServerAddPlayer (NetworkConnection connection, short playerControllerId, NetworkReader networkReader) {
 		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
 		CharacterPicker.WORLDS world = message.world;
+
 		GameObject spawn = spawnPrefabs[world == CharacterPicker.WORLDS.CAT ? 0 : CharacterPicker.IsSpectator(world) ? 2 : 1];
 		Transform startPos = startPositions.Find(x => x.gameObject.name == "StartPos" + world.ToString());
-		if (CharacterPicker.IsSpectator()){
+		if (CharacterPicker.IsSpectator(world)) {
 			startPos = GetStartPosition();
 			startPos.position += new Vector3(0, 10, 0);
 		} else {
