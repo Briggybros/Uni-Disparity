@@ -3,29 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapdoorBehaviour : RotatingDoorBehaviour {
-    protected override void ColliderEnter()
-    {
-        base.ColliderEnter();
-        NavMeshHole hole = GetComponent<NavMeshHole>();
-        hole.Toggle();
-    }
 
-    protected override void ColliderExit()
+	public GameObject[] players;
+	public GameObject heldPlayer;
+
+	protected override void Start() {
+		base.Start();
+		players = GameObject.FindGameObjectsWithTag("Player");
+		foreach (GameObject player in players) {
+			if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+				heldPlayer = player;
+			}
+		}
+	}
+
+	protected override void Update() {
+		base.Update();
+		if (heldPlayer == null) {
+			players = GameObject.FindGameObjectsWithTag("Player");
+			foreach (GameObject player in players) {
+				if (player.GetComponent<JoystickCharacter>().isLocalPlayer) {
+					heldPlayer = player;
+				}
+			}
+		}
+	}
+
+	protected override void ColliderEnter()
     {
-        base.ColliderEnter();
-        NavMeshHole hole = GetComponent<NavMeshHole>();
-        hole.Toggle();
+		if (heldPlayer != null) {
+			heldPlayer.BroadcastMessage("Trap", this.gameObject);
+		}
+	}
+
+	protected override void ColliderWithin() {
+	}
+
+	protected override void ColliderExit()
+    {
+		if (heldPlayer != null) {
+			heldPlayer.BroadcastMessage("UnTrap", this.gameObject);
+		}
     }
 
     protected override void PulseReceived() {
-        base.ColliderEnter();
-        NavMeshHole hole = GetComponent<NavMeshHole>();
-        hole.Toggle();
+        base.PulseReceived();
     }
 
     protected override void SwitchReceived() {
-        base.ColliderEnter();
-        NavMeshHole hole = GetComponent<NavMeshHole>();
-        hole.Toggle();
+        base.SwitchReceived();
     }
 }

@@ -83,9 +83,6 @@ public class SpawnOnTargetDetect : MonoBehaviour, ITrackableEventHandler {
                     } else {
                         component.enabled = true;
                     }
-                    if (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG && disparity.altTexture != null) {
-                        component.material.SetTexture("_MainTex", disparity.altTexture);
-                    }
                 } else {
                     component.enabled = true;
                 }

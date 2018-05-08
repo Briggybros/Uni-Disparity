@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4519479632213436}
   - component: {fileID: 33922626531664844}
   - component: {fileID: 23346843014708298}
-  - component: {fileID: 114948965278294748}
   m_Layer: 0
   m_Name: Exclamation
   m_TagString: Untagged
@@ -83,14 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1131982162868938}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114948965278294748
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1131982162868938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -9,7 +9,7 @@ public class JoystickMovement : MonoBehaviour, IDragHandler, IPointerUpHandler, 
 {
     public Image backgroundImage;
     public Image joystickImage;
-    private Vector3 inputVector;
+    public Vector3 inputVector;
     public Vector3 forwardVector = new Vector3(0, 0, 1);
     public Vector3 centre = new Vector3(0, 0, 0);
         

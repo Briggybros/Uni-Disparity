@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class JoystickCharacter : NetworkBehaviour
-
-{
+public class JoystickCharacter : NetworkBehaviour {
 
     private float RotationSpeed = 8.0f;
     private float MovementSpeed;
@@ -15,36 +13,45 @@ public class JoystickCharacter : NetworkBehaviour
     private Vector3 pos;
     public bool interacting;
     public bool touching;
-    private NetworkIdentity targetNetworkIdent;
     public GameObject target;
     public bool canMove;
+	public AudioClip deathSound;
 
     private GameObject mark;
     private Vector3 cameraForwards;
-    private Vector3 stickInput;
-	private float fallMod = 2.5f;
+    public Vector3 stickInput;
+	private float fallMod = 4.5f;
 	private float lowMod = 2f;
 	private Rigidbody rb;
+    public Animator animator;
 	private bool impetus = false;
 	private bool jumpReq = false;
 	private int impCount = 0;
 	private int grabLax;
-	private Animator pedantsAnimator;
 	public List<string> keys = new List<string>();
 	public List<string> cores = new List<string>();
 
+	private float MovementOffset;
+    public AudioClip soundEffect;
+    protected AudioSource audioout;
+
     private Vector3 HeldScale;
 
-    void Start() {
-        joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
+    void Start()
+    {
+        audioout = GameObject.Find("FXSource").GetComponent<AudioSource>();
+        if (isLocalPlayer) {
+			joystick = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
+		}
         pos = transform.localPosition;
         interacting = false;
         touching = false;
-        targetNetworkIdent = null;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 		grabLax = 0;
         mark = transform.GetChild(0).gameObject;
         mark.SetActive(false);
+		MovementOffset = 30.0f;
 
         if (!isLocalPlayer)
         {
@@ -57,7 +64,6 @@ public class JoystickCharacter : NetworkBehaviour
                 rigidbody.useGravity = false;
             }
         }
-		pedantsAnimator = GetComponent<Animator>();
     }
 
     [Command]
@@ -97,51 +103,71 @@ public class JoystickCharacter : NetworkBehaviour
         transform.localRotation = finalRotation;
     }
     void ResetPlayerToCheckpoint () {
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = Vector3.zero;
-        rigidbody.angularVelocity = Vector3.zero;
-        rigidbody.isKinematic = true;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
         Transform activeCheckpointTransform = Checkpoint.GetActiveCheckpointTransform();
         transform.SetPositionAndRotation(activeCheckpointTransform.position, activeCheckpointTransform.rotation);
-        rigidbody.isKinematic = false;
+        rb.isKinematic = false;
     }
 
     //Parents on interaction with collider
     void OnCollisionEnter(Collision c) {
-        if (c.gameObject.transform.parent.CompareTag("Bridge"))
+        /*if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.SetParent(c.gameObject.transform.parent.transform, true);
             pos = transform.localPosition;
-        }
-        if (c.gameObject.tag == "Enemy")
-        {
+			MovementOffset = 10.0f;
+        }*/
+        if (c.gameObject.CompareTag("Enemy")) {
+			audioout.PlayOneShot(deathSound);
             ResetPlayerToCheckpoint();
         }
     }
 
+	void onTriggerWithin(Collider c) {
+		if (c.gameObject.transform.parent.CompareTag("Bridge")) {
+			transform.SetParent(c.gameObject.transform.parent.transform, true);
+			pos = transform.localPosition;
+			MovementOffset = 3.0f;
+		}
+	}
+
+
 	//Parents on interaction with collider
 	void OnTriggerEnter(Collider c) {
+		if (c.gameObject.transform.parent.CompareTag("Bridge")) {
+			transform.SetParent(c.gameObject.transform.parent.transform, true);
+			pos = transform.localPosition;
+			MovementOffset = 3.0f;
+		}
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
-			targetNetworkIdent = c.gameObject.GetComponent<NetworkIdentity>();
 			target = c.gameObject;
 			touching = true;
             //display exclamation mark
             mark.SetActive(true);
 		}
-		if (c.gameObject.tag == "Enemy") {
+		if (c.gameObject.CompareTag("Enemy")) {
+			audioout.PlayOneShot(deathSound);
 			ResetPlayerToCheckpoint();
 		}
 	}
 
 	void OnCollisionExit(Collision c) {
-        if (c.gameObject.transform.parent.CompareTag("Bridge"))
+        /*if (c.gameObject.transform.parent.CompareTag("Bridge"))
         {
             transform.parent = null;
             pos = transform.localPosition;
-        }
+			MovementOffset = 30.0f;
+        }*/
     }
 
 	void OnTriggerExit(Collider c) {
+		if (c.gameObject.transform.parent.CompareTag("Bridge")) {
+			transform.parent = null;
+			pos = transform.localPosition;
+			MovementOffset = 30.0f;
+		}
 		if ((c.gameObject.GetComponent<Interactable>() != null)) {
 			interacting = false;
 			target = null;
@@ -150,6 +176,80 @@ public class JoystickCharacter : NetworkBehaviour
             mark.SetActive(false);
 		}
 	}
+
+	void TargetSwitch(GameObject target) {
+		if (isServer) {
+			RpcHit(target);
+		} else {
+			CmdHit(target);
+		}
+	}
+
+	[Command]
+	void CmdHit(GameObject target) {
+		target.GetComponent<ListenerScript>().BroadcastMessage("SwitchFlag");
+	}
+
+	[ClientRpc]
+	void RpcHit(GameObject target) {
+		CmdHit(target);
+	}
+
+	void syncAnima(bool running) {
+		if (isServer) {
+			RpcAnim(running);
+		} else {
+			CmdAnim(running);
+		}
+	}
+
+	[Command]
+	void CmdAnim(bool running) {
+		animator.SetBool("Running", running);
+	}
+
+	[ClientRpc]
+	void RpcAnim(bool running) {
+		GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+		CmdAnim(running);
+		GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToClient);
+	}
+
+    void IncCount(GameObject thingy){
+        if(isServer){
+            RpcCount(thingy);
+        }else{
+            CmdCount(thingy);
+        }
+    }
+    [Command]
+    void CmdCount(GameObject thingy){
+        RpcCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count++;
+    }
+
+
+    void DecCount(GameObject thingy){
+        if(isServer){
+            RpcdCount(thingy);
+        }else{
+            CmddCount(thingy);
+        }
+    }
+    [Command]
+    void CmddCount(GameObject thingy){
+        RpcdCount(thingy);
+    }
+
+    [ClientRpc]
+    void RpcdCount(GameObject thingy){
+        thingy.GetComponent<PortalEnd>().count--;
+    }
+
 	void Block(GameObject thingy) {
 		if (isServer) {
 			RpcBlocker(thingy);
@@ -189,22 +289,65 @@ public class JoystickCharacter : NetworkBehaviour
 		target.GetComponent<SlidingDoorBehaviour>().open = false;
 	}
 
-	void SyncAnim(bool running) {
+
+	void Trap(GameObject thingy) {
 		if (isServer) {
-			RpcSyncAnim(gameObject, running);
+			RpcTrapper(thingy);
 		} else {
-			CmdSyncAnim(gameObject, running);
+			CmdTrapper(thingy);
+		}
+	}
+
+	void UnTrap(GameObject thingy) {
+		if (isServer) {
+			RpcUnTrapper(thingy);
+		} else {
+			CmdUnTrapper(thingy);
 		}
 	}
 
 	[Command]
-	void CmdSyncAnim(GameObject character,bool running) {
-		RpcSyncAnim(character,running);
+	void CmdTrapper(GameObject thingy) {
+		RpcBlocker(thingy);
+	}
+
+	[Command]
+	void CmdUnTrapper(GameObject thingy) {
+		RpcUnblocker(thingy);
 	}
 
 	[ClientRpc]
-	void RpcSyncAnim(GameObject character,bool running) {
-		pedantsAnimator.SetBool("Running", running);
+	void RpcTrapper(GameObject target) {
+		target.GetComponent<TrapdoorBehaviour>().open = true;
+		target.GetComponent<TrapdoorBehaviour>().Turning = true;
+		target.GetComponent<NavMeshHole>().Toggle(true);
+	}
+
+
+	[ClientRpc]
+	void RpcUnTrapper(GameObject target) {
+		target.GetComponent<TrapdoorBehaviour>().open = false;
+		target.GetComponent<TrapdoorBehaviour>().Turning = true;
+		target.GetComponent<NavMeshHole>().Toggle(false);
+	}
+
+
+	void SyncAnim(bool running) {
+		if (isServer) {
+			RpcSyncAnim(running);
+		} else {
+			CmdSyncAnim(running);
+		}
+	}
+
+	[Command]
+	void CmdSyncAnim(bool running) {
+		RpcSyncAnim(running);
+	}
+
+	[ClientRpc]
+	void RpcSyncAnim(bool running) {
+		animator.SetBool("Running", running);
 	}
 
 	static bool IsJump() {
@@ -216,14 +359,16 @@ public class JoystickCharacter : NetworkBehaviour
     }
 
     void FixedUpdate() {
-		if (jumpReq) {
-			GetComponent<Rigidbody>().AddForce(Vector3.up * 7.0f, ForceMode.Impulse);
-			jumpReq = false;
-		}
-		if (rb.velocity.y < 0) {
-			rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
-		} else if (rb.velocity.y > 0 && !IsJump()) {
-			rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+		if (isLocalPlayer) {
+			if (jumpReq) {
+				rb.AddForce(Vector3.up * 36.0f, ForceMode.Impulse);
+				jumpReq = false;
+			}
+			if (rb.velocity.y < 0) {
+				rb.velocity += Vector3.up * Physics.gravity.y * (fallMod - 1) * Time.deltaTime;
+			} else if (rb.velocity.y > 0 && !IsJump()) {
+				rb.velocity += Vector3.up * Physics.gravity.y * (lowMod - 1) * Time.deltaTime;
+			}
 		}
 	}
 
@@ -246,35 +391,46 @@ public class JoystickCharacter : NetworkBehaviour
             return;
 		cameraForwards = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
+        // vibrate
+        // if (isInteract() || IsJump()) {
+        //     Handheld.Vibrate();
+        // }
+
 		grabLax++;
-		if (isInteract() && touching && target.tag == "Key") {
+		if (!touching || (target.name == "DoorBlockerB")) {
+			mark.SetActive(false);
+		}
+		if (isInteract() && touching && target.CompareTag("Key")) {
+            audioout.PlayOneShot(soundEffect);
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
-		}else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
+			touching = false;
+		//}else if(touching && target.GetComponent<PinMechanism>()){
+            //target.tag = "Bopped";
+        }else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
 			foreach(string trans in cores) {
-				Debug.Log(trans);
 				CmdsyncNameChange(trans, target);
 				cores.Remove(trans);
 			}
-		}
-		else if (carrying && !interacting && isInteract() && grabLax > 20) {
+		} else if (carrying && !interacting && isInteract() && grabLax > 20) {
 			carrying = false;
-			GameObject child = this.transform.GetComponentsInChildren<Interactable>()[0].gameObject;
+			GameObject child = transform.GetComponentsInChildren<Interactable>()[0].gameObject;
 			child.transform.SetParent(null);
 			child.GetComponent<Rigidbody>().isKinematic = false;
 			child.transform.Translate(0.0f, -0.4f, 0.0f);
+			touching = false;
 			grabLax = 0;
 		}
-		else if(!interacting && isInteract() && touching && !carrying && target.tag == "Weight" && grabLax > 20) {
+		else if(!interacting && isInteract() && touching && !carrying && target.CompareTag("Weight") && grabLax > 20) {
 			carrying = true;
 			target.transform.Translate(0.0f, 0.4f, 0.0f);
 			target.GetComponent<Rigidbody>().isKinematic = true;
-			target.transform.SetParent(this.transform);
+			target.transform.SetParent(transform);
 			grabLax = 0;
 		}
-        else if (!interacting && isInteract() && touching && !carrying && target.tag != "Weight") {
+        else if (!interacting && isInteract() && touching && !carrying && !target.CompareTag("Weight")) {
             interacting = true;
-			if(target.GetComponent<ChestBehaviour>() != null) {
+			if (target.GetComponent<ChestBehaviour>() != null) {
 				ChestBehaviour theirBe = target.GetComponent<ChestBehaviour>();
 				string Name = theirBe.key.name;
 				string Core = theirBe.gameObject.transform.GetChild(0).name;
@@ -285,29 +441,30 @@ public class JoystickCharacter : NetworkBehaviour
 					cores.Add(Core);
 				}
 			} else {
-				Debug.Log("Generic bop");
 				CmdsyncChange("Bopped", target);
 			}
         }
         if (interacting && !isInteract()) {
             interacting = false;
         }
-        if (transform.position.y <= -2) {
+        if (transform.position.y <= -5) {
             ResetPlayerToCheckpoint();
         }
 
         pos = transform.localPosition;
         stickInput = StickInput();
         if (stickInput != Vector3.zero) {
-            if(!GetComponent<Animator>().GetBool("Running")) SyncAnim(true);
+            if (!animator.GetBool("Running")) {
+                SyncAnim(true);
+            }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Quaternion.LookRotation(cameraForwards) * stickInput), Time.deltaTime * 8f);
-            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * 6;
-            pos +=  transform.rotation * Vector3.forward * 0.1f  * MovementSpeed;
+            MovementSpeed = Vector3.Distance(joystick.centre, stickInput) * MovementOffset;
+            pos +=  transform.localRotation * Vector3.forward * 0.1f  * MovementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, Time.deltaTime * MovementSpeed);
-        }
-        else
-        {
-            if (GetComponent<Animator>().GetBool("Running")) SyncAnim(false);
+        } else {
+            if (animator.GetBool("Running")) {
+                SyncAnim(false);
+            }
         }
 
         if (!IsJump() && impCount > 40) {
@@ -327,9 +484,7 @@ public class JoystickCharacter : NetworkBehaviour
         dir.x = joystick.Horizontal();
         dir.z = joystick.Vertical();
 
-        if(dir.magnitude > 1) {
-            dir.Normalize();
-        }
+        dir.Normalize();
         return dir;
     }
 }

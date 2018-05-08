@@ -7,5 +7,4 @@ public class Disparity : MonoBehaviour {
 	public CharacterPicker.WORLDS World = CharacterPicker.WORLDS.CAT;
 	public bool isColliderOpposite = false;
 
-	public Texture altTexture;
 }

@@ -12,18 +12,15 @@ public class DoorBehaviourScript : Receiver {
     public Vector3 target,home;
 	public int timer;
 
-    protected virtual void ToggleOpen(){
-        Debug.Log("toggled");
+    protected virtual void ToggleOpen() {
         open = !open;
     }
 
-    protected override void ColliderEnter(){
-        Debug.Log("collider enter");
+    protected override void ColliderEnter() {
         ToggleOpen();
     }
 
-    protected override void ColliderExit(){
-        Debug.Log("Collider Exit");
+    protected override void ColliderExit() {
         ToggleOpen();
     }
 

@@ -6,21 +6,19 @@ using UnityEngine.UI;
 public class PinMechanism : Receiver {
     
     bool OverlayOn;
-    bool success;
     private Vector3 spikeTarget;
     public float DownSpeed, MovementRange;
     public GameObject PinEntryUI, MovementUI;
-    public GameObject[] Slot1, Slot2, Slot3, Slot4;
+    public GameObject Slot1, Slot2, Slot3, Slot4;
     public GameObject Failed;
     public GameObject target, target1, target2;
     public GameObject Spikes;
     public Button up1, up2, up3, up4, down1, down2, down3, down4, Back, Unlock;
     public int[] CurrentPin;
-    private int[] pin = {1,2,3,4};
+    private int[] pin = {5,7,3,2};
 
 	// Use this for initialization
-	protected override void Start () {
-        success = false;
+	protected void Start () {
         spikeTarget = Spikes.transform.position;
         spikeTarget.y += MovementRange;
         OverlayOn = false;
@@ -47,18 +45,16 @@ public class PinMechanism : Receiver {
         return (x%m + m)%m;
     }
 
-    void TaskOnClickUp (int num, GameObject[] slotNum) {
+    void TaskOnClickUp (int num, GameObject slotNum) {
         //check buttons are pressed
-        slotNum[CurrentPin[num]].SetActive(false);
-        slotNum[mod(CurrentPin[num] + 1, 10)].SetActive(true);
         CurrentPin[num] = mod(CurrentPin[num] + 1, 10);
+        slotNum.transform.GetChild(0).GetComponent<Text>().text = CurrentPin[num].ToString();
     }
 
-    void TaskOnClickDown (int num, GameObject[] slotNum) {
+    void TaskOnClickDown (int num, GameObject slotNum) {
         //check buttons are pressed
-        slotNum[CurrentPin[num]].SetActive(false);
-        slotNum[mod(CurrentPin[num] - 1, 10)].SetActive(true);
         CurrentPin[num] = mod(CurrentPin[num] - 1, 10);
+        slotNum.transform.GetChild(0).GetComponent<Text>().text = CurrentPin[num].ToString();
     }
 
     void Verify () {
@@ -77,7 +73,8 @@ public class PinMechanism : Receiver {
 
     protected override void SwitchReceived()
     {
-        if (!OverlayOn) {
+        Debug.Log("switchrecevied");
+        if ((!OverlayOn) && (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG)) {
             EnablePinEntry();
         }
     }
@@ -90,23 +87,10 @@ public class PinMechanism : Receiver {
     }
 
     public void EnablePinEntry () {
+        Debug.Log("enabling");
         OverlayOn = true;
         PinEntryUI.SetActive(true);
         Failed.SetActive(false);
-        for (int j = 0; j < 4; j++) {
-            CurrentPin[j] = 0;
-        }
-        // set numbers to 0000
-        Slot1[0].SetActive(true);
-        Slot2[0].SetActive(true);
-        Slot3[0].SetActive(true);
-        Slot4[0].SetActive(true);
-        for (int i = 1; i < 10; i++) {
-            Slot1[i].SetActive(false);
-            Slot2[i].SetActive(false);
-            Slot3[i].SetActive(false);
-            Slot4[i].SetActive(false);
-        }
     }
 
     public void DisablePinEntry () {

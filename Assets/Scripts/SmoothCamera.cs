@@ -6,7 +6,6 @@ using Vuforia;
 public class SmoothCamera : MonoBehaviour {
 
 	public int smoothingFrames = 10;
-	private VuforiaBehaviour qcarBehavior;
 
 	private Quaternion smoothedRotation;
 	private Vector3 smoothedPosition;
@@ -48,7 +47,6 @@ public class SmoothCamera : MonoBehaviour {
 
 		rotations = new Queue<Quaternion>(smoothingFrames);
 		positions = new Queue<Vector3>(smoothingFrames);
-		qcarBehavior = GetComponent<VuforiaBehaviour>();
 
 		VuforiaARController vuforia = VuforiaARController.Instance;
 
@@ -63,10 +61,6 @@ public class SmoothCamera : MonoBehaviour {
 	}
 
 	private void AverageQuaternion(ref Vector4 cumulative, Quaternion newRotation, Quaternion firstRotation, int addAmount) {
-        float w = 0.0f;
-        float x = 0.0f;
-        float y = 0.0f;
-        float z = 0.0f;
         
         //Before we add the new rotation to the average (mean), we have to check whether the quaternion has to be inverted. Because
         //q and -q are the same rotation, but cannot be averaged, we have to make sure they are all the same.
@@ -75,15 +69,10 @@ public class SmoothCamera : MonoBehaviour {
         }
         
         //Average the values
-        float addDet = 1f/(float)addAmount;
         cumulative.w += newRotation.w;
-        w = cumulative.w * addDet;
         cumulative.x += newRotation.x;
-        x = cumulative.x * addDet;
         cumulative.y += newRotation.y;
-        y = cumulative.y * addDet;
         cumulative.z += newRotation.z;
-        z = cumulative.z * addDet;
         
         //note: if speed is an issue, you can skip the normalization step
         //return NormalizeQuaternion(x, y, z, w);
