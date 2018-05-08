@@ -16,9 +16,9 @@ public class PulseTrigger : InteractTrigger {
 				foreach (GameObject target in base.targets) {
 					target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("PulseFlag");
 				}
+				audioout.PlayOneShot(soundEffect);
 				interacted = false;
 				this.tag = "Static";
-                audioout.PlayOneShot(soundEffect);
 			}
 		} else {
 		}

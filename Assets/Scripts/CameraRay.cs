@@ -14,6 +14,7 @@ public class CameraRay : Receiver {
 	public AudioSource audioout;
 	public GameObject targetHit;
 	private Light laserLight;
+	private bool noise;
 
 	Vector3 prevForward;
 
@@ -33,6 +34,7 @@ public class CameraRay : Receiver {
 				heldPlayer = player;
 			}
 		}
+		noise = false;
 
 	}
 
@@ -70,6 +72,13 @@ public class CameraRay : Receiver {
 		laserParticles.Stop();
 	}
 
+	void noisyBoy() {
+		if (!noise) {
+			noise = true;
+			audioout.PlayOneShot(rockBreak);
+		}
+	}
+
 	IEnumerator fireRay() {
 
 		while (laserActive == true) {
@@ -88,8 +97,8 @@ public class CameraRay : Receiver {
 					laserParticles.transform.rotation = Quaternion.LookRotation(ray.origin - hit.point);
 
 					if (hit.rigidbody != null && hit.rigidbody.gameObject.tag == "KeyDoor") {
-						audioout.PlayOneShot(rockBreak);
 						heldPlayer.BroadcastMessage("TargetSwitch", hit.rigidbody.gameObject);
+						noisyBoy();
 					}
 				} else {
 					line.SetPosition(1, ray.GetPoint(300));

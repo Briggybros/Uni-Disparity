@@ -29,7 +29,8 @@ public class CollisionTrigger : Trigger {
             foreach (GameObject target in base.targets) {
                 target.gameObject.GetComponent<ListenerScript>().BroadcastMessage("ExitFlag");
             }
-        }
+			audioout.PlayOneShot(soundEffect);
+		}
     }
 
     protected virtual void OnTriggerStay(Collider other){

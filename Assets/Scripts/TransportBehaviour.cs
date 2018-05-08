@@ -16,7 +16,11 @@ public class TransportBehaviour : MonoBehaviour {
     void Update () {
 		if(this.name == "transporterCogBolt" || this.name == "transporterBoltCog") {
 			this.transform.GetChild(0).gameObject.SetActive(true);
-            audioout.PlayOneShot(soundEffect);
+			this.transform.GetChild(0).gameObject.GetComponent<Collider>().enabled = true;
+
+			if (!(audioout.isPlaying)) {
+				audioout.PlayOneShot(soundEffect);
+			}
 		}
 	}
 }

@@ -13,12 +13,12 @@ public class MyNetworkManager : NetworkManager {
 		NetworkMessage message = networkReader.ReadMessage<NetworkMessage>();
 		CharacterPicker.WORLDS world = message.world;
 		GameObject spawn = spawnPrefabs[world == CharacterPicker.WORLDS.CAT ? 0 : CharacterPicker.IsSpectator(world) ? 2 : 1];
-		Transform startPos;
+		Transform startPos = startPositions.Find(x => x.gameObject.name == "StartPos" + world.ToString());
 		if (CharacterPicker.IsSpectator()){
 			startPos = GetStartPosition();
 			startPos.position += new Vector3(0, 10, 0);
 		} else {
-			startPos = startPositions.Find(x => x.gameObject.name == "StartPos" + world.ToString());
+			//startPos = startPositions.Find(x => x.gameObject.name == "StartPos" + world.ToString());
 		}
 		GameObject player = (GameObject) Instantiate(spawn, startPos.position, startPos.rotation);
 		if (player.GetComponent<Rigidbody>() != null) {

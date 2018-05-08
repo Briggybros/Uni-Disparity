@@ -12,6 +12,7 @@ public class PortalEnd : Trigger {
 	public int count;
 	// Use this for initialization
 	protected override void Start () {
+		gameObject.GetComponent<Collider>().enabled = false;
 		count = 0;
 		base.Start();
 	}
