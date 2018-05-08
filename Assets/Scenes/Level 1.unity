@@ -2199,6 +2199,7 @@ GameObject:
   - component: {fileID: 114493336}
   - component: {fileID: 114493337}
   - component: {fileID: 114493338}
+  - component: {fileID: 114493339}
   m_Layer: 11
   m_Name: PressurePlate1100
   m_TagString: Untagged
@@ -2346,6 +2347,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!114 &114493339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114493330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -5.11381
+  y: 1.522193
+  z: -10.46733
 --- !u!1 &114716890
 GameObject:
   m_ObjectHideFlags: 0
@@ -13209,6 +13224,20 @@ MonoBehaviour:
   textBox: {fileID: 1466484911072878, guid: 34fa5ed3190fcfb4fb25a9e0b7458b78, type: 2}
   repeated: 0
   isTriggerable: 1
+--- !u!114 &623855427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623855414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -9.51
+  y: 2.24
+  z: 0.11
 --- !u!1001 &625714892
 Prefab:
   m_ObjectHideFlags: 0
@@ -21758,6 +21787,7 @@ GameObject:
   - component: {fileID: 1078061830}
   - component: {fileID: 1078061829}
   - component: {fileID: 1078061828}
+  - component: {fileID: 1078061831}
   m_Layer: 11
   m_Name: Box
   m_TagString: Untagged
@@ -21909,6 +21939,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7259877, y: 1.6720446, z: 1.7953005}
   m_Center: {x: 0.36299092, y: 0.33601847, z: 0.06525786}
+--- !u!114 &1078061831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078061822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: -0.00002157919
+  y: 0.6998844
+  z: 0
 --- !u!1001 &1078341624
 Prefab:
   m_ObjectHideFlags: 0
@@ -36528,6 +36572,7 @@ GameObject:
   - component: {fileID: 1844372542}
   - component: {fileID: 1844372543}
   - component: {fileID: 1844372544}
+  - component: {fileID: 1844372545}
   m_Layer: 11
   m_Name: Lid
   m_TagString: Untagged
@@ -36706,6 +36751,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!114 &1844372545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844372534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 1.229873
+  y: 0.7577915
+  z: 0
 --- !u!1001 &1853741157
 Prefab:
   m_ObjectHideFlags: 0
@@ -41268,6 +41327,7 @@ GameObject:
   - component: {fileID: 2041481656}
   - component: {fileID: 2041481655}
   - component: {fileID: 2041481654}
+  - component: {fileID: 2041481657}
   m_Layer: 12
   m_Name: Box
   m_TagString: Untagged
@@ -41419,6 +41479,20 @@ MonoBehaviour:
     i15: 43
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &2041481657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041481648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0.6998781
+  z: 0
 --- !u!1 &2042696608
 GameObject:
   m_ObjectHideFlags: 0
@@ -42107,6 +42181,7 @@ GameObject:
   - component: {fileID: 2071925174}
   - component: {fileID: 2071925175}
   - component: {fileID: 2071925176}
+  - component: {fileID: 2071925177}
   m_Layer: 12
   m_Name: Lid
   m_TagString: Untagged
@@ -42285,6 +42360,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 66
   isColliderOpposite: 0
+--- !u!114 &2071925177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2071925166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 1.139998
+  y: 0.9477485
+  z: -0.2700038
 --- !u!1001 &2076946015
 Prefab:
   m_ObjectHideFlags: 0

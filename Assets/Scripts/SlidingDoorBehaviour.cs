@@ -42,7 +42,7 @@ public class SlidingDoorBehaviour : DoorBehaviourScript {
 			}
 		}
 		}
-		if (!mirror){
+		if (!(mirror && !isServer)){
 			if (open)
 			{   
 				//Open the door
