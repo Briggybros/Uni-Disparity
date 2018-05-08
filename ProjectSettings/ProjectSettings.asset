@@ -779,9 +779,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 486ef441-c8c7-407e-bd6d-0441b0c1c275
-  projectName: disparity
-  organizationId: gregory-sims
+  cloudProjectId: 067baebd-9d5d-4577-84d3-9a255f98f109
+  projectName: Disparity
+  organizationId: ab15100
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

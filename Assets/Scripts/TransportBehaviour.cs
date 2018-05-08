@@ -18,7 +18,9 @@ public class TransportBehaviour : MonoBehaviour {
 			this.transform.GetChild(0).gameObject.SetActive(true);
 			this.transform.GetChild(0).gameObject.GetComponent<Collider>().enabled = true;
 
-			audioout.PlayOneShot(soundEffect);
+			if (!(audioout.isPlaying)) {
+				audioout.PlayOneShot(soundEffect);
+			}
 		}
 	}
 }
