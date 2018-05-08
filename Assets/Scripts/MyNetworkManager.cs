@@ -18,8 +18,6 @@ public class MyNetworkManager : NetworkManager {
 		if (CharacterPicker.IsSpectator(world)) {
 			startPos = GetStartPosition();
 			startPos.position += new Vector3(0, 10, 0);
-		} else {
-			//startPos = startPositions.Find(x => x.gameObject.name == "StartPos" + world.ToString());
 		}
 		GameObject player = (GameObject) Instantiate(spawn, startPos.position, startPos.rotation);
 		if (player.GetComponent<Rigidbody>() != null) {

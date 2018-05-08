@@ -36279,6 +36279,7 @@ GameObject:
   - component: {fileID: 1832064159}
   - component: {fileID: 1832064158}
   - component: {fileID: 1832064160}
+  - component: {fileID: 1832064161}
   m_Layer: 11
   m_Name: BrokeCol
   m_TagString: Untagged
@@ -36338,6 +36339,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: 65
   isColliderOpposite: 0
+--- !u!114 &1832064161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832064156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  z: 0
 --- !u!1001 &1832749277
 Prefab:
   m_ObjectHideFlags: 0
