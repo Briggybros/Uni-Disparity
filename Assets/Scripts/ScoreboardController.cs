@@ -42,7 +42,7 @@ public class ScoreboardController : NetworkBehaviour {
 	}
 
 	public void EndGame() {
-		if (NetworkServer.active) {
+		if (isServer) {
 			RpcStopTimer(timeElapsed);
 			NamePanel.SetActive(true);
 		} else {
