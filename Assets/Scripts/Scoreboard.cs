@@ -9,16 +9,18 @@ public static class Scoreboard {
     public static string serverURL = "http://10.42.0.1:8090/score";
 
     public static IEnumerator PostScore(ScoreCallback callback, Score score) {
-        string jsonData = JsonUtility.ToJson(score);
+		WWWForm form = new WWWForm();
+		form.AddField("level", score.level);
+		form.AddField("name", score.name);
+		form.AddField("time", score.time.ToString());
 
-        UnityWebRequest www = UnityWebRequest.Post(serverURL, jsonData);
-        www.SetRequestHeader("Content-Type", "application/json");
+        UnityWebRequest www = UnityWebRequest.Post(serverURL, form);
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError) {
             Debug.LogError(www.error);
         } else {
-            jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 3, www.downloadHandler.data.Length - 3);
+            string jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 0, www.downloadHandler.data.Length);
             Score result = JsonUtility.FromJson<Score>(jsonData);
             callback(result);
         }

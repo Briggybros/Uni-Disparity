@@ -4,15 +4,15 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-  productGUID: 9c75da23e2403ca4d894e066daf037d6
+  productGUID: d49f7016333f545eca3d7508aecde9ee
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Disparity
-  productName: Disparity
+  companyName: DefaultCompany
+  productName: disparity
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -46,7 +46,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 1
+  m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
@@ -60,7 +60,7 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 0
+  use32BitDisplayBuffer: 1
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidBlitType: 0
@@ -76,7 +76,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 1
+  bakeCollisionMeshes: 0
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
@@ -152,39 +152,37 @@ PlayerSettings:
       dashSupport: 0
   protectGraphicsMemory: 0
   useHDRDisplay: 0
-  m_ColorGamuts: 0000000003000000
-  targetPixelDensity: 400
+  m_ColorGamuts: 00000000
+  targetPixelDensity: 0
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier:
-    Android: com.disparity.game
-    iOS: com.loungeolizard.Disparity
+  applicationIdentifier: {}
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 23
+  AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
-  iPhoneStrippingLevel: 3
+  iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  keepLoadedShadersAlive: 1
-  StripUnusedMeshComponents: 1
+  keepLoadedShadersAlive: 0
+  StripUnusedMeshComponents: 0
   VertexChannelCompressionMask:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 10.0
+  iOSTargetOSVersionString: 
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 9.0
+  tvOSTargetOSVersionString: 
   uIPrerenderedIcon: 0
-  uIRequiresPersistentWiFi: 1
+  uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
@@ -241,13 +239,13 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileID: 
   appleEnableAutomaticSigning: 0
   clonedFromGUID: 00000000000000000000000000000000
-  AndroidTargetDevice: 3
+  AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
-  AndroidTVCompatibility: 0
-  AndroidIsGame: 0
+  AndroidTVCompatibility: 1
+  AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
@@ -257,158 +255,19 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 99a6a38bb43d44ee69e919fc7ed3eb18, type: 3}
-      m_Width: 128
-      m_Height: 128
-      m_Kind: 0
-  - m_BuildTarget: iPhone
-    m_Icons:
-    - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 48acde3ead6f83d4398065e8f64eae92, type: 3}
-      m_Width: 180
-      m_Height: 180
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 167
-      m_Height: 167
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 152
-      m_Height: 152
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 114
-      m_Height: 114
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 76
-      m_Height: 76
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 57
-      m_Height: 57
-      m_Kind: 0
-    - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 48acde3ead6f83d4398065e8f64eae92, type: 3}
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 3
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 80
-      m_Height: 80
-      m_Kind: 3
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 40
-      m_Height: 40
-      m_Kind: 3
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 87
-      m_Height: 87
-      m_Kind: 1
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 58
-      m_Height: 58
-      m_Kind: 1
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 29
-      m_Height: 29
-      m_Kind: 1
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 60
-      m_Height: 60
-      m_Kind: 2
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 40
-      m_Height: 40
-      m_Kind: 2
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 20
-      m_Height: 20
-      m_Kind: 2
-    - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 48acde3ead6f83d4398065e8f64eae92, type: 3}
-      m_Width: 1024
-      m_Height: 1024
-      m_Kind: 4
-  m_BuildTargetBatching:
-  - m_BuildTarget: Android
-    m_StaticBatching: 1
-    m_DynamicBatching: 1
-  m_BuildTargetGraphicsAPIs:
-  - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b00000015000000
-    m_Automatic: 0
-  - m_BuildTarget: iOSSupport
-    m_APIs: 10000000
-    m_Automatic: 0
-  - m_BuildTarget: MacStandaloneSupport
-    m_APIs: 1000000011000000
-    m_Automatic: 1
-  - m_BuildTarget: WindowsStandaloneSupport
-    m_APIs: 02000000
-    m_Automatic: 1
-  - m_BuildTarget: LinuxStandaloneSupport
-    m_APIs: 1100000015000000
-    m_Automatic: 1
-  m_BuildTargetVRSettings:
-  - m_BuildTarget: Standalone
-    m_Enabled: 0
-    m_Devices:
-    - Oculus
-    - OpenVR
-  m_BuildTargetEnableVuforiaSettings:
-  - m_BuildTarget: Android
-    m_Enabled: 1
-  - m_BuildTarget: Standalone
-    m_Enabled: 1
-  - m_BuildTarget: iOS
-    m_Enabled: 1
-  openGLRequireES31: 1
-  openGLRequireES31AEP: 1
+  m_BuildTargetIcons: []
+  m_BuildTargetBatching: []
+  m_BuildTargetGraphicsAPIs: []
+  m_BuildTargetVRSettings: []
+  m_BuildTargetEnableVuforiaSettings: []
+  openGLRequireES31: 0
+  openGLRequireES31AEP: 0
   m_TemplateCustomTags: {}
   mobileMTRendering:
     Android: 1
     iPhone: 1
     tvOS: 1
-  m_BuildTargetGroupLightmapEncodingQuality:
-  - m_BuildTarget: Standalone
-    m_EncodingQuality: 1
-  - m_BuildTarget: XboxOne
-    m_EncodingQuality: 1
-  - m_BuildTarget: PS4
-    m_EncodingQuality: 1
+  m_BuildTargetGroupLightmapEncodingQuality: []
   wiiUTitleID: 0005000011000000
   wiiUGroupID: 00010000
   wiiUCommonSaveSize: 4096
@@ -432,7 +291,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: Camera access required for target detection and tracking
+  cameraUsageDescription: 
   locationUsageDescription: 
   microphoneUsageDescription: 
   switchNetLibKey: 
@@ -597,7 +456,7 @@ PlayerSettings:
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
-  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
+  ps4Passcode: ZuGXbEWRK5RhRXdCdG5nG5azdNMK66Mu
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -643,7 +502,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
+  psp2PackagePassword: CV6GXi5xr84P2R391UXaLHbavJvFZGfO
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -689,10 +548,7 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols:
-    1: rocks
-    4: 
-    7: 
+  scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
@@ -773,17 +629,12 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled:
-    Build: 0
-    Collab: 0
-    ErrorHub: 0
-    Hub: 0
-    UNet: 1
+  cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 486ef441-c8c7-407e-bd6d-0441b0c1c275
-  projectName: disparity
-  organizationId: gregory-sims
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
