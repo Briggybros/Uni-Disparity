@@ -5759,6 +5759,7 @@ GameObject:
   - component: {fileID: 314574986}
   - component: {fileID: 314574991}
   - component: {fileID: 314574992}
+  - component: {fileID: 314574993}
   m_Layer: 11
   m_Name: BrokenWallBit
   m_TagString: KeyDoor
@@ -5888,6 +5889,20 @@ Halo:
     serializedVersion: 2
     rgba: 4278249215
   m_Size: 10
+--- !u!114 &314574993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314574985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb71a83f239c94b999fc11ece9df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0.02131513
+  y: 0.009056472
+  z: 0.02955555
 --- !u!1 &322148068
 GameObject:
   m_ObjectHideFlags: 0
