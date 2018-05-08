@@ -2028,8 +2028,8 @@ RectTransform:
   - {fileID: 603374133}
   - {fileID: 775165553}
   - {fileID: 76398372}
-  - {fileID: 1648737125}
   - {fileID: 925634473}
+  - {fileID: 1648737125}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2065,6 +2065,7 @@ MonoBehaviour:
   levels:
   - Level 0
   - Level 1
+  isInternet: 0
 --- !u!114 &421164866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4659,7 +4660,7 @@ RectTransform:
   - {fileID: 1124381705}
   - {fileID: 172115302}
   m_Father: {fileID: 421164864}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
