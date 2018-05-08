@@ -399,10 +399,14 @@ public class JoystickCharacter : NetworkBehaviour {
         // }
 
 		grabLax++;
+		if (!touching || (target.name == "DoorBlockerB")) {
+			mark.SetActive(false);
+		}
 		if (isInteract() && touching && target.CompareTag("Key")) {
             audioout.PlayOneShot(soundEffect);
 			keys.Add(target.name);
 			CmdsyncChange("Bopped", target);
+			touching = false;
 		//}else if(touching && target.GetComponent<PinMechanism>()){
             //target.tag = "Bopped";
         }else if(isInteract() && touching && target.GetComponent<TransportBehaviour>() != null) {
@@ -416,6 +420,7 @@ public class JoystickCharacter : NetworkBehaviour {
 			child.transform.SetParent(null);
 			child.GetComponent<Rigidbody>().isKinematic = false;
 			child.transform.Translate(0.0f, -0.4f, 0.0f);
+			touching = false;
 			grabLax = 0;
 		}
 		else if(!interacting && isInteract() && touching && !carrying && target.CompareTag("Weight") && grabLax > 20) {
