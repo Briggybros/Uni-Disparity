@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Vuforia;
 
-// selfie stick since we essentially stick a camera on the end of a stick move it around
 [RequireComponent(typeof(NetworkIdentity))]
 public class SelfieStickController : NetworkBehaviour {
 
@@ -12,7 +11,6 @@ public class SelfieStickController : NetworkBehaviour {
 	private const float AUTO_TIMEOUT = 0.5f;
 	private GameObject CATDOGCamera;
 
-	// Use this for initialization
 	void Start () {
 		if (!isLocalPlayer) {
 			return;
@@ -35,7 +33,6 @@ public class SelfieStickController : NetworkBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (!isLocalPlayer) {
 			return;
@@ -45,21 +42,21 @@ public class SelfieStickController : NetworkBehaviour {
 		}
 		timeSinceLastInteract += Time.deltaTime;
 		float angle = Vector3.Angle(CATDOGCamera.transform.position, Vector3.up);
-		if (Input.GetKey(KeyCode.D)) { //Rotate Right
+		if (Input.GetKey(KeyCode.D)) {
 			transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
 			timeSinceLastInteract = 0;
 		}
-		if (Input.GetKey(KeyCode.W)) { //Forward
+		if (Input.GetKey(KeyCode.W)) {
 			if (!(angle < 5.0f)) {
 				transform.Rotate(20 * Vector3.forward * Time.deltaTime);
 			}
 			timeSinceLastInteract = 0;
 		}
-		if (Input.GetKey(KeyCode.A)) { //Rotate Left
+		if (Input.GetKey(KeyCode.A)) {
 			transform.RotateAround(Vector3.zero, Vector3.up, -20 * Time.deltaTime);
 			timeSinceLastInteract = 0;
 		}
-		if (Input.GetKey(KeyCode.S)) { // Down
+		if (Input.GetKey(KeyCode.S)) {
 			if (!(angle > 80.0f)){
 				transform.Rotate(20 * Vector3.back * Time.deltaTime);
 			}

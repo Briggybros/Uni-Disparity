@@ -4,15 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class MatchJoinPanelInit : MonoBehaviour {
+public class MatchJoinPanelInit : MonoBehaviour
+{
+  public GameObject joinButton, spectateButton, levelText;
 
-	public GameObject joinButton;
-	public GameObject spectateButton;
-	public GameObject levelText;
-
-	public void Init(string levelName, UnityAction onJoinMatchFunc, UnityAction onSpectateMatchFunc) {
-		levelText.GetComponent<Text>().text = levelName;
-		joinButton.GetComponent<Button>().onClick.AddListener(onJoinMatchFunc);
-		spectateButton.GetComponent<Button>().onClick.AddListener(onSpectateMatchFunc);
-	}
+  public void Init(string levelName, UnityAction onJoinMatchFunc, UnityAction onSpectateMatchFunc)
+  {
+    levelText.GetComponent<Text>().text = levelName;
+    joinButton.GetComponent<Button>().onClick.AddListener(onJoinMatchFunc);
+    spectateButton.GetComponent<Button>().onClick.AddListener(onSpectateMatchFunc);
+  }
 }

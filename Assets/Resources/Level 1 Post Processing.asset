@@ -42,11 +42,11 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 1
-      radius: 0.25
-      sampleCount: 6
-      downsampling: 0
-      forceForwardCompatibility: 0
+      intensity: 1.5
+      radius: 0.75
+      sampleCount: 3
+      downsampling: 1
+      forceForwardCompatibility: 1
       ambientOnly: 0
       highPrecision: 1
   screenSpaceReflection:
@@ -97,7 +97,7 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
         intensity: 0.7
@@ -120,12 +120,12 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
+        postExposure: 0.51
         temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 1
-        contrast: 1
+        saturation: 1.085
+        contrast: 1.06
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -138,9 +138,9 @@ MonoBehaviour:
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 1, g: 0.82951885, b: 0.7730379, a: 0}
+          lift: {r: 1, g: 0.8562383, b: 0.9369609, a: 0}
           gamma: {r: 1, g: 1, b: 1, a: 0}
-          gain: {r: 0.89141226, g: 0.86821836, b: 1, a: 0}
+          gain: {r: 0.8212309, g: 0.90867734, b: 1, a: 0}
       curves:
         master:
           curve:

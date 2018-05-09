@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AltMaterial : MonoBehaviour {
+public class AltMaterial : MonoBehaviour
+{
+  public Material altMaterial;
 
-	public Material altMaterial;
-
-	void Start () {
-		if (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG) {
-			GetComponent<Renderer>().sharedMaterial = altMaterial;
-		}
-	}
+  void Start()
+  {
+    if (CharacterPicker.GetWorld() == CharacterPicker.WORLDS.DOG)
+    {
+      GetComponent<Renderer>().sharedMaterial = altMaterial;
+    }
+  }
 }

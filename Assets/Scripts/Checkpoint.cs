@@ -3,51 +3,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour {
+public class Checkpoint : MonoBehaviour
+{
+  public bool activated = false;
+  public static GameObject[] CheckpointList;
 
-    public bool activated = false;
-    public static GameObject[] CheckpointList;
+  void Start()
+  {
+    char World = CharacterPicker.GetWorld() == CharacterPicker.WORLDS.CAT ? 'A' : 'B';
+    string tag = "Checkpoint" + World;
+    CheckpointList = GameObject.FindGameObjectsWithTag(tag);
+  }
 
-
-    // Use this for initialization
-    void Start () {
-		char World = CharacterPicker.GetWorld() == CharacterPicker.WORLDS.CAT ? 'A' : 'B';
-		string tag = "Checkpoint" + World;
-		CheckpointList = GameObject.FindGameObjectsWithTag(tag);
-	}
-
-    private void ActivateCheckpoint() //Activated current, deactivate all else
+  private void ActivateCheckpoint()
+  {
+    foreach (GameObject cp in CheckpointList)
     {
-        foreach (GameObject cp in CheckpointList)
-        {
-            cp.GetComponent<Checkpoint>().activated = false;
-            //cp.GetComponent().SetBool("Active", false);
-        }
-        activated = true;
+      cp.GetComponent<Checkpoint>().activated = false;
     }
+    activated = true;
+  }
 
-    void OnTriggerEnter(Collider other)
+  void OnTriggerEnter(Collider other)
+  {
+    if (other.gameObject.CompareTag("Player") && Array.Exists(CheckpointList, el => el == this.gameObject))
     {
-        if (other.gameObject.CompareTag("Player") && Array.Exists(CheckpointList, el => el == this.gameObject))
-        {
-            ActivateCheckpoint();
-        }
+      ActivateCheckpoint();
     }
+  }
 
-    public static Transform GetActiveCheckpointTransform()
+  public static Transform GetActiveCheckpointTransform()
+  {
+    Transform output = MyNetworkManager.singleton.GetStartPosition();
+    if (CheckpointList != null)
     {
-        Transform output = MyNetworkManager.singleton.GetStartPosition();
-        if(CheckpointList != null)
+      foreach (GameObject cp in CheckpointList)
+      {
+        if (cp.GetComponent<Checkpoint>().activated)
         {
-            foreach (GameObject cp in CheckpointList)
-            {
-                if (cp.GetComponent<Checkpoint>().activated)
-                {
-                    output = cp.transform;
-                    break;
-                }
-            }
+          output = cp.transform;
+          break;
         }
-        return output;
+      }
     }
+    return output;
+  }
 }

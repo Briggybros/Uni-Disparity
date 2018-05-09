@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791162608775048}
   m_LocalRotation: {x: 0.62405896, y: 0.1309854, z: -0.31027046, w: 0.7050713}
-  m_LocalPosition: {x: 0, y: 80, z: 0}
+  m_LocalPosition: {x: 0, y: 600, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4596927376197324}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120751962412176}
   m_LocalRotation: {x: 0.62405896, y: 0.1309854, z: -0.31027046, w: 0.7050713}
-  m_LocalPosition: {x: 0, y: 80, z: 0}
+  m_LocalPosition: {x: 0, y: 600, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1.000001, z: 1.0000007}
   m_Children: []
   m_Father: {fileID: 4596927376197324}
@@ -128,15 +128,15 @@ Camera:
     width: 0.499
     height: 1
   near clip plane: 0.01
-  far clip plane: 200
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 30
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
-  m_RenderingPath: 3
+    m_Bits: 4294964991
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -164,15 +164,15 @@ Camera:
     width: 0.499
     height: 1
   near clip plane: 0.01
-  far clip plane: 200
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 30
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966783
-  m_RenderingPath: 3
+    m_Bits: 4294954495
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3

@@ -1,37 +1,30 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ListenerScript : MonoBehaviour {
+public class ListenerScript : MonoBehaviour
+{
+  void EnterFlag()
+  {
+    base.gameObject.BroadcastMessage("ColliderEnter");
+  }
 
+  void ExitFlag()
+  {
+    base.gameObject.BroadcastMessage("ColliderExit");
+  }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+  void WithinFlag()
+  {
+    base.gameObject.BroadcastMessage("ColliderWithin");
+  }
 
-    //Add future trigger events to here, such as interaction
-    void EnterFlag(){
-        base.gameObject.BroadcastMessage("ColliderEnter");
-    }
+  void PulseFlag()
+  {
+    base.gameObject.BroadcastMessage("PulseReceived");
+  }
 
-    void ExitFlag(){
-        base.gameObject.BroadcastMessage("ColliderExit");
-    }
-
-    void WithinFlag(){
-        base.gameObject.BroadcastMessage("ColliderWithin");
-    }
-
-    void PulseFlag() {
-        base.gameObject.BroadcastMessage("PulseReceived");
-    }
-
-    void SwitchFlag() {
-        base.gameObject.BroadcastMessage("SwitchReceived");
-    }
+  void SwitchFlag()
+  {
+    base.gameObject.BroadcastMessage("SwitchReceived");
+  }
 }
