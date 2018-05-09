@@ -6,19 +6,25 @@ using System.Collections.Generic;
 public static class Scoreboard {
     public delegate void ScoreCallback(Score score);
     public delegate void ScoresCallback(Score[] scores);
+
+    // Change this to the score endpoint of the leaderboard server
     public static string serverURL = "http://6342f9d3.ngrok.io/score";
-
+    
     public static IEnumerator PostScore(ScoreCallback callback, Score score) {
-        string jsonData = JsonUtility.ToJson(score);
+        // Using form to send because UnityWebRequest fails handling JSON
+        WWWForm form = new WWWForm();
 
-        UnityWebRequest www = UnityWebRequest.Post(serverURL, jsonData);
-        www.SetRequestHeader("Content-Type", "application/json");
+        form.AddField("name", score.name);
+        form.AddField("level", score.level);
+        form.AddField("time", score.time.ToString());
+
+        UnityWebRequest www = UnityWebRequest.Post(serverURL, form);
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError) {
             Debug.LogError(www.error);
         } else {
-            jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 3, www.downloadHandler.data.Length - 3);
+            string jsonData = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data, 0, www.downloadHandler.data.Length);
             Score result = JsonUtility.FromJson<Score>(jsonData);
             callback(result);
         }
