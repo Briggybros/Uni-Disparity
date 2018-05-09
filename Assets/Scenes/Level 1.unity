@@ -9827,12 +9827,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 0
   Turning: 0
-  MinRot: 90
-  MaxRot: 180
-  Facing: 0
   yRot: 1
   xRot: 0
   autoClose: 0
+  MinRot: 90
+  MaxRot: 180
+  Facing: 0
 --- !u!114 &508528163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11802,12 +11802,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 3
   Turning: 0
-  MinRot: 360
-  MaxRot: -75
-  Facing: 0
   yRot: 0
   xRot: 1
   autoClose: 0
+  MinRot: 360
+  MaxRot: -75
+  Facing: 0
   players: []
   heldPlayer: {fileID: 0}
 --- !u!65 &576224077
@@ -13701,12 +13701,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 3
   Turning: 0
-  MinRot: 0
-  MaxRot: 75
-  Facing: 0
   yRot: 0
   xRot: 1
   autoClose: 0
+  MinRot: 0
+  MaxRot: 75
+  Facing: 0
   players: []
   heldPlayer: {fileID: 0}
 --- !u!114 &645351793
@@ -14028,12 +14028,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 2
   Turning: 0
-  MinRot: 360
-  MaxRot: -90
-  Facing: 0
   yRot: 0
   xRot: 0
   autoClose: 0
+  MinRot: 360
+  MaxRot: -90
+  Facing: 0
 --- !u!114 &660037446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17002,7 +17002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 2098875849}
-  actualParet: {fileID: 891223868}
+  actualParent: {fileID: 891223868}
 --- !u!4 &836853238
 Transform:
   m_ObjectHideFlags: 0
@@ -31740,8 +31740,8 @@ MonoBehaviour:
   laserParticles: {fileID: 2099138333}
   audioout: {fileID: 1255420933}
   targetHit: {fileID: 0}
-  players: []
   heldPlayer: {fileID: 0}
+  players: []
 --- !u!114 &1633930144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35535,12 +35535,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 0
   Turning: 0
-  MinRot: 90
-  MaxRot: 0
-  Facing: 0
   yRot: 1
   xRot: 0
   autoClose: 0
+  MinRot: 90
+  MaxRot: 0
+  Facing: 0
 --- !u!114 &1805154976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36679,12 +36679,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 2
   Turning: 0
-  MinRot: 360
-  MaxRot: 60
-  Facing: 0
   yRot: 0
   xRot: 0
   autoClose: 0
+  MinRot: 360
+  MaxRot: 60
+  Facing: 0
 --- !u!65 &1844372540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42288,12 +42288,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 2
   Turning: 0
-  MinRot: 360
-  MaxRot: 60
-  Facing: 0
   yRot: 0
   xRot: 0
   autoClose: 0
+  MinRot: 360
+  MaxRot: 60
+  Facing: 0
 --- !u!65 &2071925172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47070,12 +47070,12 @@ MonoBehaviour:
   home: {x: 0, y: 0, z: 0}
   timer: 2
   Turning: 0
-  MinRot: 360
-  MaxRot: -90
-  Facing: 0
   yRot: 0
   xRot: 0
   autoClose: 1
+  MinRot: 360
+  MaxRot: -90
+  Facing: 0
 --- !u!65 &2126295739
 BoxCollider:
   m_ObjectHideFlags: 0

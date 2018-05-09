@@ -59,7 +59,6 @@ public class SlidingDoorBehaviour : DoorBehaviourScript
 
   protected override void ColliderWithin()
   {
-    Debug.Log("sdafsd");
     if (heldPlayer != null)
     {
       heldPlayer.BroadcastMessage("Block", this.gameObject);

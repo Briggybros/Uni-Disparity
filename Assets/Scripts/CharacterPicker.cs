@@ -42,9 +42,4 @@ public class CharacterPicker : MonoBehaviour
       return true;
     return false;
   }
-  
-  public static void ChangeSpectatorFocus()
-  {
-    Debug.LogError("Please don't use this anymore");
-  }
 }
