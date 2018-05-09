@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXOnly : MonoBehaviour {
+public class SFXOnly : MonoBehaviour
+{
+  public bool enable;
 
-	public bool enable;
-
-	void Start () {
-		if (enable && !CharacterPicker.IsSpectator()) {
-			GetComponent<AudioSource>().mute = true;
-		}
-	}
+  void Start()
+  {
+    if (enable && !CharacterPicker.IsSpectator())
+    {
+      GetComponent<AudioSource>().mute = true;
+    }
+  }
 }

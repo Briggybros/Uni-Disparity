@@ -3,60 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public class DoorBehaviourScript : Receiver
+{
+  [SyncVar]
+  public bool open;
+  public Vector3 target, home;
+  public int timer;
 
-public class DoorBehaviourScript : Receiver {
+  protected virtual void ToggleOpen()
+  {
+    open = !open;
+  }
 
-    [SyncVar]
-    public bool open;
+  protected override void ColliderEnter()
+  {
+    ToggleOpen();
+  }
 
-    public Vector3 target,home;
-	public int timer;
+  protected override void ColliderExit()
+  {
+    ToggleOpen();
+  }
 
-    protected virtual void ToggleOpen() {
-        open = !open;
-    }
+  protected override void PulseReceived()
+  {
+    StartCoroutine(TimerWait());
+  }
 
-    protected override void ColliderEnter() {
-        ToggleOpen();
-    }
+  protected override void SwitchReceived()
+  {
+    ToggleOpen();
+  }
 
-    protected override void ColliderExit() {
-        ToggleOpen();
-    }
+  IEnumerator TimerWait()
+  {
+    ToggleOpen();
+    yield return new WaitForSeconds(timer);
+    ToggleOpen();
+  }
 
-	protected override void PulseReceived() { 
-		StartCoroutine(TimerWait());
-	}
+  protected void init()
+  {
+    open = false;
+    target = transform.position;
+    home = transform.position;
+  }
 
-    protected override void SwitchReceived() {
-        ToggleOpen();
-    }
+  protected void Looping()
+  {
+    StartCoroutine(TimerWaitLoop());
+  }
 
-	IEnumerator TimerWait() {
-		ToggleOpen();
-		yield return new WaitForSeconds(timer);
-		ToggleOpen();
-	}
-
-    protected void init()
+  IEnumerator TimerWaitLoop()
+  {
+    while (true)
     {
-        open = false;
-        target = transform.position;
-        home = transform.position;
+      ToggleOpen();
+      yield return new WaitForSeconds(timer);
+      ToggleOpen();
+      yield return new WaitForSeconds(timer);
     }
-
-    protected void Looping()
-    {
-        StartCoroutine(TimerWaitLoop());
-    }
-
-    IEnumerator TimerWaitLoop() {
-        while(true)
-        {
-            ToggleOpen();
-            yield return new WaitForSeconds(timer);
-            ToggleOpen();
-            yield return new WaitForSeconds(timer);
-        }
-	}
+  }
 }
