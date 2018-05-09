@@ -4,13 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "test": "eslint ./",
     "build": "webpack -p"
   },
   "author": "",
   "license": "UNLICENSED",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "copy-webpack-plugin": "^4.5.1",
     "eslint": "^4.18.2",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -20,9 +23,6 @@
     "webpack-cli": "^2.0.15"
   },
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "socket.io": "^2.1.0"
